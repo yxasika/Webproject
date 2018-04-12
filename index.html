@@ -5,18 +5,41 @@
   <head>
     <title>Online-Journal</title>
     <meta charset="utf-8" lang="de">
+      
+      <style type="text/css">
+          
+          #Navbar {
+              list-style-type: none;
+          }
+          
+          #Navbar li {
+              float: left
+          }
+          
+          #Navbar li a {
+              display: block;
+              text-align: center;
+              background-color: #333333;
+              color:#ffffff;
+              padding: 16px;
+          }
+      
+      
+      </style>
+      
   </head>
   <body>
     <header>
       <h1>DPad</h1>
     </header>
     <nav>
-      <ul style="list-style: none">
-        <li style="float: left"><a style="display: block; text-align: center; background-color: #333333; color:#ffffff; padding: 16px" href="index.html" title="Homepage">Homepage</a></li>
-        <li style="float: left"><a style="display: block; text-align: center; background-color: #333333; color:#ffffff; padding: 16px" href="pages/upToDate.html" title="Up to date">Up to date</a></li>
-        <li style="float: left"><a style="display: block; text-align: center; background-color: #333333; color:#ffffff; padding: 16px" href="pages/archive.html" title="Archive">Archive</a></li>
-        <li style="float: left"><a style="display: block; text-align: center; background-color: #333333; color:#ffffff; padding: 16px" href="pages/aboutUs.html" title="About Us">About Us</a></li>
+      <ul id="Navbar">
+        <li><a href="index.html" title="Homepage">Homepage</a></li>
+        <li><a title="Up to date">Up to date</a></li>
+        <li><a title="Archive">Archive</a></li>
+        <li><a title="About Us">About Us</a></li>
       </ul>
     </nav>
+      
   </body>
 </html>
