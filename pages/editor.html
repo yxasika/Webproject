@@ -1,159 +1,20 @@
 <!DOCTYPE html>
-<!--
-  NO BOOTSTRAP, NO enhanced CSS3, NO JAVASCRIPT!
-
-  Design directly copied from Mockup!!!
--->
-
 <html lang="en">
 <head>
-
-  <title>Editor⁻space</title>
-  <meta charset="utf-8" name="description" content="Content Editor Space"
-  name="keywords" content="Online-Journal, Game, edit">
-    <!-- On behalf of w3schools:
-    https://www.w3schools.com/html/html_responsive.asp -->
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-
-    <style type="text/css">
-
-      body {
-          margin: 0;
-        }
-
-      header.navigation ul {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-          overflow: hidden;
-          background-color: white;
-      }
-
-      header.navigation li{
-          float: left;
-          width: 22%;
-      }
-
-      header.navigation li a {
-          display: block;
-          border: 0.2em solid black;
-          /* no double border */
-          margin-right: -.23em;
-          /*padding: 16px;*/
-
-          font-size: 1em;
-          color: black;
-          text-align: center;
-          text-decoration: none;
-          /* all uppercase in Mockup! */
-          text-transform: uppercase;
-          font-family: sans-serif;
-      }
-
-      header.navigation li a:hover {
-          background-color: #00bfff;
-      }
-
-      #searchBar {
-        float: right;
-        padding: 15px;
-      }
-
-      #mainWindow {
-        margin: 3% 20%;
-        border: 0.2em solid black;
-      }
-
-      .desc {
-        margin-top: 0px;
-        padding: 1px;
-        text-transform: uppercase;
-        font-family: sans-serif;
-      }
-
-      #contentList {
-        list-style-type: none;
-        margin: 2em;
-        padding: 0;
-        overflow: hidden;
-        background-color: white;
-      }
-
-
-      .contentField {
-        width: auto;
-        margin: 2em;
-        border: 0.2em solid black;
-      }
-
-
-      .contentDesc {
-        margin: 1px;
-      }
-    </style>
-
+  <meta charset="UTF-8">
+  <title>article editor</title>
 </head>
 <body>
-  <header class="navigation">
-    <img src="http://via.placeholder.com/400x200" alt="placeholderPic"
-        height="200" width="100%">
-        <ul>
-          <li><a href="../index.html">Start</a></li>
-          <li><a href="upToDate.html">Aktuell</a> </li>
-          <li><a href="archive.html">Archiv</a> </li>
-          <li><a href="aboutUs.html">Über uns</a> </li>
-        </ul>
-  </header>
+<header>
+  article editor
+</header>
+<form>
 
-  <main>
-    <div id = "mainWindow">
-      <p class ="desc">Meine Beiträge</p>
-      <ul id = "contentList">
-        <!-- Beitrag 1 -->
-        <li>
-          <div class = "contentBlock">
-            <div class = "contentField">
-              <p class = "contentDesc">Beitrag 1</p>
-              <pre>
-
-
-
-              </pre>
-            </div>
-          </div>
-        </li>
-        <!-- Beitrag 2 -->
-        <li>
-          <div class = "contentBlock">
-            <div class = "contentField">
-              <p class = "contentDesc">Beitrag 2</p>
-              <pre>
-
-
-
-              </pre>
-            </div>
-          </div>
-        </li>
-        <!-- Beitrag 3 -->
-        <li>
-          <div class = "contentBlock">
-            <div class = "contentField">
-              <p class = "contentDesc">Beitrag 3</p>
-              <pre>
-
-
-
-              </pre>
-            </div>
-          </div>
-        </li>
-
-      </ul>
-    </div>
-  </main>
-
+  <input type="button" value="show pending articles">
+  <input type="button" value="my articles">
+  <input type="button" value="approved articles">
+  <input type="button" value="rejected articles">
+  (hier würde die liste der jeweils gewählten artikel stehen)
+</form>
 </body>
 </html>
