@@ -5,27 +5,48 @@
     <title>Notification</title>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">home</a></li>
-            <li><a href="pages/archive.html">archive</a></li>
-            <li><form>
-                <input type="text" placeholder="search">
-                <input type="button" value="go!">
-            </form></li>
-            <li><a href="pages/publisharticle.html">publish</a></li>
-            <li><input type="button" value="🔔"></li>
-            <li><input type="button" value="≡"></li>
-        </ul>
-    </nav>
+<nav>
+    <ul>
+        <li><a href="index.html">home</a></li>
+        <li><a href="pages/archive.html">archive</a></li>
+        <li><form>
+            <input type="search" placeholder="search">
+            <input type="button" value="go!">
+        </form></li>
+        <li><a href="pages/publisharticle.html">publish</a></li>
+        <li><a href="notification.html">Notification</a></li>
+        <li><div>
+            <ul>
+                <li><a>profile</a></li>
+                <li><a>articles</a></li>
+                <li><a>logout</a></li>
+            </ul>
+        </div></li>
+    </ul>
+</nav>
     <div title="alert">
         <ul>
             <li>New</li>
             <li>Read</li>
         </ul>
     </div>
-    <div>
-    <!-- Container for Notifications -->
-    </div>
+<div id="newContainer">
+    <form>
+        <fieldset>
+            <legend>new notifications</legend>
+            <p>Message</p>
+            <p>Articel: Titel</p>
+        </fieldset>
+    </form>
+</div>
+<div id="readContainer">
+    <form>
+        <fieldset>
+            <legend>read notifications</legend>
+            <p>Comment</p>
+            <p>Article: Titel</p>
+        </fieldset>
+    </form>
+</div>
 </body>
 </html>
