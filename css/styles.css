@@ -1,4 +1,3 @@
-
 * {
 	background-color: #808080;
 
@@ -19,6 +18,9 @@ h1 {
 #whitebox h1{
 	background-color: white;
 }
+
+<!-- Navigaton -->
+<!-- www.w3schools.com/css/css_navbar.asp -->
 ul {
     list-style-type: none;
     margin: 0;
