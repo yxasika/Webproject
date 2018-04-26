@@ -1,26 +1,18 @@
-* {
-	background-color: #808080;
-
+body {
+    background-color: #808080;
 }
 
-h1 {
-	color: black;
-
+#whitebox {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: 'Varela Round', sans-serif;
 }
 
-#whitebox
-{
-	background-color: white;
-	padding: 10px;
-	border-radius: 10px;
-	font-family: 'Varela Round', sans-serif;
-}
 #whitebox h1{
-	background-color: white;
+    background-color: white;
 }
 
-<!-- Navigaton -->
-<!-- www.w3schools.com/css/css_navbar.asp -->
 ul {
     list-style-type: none;
     margin: 0;
