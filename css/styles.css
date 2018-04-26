@@ -1,8 +1,24 @@
-* {
-	background-color: blue;
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
 }
 
-h1 {
-	color: black;
+li {
+    float: left;
 }
 
+li a {
+    display: block;
+    float: left;
+    color: #ffffff;
+    padding: 14px 16px;
+    text-align: center;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111111;
+}
