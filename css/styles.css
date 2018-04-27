@@ -1,41 +1,64 @@
 body {
     background-color: #808080;
+    font-family: 'Varela Round', sans-serif;
+}
+
+#logo {
+    max-height: 100%;
+    max-width: 100%;
 }
 
 #whitebox {
     background-color: white;
-    padding: 10px;
-    border-radius: 10px;
-    font-family: 'Varela Round', sans-serif;
+    padding: 1mm;
+    border-radius: 3mm;
 }
 
 #whitebox h1{
     background-color: white;
 }
 
-ul {
+#navigation {
     list-style-type: none;
     margin: 0;
     padding: 5px;
     overflow: hidden;
-    background-color: #333333;
-    border-radius: 10px;
+    background-color: #303f9f;
+    border-radius: 3mm;
 }
 
-li {
+#navigation li {
     float: left;
 }
 
-li a {
+#navigation li a {
     display: block;
     float: left;
     color: #ffffff;
     padding: 14px 16px;
     text-align: center;
     text-decoration: none;
+    font-weight: bold;
+}
+
+#formular {
+    background-color: white;
+    border-radius: 3mm;
+}
+
+#formular ul {
+    list-style-type: none;
+}
+
+#formular li {
+
+}
+
+#formular form {
+
 }
 
 li a:hover {
-    background-color: #111111;
+    background-color: #666ad1;
     border-radius: 10px;
 }
