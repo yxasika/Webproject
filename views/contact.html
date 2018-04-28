@@ -51,19 +51,20 @@
       </div>
       <br>
     </fieldset>
-    <select>
-  <option value="articles">articles</option>
-  <option value="author">author</option>
-  <option value="profile">profile</option>
-  <option value="other">other</option>
-</select>
+    <select class="form-control">
+      <option value="reason" selected disabled>reason?</option>
+      <option value="articles">articles</option>
+      <option value="author">author</option>
+      <option value="profile">profile</option>
+      <option value="other">other</option>
+    </select>
     <br>
     <div>
       <label for="message">your message:</label>
-      <textarea id="message" name="message" placeholder="write your text here..." cols="20" rows="5"></textarea>
+      <textarea id="message" name="message" placeholder="write your text here..." cols="20" rows="5" class="form-control"></textarea>
     </div>
     <div>
-      <input type="submit" value="SEND!"/>
+      <input type="submit" value="SEND!" class="btn btn-primary"/>
     </div>
   </form>
   <footer>
