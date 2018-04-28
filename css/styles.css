@@ -25,6 +25,8 @@ body {
     overflow: hidden;
     background-color: #303f9f;
     border-radius: 3mm;
+    width: 100%;
+    position:fixed;
 }
 
 #navigation li {
@@ -42,8 +44,9 @@ body {
 }
 
 #formular {
-    background-color: white;
     border-radius: 3mm;
+    padding-left: 2%;
+    width: 40%;
 }
 
 #formular ul {

@@ -10,7 +10,7 @@
 </head>
 
 <body id="contactform" onload="document.contactform.sender.focus();">
-  <img alt="logo" src="../src/imgs/logo.png" id="logo" />
+
   <nav>
     <ul id="navigation">
       <li><a href="home.html">home</a></li>
@@ -35,17 +35,22 @@
     </ul>
   </nav>
   <br>
-  <form id="contact" name="contact" action="home.html">
+  <form id="formular" name="contact" action="home.html">
     <fieldset>
-  <legend>Contact us:</legend>
-    <div>
-      first name <input type="text" name="fname" placeholder="First name">
-      last name<input type="text" name="lname" placeholder="Last name">
-    </div>
-    <div>
-      <label for="sender">mailto:</label> <input type="email" name="sender" placeholder="my.adress@example.com" />
-    </div>
-     </fieldset>
+      <legend>Contact us:</legend>
+      <div class="form-group">
+        <input type="text" name="fname" placeholder="First name" class="form-control">
+        <small id="" class="form-text text-muted">Hier deine Name diggi</small>
+      </div>
+      <div class="form-group">
+        <input type="text" name="lname" placeholder="Last name" class="form-control">
+      </div>
+
+        <label for="sender"></label>
+        <input type="email" name="sender" placeholder="my.adress@example.com" class="form-control"/>
+      </div>
+      <br>
+    </fieldset>
     <select>
   <option value="articles">articles</option>
   <option value="author">author</option>
@@ -58,10 +63,19 @@
       <textarea id="message" name="message" placeholder="write your text here..." cols="20" rows="5"></textarea>
     </div>
     <div>
-      <input type="submit" value="SEND!" />
+      <input type="submit" value="SEND!"/>
     </div>
   </form>
-
+  <footer>
+    <ul>
+      <li><a href = "impressum.html"> impressum</a></li>
+      <li><a href = "publishedarticles.html"> articles</a></li>
+      <li><a href = "login_registration.html"> login</a></li>
+    </ul>
+    <p>
+      &copy; 2018 DPAD
+    </p>
+  </footer>
 
 
 </body>
