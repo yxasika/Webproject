@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
-<title>Contact</title>
-<meta charset="utf-8" lang="de">
-<link rel="stylesheet" href="../css/styles.css">
+  <title>Contact</title>
+  <meta charset="utf-8" lang="de">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
 
-<body>
+<body id="contactform" onload="document.contactform.sender.focus();">
   <img alt="logo" src="../src/imgs/logo.png" id="logo" />
   <nav>
     <ul id="navigation">
@@ -32,6 +34,33 @@
       </li>
     </ul>
   </nav>
+  <br>
+  <form id="contact" name="contact" action="home.html">
+    <fieldset>
+  <legend>Contact us:</legend>
+    <div>
+      first name <input type="text" name="fname" placeholder="First name">
+      last name<input type="text" name="lname" placeholder="Last name">
+    </div>
+    <div>
+      <label for="sender">mailto:</label> <input type="email" name="sender" placeholder="my.adress@example.com" />
+    </div>
+     </fieldset>
+    <select>
+  <option value="articles">articles</option>
+  <option value="author">author</option>
+  <option value="profile">profile</option>
+  <option value="other">other</option>
+</select>
+    <br>
+    <div>
+      <label for="message">your message:</label>
+      <textarea id="message" name="message" placeholder="write your text here..." cols="20" rows="5"></textarea>
+    </div>
+    <div>
+      <input type="submit" value="SEND!" />
+    </div>
+  </form>
 
 
 
