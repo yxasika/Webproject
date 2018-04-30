@@ -45,8 +45,10 @@ body {
 
 #formular {
     border-radius: 3mm;
-    padding-left: 2%;
-    width: 40%;
+    padding: 50px 30px;
+    width: 700px;
+    background-color: white;
+
 }
 
 #formular ul {
@@ -58,7 +60,6 @@ body {
 }
 
 #formular form {
-
   background-color: #eee;
   width: 370px; /* Breite des Formulars */
   padding: 20px;
@@ -83,7 +84,7 @@ textarea:focus {
 }
 
 
-li a:hover {
+/* li a:hover {
     background-color: #666ad1;
     border-radius: 10px;
-}
+} */

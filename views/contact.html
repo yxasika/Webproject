@@ -11,73 +11,78 @@
 
 <body id="contactform" onload="document.contactform.sender.focus();">
 
-  <nav>
-    <ul id="navigation">
-      <li><a href="home.html">home</a></li>
-      <li><a href="archive.html">archive</a></li>
-      <li>
-        <form>
-          <input type="search" placeholder="search">
-          <input type="button" value="go!" onclick="location.href='searchResults.html'">
-        </form>
-      </li>
-      <li><a href="publishedarticles.html">published</a></li>
-      <li><a href="notification.html">notification</a></li>
-      <li>
-        <div>
-          <ul>
-            <li><a href="profile.html">profile</a></li>
-            <li><a>articles</a></li>
-            <li><a>logout</a></li>
-          </ul>
-        </div>
-      </li>
-    </ul>
-  </nav>
-  <br>
-  <form id="formular" name="contact" action="home.html">
-    <fieldset>
-      <legend>Contact us:</legend>
-      <div class="form-group">
-        <input type="text" name="fname" placeholder="First name" class="form-control">
-        <small id="" class="form-text text-muted">Hier deine Name diggi</small>
-      </div>
-      <div class="form-group">
-        <input type="text" name="lname" placeholder="Last name" class="form-control">
-      </div>
+  <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+    <a class="navbar-brand" href="home.html">LOGO</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <label for="sender"></label>
-        <input type="email" name="sender" placeholder="my.adress@example.com" class="form-control"/>
-      </div>
-      <br>
-    </fieldset>
-    <select class="form-control">
-      <option value="reason" selected disabled>reason?</option>
-      <option value="articles">articles</option>
-      <option value="author">author</option>
-      <option value="profile">profile</option>
-      <option value="other">other</option>
-    </select>
-    <br>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="publishedarticles.html">ARTICLES</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="archive.html">ARCHIVE</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="profile.html">PROFILE</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+
+  <br>
+  <div class="container">
+    <div class="row justify-content-center">
+      <form id="formular" name="contact" action="home.html">
+          <h2>Contact us</h2>
+          <div class="form-group">
+            <input type="text" name="fname" placeholder="First name" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <input type="text" name="lname" placeholder="Last name" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <input type="email" name="sender" placeholder="my.adress@example.com" class="form-control" required/>
+          </div>
+    <div class="form-group">
+      <select class="form-control" required>
+        <option value="subject" selected disabled>Subject</option>
+        <option value="articles">Articles</option>
+        <option value="author">Author</option>
+        <option value="profile">Profile</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
     <div>
-      <label for="message">your message:</label>
+      <label for="message">Your message:</label>
       <textarea id="message" name="message" placeholder="write your text here..." cols="20" rows="5" class="form-control"></textarea>
     </div>
     <div>
-      <input type="submit" value="SEND!" class="btn btn-primary"/>
+      <input type="submit" value="SEND" class="btn btn-primary" />
     </div>
   </form>
-  <footer>
-    <ul>
-      <li><a href = "impressum.html"> impressum</a></li>
-      <li><a href = "publishedarticles.html"> articles</a></li>
-      <li><a href = "login_registration.html"> login</a></li>
-    </ul>
-    <p>
-      &copy; 2018 DPAD
-    </p>
+</div>
+</div>
+  <footer class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="impressum.html">IMPRESSUM</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">CONTACT</a>
+        </li>
+      </ul>
+    &copy; 2018 DPAD
   </footer>
-
 
 </body>
 
