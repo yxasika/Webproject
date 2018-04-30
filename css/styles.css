@@ -18,7 +18,7 @@ body {
     background-color: white;
 }
 
-#navigation {
+/* #navigation {
     list-style-type: none;
     margin: 0;
     padding: 5px;
@@ -41,7 +41,7 @@ body {
     text-align: center;
     text-decoration: none;
     font-weight: bold;
-}
+} */
 
 .content {
     margin-top: 30px;
@@ -52,20 +52,6 @@ body {
 
 }
 
-.content ul {
-    list-style-type: none;
-}
-
-.content li {
-
-}
-
-.content form {
-  background-color: #eee;
-  width: 370px; /* Breite des Formulars */
-  padding: 20px;
-  border: 1px solid #8c8c8c;
-}
 label { /* Beschriftung auf eigener Zeile */
   display: block;
   cursor: pointer; /* Mauszeiger wird zur Hand */
@@ -89,3 +75,12 @@ textarea:focus {
     background-color: #666ad1;
     border-radius: 10px;
 } */
+
+.comment {
+    padding-bottom: 50px;
+}
+
+.icon {
+  display: inline-flex;
+  vertical-align: middle;
+}

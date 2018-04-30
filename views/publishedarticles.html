@@ -2,74 +2,92 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Article</title>
+  <title>published article</title>
+  <meta charset="utf-8" lang="de">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
 
 <body>
-  <img src="../src/imgs/logo.png" alt="logo">
-  <nav>
-    <ul>
-      <li><a href="home.html">home</a></li>
-      <li><a href="archive.html">archive</a></li>
-      <li>
-        <form>
-          <input type="search" placeholder="search">
-          <input type="button" value="go!">
-        </form>
-      </li>
-      <li><a href="publishedarticles.html">published</a></li>
-      <li><a href="notification.html">Notification</a></li>
-      <li>
-        <div>
-          <ul>
-            <li><a href="profile.html">profile</a></li>
-            <li><a>articles</a></li>
-            <li><a>logout</a></li>
-          </ul>
-        </div>
-      </li>
-    </ul>
-  </nav>
-  <article>
-    <div>
-      <h1>Heading</h1>
-      <p>Author: <a href="#">Mr. Abstract</a></p>
-      <p>Date: 01.01.2018</p>
-      <p>Category: Game</p>
-      <img src="../src/imgs/default.jpg" alt="default img">
-      <p><b>Abstract</b><br> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-        gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-        et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-      </p>
-    </div>
-    <div> <embed width="100" height="200" data="../src/article.myJournal.pdf" type="application/pdf" src="../src/imgs/article.myJournal.pdf" />
-      <br>
-      <button type="button" name="Download">Download</button>
-    </div>
-    <div>
-      <h2>Comments</h2>
-      <form>
-        <input type="text" name="title" placeholder="Title">
-        <br>
-        <br>
-        <textarea name="name" rows="8" cols="80"></textarea>
-        <br>
-        <br>
-        <input type="submit" name="post">
+  <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+    <a class="navbar-brand" href="home.html"><img src="../src/imgs/logo.png" alt="logo"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="publishedarticles.html">ARTICLES</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="archive.html">ARCHIVE</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="profile.html">PROFILE</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
       </form>
     </div>
-  </article>
-
-  <footer>
-    <ul>
-      <li><a href = "impressum.html"> impressum</a></li>
-      <li><a href = "publishedarticles.html"> articles</a></li>
-      <li><a href = "login_registration.html"> login</a></li>
+  </nav>
+  <div class="content">
+    <article>
+      <div class="card">
+        <img class="card-img-top" src="../src/imgs/monster_hunter_world.jpg" alt="monster_hunter_world">
+        <div class="card-body">
+          <h5 class="card-title">Article 1</h5>
+          <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet,
+            consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+            sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">author: <a class="card-link" href="#">Max Mustermann</a></li>
+          <li class="list-group-item">published: 11.09.2018</li>
+          <li class="list-group-item">category: <a href="#" class="badge badge-primary">RPG</a>, <a href="#" class="badge badge-warning">ACTION</a></li>
+          <li class="list-group-item">
+            <a class="btn btn-outline-primary icon" role="button" target="_blank" href="../src/imgs/article.myJournal.pdf">
+              <i class="material-icons">file_download</i> Download</a>
+          </li>
+        </ul>
+      </div>
+      <br>
+      <hr />
+      <form class="comment" name="comment">
+        <div class="form-group">
+          <label for="commentbox">COMMENT</label>
+          <textarea id="commentbox" name="comment" placeholder="write your comment..." cols="20" rows="3" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="anonym">
+            <label class="form-check-label" for="anonym">
+              anonymous comment
+            </label>
+          </div>
+          <div class="form-group">
+            <input type="submit" value="SEND" class="btn btn-primary float-right" />
+          </div>
+        </div>
+      </form>
+    </article>
+  </div>
+  <footer class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark p-0">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="impressum.html">IMPRESSUM</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="contact.html">CONTACT</a>
+      </li>
     </ul>
-    <p>
-      &copy; 2018 DPAD
-    </p>
+    &copy; 2018 DPAD
   </footer>
 </body>
 
