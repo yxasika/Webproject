@@ -6,74 +6,82 @@
 <head>
   <title>Online-Journal</title>
   <meta charset="utf-8" lang="de">
-    <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
 
 <body>
-  <img alt="logo" src="../src/imgs/logo.png" id="logo"/>
+  <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+    <a class="navbar-brand" href="home.html"><img src="../src/imgs/logo.png" alt="logo"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <nav>
-    <ul id="navigation">
-      <li><a href="home.html">home</a></li>
-      <li><a href="archive.html">archive</a></li>
-      <li>
-        <form>
-          <input type="search" placeholder="search">
-          <input type="button" value="go!" onclick="location.href='searchResults.html'">
-        </form>
-      </li>
-      <li><a href="publishedarticles.html">published</a></li>
-      <li><a href="notification.html">notification</a></li>
-      <li>
-        <div>
-          <ul>
-            <li><a href="profile.html">profile</a></li>
-            <li><a>articles</a></li>
-            <li><a>logout</a></li>
-          </ul>
-        </div>
-      </li>
-    </ul>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="publishedarticles.html">ARTICLES</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="archive.html">ARCHIVE</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="profile.html">PROFILE</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
   </nav>
 
 
   <section>
-    <div>
-      <img alt="image1" src="https://images.pexels.com/photos/40185/mac-freelancer-macintosh-macbook-40185.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350" />
-      <img alt="image2" src="https://images.pexels.com/photos/38286/bar-local-cong-ireland-38286.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350">
+    <div id="dPad">
+      <form>
+        <fieldset>
+          <legend>D+Pad</legend>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+            sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+            duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        </fieldset>
+      </form>
     </div>
-      <div id="dPad">
-          <form>
-              <fieldset>
-                  <legend>D+Pad</legend>
-                  <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-              </fieldset>
-          </form>
-      </div>
-      <div id="featured Articles">
-          <form>
-              <fieldset>
-                  <legend>featured Articles</legend>
-                  <fieldset>
-                      <legend>newest Articles</legend>
-                      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                  </fieldset><fieldset>
-                  <legend>best rated Articles</legend>
-                  <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-              </fieldset>
-              </fieldset>
-          </form>
-      </div>
+    <div id="featured Articles">
+      <form>
+        <fieldset>
+          <legend>featured Articles</legend>
+          <fieldset>
+            <legend>newest Articles</legend>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+              no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
+              justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+          </fieldset>
+          <fieldset>
+            <legend>best rated Articles</legend>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+              no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
+              justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+          </fieldset>
+        </fieldset>
+      </form>
+    </div>
   </section>
-  <footer>
-      <ul>
-          <li><a href = "impressum.html"> impressum</a></li>
-          <li><a href = "publishedarticles.html"> articles</a></li>
-          <li><a href = "login_registration.html"> login</a></li>
-      </ul>
-      <p>
-          &copy; 2018 DPAD
-      </p>
+  <footer class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="impressum.html">IMPRESSUM</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="contact.html">CONTACT</a>
+      </li>
+    </ul>
+    &copy; 2018 DPAD
   </footer>
+
 </body>
+
 </html>
