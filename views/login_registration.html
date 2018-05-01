@@ -2,88 +2,120 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
   <title>Login</title>
+  <meta charset="utf-8" lang="de">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/styles.css">
 </head>
 
 <body>
-  <header>
-    login
-  </header>
-  <nav>
-    <ul>
-      <li><a href="home.html">home</a></li>
-      <li><a href="archive.html">archive</a></li>
-      <li>
-        <form>
-          <input type="search" placeholder="search">
-          <input type="button" value="go!">
-        </form>
-      </li>
-      <li><a href="publishedarticles.html">published</a></li>
-      <li><a href="notification.html">notification</a></li>
-      <li>
-        <div>
-          <ul>
-            <li><a href="profile.html">profile</a></li>
-            <li><a>articles</a></li>
-            <li><a>logout</a></li>
-          </ul>
-        </div>
-      </li>
-    </ul>
+  <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+    <a class="navbar-brand" href="home.html"><img src="../src/imgs/logo.png" alt="logo"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="publishedarticles.html">ARTICLES</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="archive.html">ARCHIVE</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="profile.html">PROFILE</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
   </nav>
 
-  <form id="formular">
-    <ul>
-      <li>
-        Email <input type="email" />
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="content">
+        <h3>Login</h3>
+        <form>
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col">
+                <label for="inputemail">E-Mail adress</label>
+                <input type="email" class="form-control" id="inputemail" placeholder="Enter E-mail" required>
+              </div>
+              <div class="col">
+                <label for="inputpassword">Password</label>
+                <input type="password" class="form-control" id="inputpassword" placeholder="Password" required>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col">
+                <a class="btn btn-link" href="#">Forgot password?</a>
+              </div>
+              <div class="col">
+                <button type="submit" class="btn btn-primary float-right">LOGIN</button>
+              </div>
+            </div>
+          </div>
+        </form>
+        <hr>
+        <form>
+          <h3>Register</h3>
+          <div class="form-group row">
+            <label for="firstname" class="col-sm-2 col-form-label">First name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="firstname" placeholder="First name" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="lastname" class="col-sm-2 col-form-label">Last name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="lastname" placeholder="Last name" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="email" class="col-sm-2 col-form-label">E-mail</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="email" placeholder="E-Mail" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="newpassword" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" id="newpassword" placeholder="Password" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="passwordagain" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" id="passwordagain" placeholder="Password again" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col">
+              <button type="submit" class="btn btn-primary float-right">REGISTER</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <footer class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark p-0">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="impressum.html">IMPRESSUM</a>
       </li>
-      <li>
-        Password <input type="password" />
-      </li>
-      <li>
-        <input type="submit" />
-      </li>
-      <li>
-        <a href="www.google.de">Forgot Password?</a>
+      <li class="nav-item">
+        <a class="nav-link" href="contact.html">CONTACT</a>
       </li>
     </ul>
-  </form>
-  <form id="formular">
-    Register
-    <ul>
-      <li>
-        Name <input type="text">
-      </li>
-      <li>
-        Surname <input type="text">
-      </li>
-      <li>
-        Email <input type="email">
-      </li>
-      <li>
-        Password <input type="password">
-      </li>
-      <li>
-        Repeat password <input type="password">
-      </li>
-      <li>
-        <input type="submit">
-      </li>
-    </ul>
-  </form>
-
-  <footer>
-    <ul>
-      <li><a href = "impressum.html"> impressum</a></li>
-      <li><a href = "publishedarticles.html"> articles</a></li>
-      <li><a href = "login_registration.html"> login</a></li>
-    </ul>
-    <p>
-      &copy; 2018 DPAD
-    </p>
+    &copy; 2018 DPAD
   </footer>
 </body>
 
