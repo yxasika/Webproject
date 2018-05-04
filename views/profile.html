@@ -32,11 +32,12 @@
         <a class="nav-link" href="profile.html">PROFILE</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
+    <form class="form-inline my-2 my-lg-0 ">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+        <button class="btn btn-primary my-2 my-sm-0 mr-4" type="submit">Search</button>
+        <button class="btn btn-info my-2 my-sm-0" onclick="window.location.href='login_registration.html'">LOGIN</button>
     </form>
-    <button class="btn btn-info my-2 my-sm-0" onclick="window.location.href='login_registration.html'">LOGIN</button>
+
   </div>
 </nav>
 
@@ -46,12 +47,12 @@
         <form class="content" name="profile" action="profile.html">
             <h2>Profile Data</h2>
                 <div class="form-row">
-                    <div class="form-col">
+                    <div class="form-col mr-4">
 
 
-                        current Email <input type="text" class="form-control" placeholder="unchanged" title="current Email" required><br>
+                        current Email <input type="text" class="form-control" placeholder="unchanged" title="current Email" ><br>
 
-                        current password<input type="password" class="form-control" placeholder="unchanged" required><br>
+                        current password<input type="password" class="form-control" placeholder="unchanged" ><br>
 
 
                         new password
@@ -59,33 +60,25 @@
                         repeat new password
                         <input type="password" class="form-control" placeholder=""><br>
                     </div>
+                    <div class="form-col mr-4">
+                        first name
+                        <input type="text" class="form-control" placeholder="unchanged" ><br>
+                        last name
+                        <input type="text" class="form-control" placeholder="unchanged" ><br>
+                        birth date
+                        <input type="date" class="form-control"><br>
+                        profile picture<br>
+                        <input type="file" class="btn btn-success float-right" accept=".png,.jpg,.jpeg">
+                    </div>
                     <div class="form-col">
-
-
+                        about me
+                        <textarea id="aboutme" name="aboutme" placeholder="write something about yourself here..." maxlength="1000" cols="50" class="form-control"></textarea>
                     </div>
                 </div>
+            <input type="submit" class="btn btn-primary float-right">
         </form>
     </div>
-    <div id="profileContainer">
-        <form>
-            <fieldset>
-                <legend>profile data</legend>
-                <p>first name</p>
-                <input type="text" placeholder="first name" required><br>
-                <p>last name</p>
-                <input type="text" placeholder="last name" required><br>
-                <hr>
-                <p>birth date</p>
-                <input type="date"><br>
-                <p>about me</p>
-                <textarea></textarea><br>
-                <p>profile picture</p>
-                <input type="image">
-                <input type="submit">
-            </fieldset>
 
-        </form>
-    </div>
 </div>
 </div>
 </div>
