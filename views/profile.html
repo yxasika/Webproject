@@ -2,98 +2,104 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" lang="de">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-  <link rel="stylesheet" href="../css/styles.css">
-  <title>Title</title>
+    <meta charset="utf-8" lang="de">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Profile</title>
 </head>
 
 <body>
 <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
-  <a class="navbar-brand" href="home.html"><img src="../src/imgs/logo.png" alt="logo"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <a class="navbar-brand" href="home.html"><img src="../src/imgs/logo.png" alt="logo"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="publishedarticles.html">ARTICLES</a>
-      </li>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="publishedarticles.html">ARTICLES</a>
+            </li>
 
-      <li class="nav-item">
-        <a class="nav-link" href="archive.html">ARCHIVE</a>
-      </li>
+            <li class="nav-item">
+                <a class="nav-link" href="archive.html">ARCHIVE</a>
+            </li>
 
-      <li class="nav-item">
-        <a class="nav-link" href="profile.html">PROFILE</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
+            <li class="nav-item">
+                <a class="nav-link" href="profile.html">PROFILE</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
 </nav>
 
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="content">
+        <form class="content" name="profile" action="profile.html">
+            <h2>Profile Data</h2>
+                <div class="form-row">
+                    <div class="form-col">
 
-  <div id="accountContainer">
-    <form>
-      <fieldset>
-        <legend>current data</legend>
-        <p>Email</p>
-        <input type="text" placeholder="Email" title="current Email" required><br>
-        <p>Password</p>
-        <input type="password" placeholder="password" required><br>
-      </fieldset>
-      <fieldset>
-        <legend>new Password</legend>
-        <p>new Password</p>
-        <input type="password" placeholder="new Password"><br>
-        <p>repeat Password</p>
-        <input type="password" placeholder="repeat password"><br>
-        <input type="submit">
-      </fieldset>
-    </form>
-  </div>
-  <div id="profileContainer">
-    <form>
-      <fieldset>
-        <legend>profile data</legend>
-        <p>first name</p>
-        <input type="text" placeholder="first name" required><br>
-        <p>last name</p>
-        <input type="text" placeholder="last name" required><br>
-        <hr>
-        <p>birth date</p>
-        <input type="date"><br>
-        <p>about me</p>
-        <textarea></textarea><br>
-        <p>profile picture</p>
-        <input type="image">
-        <input type="submit">
-      </fieldset>
 
-    </form>
-  </div></div></div>
+                        current Email <input type="text" class="form-control" placeholder="unchanged" title="current Email" required><br>
+
+                        current password<input type="password" class="form-control" placeholder="unchanged" required><br>
+
+
+                        new password
+                        <input type="password" class="form-control" placeholder=""><br>
+                        repeat new password
+                        <input type="password" class="form-control" placeholder=""><br>
+                    </div>
+                    <div class="form-col">
+
+
+                    </div>
+                </div>
+        </form>
+    </div>
+    <div id="profileContainer">
+        <form>
+            <fieldset>
+                <legend>profile data</legend>
+                <p>first name</p>
+                <input type="text" placeholder="first name" required><br>
+                <p>last name</p>
+                <input type="text" placeholder="last name" required><br>
+                <hr>
+                <p>birth date</p>
+                <input type="date"><br>
+                <p>about me</p>
+                <textarea></textarea><br>
+                <p>profile picture</p>
+                <input type="image">
+                <input type="submit">
+            </fieldset>
+
+        </form>
+    </div>
+</div>
+</div>
 </div>
 
 <br>
 <footer class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark p-0">
-  <ul class="navbar-nav ml-auto">
-    <li class="nav-item">
-      <a class="nav-link" href="impressum.html">IMPRESSUM</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="contact.html">CONTACT</a>
-    </li>
-  </ul>
-  &copy; 2018 DPAD
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="impressum.html">IMPRESSUM</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="contact.html">CONTACT</a>
+        </li>
+    </ul>
+    &copy; 2018 DPAD
 </footer>
 </body>
 
