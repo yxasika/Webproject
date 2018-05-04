@@ -79,7 +79,9 @@ textarea:focus {
 .comment {
     padding-bottom: 50px;
 }
-
+footer ul {
+  margin: 0 auto;
+}
 .icon {
   display: inline-flex;
   vertical-align: middle;
