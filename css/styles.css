@@ -79,10 +79,7 @@ textarea:focus {
 .comment {
     padding-bottom: 50px;
 }
-footer ul {
-  margin: 0 auto;
-  text-align: center;
-}
+
 .icon {
   display: inline-flex;
   vertical-align: middle;
