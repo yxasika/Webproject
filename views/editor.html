@@ -2,144 +2,134 @@
 <html lang="en">
 
 <head>
-    <title>Editor Section</title>
-    <meta charset="utf-8" lang="de">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
-          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/styles.css">
+  <title>Editor Section</title>
+  <meta charset="utf-8" lang="de">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
 
 <body>
-<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+  <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
     <a class="navbar-brand" href="home.html"><img src="../src/imgs/logo.png" alt="logo"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="home.html">HOME</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="archive.html">ARCHIVE</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="profile.html">PROFILE</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="editor.html">EDITOR</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="author.html">AUTHOR</a>
-            </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0 " action="searchResults.html">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-primary my-2 my-sm-0 mr-4" type="submit">Search</button>
-        </form>
-        <a class="btn btn-outline-primary icon mr-4" role="button" href="notification.html">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="home.html">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="archive.html">ARCHIVE</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="profile.html">PROFILE</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="editor.html">EDITOR</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="author.html">AUTHOR</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0 " action="searchResults.html">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <a class="btn btn-primary icon mr-4" role="button" href="searchResults.html">
+        <i class="material-icons">search</i></a>
+      </form>
+      <a class="btn btn-outline-primary icon mr-4" role="button" href="notification.html">
             <i class="material-icons ">notifications</i></a>
-        <button class="btn btn-primary my-2 my-sm-0" onclick="window.location.href='login_registration.html'">LOGIN</button>
+      <button class="btn btn-primary my-2 my-sm-0" onclick="window.location.href='login_registration.html'">LOGIN</button>
     </div>
-</nav>
+  </nav>
 
-<div class="container">
+  <div class="container">
     <div class="row justify-content-center">
-        <div class="content">
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">pending articles</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">my articles</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">approved articles</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">rejected articles</a>
-                </li>
-            </ul>
-            <br>
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <div class="card">
-                            <img class="card-img-top" src="../src/imgs/monster_hunter_world.jpg"
-                                 alt="monster_hunter_world">
-                            <div class="card-body">
-                                <h5 class="card-title">ARTICLE 1</h5>
-                                <i>Author</i>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                                    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-                                    voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                                <a href="publishedarticles.html" class="btn btn-primary">read more</a>
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-success btn-outline-secondary"
-                                            onclick="window.location.href='publishedarticles.html'">Approve
+      <div class="content">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">pending articles</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">my articles</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">approved articles</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">rejected articles</a>
+          </li>
+        </ul>
+        <br>
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div class="card">
+                <img class="card-img-top" src="../src/imgs/monster_hunter_world.jpg" alt="monster_hunter_world">
+                <div class="card-body">
+                  <h5 class="card-title">ARTICLE 1</h5>
+                  <i>Author</i>
+                  <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                  <a href="publishedarticles.html" class="btn btn-primary">read more</a>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-success btn-outline-secondary" onclick="window.location.href='publishedarticles.html'">Approve
                                     </button>
-                                    <button type="button" class="btn btn-danger btn-outline-secondary">Reject</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <img class="card-img-top" src="../src/imgs/dark_souls.jpg" alt="monster_hunter_world">
-                            <div class="card-body">
-                                <h5 class="card-title">ARTICLE 2</h5>
-                                <i>Author</i>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                                    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-                                    voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                                <a href="publishedarticles.html" class="btn btn-primary">read more</a>
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-success btn-outline-secondary"
-                                            onclick="window.location.href='publishedarticles.html'">Approve
-                                    </button>
-                                    <button type="button" class="btn btn-danger btn-outline-secondary">Reject</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <img class="card-img-top" src="../src/imgs/path_of_exile.jpg" alt="monster_hunter_world">
-                            <div class="card-body">
-                                <h5 class="card-title">ARTICLE 3</h5>
-                                <i>Author</i>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                                    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-                                    voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                                <a href="publishedarticles.html" class="btn btn-primary">read more</a>
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-success btn-outline-secondary"
-                                            onclick="window.location.href='publishedarticles.html'">Approve
-                                    </button>
-                                    <button type="button" class="btn btn-danger btn-outline-secondary">Reject</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <button type="button" class="btn btn-danger btn-outline-secondary">Reject</button>
+                  </div>
                 </div>
+              </div>
             </div>
+            <div class="col">
+              <div class="card">
+                <img class="card-img-top" src="../src/imgs/dark_souls.jpg" alt="monster_hunter_world">
+                <div class="card-body">
+                  <h5 class="card-title">ARTICLE 2</h5>
+                  <i>Author</i>
+                  <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                  <a href="publishedarticles.html" class="btn btn-primary">read more</a>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-success btn-outline-secondary" onclick="window.location.href='publishedarticles.html'">Approve
+                                    </button>
+                    <button type="button" class="btn btn-danger btn-outline-secondary">Reject</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <img class="card-img-top" src="../src/imgs/path_of_exile.jpg" alt="monster_hunter_world">
+                <div class="card-body">
+                  <h5 class="card-title">ARTICLE 3</h5>
+                  <i>Author</i>
+                  <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                  <a href="publishedarticles.html" class="btn btn-primary">read more</a>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-success btn-outline-secondary" onclick="window.location.href='publishedarticles.html'">Approve
+                                    </button>
+                    <button type="button" class="btn btn-danger btn-outline-secondary">Reject</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+  </div>
 
-<footer class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark p-0">
+  <footer class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark p-0">
     <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-            <a class="nav-link" href="impressum.html">IMPRESSUM</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="contact.html">CONTACT</a>
-        </li>
+      <li class="nav-item">
+        <a class="nav-link" href="impressum.html">IMPRESSUM</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="contact.html">CONTACT</a>
+      </li>
     </ul>
     &copy; 2018 DPAD
-</footer>
+  </footer>
 </body>
 
 </html>
