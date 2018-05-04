@@ -2,55 +2,140 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>article editor</title>
+    <title>Editor Section</title>
+    <meta charset="utf-8" lang="de">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 
 <body>
-  <header>
-    article editor
-  </header>
-  <nav>
-    <ul>
-      <li><a href="home.html">home</a></li>
-      <li><a href="archive.html">archive</a></li>
-      <li>
-        <form>
-          <input type="search" placeholder="search">
-          <input type="button" value="go!">
+<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+    <a class="navbar-brand" href="home.html"><img src="../src/imgs/logo.png" alt="logo"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="publishedarticles.html">ARTICLES</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="archive.html">ARCHIVE</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="profile.html">PROFILE</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0 mr-4">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-primary my-2 my-sm-0 " type="submit">Search</button>
         </form>
-      </li>
-      <li><a href="publishedarticles.html">published</a></li>
-      <li><a href="notification.html">notification</a></li>
-      <li>
-        <div>
-          <ul>
-            <li><a href="profile.html">profile</a></li>
-            <li><a>articles</a></li>
-            <li><a>logout</a></li>
-          </ul>
+        <button class="btn btn-secondary my-2 my-sm-0" onclick="window.location.href='login_registration.html'">LOGOUT
+        </button>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="content">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">pending articles</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">my articles</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">approved articles</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">rejected articles</a>
+                </li>
+            </ul>
+            <br>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <img class="card-img-top" src="../src/imgs/monster_hunter_world.jpg"
+                                 alt="monster_hunter_world">
+                            <div class="card-body">
+                                <h5 class="card-title">ARTICLE 1</h5>
+                                <i>Author</i>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                    voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                                <a href="publishedarticles.html" class="btn btn-primary">read more</a>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-success btn-outline-secondary"
+                                            onclick="window.location.href='publishedarticles.html'">Approve
+                                    </button>
+                                    <button type="button" class="btn btn-danger btn-outline-secondary">Reject</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img class="card-img-top" src="../src/imgs/dark_souls.jpg" alt="monster_hunter_world">
+                            <div class="card-body">
+                                <h5 class="card-title">ARTICLE 2</h5>
+                                <i>Author</i>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                    voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                                <a href="publishedarticles.html" class="btn btn-primary">read more</a>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-success btn-outline-secondary"
+                                            onclick="window.location.href='publishedarticles.html'">Approve
+                                    </button>
+                                    <button type="button" class="btn btn-danger btn-outline-secondary">Reject</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img class="card-img-top" src="../src/imgs/path_of_exile.jpg" alt="monster_hunter_world">
+                            <div class="card-body">
+                                <h5 class="card-title">ARTICLE 3</h5>
+                                <i>Author</i>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                    voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                                <a href="publishedarticles.html" class="btn btn-primary">read more</a>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-success btn-outline-secondary"
+                                            onclick="window.location.href='publishedarticles.html'">Approve
+                                    </button>
+                                    <button type="button" class="btn btn-danger btn-outline-secondary">Reject</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </li>
-    </ul>
-  </nav>
-  <form>
+    </div>
+</div>
 
-    <input type="button" value="show pending articles">
-    <input type="button" value="my articles">
-    <input type="button" value="approved articles">
-    <input type="button" value="rejected articles"> (hier würde die liste der jeweils gewählten artikel stehen)
-  </form>
-
-  <footer>
-    <ul>
-      <li><a href = "impressum.html"> impressum</a></li>
-      <li><a href = "publishedarticles.html"> articles</a></li>
-      <li><a href = "login_registration.html"> login</a></li>
+<footer class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark p-0">
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="impressum.html">IMPRESSUM</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="contact.html">CONTACT</a>
+        </li>
     </ul>
-    <p>
-      &copy; 2018 DPAD
-    </p>
-  </footer>
+    &copy; 2018 DPAD
+</footer>
 </body>
 
 </html>
