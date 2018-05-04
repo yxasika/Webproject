@@ -81,6 +81,7 @@ textarea:focus {
 }
 footer ul {
   margin: 0 auto;
+  text-align: center;
 }
 .icon {
   display: inline-flex;
