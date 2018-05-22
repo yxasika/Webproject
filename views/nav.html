@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<head>
+    <title>Online-Journal</title>
+    <meta charset="utf-8" lang="de">
+    <meta name="viewport" content="width = device-width, height = device-height, initial-scale=1.0,
+  user-scalable=yes">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+    <a class="navbar-brand" href="home.html"><img src="../src/imgs/logo.png" alt="logo"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto fn-nav">
+            <li class="nav-item"><a class="nav-link" data-src="home" href="#">HOME</a></li>
+            <li class="nav-item"><a class="nav-link" data-src="archive" href="#">ARCHIVE</a></li>
+            <li class="nav-item"><a class="nav-link" data-src="profile" href="#">PROFILE</a></li>
+            <li class="nav-item"><a class="nav-link" data-src="editor" href="#">EDITOR</a></li>
+            <li class="nav-item"><a class="nav-link" data-src="author" href="#">AUTHOR</a></li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0 " action="searchResults.html">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <a class="btn btn-primary icon mr-4" role="button" href="searchResults.html">
+                <i class="material-icons">search</i></a>
+        </form>
+        <a class="btn btn-primary icon mr-4" role="button" href="notification.html">
+            <i class="material-icons ">notifications</i><span class="badge">4</span></a>
+        <button class="btn btn-primary my-2 my-sm-0" onclick="window.location.href='login_registration.html'">LOGIN
+        </button>
+    </div>
+</nav>
+
+<div class="content"></div>
+
+<script src="../scripts/nav.js"></script>
+</body>
+</html>
