@@ -24,11 +24,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/loginPopup.css">
     <script rel="script" type="text/javascript" src="../scripts/loginPopup.js"></script>
+    <script rel="script" type="text/javascript" src="../scripts/jquery.rotate.1-1.js"></script>
 </head>
 
 <body>
-<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
-    <a class="navbar-brand" href="home.html"><img src="../src/imgs/logo.png" alt="logo"></a>
+<nav class="navbar fixed-top navbar-expand-xl navbar-dark bg-dark">
+    <a class="navbar-brand" href="home.html"><img src="../src/imgs/logo.png" alt="logo" align="center" onclick="$(this).rotate(45)"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -52,17 +53,19 @@
                 <a class="nav-link" href="author.html">AUTHOR</a>
             </li>
         </ul>
+      <ul class="navbar-nav ">
         <form class="form-inline my-2 my-lg-0 " action="searchResults.html">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <a class="btn btn-primary icon mr-2" role="button" href="searchResults.html">
                 <i class="material-icons">search</i></a>
         </form>
-        <a class="btn btn-primary icon mr-2" role="button" href="notification.html">
+        <a class="btn btn-primary icon my-2 mr-2" role="button" href="notification.html">
             <i class="material-icons">notifications</i><span class="badge">4</span></a>
-        <button class="btn btn-primary mr-2" onclick="document.getElementById('login-wrapper').style.display='block'">LOG IN
+        <button class="btn btn-primary my-2 mr-2" onclick="document.getElementById('login-wrapper').style.display='block'">LOG IN
         </button>
-        <button class="btn btn-primary my-2 my-sm-0" onclick="document.getElementById('register-wrapper').style.display='block'">SIGN UP
+        <button class="btn btn-primary my-2 sm-0" onclick="document.getElementById('register-wrapper').style.display='block'">SIGN UP
         </button>
+      </ul>
     </div>
 </nav>
 
