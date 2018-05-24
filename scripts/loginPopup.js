@@ -1,17 +1,12 @@
 $(function () {
-    var modal = document.getElementById('login-wrapper');
+    var login = document.getElementById('login-wrapper');
+    var register = document.getElementById('register-wrapper');
     window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
+        if (event.target == login) {
+            login.style.display = "none";
         }
-    }
-});
-
-$(function () {
-    var modal = document.getElementById('register-wrapper');
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
+        else if (event.target == register) {
+            register.style.display = "none";
         }
     }
 });
