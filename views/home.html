@@ -54,35 +54,52 @@
         </ul>
         <form class="form-inline my-2 my-lg-0 " action="searchResults.html">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <a class="btn btn-primary icon mr-4" role="button" href="searchResults.html">
+            <a class="btn btn-primary icon mr-2" role="button" href="searchResults.html">
                 <i class="material-icons">search</i></a>
         </form>
-        <a class="btn btn-primary icon mr-4" role="button" href="notification.html">
+        <a class="btn btn-primary icon mr-2" role="button" href="notification.html">
             <i class="material-icons">notifications</i><span class="badge">4</span></a>
-        <button class="btn btn-primary my-2 my-sm-0" onclick="document.getElementById('modal-wrapper').style.display='block'">LOGIN
+        <button class="btn btn-primary mr-2" onclick="document.getElementById('login-wrapper').style.display='block'">LOG IN
+        </button>
+        <button class="btn btn-primary my-2 my-sm-0" onclick="document.getElementById('register-wrapper').style.display='block'">SIGN UP
         </button>
     </div>
 </nav>
 
 <--Login Form-->
-<div id="modal-wrapper" class="modal">
-
+<div id="login-wrapper" class="modal">
     <form class="modal-content animate">
-
         <div class="imgcontainer">
-            <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
+            <span onclick="document.getElementById('login-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
             <i alt="Avatar" class="avatar material-icons">account_circle</i>
             <h1 style="text-align:center">Log In</h1>
         </div>
-
         <div class="container">
             <input type="text" placeholder="Enter E-Mail" name="uname">
             <input type="password" placeholder="Enter Password" name="psw">
-            <button id="login" class="btn btn-primary my-2 my-sm-0" type="submit">Login</button>
+            <button class="popupBtn btn btn-primary my-2 my-sm-0" type="submit">Log In</button>
             <input type="checkbox" style="margin:26px 30px;"> Remember me
             <a href="#" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">Forgot Password ?</a>
         </div>
+    </form>
+</div>
 
+<--Register Form-->
+<div id="register-wrapper" class="modal">
+    <form class="modal-content animate">
+        <div class="imgcontainer">
+            <span onclick="document.getElementById('register-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
+            <i alt="Avatar" class="avatar material-icons">account_circle</i>
+            <h1 style="text-align:center">Registration</h1>
+        </div>
+        <div class="container">
+            <input type="text" placeholder="Enter First Name" name="fname">
+            <input type="text" placeholder="Enter Last Name" name="lname">
+            <input type="text" placeholder="Enter E-Mail" name="email">
+            <input type="password" placeholder="Enter Password" name="psw">
+            <input type="password" placeholder="Repeat Password" name="psw2">
+            <button class="popupBtn btn btn-primary my-2 my-sm-0" type="submit">Register</button>
+        </div>
     </form>
 
 </div>

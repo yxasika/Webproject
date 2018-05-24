@@ -12,7 +12,7 @@ input[type=text], input[type=password] {
 }
 
 /* Set a style for all buttons */
-#login {
+.popupBtn {
     padding: 14px 20px;
     margin: 8px 26px;
     border: none;
@@ -48,6 +48,7 @@ button:hover {
     height: 100%;
     overflow: auto;
     background-color: rgba(0,0,0,0.4);
+    overflow: hidden;
 }
 
 /* Modal Content Box */
@@ -55,7 +56,7 @@ button:hover {
     background-color: #fefefe;
     margin: 4% auto 15% auto;
     border: 1px solid #888;
-    width: 40%;
+    width: 35%;
     padding-bottom: 30px;
 }
 
