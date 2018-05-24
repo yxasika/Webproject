@@ -46,53 +46,61 @@
       <button class="btn btn-primary my-2 my-sm-0" onclick="window.location.href='login_registration.html'">LOGIN</button>
     </div>
   </nav>
-<main>
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="content">
-        <article>
-          <div class="card">
-            <img class="card-img-left mx-auto" src="../src/imgs/monster_hunter_world.jpg" alt="monster_hunter_world">
-            <div class="card-body">
-              <h5 class="card-title">Article 1</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet,
-                consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet, consetetur sadipscing
-                elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+  <main>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="content">
+          <article>
+            <div class="card">
+              <div class="row">
+                <div class="col">
+                  <img class="card-img-left mx-auto" src="../src/imgs/monster_hunter_world.jpg" alt="monster_hunter_world">
+                </div>
+                <div class="col">
+                  <div class="card-body">
+                    <h5 class="card-title">Article 1</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor
+                      sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet, consetetur
+                      sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                  </div>
+                </div>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">author: <a class="card-link" href="#">Max Mustermann</a></li>
+                <li class="list-group-item">published: 11.09.2018</li>
+                <li class="list-group-item">category: <a href="#" class="badge badge-primary">RPG</a>, <a href="#" class="badge badge-warning">ACTION</a></li>
+                <li class="list-group-item">
+                  <a class="btn btn-outline-primary icon" role="button" target="_blank" href="../src/imgs/article.myJournal.pdf">
+                    <i class="material-icons">book</i> read</a>
+                  <a class="btn btn-outline-primary icon" role="button" target="_blank" href="../src/imgs/article.myJournal.pdf" download="article_1">
+                    <i class="material-icons">file_download</i> Download</a>
+                </li>
+              </ul>
             </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">author: <a class="card-link" href="#">Max Mustermann</a></li>
-              <li class="list-group-item">published: 11.09.2018</li>
-              <li class="list-group-item">category: <a href="#" class="badge badge-primary">RPG</a>, <a href="#" class="badge badge-warning">ACTION</a></li>
-              <li class="list-group-item">
-                <a class="btn btn-outline-primary icon" role="button" target="_blank" href="../src/imgs/article.myJournal.pdf">
-                  <i class="material-icons">file_download</i> Download</a>
-              </li>
-            </ul>
-          </div>
-          <br>
-          <hr />
-          <form class="comment" name="comment">
-            <div class="form-group">
-              <label for="commentbox">COMMENT</label>
-              <textarea id="commentbox" name="comment" placeholder="write your comment..." cols="20" rows="3" class="form-control"></textarea>
-            </div>
-            <div class="form-group">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="anonym">
-                <label class="form-check-label" for="anonym">
-              anonymous comment
-            </label>
+            <br>
+            <hr />
+            <form class="comment" name="comment">
+              <div class="form-group">
+                <label for="commentbox">COMMENT</label>
+                <textarea id="commentbox" name="comment" placeholder="write your comment..." cols="20" rows="3" class="form-control"></textarea>
               </div>
               <div class="form-group">
-                <input type="submit" value="SEND" class="btn btn-primary float-right" />
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="anonym">
+                  <label class="form-check-label" for="anonym">
+              anonymous comment
+            </label>
+                </div>
+                <div class="form-group">
+                  <input type="submit" value="SEND" class="btn btn-primary float-right" />
+                </div>
               </div>
-            </div>
-          </form>
-        </article>
+            </form>
+          </article>
+        </div>
       </div>
     </div>
-  </div>
-</main>
+  </main>
   <footer class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
     <div class="col">
       <div class="row">
