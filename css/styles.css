@@ -14,7 +14,7 @@ body {
 
 }
 
-#whitebox h1{
+#whitebox h1 {
     background-color: white;
 }
 
@@ -53,23 +53,25 @@ body {
 }
 
 label { /* Beschriftung auf eigener Zeile */
-  display: block;
-  cursor: pointer; /* Mauszeiger wird zur Hand */
-}
-input#absender,
-textarea {
-  width: 300px;
-  border: 1px solid #8c8c8c;
-  margin-bottom: 1em;
-}
-textarea {
-  height: 7em;
-}
-input:focus,
-textarea:focus {
-  background-color: #d9d9d9;
+    display: block;
+    cursor: pointer; /* Mauszeiger wird zur Hand */
 }
 
+input#absender,
+textarea {
+    width: 300px;
+    border: 1px solid #8c8c8c;
+    margin-bottom: 1em;
+}
+
+textarea {
+    height: 7em;
+}
+
+input:focus,
+textarea:focus {
+    background-color: #d9d9d9;
+}
 
 /* li a:hover {
     background-color: #666ad1;
@@ -81,6 +83,6 @@ textarea:focus {
 }
 
 .icon {
-  display: inline-flex;
-  vertical-align: middle;
+    display: inline-flex;
+    vertical-align: middle;
 }

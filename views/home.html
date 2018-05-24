@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
           integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
@@ -21,6 +21,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
             integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
             crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/loginPopup.css">
+    <script rel="script" type="text/javascript" src="../scripts/loginPopup.js"></script>
 </head>
 
 <body>
@@ -55,11 +58,35 @@
                 <i class="material-icons">search</i></a>
         </form>
         <a class="btn btn-primary icon mr-4" role="button" href="notification.html">
-            <i class="material-icons ">notifications</i><span class="badge">4</span></a>
-        <button class="btn btn-primary my-2 my-sm-0" onclick="window.location.href='login_registration.html'">LOGIN
+            <i class="material-icons">notifications</i><span class="badge">4</span></a>
+        <button class="btn btn-primary my-2 my-sm-0" onclick="document.getElementById('modal-wrapper').style.display='block'">LOGIN
         </button>
     </div>
 </nav>
+
+<--Login Form-->
+<div id="modal-wrapper" class="modal">
+
+    <form class="modal-content animate">
+
+        <div class="imgcontainer">
+            <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
+            <i alt="Avatar" class="avatar material-icons">account_circle</i>
+            <h1 style="text-align:center">Log In</h1>
+        </div>
+
+        <div class="container">
+            <input type="text" placeholder="Enter E-Mail" name="uname">
+            <input type="password" placeholder="Enter Password" name="psw">
+            <button id="login" class="btn btn-primary my-2 my-sm-0" type="submit">Login</button>
+            <input type="checkbox" style="margin:26px 30px;"> Remember me
+            <a href="#" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">Forgot Password ?</a>
+        </div>
+
+    </form>
+
+</div>
+
 <main style="position: relative; top: 1em;">
     <div class="container">
         <div class="row justify-content-center">
