@@ -4,155 +4,173 @@
 <html lang="en">
 
 <head>
-  <title>Archiv</title>
-  <meta charset="utf-8" lang="de">
-  <meta name="viewport" content="width = device-width, initial-scale=1.0,
+    <title>Archiv</title>
+    <meta charset="utf-8" lang="de">
+    <meta name="viewport" content="width = device-width, initial-scale=1.0,
   user-scalable=yes">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-  <link rel="stylesheet" href="../css/styles.css">
-  <script type="text/javascript" src="../scripts/search.js"></script>
-  <link rel="stylesheet" type="text/css" href="../css/search.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script type="text/javascript" src="../scripts/search.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/search.css">
 </head>
 
 <body>
-  <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
-    <a class="navbar-brand" href="home.html"><img src="../src/imgs/logo.png" alt="logo"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<nav class="navbar fixed-top navbar-expand-xl navbar-dark bg-dark">
+    <a class="navbar-brand" href="home.html"><img src="../src/imgs/logo.png" alt="logo" align="center"
+                                                  onclick="$(this).rotate(45)"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="home.html">HOME</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="archive.html">ARCHIVE</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="profile.html">PROFILE</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="editor.html">EDITOR</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="author.html">AUTHOR</a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0 " action="searchResults.html">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <a class="btn btn-primary icon mr-4" role="button" href="searchResults.html">
-        <i class="material-icons">search</i></a>
-      </form>
-      <a class="btn btn-primary icon mr-4" role="button" href="notification.html">
-      <i class="material-icons ">notifications</i><span class="badge">4</span></a>
-      <button class="btn btn-primary my-2 my-sm-0" onclick="window.location.href='login_registration.html'">LOGIN</button>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="home.html">HOME</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="archive.html">ARCHIVE</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="profile.html">PROFILE</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="editor.html">EDITOR</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="author.html">AUTHOR</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ">
+            <form class="form-inline my-2 my-lg-0" id="searchForm">
+                <input class="searchInput form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                       id="searchInput">
+            </form>
+            <a class="btn btn-primary icon my-2 mr-2" role="button" href="notification.html">
+                <i class="material-icons">notifications</i><span class="badge">4</span></a>
+            <button class="btn btn-primary my-2 mr-2"
+                    onclick="document.getElementById('login-wrapper').style.display='block'">LOG IN
+            </button>
+            <button class="btn btn-primary my-2 sm-0"
+                    onclick="document.getElementById('register-wrapper').style.display='block'">SIGN UP
+            </button>
+        </ul>
     </div>
-  </nav>
+</nav>
 <main>
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="content">
-        <form class="form-inline my-2 my-lg-0 " action="searchResults.html">
-          <input class="searchInput form-control mr-sm-2" id="myInput" onkeyup="searchFunction()"
-                 type="search" placeholder="Search" aria-label="Search">
-        </form>
-        <hr>
-        <ul id="myUL" class="list-group">
-          <li><a href="article_1.html" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">Article 1</h5>
-              <small>2 weeks ago</small>
-            </div>
-            <p class="mb-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-            <small> Max Mustermann</small>
-          </a></li>
-          <li><a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">Article A</h5>
-              <small>4 weeks ago</small>
-            </div>
-            <p class="mb-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-            <small> Max Mustermann</small>
-          </a></li>
-          <li><a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">Article B</h5>
-              <small class="text-muted">5 weeks ago</small>
-            </div>
-            <p class="mb-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-            <small> Max Mustermann</small>
-          </a></li>
-          <li><a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">Article C</h5>
-              <small class="text-muted">6 weeks ago</small>
-            </div>
-            <p class="mb-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-            <small> Max Mustermann</small>
-          </a></li>
-          <li><a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">Article D</h5>
-              <small class="text-muted">6 weeks ago</small>
-            </div>
-            <p class="mb-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-            <small> Max Mustermann</small>
-          </a></li>
-          <li><a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">Article E</h5>
-              <small class="text-muted">6 weeks ago</small>
-            </div>
-            <p class="mb-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-            <small> Max Mustermann</small>
-          </a></li>
-          <li><a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">Article F</h5>
-              <small class="text-muted">6 weeks ago</small>
-            </div>
-            <p class="mb-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-            <small> Max Mustermann</small>
-          </a></li>
-          <li><a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">Article G</h5>
-              <small class="text-muted">6 weeks ago</small>
-            </div>
-            <p class="mb-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-            <small> Max Mustermann</small>
-          </a></li>
-        </ul>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="content">
+                <form class="form-inline my-2 my-lg-0 " action="searchResults.html">
+                    <input class="searchInput form-control mr-sm-2" id="myInput" onkeyup="searchFunction()"
+                           type="search" placeholder="Search" aria-label="Search">
+                </form>
+                <hr>
+                <ul id="myUL" class="list-group">
+                    <li><a href="article_1.html"
+                           class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Article 1</h5>
+                            <small>2 weeks ago</small>
+                        </div>
+                        <p class="mb-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                        <small> Max Mustermann</small>
+                    </a></li>
+                    <li><a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Article A</h5>
+                            <small>4 weeks ago</small>
+                        </div>
+                        <p class="mb-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                        <small> Max Mustermann</small>
+                    </a></li>
+                    <li><a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Article B</h5>
+                            <small class="text-muted">5 weeks ago</small>
+                        </div>
+                        <p class="mb-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                        <small> Max Mustermann</small>
+                    </a></li>
+                    <li><a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Article C</h5>
+                            <small class="text-muted">6 weeks ago</small>
+                        </div>
+                        <p class="mb-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                        <small> Max Mustermann</small>
+                    </a></li>
+                    <li><a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Article D</h5>
+                            <small class="text-muted">6 weeks ago</small>
+                        </div>
+                        <p class="mb-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                        <small> Max Mustermann</small>
+                    </a></li>
+                    <li><a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Article E</h5>
+                            <small class="text-muted">6 weeks ago</small>
+                        </div>
+                        <p class="mb-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                        <small> Max Mustermann</small>
+                    </a></li>
+                    <li><a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Article F</h5>
+                            <small class="text-muted">6 weeks ago</small>
+                        </div>
+                        <p class="mb-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                        <small> Max Mustermann</small>
+                    </a></li>
+                    <li><a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Article G</h5>
+                            <small class="text-muted">6 weeks ago</small>
+                        </div>
+                        <p class="mb-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                        <small> Max Mustermann</small>
+                    </a></li>
+                </ul>
 
-        <ul class="pagination" style="margin-top: 1em;">
-          <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-          <li class="page-item active"><a class="page-link" href="#">1</a></li>
-          <li class="page-item disabled"><a class="page-link" href="#">Next</a></li>
-        </ul>
-      </div>
+                <ul class="pagination" style="margin-top: 1em;">
+                    <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item disabled"><a class="page-link" href="#">Next</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
-  </div>
 </main>
 
-  <footer class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
+<footer class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
     <div class="col">
-      <div class="row">
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item text-center">
-            <a class="nav-link" href="impressum.html">IMPRESSUM</a>
-          </li>
-          <li class="nav-item text-center">
-            <a class="nav-link" href="contact.html">CONTACT</a>
-          </li>
-        </ul>
-      </div>
-      <div class="row">
-        <p class="text-secondary  mx-auto">&copy; 2018 DPAD</p>
-      </div>
+        <div class="row">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item text-center">
+                    <a class="nav-link" href="impressum.html">IMPRESSUM</a>
+                </li>
+                <li class="nav-item text-center">
+                    <a class="nav-link" href="contact.html">CONTACT</a>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <p class="text-secondary  mx-auto">&copy; 2018 DPAD</p>
+        </div>
     </div>
-  </footer>
+</footer>
 </body>
 
 </html>

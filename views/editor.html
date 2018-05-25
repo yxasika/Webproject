@@ -2,143 +2,388 @@
 <html lang="en">
 
 <head>
-  <title>Editor Section</title>
-  <meta charset="utf-8" lang="de">
-  <meta name="viewport" content="width = device-width, initial-scale=1.0,
+    <title>Online-Journal</title>
+    <meta charset="utf-8" lang="de">
+    <meta name="viewport" content="width = device-width, height = device-height, initial-scale=1.0,
   user-scalable=yes">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-  <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+            integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+            integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+            crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/loginPopup.css">
+    <script rel="script" type="text/javascript" src="../scripts/loginPopup.js"></script>
+    <script rel="script" type="text/javascript" src="../scripts/jquery.rotate.1-1.js"></script>
+    <script type="text/javascript" src="../scripts/search.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/search.css">
 </head>
 
 <body>
-  <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
-    <a class="navbar-brand" href="home.html"><img src="../src/imgs/logo.png" alt="logo"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar fixed-top navbar-expand-xl navbar-dark bg-dark">
+    <a class="navbar-brand" href="home.html"><img src="../src/imgs/logo.png" alt="logo" align="center"
+                                                  onclick="$(this).rotate(45)"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="home.html">HOME</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="archive.html">ARCHIVE</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="profile.html">PROFILE</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="editor.html">EDITOR</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="author.html">AUTHOR</a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0 " action="searchResults.html">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <a class="btn btn-primary icon mr-4" role="button" href="searchResults.html">
-                <i class="material-icons">search</i></a>
-      </form>
-      <a class="btn btn-primary icon mr-4" role="button" href="notification.html">
-            <i class="material-icons ">notifications</i><span class="badge">4</span></a>
-      <button class="btn btn-primary my-2 my-sm-0" onclick="window.location.href='login_registration.html'">LOGIN
-        </button>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="home.html">HOME</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="archive.html">ARCHIVE</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="profile.html">PROFILE</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="editor.html">EDITOR</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="author.html">AUTHOR</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ">
+            <form class="form-inline my-2 my-lg-0" id="searchForm">
+                <input class="searchInput form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                       id="searchInput">
+            </form>
+            <a class="btn btn-primary icon my-2 mr-2" role="button" href="notification.html">
+                <i class="material-icons">notifications</i><span class="badge">4</span></a>
+            <button class="btn btn-primary my-2 mr-2"
+                    onclick="document.getElementById('login-wrapper').style.display='block'">LOG IN
+            </button>
+            <button class="btn btn-primary my-2 sm-0"
+                    onclick="document.getElementById('register-wrapper').style.display='block'">SIGN UP
+            </button>
+        </ul>
     </div>
-  </nav>
+</nav>
 <main>
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="content">
-        <ul class="nav nav-tabs">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">pending articles</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">my articles</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">approved articles</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">rejected articles</a>
-          </li>
-        </ul>
-        <br>
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <div class="card">
-                <img class="card-img-top" src="../src/imgs/monster_hunter_world.jpg" alt="monster_hunter_world">
-                <div class="card-body">
-                  <h5 class="card-title">ARTICLE 1</h5>
-                  <i>Author</i>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                  <a href="publishedarticles.html" class="btn btn-primary">read more</a>
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-success btn-outline-secondary" onclick="window.location.href='publishedarticles.html'">Approve
-                                    </button>
-                    <button type="button" class="btn btn-danger btn-outline-secondary">Reject</button>
-                  </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="content">
+                <ul class="nav nav-tabs" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="pills-pending-tab" data-toggle="pill" href="#pills-pending" role="tab" aria-controls="pills-pending" aria-selected="true">pending articles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-myArticle-tab" data-toggle="pill"href="#pills-myArticle" role="tab" aria-controls="pills-myArticle" aria-selected="false">my articles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-approved-tab" data-toggle="pill" href="#pills-approved" role="tab" aria-controls="pills-approved" aria-selected="false">approved articles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-rejected-tab" data-toggle="pill"href="#pills-rejected" role="tab" aria-controls="pills-rejected" aria-selected="false">rejected articles</a>
+                    </li>
+                </ul>
+                <br>
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-pending" role="tabpanel" aria-labelledby="pills-pending-tab">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card">
+                                        <img class="card-img-top" src="../src/imgs/monster_hunter_world.jpg"
+                                             alt="monster_hunter_world">
+                                        <div class="card-body">
+                                            <h5 class="card-title">ARTICLE 1</h5>
+                                            <i>Author</i>
+                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+                                                diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                                            <a href="publishedarticles.html" class="btn btn-primary">read more</a>
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-success btn-outline-secondary"
+                                                        onclick="window.location.href='publishedarticles.html'">Approve
+                                                </button>
+                                                <button type="button" class="btn btn-danger btn-outline-secondary">Reject
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card">
+                                        <img class="card-img-top" src="../src/imgs/dark_souls.jpg" alt="monster_hunter_world">
+                                        <div class="card-body">
+                                            <h5 class="card-title">ARTICLE 2</h5>
+                                            <i>Author</i>
+                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+                                                diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                                            <a href="publishedarticles.html" class="btn btn-primary">read more</a>
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-success btn-outline-secondary"
+                                                        onclick="window.location.href='publishedarticles.html'">Approve
+                                                </button>
+                                                <button type="button" class="btn btn-danger btn-outline-secondary">Reject
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card">
+                                        <img class="card-img-top" src="../src/imgs/rainbow_six.jpg"
+                                             alt="monster_hunter_world">
+                                        <div class="card-body">
+                                            <h5 class="card-title">ARTICLE 3</h5>
+                                            <i>Author</i>
+                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+                                                diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                                            <a href="publishedarticles.html" class="btn btn-primary">read more</a>
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-success btn-outline-secondary"
+                                                        onclick="window.location.href='publishedarticles.html'">Approve
+                                                </button>
+                                                <button type="button" class="btn btn-danger btn-outline-secondary">Reject
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-myArticle" role="tabpanel" aria-labelledby="pills-myArticle-tab">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card">
+                                        <img class="card-img-top" src="../src/imgs/rainbow_six.jpg"
+                                             alt="monster_hunter_world">
+                                        <div class="card-body">
+                                            <h5 class="card-title">ARTICLE 1</h5>
+                                            <i>Author</i>
+                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+                                                diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                                            <a href="publishedarticles.html" class="btn btn-primary">read more</a>
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-success btn-outline-secondary"
+                                                        onclick="window.location.href='publishedarticles.html'">Approve
+                                                </button>
+                                                <button type="button" class="btn btn-danger btn-outline-secondary">Reject
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card">
+                                        <img class="card-img-top" src="../src/imgs/league_of_legends.jpg" alt="monster_hunter_world">
+                                        <div class="card-body">
+                                            <h5 class="card-title">ARTICLE 2</h5>
+                                            <i>Author</i>
+                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+                                                diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                                            <a href="publishedarticles.html" class="btn btn-primary">read more</a>
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-success btn-outline-secondary"
+                                                        onclick="window.location.href='publishedarticles.html'">Approve
+                                                </button>
+                                                <button type="button" class="btn btn-danger btn-outline-secondary">Reject
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card">
+                                        <img class="card-img-top" src="../src/imgs/path_of_exile.jpg"
+                                             alt="monster_hunter_world">
+                                        <div class="card-body">
+                                            <h5 class="card-title">ARTICLE 3</h5>
+                                            <i>Author</i>
+                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+                                                diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                                            <a href="publishedarticles.html" class="btn btn-primary">read more</a>
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-success btn-outline-secondary"
+                                                        onclick="window.location.href='publishedarticles.html'">Approve
+                                                </button>
+                                                <button type="button" class="btn btn-danger btn-outline-secondary">Reject
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-approved" role="tabpanel" aria-labelledby="pills-approved-tab">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card">
+                                        <img class="card-img-top" src="../src/imgs/monster_hunter_world.jpg"
+                                             alt="monster_hunter_world">
+                                        <div class="card-body">
+                                            <h5 class="card-title">ARTICLE 1</h5>
+                                            <i>Author</i>
+                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+                                                diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                                            <a href="publishedarticles.html" class="btn btn-primary">read more</a>
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-success btn-outline-secondary"
+                                                        onclick="window.location.href='publishedarticles.html'">Approve
+                                                </button>
+                                                <button type="button" class="btn btn-danger btn-outline-secondary">Reject
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card">
+                                        <img class="card-img-top" src="../src/imgs/dark_souls.jpg" alt="monster_hunter_world">
+                                        <div class="card-body">
+                                            <h5 class="card-title">ARTICLE 2</h5>
+                                            <i>Author</i>
+                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+                                                diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                                            <a href="publishedarticles.html" class="btn btn-primary">read more</a>
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-success btn-outline-secondary"
+                                                        onclick="window.location.href='publishedarticles.html'">Approve
+                                                </button>
+                                                <button type="button" class="btn btn-danger btn-outline-secondary">Reject
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card">
+                                        <img class="card-img-top" src="../src/imgs/path_of_exile.jpg"
+                                             alt="monster_hunter_world">
+                                        <div class="card-body">
+                                            <h5 class="card-title">ARTICLE 3</h5>
+                                            <i>Author</i>
+                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+                                                diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                                            <a href="publishedarticles.html" class="btn btn-primary">read more</a>
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-success btn-outline-secondary"
+                                                        onclick="window.location.href='publishedarticles.html'">Approve
+                                                </button>
+                                                <button type="button" class="btn btn-danger btn-outline-secondary">Reject
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-rejected" role="tabpanel" aria-labelledby="pills-rejected-tab">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card">
+                                        <img class="card-img-top" src="../src/imgs/monster_hunter_world.jpg"
+                                             alt="monster_hunter_world">
+                                        <div class="card-body">
+                                            <h5 class="card-title">ARTICLE 1</h5>
+                                            <i>Author</i>
+                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+                                                diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                                            <a href="publishedarticles.html" class="btn btn-primary">read more</a>
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-success btn-outline-secondary"
+                                                        onclick="window.location.href='publishedarticles.html'">Approve
+                                                </button>
+                                                <button type="button" class="btn btn-danger btn-outline-secondary">Reject
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card">
+                                        <img class="card-img-top" src="../src/imgs/dark_souls.jpg" alt="monster_hunter_world">
+                                        <div class="card-body">
+                                            <h5 class="card-title">ARTICLE 2</h5>
+                                            <i>Author</i>
+                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+                                                diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                                            <a href="publishedarticles.html" class="btn btn-primary">read more</a>
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-success btn-outline-secondary"
+                                                        onclick="window.location.href='publishedarticles.html'">Approve
+                                                </button>
+                                                <button type="button" class="btn btn-danger btn-outline-secondary">Reject
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card">
+                                        <img class="card-img-top" src="../src/imgs/path_of_exile.jpg"
+                                             alt="monster_hunter_world">
+                                        <div class="card-body">
+                                            <h5 class="card-title">ARTICLE 3</h5>
+                                            <i>Author</i>
+                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+                                                diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                                            <a href="publishedarticles.html" class="btn btn-primary">read more</a>
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-success btn-outline-secondary"
+                                                        onclick="window.location.href='publishedarticles.html'">Approve
+                                                </button>
+                                                <button type="button" class="btn btn-danger btn-outline-secondary">Reject
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-            <div class="col">
-              <div class="card">
-                <img class="card-img-top" src="../src/imgs/dark_souls.jpg" alt="monster_hunter_world">
-                <div class="card-body">
-                  <h5 class="card-title">ARTICLE 2</h5>
-                  <i>Author</i>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                  <a href="publishedarticles.html" class="btn btn-primary">read more</a>
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-success btn-outline-secondary" onclick="window.location.href='publishedarticles.html'">Approve
-                                    </button>
-                    <button type="button" class="btn btn-danger btn-outline-secondary">Reject</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <img class="card-img-top" src="../src/imgs/path_of_exile.jpg" alt="monster_hunter_world">
-                <div class="card-body">
-                  <h5 class="card-title">ARTICLE 3</h5>
-                  <i>Author</i>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                  <a href="publishedarticles.html" class="btn btn-primary">read more</a>
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-success btn-outline-secondary" onclick="window.location.href='publishedarticles.html'">Approve
-                                    </button>
-                    <button type="button" class="btn btn-danger btn-outline-secondary">Reject</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
 </main>
-  <footer class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
+<footer class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
     <div class="col">
-      <div class="row">
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item text-center">
-            <a class="nav-link" href="impressum.html">IMPRESSUM</a>
-          </li>
-          <li class="nav-item text-center">
-            <a class="nav-link" href="contact.html">CONTACT</a>
-          </li>
-        </ul>
-      </div>
-      <div class="row">
-        <p class="text-secondary  mx-auto">&copy; 2018 DPAD</p>
-      </div>
+        <div class="row">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item text-center">
+                    <a class="nav-link" href="impressum.html">IMPRESSUM</a>
+                </li>
+                <li class="nav-item text-center">
+                    <a class="nav-link" href="contact.html">CONTACT</a>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <p class="text-secondary  mx-auto">&copy; 2018 DPAD</p>
+        </div>
     </div>
-  </footer>
+</footer>
 </body>
 
 </html>
