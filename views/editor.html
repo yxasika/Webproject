@@ -71,8 +71,8 @@
     </div>
 </nav>
 <--Login Form-->
-<div id="login-wrapper" class="modal">
-    <form class="modal-content animate">
+<div id="login-wrapper" class="modali">
+    <form class="modali-content animate">
         <div class="imgcontainer">
             <span onclick="document.getElementById('login-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
             <i alt="Avatar" class="avatar material-icons">account_circle</i>
@@ -89,8 +89,8 @@
 </div>
 
 <--Register Form-->
-<div id="register-wrapper" class="modal">
-    <form class="modal-content animate">
+<div id="register-wrapper" class="modali">
+    <form class="modali-content animate">
         <div class="imgcontainer">
             <span onclick="document.getElementById('register-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
             <i alt="Avatar" class="avatar material-icons">account_circle</i>
@@ -107,6 +107,48 @@
     </form>
 
 </div>
+<!--Approve Popup-->
+<div class="modal fade" id="approveModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="approveModalCenterTitle">Approve article</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to approve this article?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Approve</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Reject Popup-->
+<div class="modal fade" id="rejectModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="rejectModalCenterTitle">Reject article</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to reject this article?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Reject</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <main>
     <div class="container">
         <div class="row justify-content-center">
@@ -143,9 +185,11 @@
                                             <a href="publishedarticles.html" class="btn btn-primary">Read More</a>
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-success btn-outline-secondary"
-                                                        onclick="window.location.href='publishedarticles.html'">Approve
+                                                        data-toggle="modal"
+                                                        data-target="#approveModalCenter">Approve
                                                 </button>
-                                                <button type="button" class="btn btn-danger btn-outline-secondary">Reject
+                                                <button type="button" class="btn btn-danger btn-outline-secondary" data-toggle="modal"
+                                                        data-target="#rejectModalCenter">Reject
                                                 </button>
                                             </div>
                                         </div>
@@ -163,9 +207,11 @@
                                             <a href="publishedarticles.html" class="btn btn-primary">Read More</a>
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-success btn-outline-secondary"
-                                                        onclick="window.location.href='publishedarticles.html'">Approve
+                                                        data-toggle="modal"
+                                                        data-target="#approveModalCenter">Approve
                                                 </button>
-                                                <button type="button" class="btn btn-danger btn-outline-secondary">Reject
+                                                <button type="button" class="btn btn-danger btn-outline-secondary" data-toggle="modal"
+                                                        data-target="#rejectModalCenter">Reject
                                                 </button>
                                             </div>
                                         </div>
@@ -184,9 +230,11 @@
                                             <a href="publishedarticles.html" class="btn btn-primary">Read More</a>
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-success btn-outline-secondary"
-                                                        onclick="window.location.href='publishedarticles.html'">Approve
+                                                        data-toggle="modal"
+                                                        data-target="#approveModalCenter">Approve
                                                 </button>
-                                                <button type="button" class="btn btn-danger btn-outline-secondary">Reject
+                                                <button type="button" class="btn btn-danger btn-outline-secondary" data-toggle="modal"
+                                                        data-target="#rejectModalCenter">Reject
                                                 </button>
                                             </div>
                                         </div>
@@ -211,9 +259,11 @@
                                             <a href="publishedarticles.html" class="btn btn-primary">Read More</a>
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-success btn-outline-secondary"
-                                                        onclick="window.location.href='publishedarticles.html'">Approve
+                                                        data-toggle="modal"
+                                                        data-target="#approveModalCenter">Approve
                                                 </button>
-                                                <button type="button" class="btn btn-danger btn-outline-secondary">Reject
+                                                <button type="button" class="btn btn-danger btn-outline-secondary" data-toggle="modal"
+                                                        data-target="#rejectModalCenter">Reject
                                                 </button>
                                             </div>
                                         </div>
@@ -231,9 +281,11 @@
                                             <a href="publishedarticles.html" class="btn btn-primary">Read More</a>
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-success btn-outline-secondary"
-                                                        onclick="window.location.href='publishedarticles.html'">Approve
+                                                        data-toggle="modal"
+                                                        data-target="#approveModalCenter">Approve
                                                 </button>
-                                                <button type="button" class="btn btn-danger btn-outline-secondary">Reject
+                                                <button type="button" class="btn btn-danger btn-outline-secondary" data-toggle="modal"
+                                                        data-target="#rejectModalCenter">Reject
                                                 </button>
                                             </div>
                                         </div>
@@ -252,9 +304,11 @@
                                             <a href="publishedarticles.html" class="btn btn-primary">Read More</a>
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-success btn-outline-secondary"
-                                                        onclick="window.location.href='publishedarticles.html'">Approve
+                                                        data-toggle="modal"
+                                                        data-target="#approveModalCenter">Approve
                                                 </button>
-                                                <button type="button" class="btn btn-danger btn-outline-secondary">Reject
+                                                <button type="button" class="btn btn-danger btn-outline-secondary" data-toggle="modal"
+                                                        data-target="#rejectModalCenter">Reject
                                                 </button>
                                             </div>
                                         </div>
@@ -279,9 +333,11 @@
                                             <a href="publishedarticles.html" class="btn btn-primary">Read More</a>
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-success btn-outline-secondary"
-                                                        onclick="window.location.href='publishedarticles.html'">Approve
+                                                        data-toggle="modal"
+                                                        data-target="#approveModalCenter">Approve
                                                 </button>
-                                                <button type="button" class="btn btn-danger btn-outline-secondary">Reject
+                                                <button type="button" class="btn btn-danger btn-outline-secondary" data-toggle="modal"
+                                                        data-target="#rejectModalCenter">Reject
                                                 </button>
                                             </div>
                                         </div>
@@ -299,9 +355,11 @@
                                             <a href="publishedarticles.html" class="btn btn-primary">Read More</a>
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-success btn-outline-secondary"
-                                                        onclick="window.location.href='publishedarticles.html'">Approve
+                                                        data-toggle="modal"
+                                                        data-target="#approveModalCenter">Approve
                                                 </button>
-                                                <button type="button" class="btn btn-danger btn-outline-secondary">Reject
+                                                <button type="button" class="btn btn-danger btn-outline-secondary" data-toggle="modal"
+                                                        data-target="#rejectModalCenter">Reject
                                                 </button>
                                             </div>
                                         </div>
@@ -320,9 +378,11 @@
                                             <a href="publishedarticles.html" class="btn btn-primary">Read More</a>
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-success btn-outline-secondary"
-                                                        onclick="window.location.href='publishedarticles.html'">Approve
+                                                        data-toggle="modal"
+                                                        data-target="#approveModalCenter">Approve
                                                 </button>
-                                                <button type="button" class="btn btn-danger btn-outline-secondary">Reject
+                                                <button type="button" class="btn btn-danger btn-outline-secondary" data-toggle="modal"
+                                                        data-target="#rejectModalCenter">Reject
                                                 </button>
                                             </div>
                                         </div>
@@ -347,9 +407,11 @@
                                             <a href="publishedarticles.html" class="btn btn-primary">Read More</a>
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-success btn-outline-secondary"
-                                                        onclick="window.location.href='publishedarticles.html'">Approve
+                                                        data-toggle="modal"
+                                                        data-target="#approveModalCenter">Approve
                                                 </button>
-                                                <button type="button" class="btn btn-danger btn-outline-secondary">Reject
+                                                <button type="button" class="btn btn-danger btn-outline-secondary" data-toggle="modal"
+                                                        data-target="#rejectModalCenter">Reject
                                                 </button>
                                             </div>
                                         </div>
@@ -367,9 +429,11 @@
                                             <a href="publishedarticles.html" class="btn btn-primary">Read More</a>
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-success btn-outline-secondary"
-                                                        onclick="window.location.href='publishedarticles.html'">Approve
+                                                        data-toggle="modal"
+                                                        data-target="#approveModalCenter">Approve
                                                 </button>
-                                                <button type="button" class="btn btn-danger btn-outline-secondary">Reject
+                                                <button type="button" class="btn btn-danger btn-outline-secondary" data-toggle="modal"
+                                                        data-target="#rejectModalCenter">Reject
                                                 </button>
                                             </div>
                                         </div>
@@ -388,9 +452,11 @@
                                             <a href="publishedarticles.html" class="btn btn-primary">Read More</a>
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-success btn-outline-secondary"
-                                                        onclick="window.location.href='publishedarticles.html'">Approve
+                                                        data-toggle="modal"
+                                                        data-target="#approveModalCenter">Approve
                                                 </button>
-                                                <button type="button" class="btn btn-danger btn-outline-secondary">Reject
+                                                <button type="button" class="btn btn-danger btn-outline-secondary" data-toggle="modal"
+                                                        data-target="#rejectModalCenter">Reject
                                                 </button>
                                             </div>
                                         </div>
