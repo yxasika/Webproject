@@ -70,22 +70,59 @@
         </ul>
     </div>
 </nav>
+<--Login Form-->
+<div id="login-wrapper" class="modal">
+    <form class="modal-content animate">
+        <div class="imgcontainer">
+            <span onclick="document.getElementById('login-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
+            <i alt="Avatar" class="avatar material-icons">account_circle</i>
+            <h1 style="text-align:center">Log In</h1>
+        </div>
+        <div class="container">
+            <input type="text" placeholder="Enter E-Mail" name="uname">
+            <input type="password" placeholder="Enter Password" name="psw">
+            <button class="popupBtn btn btn-primary my-2 my-sm-0" type="submit">Log In</button>
+            <input type="checkbox" style="margin:26px 30px;"> Remember me
+            <a href="#" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">Forgot Password ?</a>
+        </div>
+    </form>
+</div>
+
+<--Register Form-->
+<div id="register-wrapper" class="modal">
+    <form class="modal-content animate">
+        <div class="imgcontainer">
+            <span onclick="document.getElementById('register-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
+            <i alt="Avatar" class="avatar material-icons">account_circle</i>
+            <h1 style="text-align:center">Registration</h1>
+        </div>
+        <div class="container">
+            <input type="text" placeholder="Enter First Name" name="fname">
+            <input type="text" placeholder="Enter Last Name" name="lname">
+            <input type="text" placeholder="Enter E-Mail" name="email">
+            <input type="password" placeholder="Enter Password" name="psw">
+            <input type="password" placeholder="Repeat Password" name="psw2">
+            <button class="popupBtn btn btn-primary my-2 my-sm-0" type="submit">Register</button>
+        </div>
+    </form>
+
+</div>
 <main>
     <div class="container">
         <div class="row justify-content-center">
             <div class="content">
                 <ul class="nav nav-tabs" id="pills-tab" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" id="pills-pending-tab" data-toggle="pill" href="#pills-pending" role="tab" aria-controls="pills-pending" aria-selected="true">pending articles</a>
+                        <a class="nav-link active" id="pills-pending-tab" data-toggle="pill" href="#pills-pending" role="tab" aria-controls="pills-pending" aria-selected="true">Pending articles</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="pills-myArticle-tab" data-toggle="pill"href="#pills-myArticle" role="tab" aria-controls="pills-myArticle" aria-selected="false">my articles</a>
+                        <a class="nav-link" id="pills-myArticle-tab" data-toggle="pill"href="#pills-myArticle" role="tab" aria-controls="pills-myArticle" aria-selected="false">My articles</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="pills-approved-tab" data-toggle="pill" href="#pills-approved" role="tab" aria-controls="pills-approved" aria-selected="false">approved articles</a>
+                        <a class="nav-link" id="pills-approved-tab" data-toggle="pill" href="#pills-approved" role="tab" aria-controls="pills-approved" aria-selected="false">Approved articles</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="pills-rejected-tab" data-toggle="pill"href="#pills-rejected" role="tab" aria-controls="pills-rejected" aria-selected="false">rejected articles</a>
+                        <a class="nav-link" id="pills-rejected-tab" data-toggle="pill"href="#pills-rejected" role="tab" aria-controls="pills-rejected" aria-selected="false">Rejected articles</a>
                     </li>
                 </ul>
                 <br>
@@ -103,7 +140,7 @@
                                             <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                                                 diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
                                                 diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                                            <a href="publishedarticles.html" class="btn btn-primary">read more</a>
+                                            <a href="publishedarticles.html" class="btn btn-primary">Read More</a>
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-success btn-outline-secondary"
                                                         onclick="window.location.href='publishedarticles.html'">Approve
@@ -123,7 +160,7 @@
                                             <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                                                 diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
                                                 diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                                            <a href="publishedarticles.html" class="btn btn-primary">read more</a>
+                                            <a href="publishedarticles.html" class="btn btn-primary">Read More</a>
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-success btn-outline-secondary"
                                                         onclick="window.location.href='publishedarticles.html'">Approve
@@ -144,7 +181,7 @@
                                             <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                                                 diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
                                                 diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                                            <a href="publishedarticles.html" class="btn btn-primary">read more</a>
+                                            <a href="publishedarticles.html" class="btn btn-primary">Read More</a>
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-success btn-outline-secondary"
                                                         onclick="window.location.href='publishedarticles.html'">Approve
@@ -171,7 +208,7 @@
                                             <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                                                 diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
                                                 diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                                            <a href="publishedarticles.html" class="btn btn-primary">read more</a>
+                                            <a href="publishedarticles.html" class="btn btn-primary">Read More</a>
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-success btn-outline-secondary"
                                                         onclick="window.location.href='publishedarticles.html'">Approve
@@ -191,7 +228,7 @@
                                             <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                                                 diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
                                                 diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                                            <a href="publishedarticles.html" class="btn btn-primary">read more</a>
+                                            <a href="publishedarticles.html" class="btn btn-primary">Read More</a>
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-success btn-outline-secondary"
                                                         onclick="window.location.href='publishedarticles.html'">Approve
@@ -212,7 +249,7 @@
                                             <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                                                 diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
                                                 diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                                            <a href="publishedarticles.html" class="btn btn-primary">read more</a>
+                                            <a href="publishedarticles.html" class="btn btn-primary">Read More</a>
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-success btn-outline-secondary"
                                                         onclick="window.location.href='publishedarticles.html'">Approve
@@ -239,7 +276,7 @@
                                             <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                                                 diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
                                                 diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                                            <a href="publishedarticles.html" class="btn btn-primary">read more</a>
+                                            <a href="publishedarticles.html" class="btn btn-primary">Read More</a>
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-success btn-outline-secondary"
                                                         onclick="window.location.href='publishedarticles.html'">Approve
@@ -259,7 +296,7 @@
                                             <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                                                 diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
                                                 diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                                            <a href="publishedarticles.html" class="btn btn-primary">read more</a>
+                                            <a href="publishedarticles.html" class="btn btn-primary">Read More</a>
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-success btn-outline-secondary"
                                                         onclick="window.location.href='publishedarticles.html'">Approve
@@ -280,7 +317,7 @@
                                             <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                                                 diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
                                                 diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                                            <a href="publishedarticles.html" class="btn btn-primary">read more</a>
+                                            <a href="publishedarticles.html" class="btn btn-primary">Read More</a>
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-success btn-outline-secondary"
                                                         onclick="window.location.href='publishedarticles.html'">Approve
@@ -307,7 +344,7 @@
                                             <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                                                 diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
                                                 diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                                            <a href="publishedarticles.html" class="btn btn-primary">read more</a>
+                                            <a href="publishedarticles.html" class="btn btn-primary">Read More</a>
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-success btn-outline-secondary"
                                                         onclick="window.location.href='publishedarticles.html'">Approve
@@ -327,7 +364,7 @@
                                             <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                                                 diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
                                                 diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                                            <a href="publishedarticles.html" class="btn btn-primary">read more</a>
+                                            <a href="publishedarticles.html" class="btn btn-primary">Read More</a>
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-success btn-outline-secondary"
                                                         onclick="window.location.href='publishedarticles.html'">Approve
@@ -348,7 +385,7 @@
                                             <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                                                 diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
                                                 diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                                            <a href="publishedarticles.html" class="btn btn-primary">read more</a>
+                                            <a href="publishedarticles.html" class="btn btn-primary">Read More</a>
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-success btn-outline-secondary"
                                                         onclick="window.location.href='publishedarticles.html'">Approve
