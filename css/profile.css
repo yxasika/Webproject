@@ -37,29 +37,6 @@ button:hover {
     font-size: 150px
 }
 
-/* The Modal (background) */
-.modal {
-    display:none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4);
-    overflow: hidden;
-}
-
-/* Modal Content Box */
-.modal-content {
-    background-color: #fefefe;
-    margin: 4% auto 15% auto;
-    border: 1px solid #888;
-    width: 35%;
-    padding-bottom: 30px;
-}
-
 /* The Close Button (x) */
 .close {
     position: absolute;

@@ -20,11 +20,12 @@
             integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
             crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/loginPopup.css">
     <script rel="script" type="text/javascript" src="../scripts/loginPopup.js"></script>
     <script rel="script" type="text/javascript" src="../scripts/jquery.rotate.1-1.js"></script>
     <script type="text/javascript" src="../scripts/search.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/search.css">
+    <link rel="stylesheet" type="text/css" href="../css/profile.css">
+    <script type="text/javascript" src="../scripts/js.js"></script>
 </head>
 
 <body>
@@ -61,88 +62,50 @@
             </form>
             <a class="btn btn-primary icon my-2 mr-2" role="button" href="notification.html">
                 <i class="material-icons">notifications</i><span class="badge">4</span></a>
-            <button class="btn btn-primary my-2 mr-2"
-                    onclick="document.getElementById('login-wrapper').style.display='block'">LOG IN
-            </button>
-            <button class="btn btn-primary my-2 sm-0"
-                    onclick="document.getElementById('register-wrapper').style.display='block'">SIGN UP
-            </button>
         </ul>
     </div>
 </nav>
-<--Login Form-->
-<div id="login-wrapper" class="modal">
-    <form class="modal-content animate">
-        <div class="imgcontainer">
-            <span onclick="document.getElementById('login-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
-            <i alt="Avatar" class="avatar material-icons">account_circle</i>
-            <h1 style="text-align:center">Log In</h1>
+<!--Save Popup-->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Save changes</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to save these changes?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
         </div>
-        <div class="container">
-            <input type="text" placeholder="Enter E-Mail" name="uname">
-            <input type="password" placeholder="Enter Password" name="psw">
-            <button class="popupBtn btn btn-primary my-2 my-sm-0" type="submit">Log In</button>
-            <input type="checkbox" style="margin:26px 30px;"> Remember me
-            <a href="#" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">Forgot Password ?</a>
-        </div>
-    </form>
-</div>
-
-<--Register Form-->
-<div id="register-wrapper" class="modal">
-    <form class="modal-content animate">
-        <div class="imgcontainer">
-            <span onclick="document.getElementById('register-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
-            <i alt="Avatar" class="avatar material-icons">account_circle</i>
-            <h1 style="text-align:center">Registration</h1>
-        </div>
-        <div class="container">
-            <input type="text" placeholder="Enter First Name" name="fname">
-            <input type="text" placeholder="Enter Last Name" name="lname">
-            <input type="text" placeholder="Enter E-Mail" name="email">
-            <input type="password" placeholder="Enter Password" name="psw">
-            <input type="password" placeholder="Repeat Password" name="psw2">
-            <button class="popupBtn btn btn-primary my-2 my-sm-0" type="submit">Register</button>
-        </div>
-    </form>
-
+    </div>
 </div>
 <main>
     <div class="container">
         <div class="row justify-content-center">
             <form class="content" name="profile" action="profile.html">
-                <h2>Profile Data</h2>
-                <div class="form-row">
-                    <div class="form-col mr-4">Current Email <input type="text" class="form-control"
-                                                                    placeholder="unchanged" title="current Email"><br>
-                        current password<input type="password" class="form-control" placeholder="unchanged"><br>
-                        new password
-                        <input type="password" class="form-control" placeholder=""><br>
-                        repeat new password
-                        <input type="password" class="form-control" placeholder=""><br>
-                    </div>
-                    <div class="form-col mr-4">
-                        first name
-                        <input type="text" class="form-control" placeholder="unchanged"><br>
-                        last name
-                        <input type="text" class="form-control" placeholder="unchanged"><br>
-                        birth date
-                        <input type="date" class="form-control"><br>
-                        profile picture<br>
-                        <input type="file" class="btn btn-primary float-right" accept=".png,.jpg,.jpeg">
-                    </div>
-                    <div class="form-col">
-                        about me
-                        <textarea id="aboutme" name="aboutme" placeholder="write something about yourself here..."
-                                  maxlength="1000" cols="50" class="form-control"></textarea>
-                    </div>
+                <div class="imgcontainer">
+                    <i id="pic" alt="Avatar" class="avatar material-icons">account_circle</i>
                 </div>
-                <input type="submit" class="btn btn-primary float-right">
+                <div class="container">
+                    <input type="text" placeholder="Enter First Name" name="fname">
+                    <input type="text" placeholder="Enter Last Name" name="lname">
+                    <input type="date" placeholder="DD/MM/YYYY" name="date">
+                    <input type="text" placeholder="Enter E-Mail" name="email">
+                    <input type="password" placeholder="Enter Password" name="psw">
+                    <input type="password" placeholder="Repeat Password" name="psw2">
+                    <button type="button" class="popupBtn btn btn-primary my-2 my-sm-0" data-toggle="modal"
+                            data-target="#exampleModalCenter">Save
+                    </button>
+                </div>
             </form>
         </div>
-
     </div>
-
 </main>
 <footer class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
     <div class="col">
