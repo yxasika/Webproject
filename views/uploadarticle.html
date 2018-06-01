@@ -25,6 +25,12 @@
     <script rel="script" type="text/javascript" src="../scripts/jquery.rotate.1-1.js"></script>
     <script type="text/javascript" src="../scripts/search.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/search.css">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -121,7 +127,7 @@
                     </div>
                 </div>
                 <div>
-                    <label for="description">article description:</label>
+
                     <textarea id="description" name="description"
                               placeholder="write a short summary of your article here..." cols="20" rows="10"
                               class="form-control"></textarea>
@@ -134,31 +140,44 @@
                     upload your article's header image here:
                     <input type="file" class="float-right" accept=".png,.jpg,.jpeg">
                 </div>
-                <div>
-                    <!--
-                                        <h1><code>tags-input</code> Example</h1>
-                                        <fieldset>
-                                            <label for="name">Name:</label>
-                                            <input type="text" placeholder="Test User" id="name" />
-                                        </fieldset>
-                                        <fieldset>
-                                            <label for="tags">Tags:</label>
-                                            <input type="tags" placeholder="add..." id="tags" />
-                                        </fieldset>
-                                        <fieldset>
-                                            <label for="email">Email:</label>
-                                            <input type="email" placeholder="user@example.com" id="email" />
-                                        </fieldset>
-                                        <p id="out"></p>
-                    -->
+                <div class="row">
+                    <div class="col">
+                        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            show categories
+                        </a>
+                        <div class="collapse" id="collapseExample">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <div class="form-row">
+                                        <label class="mr-2" for="chk_rpg">rpg</label>
+                                        <input type="checkbox" class="mt-1" id="chk_rpg">
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="form-row">
+                                        <label class="mr-2" for="chk_jnr">jump'n run</label>
+                                        <input type="checkbox" class="mt-1" id="chk_jnr">
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="form-row">
+                                        <label class="mr-2" for="chk_sht">shooter</label>
+                                        <input type="checkbox" class="mt-1" id="chk_sht">
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="form-row">
+                                        <label class="mr-2" for="chk_act">action</label>
+                                        <input type="checkbox" class="mt-1" id="chk_act">
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
 
-
-                    <input type="tags" id="tags" placeholder="add tags..."/>
-
-
-                </div>
-                <div>
+                <div class="col">
                     <input type="submit" value="UPLOAD" class="btn btn-primary float-right"/>
+                </div>
                 </div>
             </form>
         </div>
