@@ -25,19 +25,11 @@
     <script rel="script" type="text/javascript" src="../scripts/jquery.rotate.1-1.js"></script>
     <script type="text/javascript" src="../scripts/search.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/search.css">
-    <link rel="stylesheet" href="../css/styles.css">
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-
 </head>
-
 <body>
-
 <nav class="navbar fixed-top navbar-expand-xl navbar-dark bg-dark">
-    <a class="navbar-brand" href="home.html"><img src="../src/imgs/logo.png" alt="logo" align="center"
-                                                  onclick="$(this).rotate(45)"></a>
+    <a class="navbar-brand" href="home.php"><img src="../src/imgs/logo.png" alt="logo" align="center"
+                                                 onclick="$(this).rotate(45)"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -46,19 +38,19 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="home.html">HOME</a>
+                <a class="nav-link" href="home.php">HOME</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="archive.html">ARCHIVE</a>
+                <a class="nav-link" href="archive.php">ARCHIVE</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="profile.html">PROFILE</a>
+                <a class="nav-link" href="profile.php">PROFILE</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="editor.html">EDITOR</a>
+                <a class="nav-link" href="editor.php">EDITOR</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="author.html">AUTHOR</a>
+                <a class="nav-link" href="author.php">AUTHOR</a>
             </li>
         </ul>
         <ul class="navbar-nav ">
@@ -66,7 +58,7 @@
                 <input class="searchInput form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
                        id="searchInput">
             </form>
-            <a class="btn btn-primary icon my-2 mr-2" role="button" href="notification.html">
+            <a class="btn btn-primary icon my-2 mr-2" role="button" href="notification.php">
                 <i class="material-icons">notifications</i><span class="badge">4</span></a>
             <button class="btn btn-primary my-2 mr-2"
                     onclick="document.getElementById('login-wrapper').style.display='block'">LOG IN
@@ -117,82 +109,50 @@
 <main>
     <div class="container">
         <div class="row justify-content-center">
-            <form class="content" name="contact" action="home.html">
-                <h2>Upload an Article</h2>
-                <div class="form-group">
-                    <div class="form-row">
+            <div class="content">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">New Messages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Read Messages</a>
+                    </li>
+                </ul>
+                <br>
+                <div class="container">
+                    <div class="row">
                         <div class="col">
-                            <input type="text" class="form-control" required placeholder="Title of the article">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Subject: Article 1</h5>
+                                    <p class="text-muted">Max Mustermann</p>
+                                    <h6 class="card-title">Message:</h6>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                        diam
+                                        nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                        voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                                    <a class="btn btn-primary">Answer</a>
+                                    <a class="btn btn-secondary">Marked read</a>
+                                </div>
+                            </div>
                         </div>
+
+
                     </div>
                 </div>
-                <div>
-
-                    <textarea id="description" name="description"
-                              placeholder="write a short summary of your article here..." cols="20" rows="10"
-                              class="form-control"></textarea>
-                </div>
-                <div class="form-group">
-                    upload your PDF file here:
-                    <input type="file" class="float-right" required accept=".pdf">
-                </div>
-                <div class="form-group">
-                    upload your article's header image here:
-                    <input type="file" class="float-right" accept=".png,.jpg,.jpeg">
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                            show categories
-                        </a>
-                        <div class="collapse" id="collapseExample">
-                            <ul class="list-group">
-                                <li class="list-group-item">
-                                    <div class="form-row">
-                                        <label class="mr-2" for="chk_rpg">rpg</label>
-                                        <input type="checkbox" class="mt-1" id="chk_rpg">
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="form-row">
-                                        <label class="mr-2" for="chk_jnr">jump'n run</label>
-                                        <input type="checkbox" class="mt-1" id="chk_jnr">
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="form-row">
-                                        <label class="mr-2" for="chk_sht">shooter</label>
-                                        <input type="checkbox" class="mt-1" id="chk_sht">
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="form-row">
-                                        <label class="mr-2" for="chk_act">action</label>
-                                        <input type="checkbox" class="mt-1" id="chk_act">
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                <div class="col">
-                    <input type="submit" value="UPLOAD" class="btn btn-primary float-right"/>
-                </div>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
-
 </main>
 <footer class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
     <div class="col">
         <div class="row">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item text-center">
-                    <a class="nav-link" href="impressum.html">IMPRESSUM</a>
+                    <a class="nav-link" href="impressum.php">IMPRESSUM</a>
                 </li>
                 <li class="nav-item text-center">
-                    <a class="nav-link" href="contact.html">CONTACT</a>
+                    <a class="nav-link" href="contact.php">CONTACT</a>
                 </li>
             </ul>
         </div>
@@ -201,7 +161,6 @@
         </div>
     </div>
 </footer>
-
 </body>
 
 </html>

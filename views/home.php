@@ -1,5 +1,6 @@
-<!DOCTYPE html>
+<?php include "../scripts/function.php";?>
 
+<!DOCTYPE html>
 
 <html lang="en">
 
@@ -30,59 +31,68 @@
 </head>
 
 <body>
-<nav class="navbar fixed-top navbar-expand-xl navbar-dark bg-dark">
-<a class="navbar-brand" href="home.html"><img src="../src/imgs/logo.png" alt="logo" align="center" onclick="$(this).rotate(45)"></a>
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-</button>
 
-<div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-            <a class="nav-link" href="home.html">HOME</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="archive.html">ARCHIVE</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="profile.html">PROFILE</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="editor.html">EDITOR</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="author.html">AUTHOR</a>
-        </li>
-    </ul>
-    <ul class="navbar-nav ">
-        <form class="form-inline my-2 my-lg-0" id="searchForm">
-            <input class="searchInput form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="searchInput">
-        </form>
-        <a class="btn btn-primary icon my-2 mr-2" role="button" href="notification.html">
-            <i class="material-icons">notifications</i><span class="badge">4</span></a>
-        <button class="btn btn-primary my-2 mr-2" onclick="document.getElementById('login-wrapper').style.display='block'">LOG IN
-        </button>
-        <button class="btn btn-primary my-2 sm-0" onclick="document.getElementById('register-wrapper').style.display='block'">SIGN UP
-        </button>
-    </ul>
-</div>
+
+<nav class="navbar fixed-top navbar-expand-xl navbar-dark bg-dark">
+    <a class="navbar-brand" href="home.php"><img src="../src/imgs/logo.png" alt="logo" align="center"
+                                                 onclick="$(this).rotate(45)"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="home.php">HOME</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="archive.php">ARCHIVE</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="profile.php">PROFILE</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="editor.php">EDITOR</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="author.php">AUTHOR</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ">
+            <form class="form-inline my-2 my-lg-0" id="searchForm">
+                <input class="searchInput form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                       id="searchInput">
+            </form>
+            <a class="btn btn-primary icon my-2 mr-2" role="button" href="notification.php">
+                <i class="material-icons">notifications</i><span class="badge">4</span></a>
+            <button class="btn btn-primary my-2 mr-2"
+                    onclick="document.getElementById('login-wrapper').style.display='block'">LOG IN
+            </button>
+            <button class="btn btn-primary my-2 sm-0"
+                    onclick="document.getElementById('register-wrapper').style.display='block'">SIGN UP
+            </button>
+        </ul>
+    </div>
 </nav>
+
 
 <--Login Form-->
 <div id="login-wrapper" class="modali">
     <form class="modali-content animate">
         <div class="imgcontainer">
-            <span onclick="document.getElementById('login-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
+            <span onclick="document.getElementById('login-wrapper').style.display='none'" class="close"
+                  title="Close PopUp">&times;</span>
             <i alt="Avatar" class="avatar material-icons">account_circle</i>
             <h1 style="text-align:center">Log In</h1>
         </div>
         <div class="container">
-            <input type="text" placeholder="Enter E-Mail" name="uname">
-            <input type="password" placeholder="Enter Password" name="psw">
-            <button class="popupBtn btn btn-primary my-2 my-sm-0" type="submit">Log In</button>
+            <input type="text" placeholder="Enter Username" name="username">
+            <input type="password" placeholder="Enter Password" name="password">
+            <button class="popupBtn btn btn-primary my-2 my-sm-0" type="submit" name="login">Log In</button>
             <input type="checkbox" style="margin:26px 30px;"> Remember me
-            <a href="#" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">Forgot Password ?</a>
+            <a href="#" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">Forgot Password
+                ?</a>
         </div>
     </form>
 </div>
@@ -91,7 +101,8 @@
 <div id="register-wrapper" class="modali">
     <form class="modali-content animate">
         <div class="imgcontainer">
-            <span onclick="document.getElementById('register-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
+            <span onclick="document.getElementById('register-wrapper').style.display='none'" class="close"
+                  title="Close PopUp">&times;</span>
             <i alt="Avatar" class="avatar material-icons">account_circle</i>
             <h1 style="text-align:center">Registration</h1>
         </div>
@@ -104,7 +115,6 @@
             <button class="popupBtn btn btn-primary my-2 my-sm-0" type="submit">Register</button>
         </div>
     </form>
-
 </div>
 
 <main style="position: relative; top: 1em;">
@@ -115,45 +125,62 @@
                     <h3 class="card-header">About us</h3>
                     <div class="card-body">
                         <h5 class="card-title">Title</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-                            no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-                            et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                            eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
+                            eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                            no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+                            consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                            magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                            et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                            Lorem ipsum dolor sit amet.</p>
                     </div>
                 </div>
                 <br>
                 <ul class="nav nav-tabs" id="pills-tab" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" id="pills-latest-tab" data-toggle="pill" href="#pills-latest" role="tab" aria-controls="pills-latest" aria-selected="true">Latest</a>
+                        <a class="nav-link active" id="pills-latest-tab" data-toggle="pill" href="#pills-latest"
+                           role="tab" aria-controls="pills-latest" aria-selected="true">Latest</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="pills-popular-tab" data-toggle="pill" href="#pills-popular" role="tab" aria-controls="pills-popular" aria-selected="false">Popular</a>
+                        <a class="nav-link" id="pills-popular-tab" data-toggle="pill" href="#pills-popular" role="tab"
+                           aria-controls="pills-popular" aria-selected="false">Popular</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="pills-bestRated-tab" data-toggle="pill" href="#pills-bestRated" role="tab" aria-controls="pills-bestRated" aria-selected="false">Best rated</a>
+                        <a class="nav-link" id="pills-bestRated-tab" data-toggle="pill" href="#pills-bestRated"
+                           role="tab" aria-controls="pills-bestRated" aria-selected="false">Best rated</a>
                     </li>
                 </ul>
                 <br>
                 <div class="tab-content" id="pills-tabContent">
-                    <div class="tab-pane fade show active" id="pills-latest" role="tabpanel" aria-labelledby="pills-latest-tab">
+                    <div class="tab-pane fade show active" id="pills-latest" role="tabpanel"
+                         aria-labelledby="pills-latest-tab">
                         <div class="container">
                             <div class="row">
                                 <div class="col">
                                     <div class="card">
-                                        <img class="card-img-top" src="../src/imgs/monster_hunter_world.jpg" alt="monster_hunter_world">
+                                        <img class="card-img-top" src="../src/imgs/monster_hunter_world.jpg"
+                                             alt="monster_hunter_world">
                                         <div class="card-body">
                                             <h5 class="card-title">ARTICLE 1</h5>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
+                                                elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                                                dolores et ea rebum.
                                             </p>
-                                            <a href="article_1.html" class="btn btn-primary">Read more</a>
+                                            <a href="article_1.php" class="btn btn-primary">Read more</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="card">
-                                        <img class="card-img-top" src="../src/imgs/dark_souls.jpg" alt="monster_hunter_world">
+                                        <img class="card-img-top" src="../src/imgs/dark_souls.jpg"
+                                             alt="monster_hunter_world">
                                         <div class="card-body">
                                             <h5 class="card-title">ARTICLE 2</h5>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
+                                                elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                                                dolores et ea rebum.
                                             </p>
                                             <a href="#" class="btn btn-primary">Read more</a>
                                         </div>
@@ -161,10 +188,14 @@
                                 </div>
                                 <div class="col">
                                     <div class="card">
-                                        <img class="card-img-top" src="../src/imgs/path_of_exile.jpg" alt="monster_hunter_world">
+                                        <img class="card-img-top" src="../src/imgs/path_of_exile.jpg"
+                                             alt="monster_hunter_world">
                                         <div class="card-body">
                                             <h5 class="card-title">ARTICLE 3</h5>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
+                                                elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                                                dolores et ea rebum.
                                             </p>
                                             <a href="#" class="btn btn-primary">Read more</a>
                                         </div>
@@ -178,7 +209,10 @@
                                         <img class="card-img-top" src="../src/imgs/rainbow_six.jpg" alt="rainbow_six">
                                         <div class="card-body">
                                             <h5 class="card-title">ARTICLE 4</h5>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
+                                                elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                                                dolores et ea rebum.
                                             </p>
                                             <a href="#" class="btn btn-primary">Read more</a>
                                         </div>
@@ -186,10 +220,14 @@
                                 </div>
                                 <div class="col">
                                     <div class="card">
-                                        <img class="card-img-top" src="../src/imgs/league_of_legends.jpg" alt="league_of_legends">
+                                        <img class="card-img-top" src="../src/imgs/league_of_legends.jpg"
+                                             alt="league_of_legends">
                                         <div class="card-body">
                                             <h5 class="card-title">ARTICLE 5</h5>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
+                                                elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                                                dolores et ea rebum.
                                             </p>
                                             <a href="#" class="btn btn-primary">Read more</a>
                                         </div>
@@ -200,7 +238,10 @@
                                         <img class="card-img-top" src="../src/imgs/ac_origins.jpg" alt="ac_origins">
                                         <div class="card-body">
                                             <h5 class="card-title">ARTICLE 6</h5>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
+                                                elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                                                dolores et ea rebum.
                                             </p>
                                             <a href="#" class="btn btn-primary">Read more</a>
                                         </div>
@@ -214,10 +255,14 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="card">
-                                        <img class="card-img-top" src="../src/imgs/dark_souls.jpg" alt="monster_hunter_world">
+                                        <img class="card-img-top" src="../src/imgs/dark_souls.jpg"
+                                             alt="monster_hunter_world">
                                         <div class="card-body">
                                             <h5 class="card-title">ARTICLE 2</h5>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
+                                                elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                                                dolores et ea rebum.
                                             </p>
                                             <a href="#" class="btn btn-primary">Read more</a>
                                         </div>
@@ -225,21 +270,29 @@
                                 </div>
                                 <div class="col">
                                     <div class="card">
-                                        <img class="card-img-top" src="../src/imgs/monster_hunter_world.jpg" alt="monster_hunter_world">
+                                        <img class="card-img-top" src="../src/imgs/monster_hunter_world.jpg"
+                                             alt="monster_hunter_world">
                                         <div class="card-body">
                                             <h5 class="card-title">ARTICLE 1</h5>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
+                                                elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                                                dolores et ea rebum.
                                             </p>
-                                            <a href="article_1.html" class="btn btn-primary">Read more</a>
+                                            <a href="article_1.php" class="btn btn-primary">Read more</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="card">
-                                        <img class="card-img-top" src="../src/imgs/path_of_exile.jpg" alt="monster_hunter_world">
+                                        <img class="card-img-top" src="../src/imgs/path_of_exile.jpg"
+                                             alt="monster_hunter_world">
                                         <div class="card-body">
                                             <h5 class="card-title">ARTICLE 3</h5>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
+                                                elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                                                dolores et ea rebum.
                                             </p>
                                             <a href="#" class="btn btn-primary">Read more</a>
                                         </div>
@@ -253,7 +306,10 @@
                                         <img class="card-img-top" src="../src/imgs/rainbow_six.jpg" alt="rainbow_six">
                                         <div class="card-body">
                                             <h5 class="card-title">ARTICLE 4</h5>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
+                                                elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                                                dolores et ea rebum.
                                             </p>
                                             <a href="#" class="btn btn-primary">Read more</a>
                                         </div>
@@ -264,7 +320,10 @@
                                         <img class="card-img-top" src="../src/imgs/ac_origins.jpg" alt="ac_origins">
                                         <div class="card-body">
                                             <h5 class="card-title">ARTICLE 6</h5>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
+                                                elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                                                dolores et ea rebum.
                                             </p>
                                             <a href="#" class="btn btn-primary">Read more</a>
                                         </div>
@@ -272,10 +331,14 @@
                                 </div>
                                 <div class="col">
                                     <div class="card">
-                                        <img class="card-img-top" src="../src/imgs/league_of_legends.jpg" alt="league_of_legends">
+                                        <img class="card-img-top" src="../src/imgs/league_of_legends.jpg"
+                                             alt="league_of_legends">
                                         <div class="card-body">
                                             <h5 class="card-title">ARTICLE 5</h5>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
+                                                elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                                                dolores et ea rebum.
                                             </p>
                                             <a href="#" class="btn btn-primary">Read more</a>
                                         </div>
@@ -284,15 +347,20 @@
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="pills-bestRated" role="tabpanel" aria-labelledby="pills-bestRated-tab">
+                    <div class="tab-pane fade" id="pills-bestRated" role="tabpanel"
+                         aria-labelledby="pills-bestRated-tab">
                         <div class="container">
                             <div class="row">
                                 <div class="col">
                                     <div class="card">
-                                        <img class="card-img-top" src="../src/imgs/path_of_exile.jpg" alt="monster_hunter_world">
+                                        <img class="card-img-top" src="../src/imgs/path_of_exile.jpg"
+                                             alt="monster_hunter_world">
                                         <div class="card-body">
                                             <h5 class="card-title">ARTICLE 3</h5>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
+                                                elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                                                dolores et ea rebum.
                                             </p>
                                             <a href="#" class="btn btn-primary">Read more</a>
                                         </div>
@@ -300,10 +368,14 @@
                                 </div>
                                 <div class="col">
                                     <div class="card">
-                                        <img class="card-img-top" src="../src/imgs/dark_souls.jpg" alt="monster_hunter_world">
+                                        <img class="card-img-top" src="../src/imgs/dark_souls.jpg"
+                                             alt="monster_hunter_world">
                                         <div class="card-body">
                                             <h5 class="card-title">ARTICLE 2</h5>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
+                                                elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                                                dolores et ea rebum.
                                             </p>
                                             <a href="#" class="btn btn-primary">Read more</a>
                                         </div>
@@ -311,12 +383,16 @@
                                 </div>
                                 <div class="col">
                                     <div class="card">
-                                        <img class="card-img-top" src="../src/imgs/monster_hunter_world.jpg" alt="monster_hunter_world">
+                                        <img class="card-img-top" src="../src/imgs/monster_hunter_world.jpg"
+                                             alt="monster_hunter_world">
                                         <div class="card-body">
                                             <h5 class="card-title">ARTICLE 1</h5>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
+                                                elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                                                dolores et ea rebum.
                                             </p>
-                                            <a href="article_1.html" class="btn btn-primary">Read more</a>
+                                            <a href="article_1.php" class="btn btn-primary">Read more</a>
                                         </div>
                                     </div>
                                 </div>
@@ -328,7 +404,10 @@
                                         <img class="card-img-top" src="../src/imgs/ac_origins.jpg" alt="ac_origins">
                                         <div class="card-body">
                                             <h5 class="card-title">ARTICLE 6</h5>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
+                                                elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                                                dolores et ea rebum.
                                             </p>
                                             <a href="#" class="btn btn-primary">Read more</a>
                                         </div>
@@ -336,10 +415,14 @@
                                 </div>
                                 <div class="col">
                                     <div class="card">
-                                        <img class="card-img-top" src="../src/imgs/league_of_legends.jpg" alt="league_of_legends">
+                                        <img class="card-img-top" src="../src/imgs/league_of_legends.jpg"
+                                             alt="league_of_legends">
                                         <div class="card-body">
                                             <h5 class="card-title">ARTICLE 5</h5>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
+                                                elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                                                dolores et ea rebum.
                                             </p>
                                             <a href="#" class="btn btn-primary">Read more</a>
                                         </div>
@@ -350,9 +433,12 @@
                                         <img class="card-img-top" src="../src/imgs/rainbow_six.jpg" alt="rainbow_six">
                                         <div class="card-body">
                                             <h5 class="card-title">ARTICLE 4</h5>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
+                                                elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                                                dolores et ea rebum.
                                             </p>
-                                            <a href="article_1.html" class="btn btn-primary">Read more</a>
+                                            <a href="article_1.php" class="btn btn-primary">Read more</a>
                                         </div>
                                     </div>
                                 </div>
@@ -369,10 +455,10 @@
         <div class="row">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item text-center">
-                    <a class="nav-link" href="impressum.html">IMPRESSUM</a>
+                    <a class="nav-link" href="impressum.php">IMPRESSUM</a>
                 </li>
                 <li class="nav-item text-center">
-                    <a class="nav-link" href="contact.html">CONTACT</a>
+                    <a class="nav-link" href="contact.php">CONTACT</a>
                 </li>
             </ul>
         </div>

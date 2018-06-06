@@ -25,13 +25,11 @@
     <script rel="script" type="text/javascript" src="../scripts/jquery.rotate.1-1.js"></script>
     <script type="text/javascript" src="../scripts/search.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/search.css">
-    <script type="text/javascript" src="../scripts/js.js"></script>
 </head>
-
 <body>
 <nav class="navbar fixed-top navbar-expand-xl navbar-dark bg-dark">
-    <a class="navbar-brand" href="home.html"><img src="../src/imgs/logo.png" alt="logo" align="center"
-                                                  onclick="$(this).rotate(45)"></a>
+    <a class="navbar-brand" href="home.php"><img src="../src/imgs/logo.png" alt="logo" align="center"
+                                                 onclick="$(this).rotate(45)"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -40,19 +38,19 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="home.html">HOME</a>
+                <a class="nav-link" href="home.php">HOME</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="archive.html">ARCHIVE</a>
+                <a class="nav-link" href="archive.php">ARCHIVE</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="profile.html">PROFILE</a>
+                <a class="nav-link" href="profile.php">PROFILE</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="editor.html">EDITOR</a>
+                <a class="nav-link" href="editor.php">EDITOR</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="author.html">AUTHOR</a>
+                <a class="nav-link" href="author.php">AUTHOR</a>
             </li>
         </ul>
         <ul class="navbar-nav ">
@@ -60,7 +58,7 @@
                 <input class="searchInput form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
                        id="searchInput">
             </form>
-            <a class="btn btn-primary icon my-2 mr-2" role="button" href="notification.html">
+            <a class="btn btn-primary icon my-2 mr-2" role="button" href="notification.php">
                 <i class="material-icons">notifications</i><span class="badge">4</span></a>
             <button class="btn btn-primary my-2 mr-2"
                     onclick="document.getElementById('login-wrapper').style.display='block'">LOG IN
@@ -72,8 +70,8 @@
     </div>
 </nav>
 <--Login Form-->
-<div id="login-wrapper" class="modali">
-    <form class="modali-content animate">
+<div id="login-wrapper" class="modal">
+    <form class="modal-content animate">
         <div class="imgcontainer">
             <span onclick="document.getElementById('login-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
             <i alt="Avatar" class="avatar material-icons">account_circle</i>
@@ -90,8 +88,8 @@
 </div>
 
 <--Register Form-->
-<div id="register-wrapper" class="modali">
-    <form class="modali-content animate">
+<div id="register-wrapper" class="modal">
+    <form class="modal-content animate">
         <div class="imgcontainer">
             <span onclick="document.getElementById('register-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
             <i alt="Avatar" class="avatar material-icons">account_circle</i>
@@ -108,57 +106,69 @@
     </form>
 
 </div>
-<!--Save Popup-->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                ...
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </div>
-</div>
 <main>
     <div class="container">
-        <div class="row justify-content-center">
-            <form class="content" name="profile" action="profile.html">
-                <div class="imgcontainer">
-                    <i id="pic" alt="Avatar" class="avatar material-icons">account_circle</i>
-                </div>
-                <div class="container">
-                    <input type="text" placeholder="Enter First Name" name="fname">
-                    <input type="text" placeholder="Enter Last Name" name="lname">
-                    <input type="date" placeholder="DD/MM/YYYY" name="date">
-                    <input type="text" placeholder="Enter E-Mail" name="email">
-                    <input type="password" placeholder="Enter Password" name="psw">
-                    <input type="password" placeholder="Repeat Password" name="psw2">
-                    <button type="button" class="popupBtn btn btn-primary my-2 my-sm-0" data-toggle="modal"
-                            data-target="#exampleModalCenter">Save
-                    </button>
-                </div>
-            </form>
+        <div class="justify-content-center">
+            <div class="content">
+                <form class="form-inline my-2 my-lg-0 " action="searchResults.php">
+                    <input class="searchInput form-control mr-sm-2" id="myInput" onkeyup="searchFunction()"
+                           type="search" placeholder="Search" aria-label="Search">
+                </form>
+                <hr>
+                <h3>Results</h3>
+                <ul id="myUL" class="list-group myList">
+                    <li><a href="article_1.php"
+                           class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Article 1</h5>
+                            <small>2 weeks ago</small>
+                        </div>
+                        <p class="mb-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                        <small> Max Mustermann</small>
+                    </a></li>
+                    <li><a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Article A</h5>
+                            <small>4 weeks ago</small>
+                        </div>
+                        <p class="mb-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                        <small> Max Mustermann</small>
+                    </a></li>
+                    <li><a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Article B</h5>
+                            <small class="text-muted">5 weeks ago</small>
+                        </div>
+                        <p class="mb-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                        <small> Max Mustermann</small>
+                    </a></li>
+                    <li><a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Test</h5>
+                            <small class="text-muted">5 weeks ago</small>
+                        </div>
+                        <p class="mb-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                        <small> Max Mustermann</small>
+                    </a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </main>
+
 <footer class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
     <div class="col">
         <div class="row">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item text-center">
-                    <a class="nav-link" href="impressum.html">IMPRESSUM</a>
+                    <a class="nav-link" href="impressum.php">IMPRESSUM</a>
                 </li>
                 <li class="nav-item text-center">
-                    <a class="nav-link" href="contact.html">CONTACT</a>
+                    <a class="nav-link" href="contact.php">CONTACT</a>
                 </li>
             </ul>
         </div>
@@ -167,6 +177,7 @@
         </div>
     </div>
 </footer>
+
 </body>
 
 </html>
