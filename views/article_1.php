@@ -29,7 +29,7 @@
 
 <body>
 <nav class="navbar fixed-top navbar-expand-xl navbar-dark bg-dark">
-    <a class="navbar-brand" href="home.php"><img src="../src/imgs/logo.png" alt="logo" align="center" onclick="$(this).rotate(45)"></a>
+    <a class="navbar-brand" href="home.html"><img src="../src/imgs/logo.png" alt="logo" align="center" onclick="$(this).rotate(45)"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -38,26 +38,26 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="home.php">HOME</a>
+                <a class="nav-link" href="home.html">HOME</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="archive.php">ARCHIVE</a>
+                <a class="nav-link" href="archive.html">ARCHIVE</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="profile.php">PROFILE</a>
+                <a class="nav-link" href="profile.html">PROFILE</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="editor.php">EDITOR</a>
+                <a class="nav-link" href="editor.html">EDITOR</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="author.php">AUTHOR</a>
+                <a class="nav-link" href="author.html">AUTHOR</a>
             </li>
         </ul>
         <ul class="navbar-nav ">
             <form class="form-inline my-2 my-lg-0" id="searchForm">
                 <input class="searchInput form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="searchInput">
             </form>
-            <a class="btn btn-primary icon my-2 mr-2" role="button" href="notification.php">
+            <a class="btn btn-primary icon my-2 mr-2" role="button" href="notification.html">
                 <i class="material-icons">notifications</i><span class="badge">4</span></a>
             <button class="btn btn-primary my-2 mr-2" onclick="document.getElementById('login-wrapper').style.display='block'">LOG IN
             </button>
@@ -71,6 +71,25 @@
         <div class="row justify-content-center">
             <div class="content">
                 <article>
+
+                    <?php
+                        $source = file_get_contents("../json/articles.json");
+                        $articles = json_decode($string, true);
+
+                        foreach ($articles as $article)
+                        {
+                            echo '
+                                <div class="card">
+                                <div class="row">
+                                <div class="col">
+                                <img class="card-img-left mx-auto" src="
+                            ';
+                            echo $articles[$article][imglink];
+                            echo '" alt="article image" >';
+
+                        }
+                    ?>
+
                     <div class="card">
                         <div class="row">
                             <div class="col">
@@ -176,10 +195,10 @@
         <div class="row">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item text-center">
-                    <a class="nav-link" href="impressum.php">IMPRESSUM</a>
+                    <a class="nav-link" href="impressum.html">IMPRESSUM</a>
                 </li>
                 <li class="nav-item text-center">
-                    <a class="nav-link" href="contact.php">CONTACT</a>
+                    <a class="nav-link" href="contact.html">CONTACT</a>
                 </li>
             </ul>
         </div>
