@@ -74,6 +74,27 @@
     </div>
 </div>
 
+<!--Publish Popup-->
+<div class="modal fade" id="publishModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="publishModalCenterTitle">Publish article</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to publish this article?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Publish</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <main>
     <div class="container">
         <div class="row justify-content-center">
@@ -160,6 +181,12 @@
                                             <i>' . $articles[$article]["author"] . '</i>
                                             <p class="card-text">'.$articles[$article]["description"].'</p>
                                             <a href='.$articles[$article]["articlelink"].' class="btn btn-primary">Read More</a>
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-success btn-outline-secondary"
+                                                        data-toggle="modal"
+                                                        data-target="#publishModalCenter">Publish
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
