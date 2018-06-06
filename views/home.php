@@ -1,4 +1,4 @@
-<?php include "../scripts/function.php";?>
+<?php include "../scripts/function.php" ?>
 
 <!DOCTYPE html>
 
@@ -77,27 +77,25 @@
 </nav>
 
 
-<--Login Form-->
 <div id="login-wrapper" class="modali">
-    <form class="modali-content animate">
+    <div class="modali-content animate">
         <div class="imgcontainer">
             <span onclick="document.getElementById('login-wrapper').style.display='none'" class="close"
                   title="Close PopUp">&times;</span>
             <i alt="Avatar" class="avatar material-icons">account_circle</i>
             <h1 style="text-align:center">Log In</h1>
         </div>
-        <div class="container">
-            <input type="text" placeholder="Enter Username" name="username">
+        <form class="container" method="post" action="">
+            <input type="text" placeholder="Enter your Emial" name="email">
             <input type="password" placeholder="Enter Password" name="password">
             <button class="popupBtn btn btn-primary my-2 my-sm-0" type="submit" name="login">Log In</button>
             <input type="checkbox" style="margin:26px 30px;"> Remember me
-            <a href="#" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">Forgot Password
-                ?</a>
-        </div>
-    </form>
+            <a href="#" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">Forgot
+                Password?</a>
+        </form>
+    </div>
 </div>
 
-<--Register Form-->
 <div id="register-wrapper" class="modali">
     <form class="modali-content animate">
         <div class="imgcontainer">
