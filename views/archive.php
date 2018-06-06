@@ -131,89 +131,13 @@
                             <li><a href='. $articles[$article]["articlelink"] . ' class="list-group-item list-group-item-action flex-column align-items-start">
                         <div class="d-flex w-100 justify-content-between">
                             <h5 class="mb-1">' . $articles[$article]["title"] . '
-                            <small>'. $articles[$article]["published"] . '</small>
+                            <small class="text-muted">'. $articles[$article]["published"] . '</small>
                             </div>
                         <p class="mb-1">' . $articles[$article]["description"] . '</p>
                         <small>' . $articles[$article]["author"] . '</small></a></li>
                         ';
                     }
                     ?>
-                    <!--
-                    <li><a href="article_1.php"
-                           class="list-group-item list-group-item-action flex-column align-items-start">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">Article 1</h5>
-                            <small>2 weeks ago</small>
-                        </div>
-                        <p class="mb-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                        <small> Max Mustermann</small>
-                    </a></li>
-                    <li><a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">Article A</h5>
-                            <small>4 weeks ago</small>
-                        </div>
-                        <p class="mb-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                        <small> Max Mustermann</small>
-                    </a></li>
-                    <li><a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">Article B</h5>
-                            <small class="text-muted">5 weeks ago</small>
-                        </div>
-                        <p class="mb-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                        <small> Max Mustermann</small>
-                    </a></li>
-                    <li><a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">Article C</h5>
-                            <small class="text-muted">6 weeks ago</small>
-                        </div>
-                        <p class="mb-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                        <small> Max Mustermann</small>
-                    </a></li>
-                    <li><a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">Article D</h5>
-                            <small class="text-muted">6 weeks ago</small>
-                        </div>
-                        <p class="mb-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                        <small> Max Mustermann</small>
-                    </a></li>
-                    <li><a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">Article E</h5>
-                            <small class="text-muted">6 weeks ago</small>
-                        </div>
-                        <p class="mb-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                        <small> Max Mustermann</small>
-                    </a></li>
-                    <li><a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">Article F</h5>
-                            <small class="text-muted">6 weeks ago</small>
-                        </div>
-                        <p class="mb-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                        <small> Max Mustermann</small>
-                    </a></li>
-                    <li><a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">Article G</h5>
-                            <small class="text-muted">6 weeks ago</small>
-                        </div>
-                        <p class="mb-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                        <small> Max Mustermann</small>
-                    </a></li>
-
-                    -->
                 </ul>
 
                 <ul class="pagination" style="margin-top: 1em;">
