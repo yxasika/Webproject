@@ -90,16 +90,18 @@
 
                     foreach ($articles as $article => $article)
                     {
-                        echo
-                        '
-                            <li><a href='. $articles[$article]["articlelink"] . ' class="list-group-item list-group-item-action flex-column align-items-start">
+                        if($articles[$article]["status"] == "published") {
+                            echo
+                                '
+                            <li><a href=' . $articles[$article]["articlelink"] . ' class="list-group-item list-group-item-action flex-column align-items-start">
                         <div class="d-flex w-100 justify-content-between">
                             <h5 class="mb-1">' . $articles[$article]["title"] . '
-                            <small class="text-muted">'. $articles[$article]["published"] . '</small>
+                            <small class="text-muted">' . $articles[$article]["published"] . '</small>
                             </div>
                         <p class="mb-1">' . $articles[$article]["description"] . '</p>
                         <small>' . $articles[$article]["author"] . '</small></a></li>
                         ';
+                        }
                     }
                     ?>
                 </ul>

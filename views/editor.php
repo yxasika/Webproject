@@ -91,9 +91,6 @@
                         <a class="nav-link active" id="pills-pending-tab" data-toggle="pill" href="#pills-pending" role="tab" aria-controls="pills-pending" aria-selected="true">Pending articles</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="pills-myArticle-tab" data-toggle="pill"href="#pills-myArticle" role="tab" aria-controls="pills-myArticle" aria-selected="false">My articles</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" id="pills-approved-tab" data-toggle="pill" href="#pills-approved" role="tab" aria-controls="pills-approved" aria-selected="false">Approved articles</a>
                     </li>
                     <li class="nav-item">
@@ -105,17 +102,24 @@
                     <div class="tab-pane fade show active" id="pills-pending" role="tabpanel" aria-labelledby="pills-pending-tab">
                         <div class="container">
                             <div class="row">
-                                <div class="col">
+
+                                <?php
+                                $source = file_get_contents("../json/articles.json");
+                                $articles = json_decode($source, true);
+
+                                foreach ($articles as $article => $article)
+                                {
+                                    if($articles[$article]["status"] == "pending") {
+                                        echo '
+                                        <div class="col-md-5">
                                     <div class="card">
-                                        <img class="card-img-top" src="../src/imgs/monster_hunter_world.jpg"
-                                             alt="monster_hunter_world">
+                                        <img class="card-img-top" src=' . $articles[$article]["imglink"] . '
+                                        alt="article image">
                                         <div class="card-body">
-                                            <h5 class="card-title">ARTICLE 1</h5>
-                                            <i>Author</i>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-                                                diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                                            <a href="publishedarticles.html" class="btn btn-primary">Read More</a>
+                                            <h5 class="card-title">' . $articles[$article]["title"] . '</h5>
+                                            <i>' . $articles[$article]["author"] . '</i>
+                                            <p class="card-text">'.$articles[$article]["description"].'</p>
+                                            <a href='.$articles[$article]["articlelink"].' class="btn btn-primary">Read More</a>
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-success btn-outline-secondary"
                                                         data-toggle="modal"
@@ -128,273 +132,71 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col">
-                                    <div class="card">
-                                        <img class="card-img-top" src="../src/imgs/dark_souls.jpg" alt="monster_hunter_world">
-                                        <div class="card-body">
-                                            <h5 class="card-title">ARTICLE 2</h5>
-                                            <i>Author</i>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-                                                diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                                            <a href="publishedarticles.html" class="btn btn-primary">Read More</a>
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-success btn-outline-secondary"
-                                                        data-toggle="modal"
-                                                        data-target="#approveModalCenter">Approve
-                                                </button>
-                                                <button type="button" class="btn btn-danger btn-outline-secondary" data-toggle="modal"
-                                                        data-target="#rejectModalCenter">Reject
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="card">
-                                        <img class="card-img-top" src="../src/imgs/rainbow_six.jpg"
-                                             alt="monster_hunter_world">
-                                        <div class="card-body">
-                                            <h5 class="card-title">ARTICLE 3</h5>
-                                            <i>Author</i>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-                                                diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                                            <a href="publishedarticles.html" class="btn btn-primary">Read More</a>
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-success btn-outline-secondary"
-                                                        data-toggle="modal"
-                                                        data-target="#approveModalCenter">Approve
-                                                </button>
-                                                <button type="button" class="btn btn-danger btn-outline-secondary" data-toggle="modal"
-                                                        data-target="#rejectModalCenter">Reject
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="pills-myArticle" role="tabpanel" aria-labelledby="pills-myArticle-tab">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="card">
-                                        <img class="card-img-top" src="../src/imgs/rainbow_six.jpg"
-                                             alt="monster_hunter_world">
-                                        <div class="card-body">
-                                            <h5 class="card-title">ARTICLE 1</h5>
-                                            <i>Author</i>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-                                                diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                                            <a href="publishedarticles.html" class="btn btn-primary">Read More</a>
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-success btn-outline-secondary"
-                                                        data-toggle="modal"
-                                                        data-target="#approveModalCenter">Approve
-                                                </button>
-                                                <button type="button" class="btn btn-danger btn-outline-secondary" data-toggle="modal"
-                                                        data-target="#rejectModalCenter">Reject
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="card">
-                                        <img class="card-img-top" src="../src/imgs/league_of_legends.jpg" alt="monster_hunter_world">
-                                        <div class="card-body">
-                                            <h5 class="card-title">ARTICLE 2</h5>
-                                            <i>Author</i>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-                                                diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                                            <a href="publishedarticles.html" class="btn btn-primary">Read More</a>
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-success btn-outline-secondary"
-                                                        data-toggle="modal"
-                                                        data-target="#approveModalCenter">Approve
-                                                </button>
-                                                <button type="button" class="btn btn-danger btn-outline-secondary" data-toggle="modal"
-                                                        data-target="#rejectModalCenter">Reject
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="card">
-                                        <img class="card-img-top" src="../src/imgs/path_of_exile.jpg"
-                                             alt="monster_hunter_world">
-                                        <div class="card-body">
-                                            <h5 class="card-title">ARTICLE 3</h5>
-                                            <i>Author</i>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-                                                diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                                            <a href="publishedarticles.html" class="btn btn-primary">Read More</a>
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-success btn-outline-secondary"
-                                                        data-toggle="modal"
-                                                        data-target="#approveModalCenter">Approve
-                                                </button>
-                                                <button type="button" class="btn btn-danger btn-outline-secondary" data-toggle="modal"
-                                                        data-target="#rejectModalCenter">Reject
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                    ';
+                                    }
+                                }
+                                ?>
+
                             </div>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="pills-approved" role="tabpanel" aria-labelledby="pills-approved-tab">
                         <div class="container">
                             <div class="row">
-                                <div class="col">
+                                <?php
+                                $source = file_get_contents("../json/articles.json");
+                                $articles = json_decode($source, true);
+
+                                foreach ($articles as $article => $article)
+                                {
+                                    if($articles[$article]["status"] == "approved") {
+                                        echo '
+                                        <div class="col-md-5">
                                     <div class="card">
-                                        <img class="card-img-top" src="../src/imgs/monster_hunter_world.jpg"
-                                             alt="monster_hunter_world">
+                                        <img class="card-img-top" src=' . $articles[$article]["imglink"] . '
+                                        alt="article image">
                                         <div class="card-body">
-                                            <h5 class="card-title">ARTICLE 1</h5>
-                                            <i>Author</i>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-                                                diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                                            <a href="publishedarticles.html" class="btn btn-primary">Read More</a>
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-success btn-outline-secondary"
-                                                        data-toggle="modal"
-                                                        data-target="#approveModalCenter">Approve
-                                                </button>
-                                                <button type="button" class="btn btn-danger btn-outline-secondary" data-toggle="modal"
-                                                        data-target="#rejectModalCenter">Reject
-                                                </button>
-                                            </div>
+                                            <h5 class="card-title">' . $articles[$article]["title"] . '</h5>
+                                            <i>' . $articles[$article]["author"] . '</i>
+                                            <p class="card-text">'.$articles[$article]["description"].'</p>
+                                            <a href='.$articles[$article]["articlelink"].' class="btn btn-primary">Read More</a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col">
-                                    <div class="card">
-                                        <img class="card-img-top" src="../src/imgs/dark_souls.jpg" alt="monster_hunter_world">
-                                        <div class="card-body">
-                                            <h5 class="card-title">ARTICLE 2</h5>
-                                            <i>Author</i>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-                                                diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                                            <a href="publishedarticles.html" class="btn btn-primary">Read More</a>
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-success btn-outline-secondary"
-                                                        data-toggle="modal"
-                                                        data-target="#approveModalCenter">Approve
-                                                </button>
-                                                <button type="button" class="btn btn-danger btn-outline-secondary" data-toggle="modal"
-                                                        data-target="#rejectModalCenter">Reject
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="card">
-                                        <img class="card-img-top" src="../src/imgs/path_of_exile.jpg"
-                                             alt="monster_hunter_world">
-                                        <div class="card-body">
-                                            <h5 class="card-title">ARTICLE 3</h5>
-                                            <i>Author</i>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-                                                diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                                            <a href="publishedarticles.html" class="btn btn-primary">Read More</a>
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-success btn-outline-secondary"
-                                                        data-toggle="modal"
-                                                        data-target="#approveModalCenter">Approve
-                                                </button>
-                                                <button type="button" class="btn btn-danger btn-outline-secondary" data-toggle="modal"
-                                                        data-target="#rejectModalCenter">Reject
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                    ';
+                                    }
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="pills-rejected" role="tabpanel" aria-labelledby="pills-rejected-tab">
                         <div class="container">
                             <div class="row">
-                                <div class="col">
+                                <?php
+                                $source = file_get_contents("../json/articles.json");
+                                $articles = json_decode($source, true);
+
+                                foreach ($articles as $article => $article)
+                                {
+                                    if($articles[$article]["status"] == "rejected") {
+                                        echo '
+                                        <div class="col-md-5">
                                     <div class="card">
-                                        <img class="card-img-top" src="../src/imgs/monster_hunter_world.jpg"
-                                             alt="monster_hunter_world">
+                                        <img class="card-img-top" src=' . $articles[$article]["imglink"] . '
+                                        alt="article image">
                                         <div class="card-body">
-                                            <h5 class="card-title">ARTICLE 1</h5>
-                                            <i>Author</i>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-                                                diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                                            <a href="publishedarticles.html" class="btn btn-primary">Read More</a>
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-success btn-outline-secondary"
-                                                        data-toggle="modal"
-                                                        data-target="#approveModalCenter">Approve
-                                                </button>
-                                                <button type="button" class="btn btn-danger btn-outline-secondary" data-toggle="modal"
-                                                        data-target="#rejectModalCenter">Reject
-                                                </button>
-                                            </div>
+                                            <h5 class="card-title">' . $articles[$article]["title"] . '</h5>
+                                            <i>' . $articles[$article]["author"] . '</i>
+                                            <p class="card-text">'.$articles[$article]["description"].'</p>
+                                            <a href='.$articles[$article]["articlelink"].' class="btn btn-primary">Read More</a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col">
-                                    <div class="card">
-                                        <img class="card-img-top" src="../src/imgs/dark_souls.jpg" alt="monster_hunter_world">
-                                        <div class="card-body">
-                                            <h5 class="card-title">ARTICLE 2</h5>
-                                            <i>Author</i>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-                                                diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                                            <a href="publishedarticles.html" class="btn btn-primary">Read More</a>
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-success btn-outline-secondary"
-                                                        data-toggle="modal"
-                                                        data-target="#approveModalCenter">Approve
-                                                </button>
-                                                <button type="button" class="btn btn-danger btn-outline-secondary" data-toggle="modal"
-                                                        data-target="#rejectModalCenter">Reject
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="card">
-                                        <img class="card-img-top" src="../src/imgs/path_of_exile.jpg"
-                                             alt="monster_hunter_world">
-                                        <div class="card-body">
-                                            <h5 class="card-title">ARTICLE 3</h5>
-                                            <i>Author</i>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-                                                diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                                            <a href="publishedarticles.html" class="btn btn-primary">Read More</a>
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-success btn-outline-secondary"
-                                                        data-toggle="modal"
-                                                        data-target="#approveModalCenter">Approve
-                                                </button>
-                                                <button type="button" class="btn btn-danger btn-outline-secondary" data-toggle="modal"
-                                                        data-target="#rejectModalCenter">Reject
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                    ';
+                                    }
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>

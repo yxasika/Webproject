@@ -53,7 +53,7 @@
     "author":"Max Musterbacon",
     "published":"01.01.1960",
     "categories":["jump'n run"],
-    "imglink":"../src/imgs/rainbox_six.jpg",
+    "imglink":"../src/imgs/rainbow_six.jpg",
     "pdflink":"../src/imgs/article.myJournal.pdf",
     "articlelink":"../views/article_1.php",
     "status":"pending",
@@ -69,6 +69,30 @@
     "pdflink":"../src/imgs/article.myJournal.pdf",
     "articlelink":"../views/article_1.php",
     "status":"rejected",
+    "description":"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."
+  },
+  {
+    "id":1007,
+    "title": "Article mayonaise",
+    "author":"Max eiermann",
+    "published":"01.06.1980",
+    "categories":["jump'n run"],
+    "imglink":"../src/imgs/rainbow_six.jpg",
+    "pdflink":"../src/imgs/article.myJournal.pdf",
+    "articlelink":"../views/article_1.php",
+    "status":"approved",
+    "description":"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."
+  },
+  {
+    "id":1008,
+    "title": "Article eiersalat",
+    "author":"Tina Musterfrau",
+    "published":"12.06.2018",
+    "categories":["shooter","action"],
+    "imglink":"../src/imgs/league_of_legends.jpg",
+    "pdflink":"../src/imgs/article.myJournal.pdf",
+    "articlelink":"../views/article_1.php",
+    "status":"approved",
     "description":"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."
   }
 ]
