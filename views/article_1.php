@@ -28,6 +28,8 @@
 </head>
 
 <body>
+<?php include "logReg.php"?>
+
 <nav class="navbar fixed-top navbar-expand-xl navbar-dark bg-dark">
     <a class="navbar-brand" href="home.html"><img src="../src/imgs/logo.png" alt="logo" align="center" onclick="$(this).rotate(45)"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -133,44 +135,6 @@
         </div>
     </div>
 </main>
-
-<--Login Form-->
-<div id="login-wrapper" class="modali">
-    <form class="modali-content animate">
-        <div class="imgcontainer">
-            <span onclick="document.getElementById('login-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
-            <i alt="Avatar" class="avatar material-icons">account_circle</i>
-            <h1 style="text-align:center">Log In</h1>
-        </div>
-        <div class="container">
-            <input type="text" placeholder="Enter E-Mail" name="uname">
-            <input type="password" placeholder="Enter Password" name="psw">
-            <button class="popupBtn btn btn-primary my-2 my-sm-0" type="submit">Log In</button>
-            <input type="checkbox" style="margin:26px 30px;"> Remember me
-            <a href="#" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">Forgot Password ?</a>
-        </div>
-    </form>
-</div>
-
-<--Register Form-->
-<div id="register-wrapper" class="modali">
-    <form class="modali-content animate">
-        <div class="imgcontainer">
-            <span onclick="document.getElementById('register-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
-            <i alt="Avatar" class="avatar material-icons">account_circle</i>
-            <h1 style="text-align:center">Registration</h1>
-        </div>
-        <div class="container">
-            <input type="text" placeholder="Enter First Name" name="fname">
-            <input type="text" placeholder="Enter Last Name" name="lname">
-            <input type="text" placeholder="Enter E-Mail" name="email">
-            <input type="password" placeholder="Enter Password" name="psw">
-            <input type="password" placeholder="Repeat Password" name="psw2">
-            <button class="popupBtn btn btn-primary my-2 my-sm-0" type="submit">Register</button>
-        </div>
-    </form>
-
-</div>
 
 <footer class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
     <div class="col">
