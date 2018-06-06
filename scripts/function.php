@@ -3,12 +3,12 @@ if (isset($_POST["login"])) {
     $email = $_POST["email"];
     $password = md5($_POST["password"]);
     $data = file_get_contents("../json/test.json");
-    $user = json_decode($data, true);
-    for ($i=0; $i < count($user); $i++) {
-        if ($email == $user[i]->users->email) {
-            if ($password == $user[i]->password) {
+    $users = json_decode($data, true);
+    foreach ($users as $user => $user) {
+        if ($email == $users[$user]["email"]) {
+            if ($password == $users[$user]["password"]) {
                 session_start();
-                $_SESSION["username"] = $username;
+                $_SESSION["email"] = $email;
                 header("Location: ../views/editor.php");
                 die;
             }

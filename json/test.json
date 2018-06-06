@@ -1,10 +1,9 @@
-{
-  "users": [
+[
   {
     "firstname": "Max",
     "lastname": "Musterman",
     "email": "muster@mail.com",
-    "password": "827ccb0eea8a706c4c34a16891f84e7b",
+    "password": "5452eea2e1ff9cefa25f5fb590386dfb",
     "role": "editor",
     "picture": null,
     "birthday": "10.02.2000"
@@ -18,4 +17,4 @@
     "picture": null,
     "birthday": "10.02.2000"
   }
-]}
+]
