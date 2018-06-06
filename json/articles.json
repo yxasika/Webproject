@@ -1,4 +1,4 @@
-{"articles":[
+[
   {
     "id":1001,
     "title": "Article 1",
@@ -7,6 +7,7 @@
     "categories":["rpg","action"],
     "imglink":"../src/imgs/monster_hunter_world.jpg",
     "pdflink":"../src/imgs/article.myJournal.pdf",
+    "articlelink":"../views/article_1.php",
     "status":"published",
     "description":"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."
   },
@@ -18,6 +19,7 @@
     "categories":["jump'n run","rpg","action"],
     "imglink":"../src/imgs/path_of_exile.jpg",
     "pdflink":"../src/imgs/article.myJournal.pdf",
+    "articlelink":"../views/article_1.php",
     "status":"pending",
     "description":"Kartoffel Kartoffel Kartoffel Kartoffel Kartoffel Kartoffel Kartoffel Kartoffel Kartoffel Kartoffel Kartoffel Kartoffel Kartoffel! Os et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."
   },
@@ -29,6 +31,7 @@
     "categories":["rpg"],
     "imglink":"../src/imgs/dark_souls.jpg",
     "pdflink":"../src/imgs/article.myJournal.pdf",
+    "articlelink":"../views/article_1.php",
     "status":"rejected",
     "description":"Looooooooorem liquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."
   },
@@ -40,6 +43,7 @@
     "categories":["rpg","action"],
     "imglink":"../src/imgs/league_of_legends.jpg",
     "pdflink":"../src/imgs/article.myJournal.pdf",
+    "articlelink":"../views/article_1.php",
     "status":"published",
     "description":"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."
   },
@@ -51,6 +55,7 @@
     "categories":["jump'n run"],
     "imglink":"../src/imgs/rainbox_six.jpg",
     "pdflink":"../src/imgs/article.myJournal.pdf",
+    "articlelink":"../views/article_1.php",
     "status":"pending",
     "description":"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."
   },
@@ -58,12 +63,12 @@
     "id":1006,
     "title": "Article Omelett",
     "author":"Malea Musterfrau",
-    "published":12092018,
+    "published":"12.09.2018",
     "categories":["shooter","action"],
     "imglink":"../src/imgs/league_of_legends.jpg",
     "pdflink":"../src/imgs/article.myJournal.pdf",
+    "articlelink":"../views/article_1.php",
     "status":"rejected",
     "description":"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."
   }
 ]
-}

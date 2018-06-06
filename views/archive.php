@@ -119,6 +119,26 @@
                 </form>
                 <hr>
                 <ul id="myUL" class="list-group">
+
+                    <?php
+                    $source = file_get_contents("../json/articles.json");
+                    $articles = json_decode($source, true);
+
+                    foreach ($articles as $article => $article)
+                    {
+                        echo
+                        '
+                            <li><a href='. $articles[$article]["articlelink"] . ' class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">' . $articles[$article]["title"] . '
+                            <small>'. $articles[$article]["published"] . '</small>
+                            </div>
+                        <p class="mb-1">' . $articles[$article]["description"] . '</p>
+                        <small>' . $articles[$article]["author"] . '</small></a></li>
+                        ';
+                    }
+                    ?>
+                    <!--
                     <li><a href="article_1.php"
                            class="list-group-item list-group-item-action flex-column align-items-start">
                         <div class="d-flex w-100 justify-content-between">
@@ -192,6 +212,8 @@
                             tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
                         <small> Max Mustermann</small>
                     </a></li>
+
+                    -->
                 </ul>
 
                 <ul class="pagination" style="margin-top: 1em;">

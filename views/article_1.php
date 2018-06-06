@@ -72,24 +72,6 @@
             <div class="content">
                 <article>
 
-                    <?php
-                        $source = file_get_contents("../json/articles.json");
-                        $articles = json_decode($string, true);
-
-                        foreach ($articles as $article)
-                        {
-                            echo '
-                                <div class="card">
-                                <div class="row">
-                                <div class="col">
-                                <img class="card-img-left mx-auto" src="
-                            ';
-                            echo $articles[$article][imglink];
-                            echo '" alt="article image" >';
-
-                        }
-                    ?>
-
                     <div class="card">
                         <div class="row">
                             <div class="col">
