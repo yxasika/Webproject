@@ -1,4 +1,11 @@
+<?php
+$cookie_name = "user";
+$cookie_value = "Max Muster";
+setCookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+?>
+
 <?php include "../scripts/function.php" ?>
+
 
 <!DOCTYPE html>
 
@@ -33,6 +40,7 @@
 <body>
 <?php include "logReg.php"?>
 <?php include "navbar.php"?>
+<?php include "cookie_alert.php"?>
 
 <main style="position: relative; top: 1em;">
     <div class="container">
