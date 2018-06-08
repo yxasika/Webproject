@@ -34,10 +34,10 @@
             <a class="btn btn-primary icon my-2 mr-2" role="button" href="notification.php">
                 <i class="material-icons">notifications</i><span class="badge">4</span></a>
             <button class="btn btn-primary my-2 mr-2"
-                    onclick="document.getElementById('login-wrapper').style.display='block'">LOG IN
+                    data-toggle="modal" data-target="#login-wrapper">LOG IN
             </button>
-            <button class="btn btn-primary my-2 sm-0"
-                    onclick="document.getElementById('register-wrapper').style.display='block'">SIGN UP
+            <button class="btn btn-primary my-2 sm-0" data-toggle="modal" data-target="#register-wrapper"
+                    >SIGN UP
             </button>
         </ul>
     </div>

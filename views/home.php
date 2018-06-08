@@ -23,7 +23,7 @@
             integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
             crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/loginPopup.css">
+   <link rel="stylesheet" type="text/css" href="../css/loginPopup.css">
     <script rel="script" type="text/javascript" src="../scripts/loginPopup.js"></script>
     <script rel="script" type="text/javascript" src="../scripts/jquery.rotate.1-1.js"></script>
     <script type="text/javascript" src="../scripts/search.js"></script>
