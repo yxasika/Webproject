@@ -46,7 +46,7 @@
                             <p class="lead text-muted">This is the perspective of an author. You can view all of your articles
                                 and edit them here. You can upload new articles too.</p>
                             <p>
-                                <a href="#" class="btn btn-primary my-2" onclick="window.location.href='uploadarticle.html'">Upload
+                                <a href="#" class="btn btn-primary my-2" onclick="window.location.href='uploadarticle.php'">Upload
                                     a new
                                     article</a>
                             </p>
