@@ -32,26 +32,6 @@
 <?php include "navbar.php"?>
 
 
-<!--Approve Popup-->
-<div class="modal fade" id="approveModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="approveModalCenterTitle">Approve article</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                Are you sure you want to approve this article?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Approve</button>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!--Reject Popup-->
 <div class="modal fade" id="rejectModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -131,6 +111,20 @@
                                 foreach ($articles as $article => $article)
                                 {
                                     if($articles[$article]["status"] == "pending") {
+
+                                        include "approvepopup0.php";
+                                        echo $articles[$article]["id"];
+                                        include "approvepopup1.php";
+
+                                        echo '
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button name='.$articles[$article]["id"].' type="button" name="approve" class="btn btn-primary">Approve '.$articles[$article]["id"].'</button>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>';
+
+
                                         echo '
                                         <div class="col-md-5">
                                     <div class="card">
