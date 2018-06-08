@@ -133,13 +133,15 @@
                                         <div class="card-body">
                                             <h5 class="card-title">' . $articles[$article]["title"] . '</h5>
                                             <i>' . $articles[$article]["author"] . '</i>
-                                            <p class="card-text">'.$articles[$article]["description"].'</p>
-                                            <a href='.$articles[$article]["articlelink"].' class="btn btn-primary">Read More</a>
+                                            <p class="card-text">' . $articles[$article]["description"] . '</p>
+                                            <a href=' . $articles[$article]["articlelink"] . ' class="btn btn-primary">Read More</a>
                                             <div class="btn-group">
-                                                <button type="button" class="btn btn-success btn-outline-secondary"
-                                                        data-toggle="modal"
-                                                        data-target="#approveModalCenter">Approve
-                                                </button>
+                                            
+                                                    <button type="button" class="btn btn-success btn-outline-secondary"
+                                                            data-toggle="modal"
+                                                            data-target="#approveModalCenter'.$articles[$article]["id"].'">Approve
+                                                    </button>
+                                                    
                                                 <button type="button" class="btn btn-danger btn-outline-secondary" data-toggle="modal"
                                                         data-target="#rejectModalCenter">Reject
                                                 </button>
