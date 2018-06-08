@@ -1,3 +1,5 @@
+<?php include "../scripts/articleeditor.php" ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -118,7 +120,8 @@
 
                                         echo '
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button name='.$articles[$article]["id"].' type="button" name="approve" class="btn btn-primary">Approve '.$articles[$article]["id"].'</button>
+                                        <form action=""  method="get"><button type="submit" name="approve'.$articles[$article]["id"].'" class="btn btn-primary">Approve '.$articles[$article]["id"].'</button>
+                                    </form>
                                     </div>
                                     </div>
                                     </div>
