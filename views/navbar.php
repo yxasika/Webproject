@@ -14,9 +14,11 @@
             <li class="nav-item">
                 <a class="nav-link" href="archive.php">ARCHIVE</a>
             </li>
+            <!--
             <li class="nav-item">
                 <a class="nav-link" href="profile.php">PROFILE</a>
             </li>
+            -->
             <li class="nav-item">
                 <a class="nav-link" href="editor.php">EDITOR</a>
             </li>

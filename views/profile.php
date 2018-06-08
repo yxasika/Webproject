@@ -52,6 +52,46 @@
         </div>
     </div>
 </div>
+
+<main>
+    <div class="container">
+        <div class="row justify-content-center">
+            <form class="content" name="profile" action="profile.php">
+                <h2>Profile Data</h2>
+                <div class="form-row">
+                    <div class="form-col mr-4">Current Email <input type="text" class="form-control"
+                                                                    placeholder="unchanged" title="current Email"><br>
+                        current password<input type="password" class="form-control" placeholder="unchanged"><br>
+                        new password
+                        <input type="password" class="form-control" placeholder=""><br>
+                        repeat new password
+                        <input type="password" class="form-control" placeholder=""><br>
+                    </div>
+                    <div class="form-col mr-4">
+                        first name
+                        <input type="text" class="form-control" placeholder="unchanged"><br>
+                        last name
+                        <input type="text" class="form-control" placeholder="unchanged"><br>
+                        birth date
+                        <input type="date" class="form-control"><br>
+                        profile picture<br>
+                        <input type="file" class="btn btn-primary float-right" accept=".png,.jpg,.jpeg">
+                    </div>
+                    <div class="form-col">
+                        about me
+                        <textarea id="aboutme" name="aboutme" placeholder="write something about yourself here..."
+                                  maxlength="1000" cols="50" class="form-control"></textarea>
+                    </div>
+                </div>
+                <input type="submit" class="btn btn-primary float-right">
+            </form>
+        </div>
+
+    </div>
+
+</main>
+
+
 <main>
     <div class="container">
         <div class="row justify-content-center">
