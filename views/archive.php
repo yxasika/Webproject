@@ -34,6 +34,8 @@
 <body>
 <?php include "logReg.php"?>
 <?php include "navbar.php"?>
+<?php include "cookie_alert.php"?>
+
 <main>
     <div class="container">
         <div class="row justify-content-center">
