@@ -1,3 +1,4 @@
+<?php include "../scripts/function.php" ?>
 <?php include "../scripts/articleeditor.php" ?>
 
 <!DOCTYPE html>

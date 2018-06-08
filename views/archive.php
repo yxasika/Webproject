@@ -1,3 +1,5 @@
+<?php include "../scripts/function.php" ?>
+
 <!DOCTYPE html>
 
 
