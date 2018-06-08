@@ -6,42 +6,17 @@ $kind = "";
 $tempid = "";
 
 
-if(isset($_GET)){
+if(isset($_GET["approve"])){
 
-    if (gettype($_GET) == string)
-    {
-        $tempid = $_GET;
+    approvearticle($_GET["approve"]);
+}
+if(isset($_GET["reject"])){
 
-        if(strpos($tempid, "approve")){
-            str_replace("approve", "", $tempid);
-            $kind = "approve";
-        }
-        if(strpos($tempid, "reject")){
-            str_replace("reject", "", $tempid);
-            $kind = "reject";
-        }
-        if(strpos($tempid, "publish")){
-            str_replace("publish", "", $tempid);
-            $kind = "publish";
-        }
+    rejectarticle($_GET["reject"]);
+}
+if(isset($_GET["publish"])){
 
-        switch($kind)
-        {
-            case "approve":
-                approvearticle($tempid);
-                break;
-            case "reject":
-                rejectarticle($tempid);
-                break;
-            case "publish":
-                publisharticle($tempid);
-                break;
-            default:
-                break;
-        }
-    }
-
-
+    publisharticle($_GET["publish"]);
 }
 
 
@@ -60,6 +35,39 @@ function approvearticle($artid)
     $newJsonString = json_encode($articles);
     file_put_contents("../json/articles.json", $newJsonString);
 
-    header("Refresh:0");
+}
+
+function rejectarticle($artid)
+{
+    $source = file_get_contents("../json/articles.json");
+    $articles = json_decode($source, true);
+
+    foreach ($articles as $article => $article) {
+        if($articles[$article]["id"] == $artid)
+        {
+            $articles[$article]["status"] = "rejected";
+        }
+    }
+
+    $newJsonString = json_encode($articles);
+    file_put_contents("../json/articles.json", $newJsonString);
+
+}
+
+function publisharticle($artid)
+{
+    $source = file_get_contents("../json/articles.json");
+    $articles = json_decode($source, true);
+
+    foreach ($articles as $article => $article) {
+        if($articles[$article]["id"] == $artid)
+        {
+            $articles[$article]["status"] = "published";
+        }
+    }
+
+    $newJsonString = json_encode($articles);
+    file_put_contents("../json/articles.json", $newJsonString);
+
 }
 ?>

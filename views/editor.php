@@ -33,50 +33,6 @@
 <?php include "logReg.php"?>
 <?php include "navbar.php"?>
 
-
-
-<!--Reject Popup-->
-<div class="modal fade" id="rejectModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="rejectModalCenterTitle">Reject article</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                Are you sure you want to reject this article?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Reject</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!--Publish Popup-->
-<div class="modal fade" id="publishModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="publishModalCenterTitle">Publish article</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                Are you sure you want to publish this article?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Publish</button>
-            </div>
-        </div>
-    </div>
-</div>
-
 <main>
     <div class="container">
         <div class="row justify-content-center">
@@ -117,19 +73,22 @@
                                         include "approvepopup0.php";
                                         echo $articles[$article]["id"];
                                         include "approvepopup1.php";
+                                        echo $articles[$article]["id"];
+                                        include  "approvepopup2.php";
+                                        echo $articles[$article]["id"];
+                                        include "approvepopup3.php";
+
+                                        include "rejectpopup0.php";
+                                        echo $articles[$article]["id"];
+                                        include "rejectpopup1.php";
+                                        echo $articles[$article]["id"];
+                                        include  "rejectpopup2.php";
+                                        echo $articles[$article]["id"];
+                                        include "rejectpopup3.php";
+
 
                                         echo '
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <form action=""  method="get"><button type="submit" name="approve'.$articles[$article]["id"].'" class="btn btn-primary">Approve '.$articles[$article]["id"].'</button>
-                                    </form>
-                                    </div>
-                                    </div>
-                                    </div>
-                                    </div>';
-
-
-                                        echo '
-                                        <div class="col-md-5">
+                                        <div class="col-md-3">
                                     <div class="card">
                                         <img class="card-img-top" src=' . $articles[$article]["imglink"] . '
                                         alt="article image">
@@ -146,7 +105,7 @@
                                                     </button>
                                                     
                                                 <button type="button" class="btn btn-danger btn-outline-secondary" data-toggle="modal"
-                                                        data-target="#rejectModalCenter">Reject
+                                                        data-target="#rejectModalCenter'.$articles[$article]["id"].'">Reject
                                                 </button>
                                             </div>
                                         </div>
@@ -170,8 +129,17 @@
                                 foreach ($articles as $article => $article)
                                 {
                                     if($articles[$article]["status"] == "approved") {
+
+                                        include "publishpopup0.php";
+                                        echo $articles[$article]["id"];
+                                        include "publishpopup1.php";
+                                        echo $articles[$article]["id"];
+                                        include  "publishpopup2.php";
+                                        echo $articles[$article]["id"];
+                                        include "publishpopup3.php";
+
                                         echo '
-                                        <div class="col-md-5">
+                                        <div class="col-md-3">
                                     <div class="card">
                                         <img class="card-img-top" src=' . $articles[$article]["imglink"] . '
                                         alt="article image">
@@ -183,7 +151,7 @@
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-success btn-outline-secondary"
                                                         data-toggle="modal"
-                                                        data-target="#publishModalCenter">Publish
+                                                        data-target="#publishModalCenter'.$articles[$article]["id"].'">Publish
                                                 </button>
                                             </div>
                                         </div>
@@ -207,7 +175,7 @@
                                 {
                                     if($articles[$article]["status"] == "rejected") {
                                         echo '
-                                        <div class="col-md-5">
+                                        <div class="col-md-3">
                                     <div class="card">
                                         <img class="card-img-top" src=' . $articles[$article]["imglink"] . '
                                         alt="article image">
