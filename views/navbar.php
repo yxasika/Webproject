@@ -33,12 +33,15 @@
             </form>
             <a class="btn btn-primary icon my-2 mr-2" role="button" href="notification.php">
                 <i class="material-icons">notifications</i><span class="badge">4</span></a>
-            <button class="btn btn-primary my-2 mr-2"
+            <a href="login.php" class="btn btn-primary my-2 mr-2">Log In</a>
+            <a href="signUp.php" class="btn btn-primary my-2 mr-2">Sign Up</a>
+
+            <!--<button class="btn btn-primary my-2 mr-2"
                     data-toggle="modal" data-target="#login-wrapper">LOG IN
             </button>
             <button class="btn btn-primary my-2 sm-0" data-toggle="modal" data-target="#register-wrapper"
                     >SIGN UP
-            </button>
+            </button>-->
         </ul>
     </div>
 </nav>

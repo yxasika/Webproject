@@ -1,4 +1,5 @@
 <?php
+$error = false;
 if (isset($_POST["login"])) {
 
     $email = $_POST["email"];
@@ -17,6 +18,7 @@ if (isset($_POST["login"])) {
             }
         }
     }
+    $error = true;
 }
 
 if(isset($_POST["register"]))
