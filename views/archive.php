@@ -34,7 +34,6 @@ session_start();
 </head>
 
 <body>
-<?php include "logReg.php" ?>
 <?php include "navbar.php" ?>
 <?php include "cookie_alert.php" ?>
 

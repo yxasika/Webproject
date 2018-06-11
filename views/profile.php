@@ -30,7 +30,7 @@
 </head>
 
 <body>
-<?php include "logReg.php"?>
+
 <?php include "navbar.php"?>
 
 <!--Save Popup-->

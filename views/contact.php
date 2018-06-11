@@ -33,7 +33,7 @@ session_start();
 </head>
 
 <body id="contactform" onload="document.contactform.sender.focus();">
-<?php include "logReg.php"?>
+
 <?php include "navbar.php"?>
 <?php include "cookie_alert.php"?>
 

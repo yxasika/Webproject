@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../css/search.css">
 </head>
 <body>
-<?php include "logReg.php"?>
+
 <?php include "navbar.php"?>
 
 <main>

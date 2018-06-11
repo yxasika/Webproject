@@ -37,7 +37,7 @@
 </head>
 
 <body>
-<?php include "logReg.php"?>
+
 <?php include "navbar.php"?>
 
 <main style="position: relative; top: 1em;">
