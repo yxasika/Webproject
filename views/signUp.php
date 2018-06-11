@@ -1,6 +1,5 @@
-<?php include "navbar.php" ?>
-<?php include "footer.php" ?>
 <?php
+session_start();
 $error = array();
 if (isset($_POST["register"])) {
 
@@ -12,10 +11,10 @@ if (isset($_POST["register"])) {
 
     $data = file_get_contents("../json/users.json");
     $users = json_decode($data, true);
-    if($fname == "" || $lname == "" || $email == "" || $pass1 == "" || $pass2 == ""){
+    if ($fname == "" || $lname == "" || $email == "" || $pass1 == "" || $pass2 == "") {
         $error[] = "Some inputfield are blank.";
     }
-    if($pass1 != $pass2){
+    if ($pass1 != $pass2) {
         $error[] = "Passwords do not match.";
     }
 
@@ -76,28 +75,30 @@ if (isset($_POST["register"])) {
 </head>
 
 <body>
+<?php include "navbar.php" ?>
 
 <div class="container">
     <div class="row">
         <div class="col">
         </div>
         <div class="col-6  modal-content">
-            <h5 class="modal-title modal-header" id="exampleModalLabel">Registration</h5>
             <div class="modal-body">
+                <h5 class="modal-title modal-header" id="exampleModalLabel">Registration</h5>
                 <form class="container" method="post" action="">
-                    <input class="form-control mb-1" type="text" placeholder="Enter First Name" name="fname"/>
-                    <input class="form-control mb-1" type="text" placeholder="Enter Last Name" name="lname"/>
-                    <input class="form-control mb-1" type="text" placeholder="Enter E-Mail" name="email"/>
-                    <input class="form-control mb-1" type="password" placeholder="Enter Password" name="psw1"/>
-                    <input class="form-control mb-3" type="password" placeholder="Repeat Password" name="psw2"/>
+                    <input class="form-control mb-1" type="text" placeholder="Enter First Name" name="fname" required/>
+                    <input class="form-control mb-1" type="text" placeholder="Enter Last Name" name="lname" required/>
+                    <input class="form-control mb-1" type="text" placeholder="Enter E-Mail" name="email" required/>
+                    <input class="form-control mb-1" type="password" placeholder="Enter Password" name="psw1" required/>
+                    <input class="form-control mb-3" type="password" placeholder="Repeat Password" name="psw2"
+                           required/>
                     <?php
-                        if(count($error) > 0){
-                            echo "<ul class='text-danger' style='list-style-type: none;'>";
-                            foreach ($error as $e){
-                                echo "<li>".$e."</li>";
-                            }
-                            echo "</ul>";
+                    if (count($error) > 0) {
+                        echo "<ul class='text-danger' style='list-style-type: none;'>";
+                        foreach ($error as $e) {
+                            echo "<li>" . $e . "</li>";
                         }
+                        echo "</ul>";
+                    }
                     ?>
                     <div class="modal-footer">
                         <button name="register" class="popupBtn btn btn-primary my-2 my-sm-0" type="submit">Sign Up
@@ -109,6 +110,8 @@ if (isset($_POST["register"])) {
         <div class="col">
         </div>
     </div>
+</div>
+<?php include "footer.php" ?>
 
 </body>
 </html>

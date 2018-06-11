@@ -8,7 +8,7 @@
     padding-left: 40px;
 }
 body {
-    background-color: #808080;
+    background-color: #FFFFFF;
     font-family: 'Varela Round', sans-serif;
 }
 
@@ -95,3 +95,6 @@ textarea:focus {
     display: inline-flex;
     vertical-align: middle;
 }
+
+
+

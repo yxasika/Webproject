@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <?php include "../scripts/function.php" ?>
 <?php include "../scripts/articleeditor.php" ?>
 

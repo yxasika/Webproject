@@ -43,8 +43,6 @@
                     <input class="form-control mb-1" type="text" placeholder="Enter E-Mail" name="email"/>
                     <input class="form-control mb-1" type="password" placeholder="Enter Password" name="psw1"/>
                     <input class="form-control mb-3" type="password" placeholder="Repeat Password" name="psw2"/>
-
-
                 <div class="modal-footer">
 
                     <button name="register" class="popupBtn btn btn-primary my-2 my-sm-0" type="submit">Register</button>

@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <nav class="navbar fixed-top navbar-expand-xl navbar-dark bg-dark">
     <a class="navbar-brand" href="home.php"><img src="../src/imgs/logo.png" alt="logo" align="center"
                                                  onclick="$(this).rotate(45)"></a>
@@ -14,17 +18,14 @@
             <li class="nav-item">
                 <a class="nav-link" href="archive.php">ARCHIVE</a>
             </li>
-            <!--
-            <li class="nav-item">
-                <a class="nav-link" href="profile.php">PROFILE</a>
-            </li>
-            -->
-            <li class="nav-item">
-                <a class="nav-link" href="editor.php">EDITOR</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="author.php">AUTHOR</a>
-            </li>
+            <?php
+            if (isset($_SESSION["role"]) && $_SESSION["role"] == "editor") {
+                echo '<li class="nav-item"><a class="nav-link" href="editor.php">EDITOR</a></li>';
+            }
+            if (isset($_SESSION["role"]) && $_SESSION["role"] == "author") {
+                echo '<li class="nav-item"><a class="nav-link" href="author.php">AUTHOR</a></li>';
+            }
+            ?>
         </ul>
         <ul class="navbar-nav ">
             <form class="form-inline my-2 my-lg-0" id="searchForm">
@@ -33,15 +34,14 @@
             </form>
             <a class="btn btn-primary icon my-2 mr-2" role="button" href="notification.php">
                 <i class="material-icons">notifications</i><span class="badge">4</span></a>
-            <a href="login.php" class="btn btn-primary my-2 mr-2">Log In</a>
-            <a href="signUp.php" class="btn btn-primary my-2 mr-2">Sign Up</a>
-
-            <!--<button class="btn btn-primary my-2 mr-2"
-                    data-toggle="modal" data-target="#login-wrapper">LOG IN
-            </button>
-            <button class="btn btn-primary my-2 sm-0" data-toggle="modal" data-target="#register-wrapper"
-                    >SIGN UP
-            </button>-->
+            <?php
+            if (!isset($_SESSION["username"])) {
+                echo '<a href="login.php" class="btn btn-primary my-2 mr-2" name="loginBtn">Log In</a>
+                    <a href="signUp.php" class="btn btn-primary my-2 mr-2" name="signupBtn">Sign Up</a>';
+            } else {
+                echo '<a href="logout.php" class="btn btn-primary my-2 mr-2" name="logoutBtn">Log out</a>';
+            }
+            ?>
         </ul>
     </div>
 </nav>
