@@ -123,15 +123,9 @@ session_start();
 
                                 foreach ($articles as $article => $article)
                                 {
-                                    if($articles[$article]["status"] == "approved") {
+                                    if($articles[$article]["status"] == "approved" && $articles[$article]["mail"] != $_SESSION["email"]) {
 
-                                        include "publishpopup0.php";
-                                        echo $articles[$article]["id"];
-                                        include "publishpopup1.php";
-                                        echo $articles[$article]["id"];
-                                        include  "publishpopup2.php";
-                                        echo $articles[$article]["id"];
-                                        include "publishpopup3.php";
+                                        generatepopup("publish", ($articles[$article]["id"]), "Are you sure you want to publish this article?", "warning");
 
                                         echo '
                                         <div class="col-md-3">
