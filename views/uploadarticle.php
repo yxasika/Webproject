@@ -1,5 +1,6 @@
 <?php include "../scripts/function.php" ?>
 <?php include "../scripts/uploadarticlescript.php" ?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 

@@ -19,7 +19,9 @@ if (isset($_POST["login"])) {
                 }
                 session_start();
                 $_SESSION["username"] = $users[$user]["firstname"];
+                $_SESSION["lastname"] = $users[$user]["lastname"];
                 $_SESSION["role"] = $users[$user]["role"];
+                $_SESSION["email"] = $users[$user]["email"];
                 header("Location: ../views/home.php");
                 die;
             }

@@ -67,28 +67,19 @@ session_start();
                             <div class="row">
 
                                 <?php
+                                include "../scripts/popupgenerator.php";
+
                                 $source = file_get_contents("../json/articles.json");
                                 $articles = json_decode($source, true);
 
                                 foreach ($articles as $article => $article)
                                 {
-                                    if($articles[$article]["status"] == "pending") {
+                                    if($articles[$article]["status"] == "pending" && $articles[$article]["mail"] != $_SESSION["email"]) {
 
-                                        include "approvepopup0.php";
-                                        echo $articles[$article]["id"];
-                                        include "approvepopup1.php";
-                                        echo $articles[$article]["id"];
-                                        include  "approvepopup2.php";
-                                        echo $articles[$article]["id"];
-                                        include "approvepopup3.php";
 
-                                        include "rejectpopup0.php";
-                                        echo $articles[$article]["id"];
-                                        include "rejectpopup1.php";
-                                        echo $articles[$article]["id"];
-                                        include  "rejectpopup2.php";
-                                        echo $articles[$article]["id"];
-                                        include "rejectpopup3.php";
+                                        generatepopup("approve", ($articles[$article]["id"]),"Are you sure you want to approve this article?", "success" );
+
+                                        generatepopup("reject", ($articles[$article]["id"]),"Are you sure you want to reject this article?", "danger" );
 
 
                                         echo '
