@@ -1,7 +1,7 @@
 <?php
     session_start();
 ?>
-<?php include "../scripts/function.php" ?>
+<?php include "../scripts/logReg.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,8 +42,7 @@
                     <?php
                         if(isset($_SESSION["search"])){
                            echo '<input class="searchInput form-control mr-sm-2" id="myInput" onkeyup="searchFunction()"
-                           type="search" placeholder="Search" aria-label="Search" value="'.$_SESSION['search'].'">';
-                           echo '<script>searchFunction()</script>';
+                           type="search" placeholder="Search" aria-label="Search" value="'.$_SESSION['search'].'"><script>searchFunction()</script>';
                         }
                         else{
                             echo '<input class="searchInput form-control mr-sm-2" id="myInput" onkeyup="searchFunction()"

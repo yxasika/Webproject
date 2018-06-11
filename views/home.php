@@ -4,7 +4,7 @@ $cookie_name = "user";
 $cookie_value = "Max Muster";
 setCookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 ?>
-<?php include "../scripts/function.php" ?>
+<?php include "../scripts/logReg.php" ?>
 
 <!DOCTYPE html>
 

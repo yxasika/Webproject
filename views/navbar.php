@@ -32,12 +32,12 @@ if(isset($_POST["search"])){
             ?>
         </ul>
         <ul class="navbar-nav ">
-            <form class="form-inline my-2 my-lg-0" id="searchForm" method="post" action="searchResults.php">
+            <form class="form-inline my-2 my-lg-0" id="searchForm" method="post" action="archive.php">
                 <input class="searchInput form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
                        id="searchInput" name="search">
             </form>
             <a class="btn btn-primary icon my-2 mr-2" role="button" href="notification.php">
-                <i class="material-icons">notifications</i><span class="badge">4</span></a>
+                <i class="material-icons">notifications</i><span class="badge"></span></a>
             <?php
             if (!isset($_SESSION["username"])) {
                 echo '<a href="login.php" class="btn btn-primary my-2 mr-2" name="loginBtn">Log In</a>

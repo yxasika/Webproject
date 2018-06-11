@@ -1,7 +1,7 @@
 <?php
 session_start();
 ?>
-<?php include "../scripts/function.php" ?>
+<?php include "../scripts/logReg.php" ?>
 
 <!DOCTYPE html>
 
@@ -35,17 +35,26 @@ session_start();
 </head>
 
 <body>
-<?php include "logReg.php"?>
-<?php include "navbar.php"?>
-<?php include "cookie_alert.php"?>
+<?php include "logReg.php" ?>
+<?php include "navbar.php" ?>
+<?php include "cookie_alert.php" ?>
 
 <main>
     <div class="container">
         <div class="row justify-content-center">
             <div class="content">
-                <form class="form-inline my-2 my-lg-0 " action="searchResults.php">
-                    <input class="searchInput form-control mr-sm-2" id="myInput" onkeyup="searchFunction()"
-                           type="search" placeholder="Search" aria-label="Search">
+                <form class="form-inline my-2 my-lg-0 " action="archive.php">
+                    <?php
+                    if (isset($_SESSION["search"])) {
+                        echo '<input class="searchInput form-control mr-sm-2" id="myInput" onkeyup="searchFunction()"
+                           type="search" placeholder="Search" aria-label="Search" value="' . $_SESSION['search'] . '">';
+                        echo '<script>searchFunction()</script>';
+                        unset($_SESSION["search"]);
+                    } else {
+                        echo '<input class="searchInput form-control mr-sm-2" id="myInput" onkeyup="searchFunction()"
+                           type="search" placeholder="Search" aria-label="Search">';
+                    }
+                    ?>
                 </form>
                 <hr>
                 <ul id="myUL" class="list-group">
@@ -54,9 +63,8 @@ session_start();
                     $source = file_get_contents("../json/articles.json");
                     $articles = json_decode($source, true);
 
-                    foreach ($articles as $article => $article)
-                    {
-                        if($articles[$article]["status"] == "published") {
+                    foreach ($articles as $article => $article) {
+                        if ($articles[$article]["status"] == "published") {
                             echo
                                 '
                             <li><a href=' . $articles[$article]["articlelink"] . ' class="list-group-item list-group-item-action flex-column align-items-start">
