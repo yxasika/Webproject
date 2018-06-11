@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <?php include "../scripts/function.php" ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,8 +39,17 @@
         <div class="justify-content-center">
             <div class="content">
                 <form class="form-inline my-2 my-lg-0 " action="searchResults.php">
-                    <input class="searchInput form-control mr-sm-2" id="myInput" onkeyup="searchFunction()"
-                           type="search" placeholder="Search" aria-label="Search">
+                    <?php
+                        if(isset($_SESSION["search"])){
+                           echo '<input class="searchInput form-control mr-sm-2" id="myInput" onkeyup="searchFunction()"
+                           type="search" placeholder="Search" aria-label="Search" value="'.$_SESSION['search'].'">';
+                           echo '<script>searchFunction()</script>';
+                        }
+                        else{
+                            echo '<input class="searchInput form-control mr-sm-2" id="myInput" onkeyup="searchFunction()"
+                           type="search" placeholder="Search" aria-label="Search">';
+                        }
+                    ?>
                 </form>
                 <hr>
                 <h3>Results</h3>

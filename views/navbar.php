@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(isset($_POST["search"])){
+    $_SESSION["search"]= $_POST["search"];
+}
 ?>
 
 <nav class="navbar fixed-top navbar-expand-xl navbar-dark bg-dark">
@@ -21,6 +24,7 @@ session_start();
             <?php
             if (isset($_SESSION["role"]) && $_SESSION["role"] == "editor") {
                 echo '<li class="nav-item"><a class="nav-link" href="editor.php">EDITOR</a></li>';
+                echo '<li class="nav-item"><a class="nav-link" href="author.php">AUTHOR</a></li>';
             }
             if (isset($_SESSION["role"]) && $_SESSION["role"] == "author") {
                 echo '<li class="nav-item"><a class="nav-link" href="author.php">AUTHOR</a></li>';
@@ -28,9 +32,9 @@ session_start();
             ?>
         </ul>
         <ul class="navbar-nav ">
-            <form class="form-inline my-2 my-lg-0" id="searchForm">
+            <form class="form-inline my-2 my-lg-0" id="searchForm" method="post" action="searchResults.php">
                 <input class="searchInput form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
-                       id="searchInput">
+                       id="searchInput" name="search">
             </form>
             <a class="btn btn-primary icon my-2 mr-2" role="button" href="notification.php">
                 <i class="material-icons">notifications</i><span class="badge">4</span></a>
