@@ -1,6 +1,7 @@
 <?php
 session_start();
 $error = array();
+$success = false;
 if (isset($_POST["register"])) {
 
     $fname = $_POST["fname"];
@@ -38,7 +39,8 @@ if (isset($_POST["register"])) {
             $newdata = json_encode($users);
 
             file_put_contents("../json/users.json", $newdata);
-            header("Location: ../views/home.php");
+            $success = true;
+            header('Refresh: 5; URL=../views/login.php');
         }
     }
 }
@@ -98,6 +100,10 @@ if (isset($_POST["register"])) {
                             echo "<li>" . $e . "</li>";
                         }
                         echo "</ul>";
+                    }
+                    if ($success)
+                    {
+                        echo '<ul class="text-success" style= "list-style-type: none;"><li>Registration successful. Forwarding to Login page in a moment.</li></ul>';
                     }
                     ?>
                     <div class="modal-footer">
