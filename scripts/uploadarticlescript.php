@@ -10,7 +10,6 @@ if (isset($_POST["upload"]))
     $articlelink = "../views/article_1.php";    //wird später durch eine hoffentlich automatisch generierte php-seite ersetzt
     $categories = array();
     $mail = $_SESSION["email"];
-
     $rpg = $_POST["rpg"];
     $jump = $_POST["jump'n run"];
     $action = $_POST["action"];

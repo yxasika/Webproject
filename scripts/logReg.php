@@ -13,6 +13,9 @@ if (isset($_POST["login"])) {
             if ($password == $users[$user]["password"]) {
                 session_start();
                 $_SESSION["email"] = $email;
+                $_SESSION["username"] = $users[$user]["firstname"];
+                $_SESSION["lastname"] = $users[$user]["lastname"];
+
                 header("Location: ../views/editor.php");
                 die;
             }

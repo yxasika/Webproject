@@ -55,6 +55,42 @@ session_start();
                             </p>
                         </div>
                     </section>
+
+                    <div class="container">
+                        <div class="row">
+
+                            <?php
+
+                            $source = file_get_contents("../json/articles.json");
+                            $articles = json_decode($source, true);
+
+                            foreach ($articles as $article => $article)
+                            {
+                                if($articles[$article]["mail"] == $_SESSION["email"]) {
+
+
+                                    echo '
+                                        <div class="col-md-3">
+                                    <div class="card">
+                                        <img class="card-img-top" src=' . $articles[$article]["imglink"] . '
+                                        alt="article image">
+                                        <div class="card-body">
+                                            <h5 class="card-title">' . $articles[$article]["title"] . '</h5>
+                                            <i>' . $articles[$article]["author"] . '</i>
+                                            <p class="card-text">' . $articles[$article]["description"] . '</p>
+                                            <a href=' . $articles[$article]["articlelink"] . ' class="btn btn-primary">Read More</a>
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                    ';
+                                }
+                            }
+                            ?>
+
+                        </div>
+
+<!--
                     <div class="row">
                         <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
@@ -158,6 +194,7 @@ session_start();
                             </div>
                         </div>
                     </div>
+                    -->
                 </div>
             </div>
         </div>
