@@ -124,53 +124,5 @@
     "articlelink": "..\/views\/article_1.php",
     "status": "approved",
     "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."
-  },
-  {
-    "id": 1009,
-    "title": "4z34wz",
-    "author": " ",
-    "mail": null,
-    "published": "11.6.2018",
-    "categories": [
-      "rpg",
-      "shooter"
-    ],
-    "imglink": "..\/src\/imgs\/dark_souls.jpg",
-    "pdflink": "..\/src\/imgs\/article.myJournal.pdf",
-    "articlelink": "..\/views\/article_1.php",
-    "status": "pending",
-    "description": "34z34z"
-  },
-  {
-    "id": 1010,
-    "title": "test",
-    "author": " ",
-    "mail": null,
-    "published": "11.6.2018",
-    "categories": [
-      "rpg",
-      "shooter"
-    ],
-    "imglink": "..\/src\/imgs\/dark_souls.jpg",
-    "pdflink": "..\/src\/imgs\/article.myJournal.pdf",
-    "articlelink": "..\/views\/article_1.php",
-    "status": "pending",
-    "description": "test"
-  },
-  {
-    "id": 1011,
-    "title": "test",
-    "author": " ",
-    "mail": null,
-    "published": "11.6.2018",
-    "categories": [
-      "rpg",
-      "shooter"
-    ],
-    "imglink": "..\/src\/imgs\/dark_souls.jpg",
-    "pdflink": "..\/src\/imgs\/article.myJournal.pdf",
-    "articlelink": "..\/views\/article_1.php",
-    "status": "pending",
-    "description": "test"
   }
 ]

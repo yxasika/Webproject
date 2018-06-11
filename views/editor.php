@@ -1,7 +1,7 @@
 <?php
 session_start();
 ?>
-<?php include "../scripts/logReg.php" ?>
+
 <?php include "../scripts/articleeditor.php" ?>
 
 <!DOCTYPE html>

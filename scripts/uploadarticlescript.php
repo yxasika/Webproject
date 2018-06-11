@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 if (isset($_POST["upload"]))
 {
     $title = htmlspecialchars($_POST["title"]);
@@ -45,7 +45,7 @@ if (isset($_POST["upload"]))
         "author" => $authorname,
         "mail" => $mail,
         "published" => date("j.n.Y"),
-        "categories" => array("rpg", "shooter"),
+        "categories" => $categories,
         "imglink" => $imglink,
         "pdflink" => $pdflink,
         "articlelink" => $articlelink,
