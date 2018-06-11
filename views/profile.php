@@ -1,4 +1,4 @@
-<?php include "../scripts/function.php" ?>
+<?php include "../scripts/logReg.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 

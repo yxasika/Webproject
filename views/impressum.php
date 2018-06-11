@@ -1,4 +1,7 @@
-<?php include "../scripts/function.php" ?>
+<?php
+session_start();
+?>
+<?php include "../scripts/logReg.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 
