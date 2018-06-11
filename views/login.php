@@ -12,6 +12,11 @@ if (isset($_POST["login"])) {
     foreach ($users as $user => $user) {
         if ($email == $users[$user]["email"]) {
             if ($password == $users[$user]["password"]) {
+                if(isset($_POST["loginCheckbox"])){
+                    $cookie_name = "email";
+                    $cookie_value = $email;
+                    setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+                }
                 session_start();
                 $_SESSION["username"] = $users[$user]["firstname"];
                 $_SESSION["role"] = $users[$user]["role"];
@@ -65,14 +70,21 @@ if (isset($_POST["login"])) {
             <div class="modal-body">
                 <h5 class="modal-title modal-header" id="exampleModalLabel">Log In</h5>
                 <form class="container" method="post" action=""/>
-                <input class="form-control" type="text" placeholder="Enter your Email" name="email" required/>
+                <?php
+                 if(isset($_COOKIE["email"])) {
+                     echo '<input class="form-control" type="text" placeholder="Enter your Email" name="email" value="'.$_COOKIE["email"].'" required/>';
+                 }
+                 else{
+                     echo '<input class="form-control" type="text" placeholder="Enter your Email" name="email" required/>';
+                 }
+                ?>
                 <input class="form-control" type="password" placeholder="Enter Password" name="password" required/>
                 <?php
                 if ($error) {
                     echo "<p class='text-danger'>Invalid email and/or password.</p>";
                 }
                 ?>
-                <input type="checkbox" style="margin:26px 30px;"/> Remember me
+                <input name="loginCheckbox" type="checkbox" style="margin:26px 30px;"/> Remember me
                 <a href="#" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">Forgot
                     Password?</a>
                 <div class="modal-footer">
