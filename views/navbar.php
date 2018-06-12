@@ -7,7 +7,16 @@ if(isset($_POST["search"])){
 
 <nav class="navbar fixed-top navbar-expand-xl navbar-dark bg-dark">
     <a class="navbar-brand" href="home.php"><img src="../src/imgs/logo.png" alt="logo" align="center"
-                                                 onclick="$(this).rotate(45)"></a>
+                                                 onclick="$("#img").rotate({bind:{
+        click: function(){
+        $(this).rotate({
+        angle: 0,
+        animateTo:180,
+        callback: function(){   alert(1)  }
+        })
+        }
+        }
+        });"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

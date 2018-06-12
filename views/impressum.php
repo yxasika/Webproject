@@ -60,6 +60,11 @@ session_start();
                 DPAD Inc
                 <br>
                 <br>
+                <h5>Externe Scripts und anderer Content</h5>
+                PDF.js: https://github.com/mozilla/pdf.js/
+
+                <br>
+                <br>
                 <h5>Bilder und Grafiken:</h5>
                 Angaben der Quelle für verwendetes Bilder- und Grafikmaterial:
                 <br>
