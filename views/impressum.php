@@ -61,8 +61,7 @@ session_start();
                 <br>
                 <br>
                 <h5>Externe Scripts und anderer Content</h5>
-                PDF.js: https://github.com/mozilla/pdf.js/
-
+                PDF.js: <a href="https://github.com/mozilla/pdf.js/">https://github.com/mozilla/pdf.js/</a>
                 <br>
                 <br>
                 <h5>Bilder und Grafiken:</h5>
