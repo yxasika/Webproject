@@ -4,19 +4,10 @@ if(isset($_POST["search"])){
     $_SESSION["search"]= $_POST["search"];
 }
 ?>
+<script type="text/javascript" src="http://beneposto.pl/jqueryrotate/js/jQueryRotateCompressed.js"></script>
 
 <nav class="navbar fixed-top navbar-expand-xl navbar-dark bg-dark">
-    <a class="navbar-brand" href="home.php"><img src="../src/imgs/logo.png" alt="logo" align="center"
-                                                 onclick="$("#img").rotate({bind:{
-        click: function(){
-        $(this).rotate({
-        angle: 0,
-        animateTo:180,
-        callback: function(){   alert(1)  }
-        })
-        }
-        }
-        });"></a>
+    <a class="navbar-brand" href="home.php"><img src="../src/imgs/logo.png" alt="logo" align="center"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
