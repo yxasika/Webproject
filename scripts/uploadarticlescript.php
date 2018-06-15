@@ -2,6 +2,7 @@
 session_start();
 if (isset($_POST["upload"]))
 {
+
     $title = htmlspecialchars($_POST["title"]);
     $description = htmlspecialchars($_POST['descriptionarea']);
     $pdflink = "../src/imgs/article.myJournal.pdf"; //wird später durch den pdf-dateiinput ersetzt
