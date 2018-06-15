@@ -5,7 +5,7 @@ $pw = null;
  $dsn = 'sqlite:../db.db';
 $db = new PDO($dsn, $user, $pw);
 
-$db->exec("CREATE TABLE Users (email TEXT PRIMARY KEY, firstname TEXT, lastname TEXT, password TEXT, role TEXT)");
+$db->exec("CREATE TABLE IF NOT EXISTS (email TEXT PRIMARY KEY, firstname TEXT, lastname TEXT, password TEXT, role TEXT)");
 
 //insert some data...
 $db->exec
@@ -29,3 +29,4 @@ print "</table>";
 
 $db = NULL;
 ?>
+
