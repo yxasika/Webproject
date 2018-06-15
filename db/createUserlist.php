@@ -2,7 +2,6 @@
 
 class user
 {
-
     private $pdo = null;
 
     public function __construct()
@@ -22,22 +21,40 @@ class user
         }
     }
 
-    public function insertUser($fname, $lname, $email, $password, $role){
+    public function insertUser($fname, $lname, $email, $password, $role)
+    {
         $sql = "INSERT INTO userlist (firstname, lastname, email, password, role) 
             VALUES (:firstname, :lastname, :email, :password, :role);";
         $stmt = $this->pdo->prepare($sql);
 
-        $stmt->bindParam(':firstname',$fname);
+        $stmt->bindParam(':firstname', $fname);
         $stmt->bindParam(':lastname', $lname);
-        $stmt->bindParam(':email',$email);
+        $stmt->bindParam(':email', $email);
         $stmt->bindParam(':password', $password);
         $stmt->bindParam(':role', $role);
 
         return $stmt->execute();
     }
 
-    public function updateUser($fname, $lname, $email, $password, $role){
+    public function updateUser($id, $fname, $lname, $email, $password, $role)
+    {
+        $sql = "UPDATE userlist
+                SET firstname = :firstname,
+                AND lastname = :lastname,
+                AND email = :email,
+                AND password = :password,
+                AND role = :role
+                WHERE id = :id;";
 
+        $stmt = $this->pdo->prepare($sql);
+
+        $stmt->bindParam(':firstname', $fname);
+        $stmt->bindParam(':lastname', $lname);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':password', $password);
+        $stmt->bindParam(':role', $role);
+
+        return $stmt->execute();
     }
 
     public function __destruct()
