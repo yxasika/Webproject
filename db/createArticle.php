@@ -56,8 +56,6 @@ class article
     }
 
 
-
-
     public function __destruct()
     {
         $this->pdo = null;

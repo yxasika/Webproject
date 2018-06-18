@@ -6,7 +6,7 @@ try {
 
     echo "<ul>";
     while ($zeile = $ergebnis->fetchArray()) {
-        echo "<li>" . htmlspecialchars($zeile["id"]) .
+        echo "<li>" . htmlspecialchars($zeile["id_user"]) .
             ": " . htmlspecialchars($zeile["firstname"]) .
             ": " . htmlspecialchars($zeile["lastname"]) .
             ": " . htmlspecialchars($zeile["email"]) .

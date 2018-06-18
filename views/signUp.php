@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+include "../db/createArticle.php";
+include "../db/createUserlist.php";
+include "../db/createCategorylist.php";
+include "../db/createNotification.php";
+
 $error = array();
 $success = false;
 if (isset($_POST["register"])) {
@@ -7,8 +13,8 @@ if (isset($_POST["register"])) {
     $fname = $_POST["fname"];
     $lname = $_POST["lname"];
     $email = $_POST["email"];
-    $pass1 = $_POST["psw1"];
-    $pass2 = $_POST["psw2"];
+    $pass1 = md5($_POST["psw1"]);
+    $pass2 = md5($_POST["psw2"]);
 
     $data = file_get_contents("../json/users.json");
     $users = json_decode($data, true);
@@ -26,21 +32,11 @@ if (isset($_POST["register"])) {
             }
         }
         if (count($error) == 0) {
-            $newuser = array(
-                "firstname" => $fname,
-                "lastname" => $lname,
-                "email" => $email,
-                "password" => md5($pass1),
-                "role" => "author"
-            );
+            $userObj = new user();
+            $userObj->insertUser($fname, $lname, $email, $pass1, 'author');
 
-            array_push($users, $newuser);
-
-            $newdata = json_encode($users);
-
-            file_put_contents("../json/users.json", $newdata);
             $success = true;
-            header('Refresh: 5; URL=../views/login.php');
+            header('Refresh: 2; URL=../views/login.php');
         }
     }
 }
@@ -86,13 +82,12 @@ if (isset($_POST["register"])) {
         <div class="col-6  modal-content">
             <div class="modal-body">
                 <h5 class="modal-title modal-header" id="exampleModalLabel">Registration</h5>
-                <form class="container" method="post" action="">
-                    <input class="form-control mb-1" type="text" placeholder="Enter First Name" name="fname" required/>
-                    <input class="form-control mb-1" type="text" placeholder="Enter Last Name" name="lname" required/>
-                    <input class="form-control mb-1" type="text" placeholder="Enter E-Mail" name="email" required/>
-                    <input class="form-control mb-1" type="password" placeholder="Enter Password" name="psw1" required/>
-                    <input class="form-control mb-3" type="password" placeholder="Repeat Password" name="psw2"
-                           required/>
+                <form method="post" action="">
+                    <input class="form-control" type="text" placeholder="Enter First Name" name="fname" required/>
+                    <input class="form-control" type="text" placeholder="Enter Last Name" name="lname" required/>
+                    <input class="form-control" type="email" placeholder="Enter E-Mail" name="email" required/>
+                    <input class="form-control" type="password" placeholder="Enter Password" name="psw1" required/>
+                    <input class="form-control" type="password" placeholder="Repeat Password" name="psw2" required/>
                     <?php
                     if (count($error) > 0) {
                         echo "<ul class='text-danger' style='list-style-type: none;'>";
