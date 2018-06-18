@@ -63,7 +63,5 @@ class user
     }
 }
 
-$userObj = new user();
-$userObj->insertUser('Max', 'Musterman', 'muster@mail.com', '5452eea2e1ff9cefa25f5fb590386dfb', 'editor');
-$userObj->insertUser('test', 'Mustertest', 'test@mail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'author');
+
 ?>
