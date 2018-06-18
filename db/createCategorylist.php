@@ -8,7 +8,7 @@ class category
     {
         $user = "root";
         $pw = null;
-        $dsn = "sqlite:dpad.db";
+        $dsn = "sqlite:../db/dpad.db";
         $id_user = "artid INTEGER PRIMARY KEY,";
 
         try {

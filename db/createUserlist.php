@@ -8,7 +8,7 @@ class user
     {
         $user = "root";
         $pw = null;
-        $dsn = "sqlite:dpad.db";
+        $dsn = "sqlite:../db/dpad.db";
         $id_user = "id INTEGER PRIMARY KEY AUTOINCREMENT,";
 
         try {

@@ -1,7 +1,7 @@
 <?php
-include "createArticle.php";
-include "createUserlist.php";
-include "createCategorylist.php";
+include "../db/createArticle.php";
+include "../db/createUserlist.php";
+include "../db/createCategorylist.php";
 
 $userObj = new user();
 $userObj->insertUser('Max', 'Musterman', 'muster@mail.com', '5452eea2e1ff9cefa25f5fb590386dfb', 'editor');
