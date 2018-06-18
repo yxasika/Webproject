@@ -75,7 +75,7 @@ include "navbar.php"
 
                                 foreach ($articles as $article => $article)
                                 {
-                                    if($article['authormail'] != $_SESSION["email"])
+                                    if($articles[$article]['authormail'] != $_SESSION["email"])
                                     {
                                         generatepopup("approve", ($articles[$article]["id"]), "Are you sure you want to approve this article?", "success");
 
