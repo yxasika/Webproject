@@ -107,7 +107,7 @@ include "navbar.php"
                                     ';
                                     }
                                 }
-
+/*
                                 $source = file_get_contents("../json/articles.json");
                                 $articles = json_decode($source, true);
 
@@ -147,7 +147,7 @@ include "navbar.php"
                                 </div>
                                     ';
                                     }
-                                }
+                                }*/
                                 ?>
 
                             </div>

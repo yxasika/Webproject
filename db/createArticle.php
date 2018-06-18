@@ -43,7 +43,7 @@ class article
 
     public function editArticle($id, $status)
     {
-        $sql = "UPDATE userlist
+        $sql = "UPDATE articlelist
                 SET status = :status
                 WHERE id = :id;";
 

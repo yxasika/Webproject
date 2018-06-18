@@ -7,9 +7,10 @@ $articles = json_decode($source, true);
 $kind = "";
 $tempid = "";
 
+$articleObj = new article();
 
 if(isset($_GET["approve"])){
-    editArticle($_GET["approve"], 'approved');
+    $articleObj->editArticle($_GET["approve"], 'approved');
     /*approvearticle($_GET["approve"]);*/
 }
 if(isset($_GET["reject"])){
