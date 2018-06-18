@@ -17,7 +17,7 @@ function generatepopup($type, $artid, $text, $buttontype)
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <form action=""  method="get"><button value="' . $artid . '" type="submit" name="' . $type . '" class="btn btn-' . $buttontype . '" href="...?' . $type . '="' . $artid . '>' . $type . '</button>
+                <form action=""  method="post"><button value="' . $artid . '" type="submit" name="' . $type . '" class="btn btn-' . $buttontype . '" href="...?' . $type . '="' . $artid . '>' . $type . '</button>
 
                 </form>
             </div>

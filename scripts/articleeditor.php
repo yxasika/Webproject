@@ -9,17 +9,17 @@ $tempid = "";
 
 $articleObj = new article();
 
-if(isset($_GET["approve"])){
-    $articleObj->editArticle($_GET["approve"], 'approved');
+if(isset($_POST["approve"])){
+    $articleObj->editArticle($_POST["approve"], 'approved');
     /*approvearticle($_GET["approve"]);*/
 }
-if(isset($_GET["reject"])){
+if(isset($_POST["reject"])){
 
-    rejectarticle($_GET["reject"]);
+    rejectarticle($_POST["reject"]);
 }
-if(isset($_GET["publish"])){
+if(isset($_POST["publish"])){
 
-    publisharticle($_GET["publish"]);
+    publisharticle($_POST["publish"]);
 }
 
 /*
