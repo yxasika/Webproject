@@ -39,9 +39,6 @@ setCookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 <body>
 <?php include "navbar.php"?>
 <?php include "cookie_alert.php"?>
-<br>
-<br>
-<?php include "../scripts/sqlite3_test.php" ?>
 
 <main style="position: relative; top: 1em;">
     <div class="container">

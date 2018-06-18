@@ -20,7 +20,7 @@ foreach ($ergebnis as $zeile) {
 echo "</ul>";*/
 try {
     $db = new SQLite3("dpad.db");
-    $sql = "SELECT * FROM article";
+    $sql = "SELECT * FROM articlelist";
     $ergebnis = $db->query($sql);
 
     echo "<ul>";

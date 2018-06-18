@@ -13,7 +13,7 @@ class user
 
         try {
             $this->pdo = new PDO($dsn, $user, $pw);
-            $sql = "CREATE TABLE userlist (" . $id_user . " firstname VARCHAR(40), lastname VARCHAR(40), email VARCHAR(50), password VARCHAR(32), role VARCHAR(20));";
+            $sql = "CREATE TABLE userlist (" . $id_user . " firstname VARCHAR(40), lastname VARCHAR(40), email VARCHAR(50) UNIQUE, password VARCHAR(32), role VARCHAR(20));";
             $this->pdo->exec($sql);
             echo "Tabelle userlist angelegt.<br/>";
         } catch (PDOException $e) {
