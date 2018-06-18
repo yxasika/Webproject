@@ -8,7 +8,7 @@ class article
     {
         $user = "root";
         $pw = null;
-        $dsn = "sqlite:dpad.db";
+        $dsn = "sqlite:../db/dpad.db";
         $id_article = "id INTEGER PRIMARY KEY AUTOINCREMENT,";
 
         try {
@@ -45,7 +45,7 @@ class article
     {
         $sql = "UPDATE articlelist
                 SET status = :status
-                WHERE id = :id";
+                WHERE id = :id;";
 
         $stmt = $this->pdo->prepare($sql);
 
