@@ -27,7 +27,6 @@ function getArticles($status)
                 
                 WHERE status = '" . $status . "'";
 
-
             $ergebnis = $db->query($sql);
 
             $articles = array();
