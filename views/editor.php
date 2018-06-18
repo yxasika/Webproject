@@ -34,7 +34,9 @@ session_start();
 </head>
 
 <body>
-<?php include "navbar.php"?>
+<?php
+include "navbar.php"
+?>
 
 <main>
     <div class="container">
@@ -67,6 +69,41 @@ session_start();
 
                                 <?php
                                 include "../scripts/popupgenerator.php";
+                                include "../db/article_auslesen.php";
+
+                                $articles = getArticles('pending');
+
+                                foreach ($articles as $article => $article)
+                                {
+                                    generatepopup("approve", ($articles[$article]["id"]),"Are you sure you want to approve this article?", "success" );
+
+                                    generatepopup("reject", ($articles[$article]["id"]),"Are you sure you want to reject this article?", "danger" );
+
+                                    echo '
+                                        <div class="col-md-3">
+                                            <div class="card">
+                                                <img class="card-img-top" src=' . $articles[$article]["img"] . 'alt="article image">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">' . $articles[$article]["title"] . '</h5>
+                                                    <i>' . $articles[$article]["author"] . '</i>
+                                                    <p class="card-text">' . $articles[$article]["description"] . '</p>
+                                                    <a href="#" class="btn btn-primary">Read More</a>
+                                                    <div class="btn-group">
+                                            
+                                                    <button type="button" class="btn btn-success btn-outline-secondary"
+                                                            data-toggle="modal"
+                                                            data-target="#approveModalCenter'.$articles[$article]["id"].'">Approve
+                                                    </button>
+                                                    
+                                                <button type="button" class="btn btn-danger btn-outline-secondary" data-toggle="modal"
+                                                        data-target="#rejectModalCenter'.$articles[$article]["id"].'">Reject
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                    ';
+                                }
 
                                 $source = file_get_contents("../json/articles.json");
                                 $articles = json_decode($source, true);

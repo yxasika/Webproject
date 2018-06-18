@@ -41,6 +41,23 @@ class article
         return $stmt->execute();
     }
 
+    public function editArticle($id, $status)
+    {
+        $sql = "UPDATE userlist
+                SET status = :status
+                WHERE id = :id;";
+
+        $stmt = $this->pdo->prepare($sql);
+
+        $stmt->bindParam(':status', $status);
+        $stmt->bindParam(':id', $id);
+
+        return $stmt->execute();
+    }
+
+
+
+
     public function __destruct()
     {
         $this->pdo = null;

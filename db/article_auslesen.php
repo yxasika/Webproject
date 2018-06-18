@@ -18,9 +18,36 @@ foreach ($ergebnis as $zeile) {
         ": " . htmlspecialchars($zeile["upvote"]) ."</li>";
 }
 echo "</ul>";*/
+
+function getArticles($status)
+    {
+        try {
+            $db = new SQLite3("dpad.db");
+            $sql = "SELECT * FROM articlelist
+                
+                WHERE status = " . $status;
+
+
+            $ergebnis = $db->query($sql);
+
+            $articlelist = array();
+
+            while ($row_article = $ergebnis->fetchArray()) {
+                $articlelist[] = $row_article;
+            }
+            $db->close();
+            return $articlelist;
+        }
+        catch (Exception $ex) {
+            echo "Fehler: " . $ex->getMessage();
+        }
+    }
+
+/*
 try {
     $db = new SQLite3("dpad.db");
     $sql = "SELECT * FROM articlelist";
+
     $ergebnis = $db->query($sql);
 
     echo "<ul>";
@@ -42,4 +69,5 @@ try {
 } catch (Exception $ex) {
     echo "Fehler: " . $ex->getMessage();
 }
+*/
 ?>

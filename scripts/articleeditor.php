@@ -1,4 +1,6 @@
 <?php
+include "../db/createArticle.php";
+
 
 $source = file_get_contents("../json/articles.json");
 $articles = json_decode($source, true);
@@ -7,8 +9,8 @@ $tempid = "";
 
 
 if(isset($_GET["approve"])){
-
-    approvearticle($_GET["approve"]);
+    editArticle($_GET["approve"], 'approved');
+    /*approvearticle($_GET["approve"]);*/
 }
 if(isset($_GET["reject"])){
 
@@ -19,9 +21,11 @@ if(isset($_GET["publish"])){
     publisharticle($_GET["publish"]);
 }
 
-
+/*
 function approvearticle($artid)
 {
+
+
     $source = file_get_contents("../json/articles.json");
     $articles = json_decode($source, true);
 
@@ -35,7 +39,7 @@ function approvearticle($artid)
     $newJsonString = json_encode($articles);
     file_put_contents("../json/articles.json", $newJsonString);
 
-}
+}*/
 
 function rejectarticle($artid)
 {
