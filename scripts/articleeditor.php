@@ -15,11 +15,11 @@ if(isset($_POST["approve"])){
 }
 if(isset($_POST["reject"])){
 
-    rejectarticle($_POST["reject"]);
+    $articleObj->editArticle($_POST["reject"], 'rejected');
 }
 if(isset($_POST["publish"])){
 
-    publisharticle($_POST["publish"]);
+    $articleObj->editArticle($_POST["publish"], 'published');
 }
 
 /*

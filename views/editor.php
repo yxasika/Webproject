@@ -35,7 +35,9 @@ session_start();
 
 <body>
 <?php
-include "navbar.php"
+include "navbar.php";
+include "../db/article_auslesen.php";
+include "../scripts/popupgenerator.php"
 ?>
 
 <main>
@@ -68,8 +70,6 @@ include "navbar.php"
                             <div class="row">
 
                                 <?php
-                                include "../scripts/popupgenerator.php";
-                                include "../db/article_auslesen.php";
 
                                 $articles = getArticles('pending');
 
@@ -157,25 +157,25 @@ include "navbar.php"
                         <div class="container">
                             <div class="row">
                                 <?php
-                                $source = file_get_contents("../json/articles.json");
-                                $articles = json_decode($source, true);
+
+                                $articles = getArticles('approved');
 
                                 foreach ($articles as $article => $article)
                                 {
-                                    if($articles[$article]["status"] == "approved" && $articles[$article]["mail"] != $_SESSION["email"]) {
+                                    if($articles[$article]["status"] == "approved" && $articles[$article]["authormail"] != $_SESSION["email"]) {
 
                                         generatepopup("publish", ($articles[$article]["id"]), "Are you sure you want to publish this article?", "warning");
 
                                         echo '
                                         <div class="col-md-3">
                                     <div class="card">
-                                        <img class="card-img-top" src=' . $articles[$article]["imglink"] . '
+                                        <img class="card-img-top" src=' . $articles[$article]["img"] . '
                                         alt="article image">
                                         <div class="card-body">
                                             <h5 class="card-title">' . $articles[$article]["title"] . '</h5>
                                             <i>' . $articles[$article]["author"] . '</i>
                                             <p class="card-text">'.$articles[$article]["description"].'</p>
-                                            <a href='.$articles[$article]["articlelink"].' class="btn btn-primary">Read More</a>
+                                            <a href="#" class="btn btn-primary">Read More</a>
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-success btn-outline-secondary"
                                                         data-toggle="modal"
@@ -196,8 +196,7 @@ include "navbar.php"
                         <div class="container">
                             <div class="row">
                                 <?php
-                                $source = file_get_contents("../json/articles.json");
-                                $articles = json_decode($source, true);
+                                $articles = getArticles('rejected');
 
                                 foreach ($articles as $article => $article)
                                 {
@@ -205,13 +204,13 @@ include "navbar.php"
                                         echo '
                                         <div class="col-md-3">
                                     <div class="card">
-                                        <img class="card-img-top" src=' . $articles[$article]["imglink"] . '
+                                        <img class="card-img-top" src=' . $articles[$article]["img"] . '
                                         alt="article image">
                                         <div class="card-body">
                                             <h5 class="card-title">' . $articles[$article]["title"] . '</h5>
                                             <i>' . $articles[$article]["author"] . '</i>
                                             <p class="card-text">'.$articles[$article]["description"].'</p>
-                                            <a href='.$articles[$article]["articlelink"].' class="btn btn-primary">Read More</a>
+                                            <a href="#" class="btn btn-primary">Read More</a>
                                         </div>
                                     </div>
                                 </div>
