@@ -22,7 +22,7 @@ echo "</ul>";*/
 function getArticles($status)
     {
         try {
-            $db = new SQLite3("dpad.db");
+            $db = new SQLite3("../db/dpad.db");
             $sql = "SELECT * FROM articlelist
                 
                 WHERE status = '" . $status . "'";
@@ -34,18 +34,6 @@ function getArticles($status)
 
             while ($row_article = $ergebnis->fetchArray()) {
                 $articles[] = $row_article;
-
-                echo htmlspecialchars($row_article["id"]) .
-                    "| " . htmlspecialchars($row_article["title"]) .
-                    "| " . htmlspecialchars($row_article["author"]) .
-                    "| " . htmlspecialchars($row_article["published_date"]) .
-                    "| " . htmlspecialchars($row_article["img"]) .
-                    "| " . htmlspecialchars($row_article["pdf"]) .
-                    "| " . htmlspecialchars($row_article["categoryid"]) .
-                    "| " . htmlspecialchars($row_article["status"]) .
-                    "| " . htmlspecialchars($row_article["description"]) .
-                    "| " . htmlspecialchars($row_article["upvote"]);
-
             }
             $db->close();
 
@@ -55,7 +43,7 @@ function getArticles($status)
             echo "Fehler: " . $ex->getMessage();
         }
     }
-getArticles('pending');
+
 /*
 try {
     $db = new SQLite3("dpad.db");
