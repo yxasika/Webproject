@@ -45,7 +45,7 @@ class article
     {
         $sql = "UPDATE articlelist
                 SET status = :status
-                WHERE id = :id;";
+                WHERE id = :id";
 
         $stmt = $this->pdo->prepare($sql);
 
