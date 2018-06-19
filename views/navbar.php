@@ -1,7 +1,7 @@
 <?php
 session_start();
-if(isset($_POST["search"])){
-    $_SESSION["search"]= $_POST["search"];
+if (isset($_POST["search"])) {
+    $_SESSION["search"] = $_POST["search"];
 }
 ?>
 <script type="text/javascript" src="http://beneposto.pl/jqueryrotate/js/jQueryRotateCompressed.js"></script>
@@ -36,13 +36,13 @@ if(isset($_POST["search"])){
                 <input class="searchInput form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
                        id="searchInput" name="search">
             </form>
-            <a class="btn btn-primary icon my-2 mr-2" role="button" href="notification.php">
-                <i class="material-icons">notifications</i><span class="badge"></span></a>
             <?php
             if (!isset($_SESSION["username"])) {
                 echo '<a href="login.php" class="btn btn-primary my-2 mr-2" name="loginBtn">Log In</a>
                     <a href="signUp.php" class="btn btn-primary my-2 mr-2" name="signupBtn">Sign Up</a>';
             } else {
+                echo '<a class="btn btn-primary icon my-2 mr-2" role="button" href="notification.php">
+                       <i class="material-icons">notifications</i><span class="badge"></span></a>';
                 echo '<a href="logout.php" class="btn btn-primary my-2 mr-2" name="logoutBtn">Log out</a>';
             }
             ?>
