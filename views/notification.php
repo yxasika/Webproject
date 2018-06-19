@@ -32,7 +32,8 @@ session_start();
 </head>
 <body>
 
-<?php include "navbar.php"?>
+<?php include "navbar.php" ?>
+<?php include "../db/article_auslesen.php" ?>
 
 <main>
     <div class="container">
@@ -50,19 +51,23 @@ session_start();
                 <div class="container">
                     <div class="row">
                         <div class="col">
-                            <div class="card">
+                            <?php
+                            $notifi = getNotifi();
+                            foreach ($notifi as $notification => $notification) {
+                                if ($notifi[$notification]['receiver'] == ($_SESSION['email'])) {
+                                    print '<div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">Subject: Article 1</h5>
-                                    <p class="text-muted">Max Mustermann</p>
+                                    <h5 class="card-title">Subject: ' . htmlspecialchars($notifi[$notification]['subject']) . '</h5>
+                                    <p class="text-muted">' . htmlspecialchars($notifi[$notification]['sender']) . '</p>
                                     <h6 class="card-title">Message:</h6>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                        diam
-                                        nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-                                        voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                                    <p class="card-text">' . htmlspecialchars($notifi[$notification]['message']) . '</p>
                                     <a class="btn btn-primary">Answer</a>
                                     <a class="btn btn-secondary">Marked read</a>
                                 </div>
-                            </div>
+                            </div>';
+                                }
+                            }
+                            ?>
                         </div>
 
 
@@ -72,7 +77,7 @@ session_start();
         </div>
     </div>
 </main>
-<?php include "footer.php"?>
+<?php include "footer.php" ?>
 </body>
 
 </html>

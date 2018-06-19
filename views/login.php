@@ -6,22 +6,22 @@ if (isset($_POST["login"])) {
     $email = $_POST["email"];
     $password = md5($_POST["password"]);
 
+    if(isset($_POST["loginCheckbox"])){
+        $cookie_name = "email";
+        $cookie_value = $email;
+        setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+    }
+
     $data = file_get_contents("../json/users.json");
     $users = json_decode($data, true);
 
     foreach ($users as $user => $user) {
         if ($email == $users[$user]["email"]) {
             if ($password == $users[$user]["password"]) {
-                if(isset($_POST["loginCheckbox"])){
-                    $cookie_name = "email";
-                    $cookie_value = $email;
-                    setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
-                }
-                session_start();
                 $_SESSION["username"] = $users[$user]["firstname"];
                 $_SESSION["lastname"] = $users[$user]["lastname"];
-                $_SESSION["role"] = $users[$user]["role"];
                 $_SESSION["email"] = $users[$user]["email"];
+                $_SESSION["role"] = $users[$user]["role"];
                 header("Location: ../views/home.php");
                 die;
             }

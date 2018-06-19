@@ -20,28 +20,48 @@ foreach ($ergebnis as $zeile) {
 echo "</ul>";*/
 
 function getArticles($status)
-    {
-        try {
-            $db = new SQLite3("../db/dpad.db");
-            $sql = "SELECT * FROM articlelist
+{
+    try {
+        $db = new SQLite3("../db/dpad.db");
+        $sql = "SELECT * FROM articlelist
                 
                 WHERE status = '" . $status . "'";
 
-            $ergebnis = $db->query($sql);
+        $ergebnis = $db->query($sql);
 
-            $articles = array();
+        $articles = array();
 
-            while ($row_article = $ergebnis->fetchArray()) {
-                $articles[] = $row_article;
-            }
-            $db->close();
-
-            return $articles;
+        while ($row_article = $ergebnis->fetchArray()) {
+            $articles[] = $row_article;
         }
-        catch (Exception $ex) {
-            echo "Fehler: " . $ex->getMessage();
-        }
+        $db->close();
+
+        return $articles;
+    } catch (Exception $ex) {
+        echo "Fehler: " . $ex->getMessage();
     }
+}
+
+function getNotifi()
+{
+    try {
+        $db = new SQLite3("../db/dpad.db");
+        $sql = "SELECT * FROM notification";
+
+        $result = $db->query($sql);
+
+        $notifi = array();
+
+        while ($row = $result->fetchArray()) {
+            $notifi[] = $row;
+        }
+        $db->close();
+
+        return $notifi;
+    } catch (Exception $ex) {
+        echo "Fehler: " . $ex->getMessage();
+    }
+}
 
 /*
 try {

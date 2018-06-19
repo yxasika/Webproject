@@ -42,6 +42,8 @@ class notification
         return $stmt->execute();
     }
 
+
+
     public function __destruct()
     {
         $this->pdo = null;
