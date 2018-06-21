@@ -1,7 +1,7 @@
 <?php
 session_start();
 $cookie_name = "user";
-$cookie_value = "Max Muster";
+$cookie_value = "Max Mustermann";
 setCookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 ?>
 
@@ -37,8 +37,10 @@ setCookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 </head>
 
 <body>
-<?php include "navbar.php"?>
-<?php include "cookie_alert.php"?>
+<?php include "cookie_alert.php";
+include "../db/db_auslesen.php";
+include "navbar.php"?>
+
 
 <main style="position: relative; top: 1em;">
     <div class="container">
@@ -65,10 +67,6 @@ setCookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
                            role="tab" aria-controls="pills-latest" aria-selected="true">Latest</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="pills-popular-tab" data-toggle="pill" href="#pills-popular" role="tab"
-                           aria-controls="pills-popular" aria-selected="false">Popular</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" id="pills-bestRated-tab" data-toggle="pill" href="#pills-bestRated"
                            role="tab" aria-controls="pills-bestRated" aria-selected="false">Best rated</a>
                     </li>
@@ -79,197 +77,34 @@ setCookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
                          aria-labelledby="pills-latest-tab">
                         <div class="container">
                             <div class="row">
-                                <div class="col">
+
+                                <?php
+                                $articles = getArticles_sortby('published', 'published_date', false);
+
+                                foreach ($articles as $article => $article)
+                                {
+                                    echo'
                                     <div class="card">
-                                        <img class="card-img-top" src="../src/imgs/monster_hunter_world.jpg"
-                                             alt="monster_hunter_world">
+                                        <img class="card-img-top" src='. $articles[$article]["img"] .'
+                                             alt="article_image">
                                         <div class="card-body">
-                                            <h5 class="card-title">ARTICLE 1</h5>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
-                                                elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-                                                dolores et ea rebum.
-                                            </p>
-                                            <a href="article_1.php" class="btn btn-primary">Read more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="card">
-                                        <img class="card-img-top" src="../src/imgs/dark_souls.jpg"
-                                             alt="monster_hunter_world">
-                                        <div class="card-body">
-                                            <h5 class="card-title">ARTICLE 2</h5>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
-                                                elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-                                                dolores et ea rebum.
+                                            <h5 class="card-title">. $articles[$article]["title"] .</h5>
+                                            <p class="card-text">. $articles[$article]["description"] .
                                             </p>
                                             <a href="#" class="btn btn-primary">Read more</a>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col">
-                                    <div class="card">
-                                        <img class="card-img-top" src="../src/imgs/path_of_exile.jpg"
-                                             alt="monster_hunter_world">
-                                        <div class="card-body">
-                                            <h5 class="card-title">ARTICLE 3</h5>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
-                                                elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-                                                dolores et ea rebum.
-                                            </p>
-                                            <a href="#" class="btn btn-primary">Read more</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                    ';
+                                }
+
+                                ?>
+
+
                             </div>
-                            <br>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="card">
-                                        <img class="card-img-top" src="../src/imgs/rainbow_six.jpg" alt="rainbow_six">
-                                        <div class="card-body">
-                                            <h5 class="card-title">ARTICLE 4</h5>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
-                                                elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-                                                dolores et ea rebum.
-                                            </p>
-                                            <a href="#" class="btn btn-primary">Read more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="card">
-                                        <img class="card-img-top" src="../src/imgs/league_of_legends.jpg"
-                                             alt="league_of_legends">
-                                        <div class="card-body">
-                                            <h5 class="card-title">ARTICLE 5</h5>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
-                                                elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-                                                dolores et ea rebum.
-                                            </p>
-                                            <a href="#" class="btn btn-primary">Read more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="card">
-                                        <img class="card-img-top" src="../src/imgs/ac_origins.jpg" alt="ac_origins">
-                                        <div class="card-body">
-                                            <h5 class="card-title">ARTICLE 6</h5>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
-                                                elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-                                                dolores et ea rebum.
-                                            </p>
-                                            <a href="#" class="btn btn-primary">Read more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="pills-popular" role="tabpanel" aria-labelledby="pills-popular-tab">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="card">
-                                        <img class="card-img-top" src="../src/imgs/dark_souls.jpg"
-                                             alt="monster_hunter_world">
-                                        <div class="card-body">
-                                            <h5 class="card-title">ARTICLE 2</h5>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
-                                                elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-                                                dolores et ea rebum.
-                                            </p>
-                                            <a href="#" class="btn btn-primary">Read more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="card">
-                                        <img class="card-img-top" src="../src/imgs/monster_hunter_world.jpg"
-                                             alt="monster_hunter_world">
-                                        <div class="card-body">
-                                            <h5 class="card-title">ARTICLE 1</h5>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
-                                                elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-                                                dolores et ea rebum.
-                                            </p>
-                                            <a href="article_1.php" class="btn btn-primary">Read more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="card">
-                                        <img class="card-img-top" src="../src/imgs/path_of_exile.jpg"
-                                             alt="monster_hunter_world">
-                                        <div class="card-body">
-                                            <h5 class="card-title">ARTICLE 3</h5>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
-                                                elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-                                                dolores et ea rebum.
-                                            </p>
-                                            <a href="#" class="btn btn-primary">Read more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="card">
-                                        <img class="card-img-top" src="../src/imgs/rainbow_six.jpg" alt="rainbow_six">
-                                        <div class="card-body">
-                                            <h5 class="card-title">ARTICLE 4</h5>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
-                                                elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-                                                dolores et ea rebum.
-                                            </p>
-                                            <a href="#" class="btn btn-primary">Read more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="card">
-                                        <img class="card-img-top" src="../src/imgs/ac_origins.jpg" alt="ac_origins">
-                                        <div class="card-body">
-                                            <h5 class="card-title">ARTICLE 6</h5>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
-                                                elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-                                                dolores et ea rebum.
-                                            </p>
-                                            <a href="#" class="btn btn-primary">Read more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="card">
-                                        <img class="card-img-top" src="../src/imgs/league_of_legends.jpg"
-                                             alt="league_of_legends">
-                                        <div class="card-body">
-                                            <h5 class="card-title">ARTICLE 5</h5>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
-                                                elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-                                                dolores et ea rebum.
-                                            </p>
-                                            <a href="#" class="btn btn-primary">Read more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                </div>
                     <div class="tab-pane fade" id="pills-bestRated" role="tabpanel"
                          aria-labelledby="pills-bestRated-tab">
                         <div class="container">

@@ -36,7 +36,9 @@ session_start();
 
 <body>
 
-<?php include "navbar.php"?>
+<?php include "navbar.php";
+include "../db/db_auslesen.php"
+?>
 
 <main>
     <div class="container">
@@ -61,24 +63,23 @@ session_start();
 
                             <?php
 
-                            $source = file_get_contents("../json/articles.json");
-                            $articles = json_decode($source, true);
+                            $articles = array_merge(getArticles('pending'), getArticles('approved'), getArticles('rejected'), getArticles('published'));
 
                             foreach ($articles as $article => $article)
                             {
-                                if($articles[$article]["mail"] == $_SESSION["email"]) {
+                                if($articles[$article]['authormail'] == $_SESSION["email"]) {
 
 
                                     echo '
                                         <div class="col-md-3">
                                     <div class="card">
-                                        <img class="card-img-top" src=' . $articles[$article]["imglink"] . '
+                                        <img class="card-img-top" src=' . $articles[$article]["img"] . '
                                         alt="article image">
                                         <div class="card-body">
                                             <h5 class="card-title">' . $articles[$article]["title"] . '</h5>
-                                            <i>' . $articles[$article]["author"] . '</i>
+                                            status: <i>' . $articles[$article]["status"] . '</i>
                                             <p class="card-text">' . $articles[$article]["description"] . '</p>
-                                            <a href=' . $articles[$article]["articlelink"] . ' class="btn btn-primary">Read More</a>
+                                            <a href="#" class="btn btn-primary">Read More</a>
                                         
                                         </div>
                                     </div>
@@ -87,114 +88,7 @@ session_start();
                                 }
                             }
                             ?>
-
                         </div>
-
-<!--
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card mb-4 box-shadow">
-                                <img class="card-img-top" src="../src/imgs/monster_hunter_world.jpg" alt="Thumbnail">
-                                <div class="card-body">
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                        diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-                                        diam voluptua.
-                                    </p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-sm btn-outline-secondary"
-                                                    onclick="window.location.href='article_1.html'">View
-                                            </button>
-                                            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                        </div>
-                                        <small class="text-muted">9 mins</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card mb-4 box-shadow">
-                                <img class="card-img-top" src="../src/imgs/dark_souls.jpg"
-                                     data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail"
-                                     alt="Thumbnail">
-                                <div class="card-body">
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                        diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-                                        diam voluptua.
-                                    </p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                        </div>
-                                        <small class="text-muted">9 mins</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card mb-4 box-shadow">
-                                <img class="card-img-top" src="../src/imgs/path_of_exile.jpg"
-                                     data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail"
-                                     alt="Thumbnail">
-                                <div class="card-body">
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                        diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-                                        diam voluptua.
-                                    </p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                        </div>
-                                        <small class="text-muted">9 mins</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card mb-4 box-shadow">
-                                <img class="card-img-top" src="../src/imgs/default.jpg"
-                                     data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail"
-                                     alt="Thumbnail">
-                                <div class="card-body">
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                        diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-                                        diam voluptua.
-                                    </p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                        </div>
-                                        <small class="text-muted">9 mins</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="card mb-4 box-shadow">
-                                <img class="card-img-top" src="../src/imgs/default.jpg"
-                                     data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail"
-                                     alt="Thumbnail">
-                                <div class="card-body">
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                        diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-                                        diam voluptua.
-                                    </p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                        </div>
-                                        <small class="text-muted">9 mins</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    -->
                 </div>
             </div>
         </div>

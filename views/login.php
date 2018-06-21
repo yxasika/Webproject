@@ -1,6 +1,9 @@
 <?php
-session_start();
+
 $error = false;
+$success = false;
+include "../db/db_auslesen.php";
+
 if (isset($_POST["login"])) {
 
     $email = $_POST["email"];
@@ -12,22 +15,27 @@ if (isset($_POST["login"])) {
         setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
     }
 
-    $data = file_get_contents("../json/users.json");
-    $users = json_decode($data, true);
+    $users = getUsers();
 
     foreach ($users as $user => $user) {
         if ($email == $users[$user]["email"]) {
             if ($password == $users[$user]["password"]) {
-                $_SESSION["username"] = $users[$user]["firstname"];
+                $_SESSION["firstname"] = $users[$user]["firstname"];
                 $_SESSION["lastname"] = $users[$user]["lastname"];
                 $_SESSION["email"] = $users[$user]["email"];
                 $_SESSION["role"] = $users[$user]["role"];
-                header("Location: ../views/home.php");
-                die;
+
+                $success = true;
+                header('Refresh: 2; URL=../views/home.php');
+
             }
         }
     }
-    $error = true;
+    if(success == false)
+    {
+        $error = true;
+    }
+
 }
 ?>
 
@@ -63,6 +71,9 @@ if (isset($_POST["login"])) {
 
 <body>
 <?php include "navbar.php" ?>
+</br>
+</br>
+</br>
 
 <div class="container">
     <div class="row">
@@ -84,6 +95,10 @@ if (isset($_POST["login"])) {
                 <?php
                 if ($error) {
                     echo "<p class='text-danger'>Invalid email and/or password.</p>";
+                }
+                if ($success)
+                {
+                    echo '<ul class="text-success" style= "list-style-type: none;"><li>Login successful. Forwarding to home page in a moment.</li></ul>';
                 }
                 ?>
                 <input name="loginCheckbox" type="checkbox" style="margin:26px 30px;"/> Remember me

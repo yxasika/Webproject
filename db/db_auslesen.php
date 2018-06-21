@@ -42,6 +42,68 @@ function getArticles($status)
     }
 }
 
+function getArticles_sortby($status, $sortby, $asc)
+{
+
+    try {
+        $db = new SQLite3("../db/dpad.db");
+        if($asc)
+        {
+            $sql = "SELECT * FROM articlelist
+                
+                WHERE status = :status
+                ORDER BY :sortby ASC";
+        }
+        else
+        {
+            $sql = "SELECT * FROM articlelist
+                
+                WHERE status = :status
+                ORDER BY :sortby DESC";
+        }
+
+
+        $stmt = $db->prepare($sql);
+
+        $stmt->bindParam(':status', $status);
+        $stmt->bindParam(':author', $sortby);
+
+        $ergebnis = $stmt->execute();
+
+        $articles = array();
+
+        while ($row_article = $ergebnis->fetchArray()) {
+            $articles[] = $row_article;
+        }
+        $db->close();
+
+        return $articles;
+    } catch (Exception $ex) {
+        echo "Fehler: " . $ex->getMessage();
+    }
+}
+
+function getUsers()
+{
+    try {
+        $db = new SQLite3("../db/dpad.db");
+        $sql = "SELECT * FROM userlist";
+
+        $ergebnis = $db->query($sql);
+
+        $users = array();
+
+        while ($row_user = $ergebnis->fetchArray()) {
+            $users[] = $row_user;
+        }
+        $db->close();
+
+        return $users;
+    } catch (Exception $ex) {
+        echo "Fehler: " . $ex->getMessage();
+    }
+}
+
 function getNotifi()
 {
     try {

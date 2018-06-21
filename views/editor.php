@@ -36,7 +36,7 @@ session_start();
 <body>
 <?php
 include "navbar.php";
-include "../db/article_auslesen.php";
+include "../db/db_auslesen.php";
 include "../scripts/popupgenerator.php"
 ?>
 
@@ -107,47 +107,6 @@ include "../scripts/popupgenerator.php"
                                     ';
                                     }
                                 }
-/*
-                                $source = file_get_contents("../json/articles.json");
-                                $articles = json_decode($source, true);
-
-                                foreach ($articles as $article => $article)
-                                {
-                                    if($articles[$article]["status"] == "pending" && $articles[$article]["mail"] != $_SESSION["email"]) {
-
-
-                                        generatepopup("approve", ($articles[$article]["id"]),"Are you sure you want to approve this article?", "success" );
-
-                                        generatepopup("reject", ($articles[$article]["id"]),"Are you sure you want to reject this article?", "danger" );
-
-
-                                        echo '
-                                        <div class="col-md-3">
-                                    <div class="card">
-                                        <img class="card-img-top" src=' . $articles[$article]["imglink"] . '
-                                        alt="article image">
-                                        <div class="card-body">
-                                            <h5 class="card-title">' . $articles[$article]["title"] . '</h5>
-                                            <i>' . $articles[$article]["author"] . '</i>
-                                            <p class="card-text">' . $articles[$article]["description"] . '</p>
-                                            <a href=' . $articles[$article]["articlelink"] . ' class="btn btn-primary">Read More</a>
-                                            <div class="btn-group">
-                                            
-                                                    <button type="button" class="btn btn-success btn-outline-secondary"
-                                                            data-toggle="modal"
-                                                            data-target="#approveModalCenter'.$articles[$article]["id"].'">Approve
-                                                    </button>
-                                                    
-                                                <button type="button" class="btn btn-danger btn-outline-secondary" data-toggle="modal"
-                                                        data-target="#rejectModalCenter'.$articles[$article]["id"].'">Reject
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                    ';
-                                    }
-                                }*/
                                 ?>
 
                             </div>
@@ -162,7 +121,7 @@ include "../scripts/popupgenerator.php"
 
                                 foreach ($articles as $article => $article)
                                 {
-                                    if($articles[$article]["status"] == "approved" && $articles[$article]["authormail"] != $_SESSION["email"]) {
+
 
                                         generatepopup("publish", ($articles[$article]["id"]), "Are you sure you want to publish this article?", "warning");
 
@@ -186,7 +145,7 @@ include "../scripts/popupgenerator.php"
                                     </div>
                                 </div>
                                     ';
-                                    }
+
                                 }
                                 ?>
                             </div>
@@ -200,7 +159,7 @@ include "../scripts/popupgenerator.php"
 
                                 foreach ($articles as $article => $article)
                                 {
-                                    if($articles[$article]["status"] == "rejected") {
+
                                         echo '
                                         <div class="col-md-3">
                                     <div class="card">
@@ -215,7 +174,7 @@ include "../scripts/popupgenerator.php"
                                     </div>
                                 </div>
                                     ';
-                                    }
+
                                 }
                                 ?>
                             </div>

@@ -1,4 +1,8 @@
 <?php
+
+
+
+/*
 try {
     $db = new SQLite3("dpad.db");
     $sql = "SELECT * FROM userlist";
@@ -19,4 +23,5 @@ try {
 } catch (Exception $ex) {
     echo "Fehler: " . $ex->getMessage();
 }
+*/
 ?>

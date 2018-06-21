@@ -33,7 +33,7 @@ session_start();
 <body>
 
 <?php include "navbar.php" ?>
-<?php include "../db/article_auslesen.php" ?>
+<?php include "../db/db_auslesen.php" ?>
 
 <main>
     <div class="container">
@@ -59,7 +59,7 @@ session_start();
                                     <?php
                                     $notifi = getNotifi();
                                     foreach ($notifi as $notification => $notification) {
-                                        if ($notifi[$notification]['receiver'] == ($_SESSION['email'])) {
+                                        if ($notifi[$notification]['receiver'] == ($_SESSION['email'] && $notifi[$notification]['status'] == 'new')) {
                                             print '<div class="card">
                                                     <div class="card-body">
                                                     <h5 class="card-title">Subject: ' . htmlspecialchars($notifi[$notification]['subject']) . '</h5>

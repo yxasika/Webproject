@@ -5,8 +5,8 @@ include "../db/createCategorylist.php";
 include "../db/createNotification.php";
 
 $userObj = new user();
-$userObj->insertUser('test', 'Mustertest', 'test@mail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'author');
-$userObj->insertUser('Max', 'Musterman', 'muster@mail.com', '5452eea2e1ff9cefa25f5fb590386dfb', 'editor');
+$userObj->insertUser('test', 'Mustertest', 'test@mail.com', md5("test"), 'author');
+$userObj->insertUser('Max', 'Musterman', 'muster@mail.com', md5("muster"), 'editor');
 
 $articleObj = new article();
 $articleObj->insertArticle('testArticle', 'test Mustertest', 'test@mail.com' ,  '2018-06-15', 2, NULL, NULL, 'pending', 'blablabla', '4');

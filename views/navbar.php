@@ -37,7 +37,7 @@ if (isset($_POST["search"])) {
                        id="searchInput" name="search">
             </form>
             <?php
-            if (!isset($_SESSION["username"])) {
+            if (!isset($_SESSION["firstname"])) {
                 echo '<a href="login.php" class="btn btn-primary my-2 mr-2" name="loginBtn">Log In</a>
                     <a href="signUp.php" class="btn btn-primary my-2 mr-2" name="signupBtn">Sign Up</a>';
             } else {

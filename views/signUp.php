@@ -5,6 +5,7 @@ include "../db/createArticle.php";
 include "../db/createUserlist.php";
 include "../db/createCategorylist.php";
 include "../db/createNotification.php";
+include "../db/db_auslesen.php";
 
 $error = array();
 $success = false;
@@ -16,8 +17,8 @@ if (isset($_POST["register"])) {
     $pass1 = md5($_POST["psw1"]);
     $pass2 = md5($_POST["psw2"]);
 
-    $data = file_get_contents("../json/users.json");
-    $users = json_decode($data, true);
+    $users = getUsers();
+
     if ($fname == "" || $lname == "" || $email == "" || $pass1 == "" || $pass2 == "") {
         $error[] = "Some inputfield are blank.";
     }
@@ -74,7 +75,7 @@ if (isset($_POST["register"])) {
 
 <body>
 <?php include "navbar.php" ?>
-
+</br>
 <div class="container">
     <div class="row">
         <div class="col">
