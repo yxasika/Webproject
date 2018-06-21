@@ -31,7 +31,7 @@
 <?php include "logReg.php" ?>
 
 <nav class="navbar fixed-top navbar-expand-xl navbar-dark bg-dark">
-    <a class="navbar-brand" href="home.html"><img src="../imgs/logo.png" alt="logo" align="center" onclick="$(this).rotate(45)"></a>
+    <a class="navbar-brand" href="home.html"><img src="../src/imgs/logo.png" alt="logo" align="center" onclick="$(this).rotate(45)"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -77,7 +77,7 @@
                     <div class="card">
                         <div class="row">
                             <div class="col">
-                                <img class="card-img-left mx-auto" src="../imgs/monster_hunter_world.jpg"
+                                <img class="card-img-left mx-auto" src="../src/imgs/monster_hunter_world.jpg"
                                      alt="monster_hunter_world">
                             </div>
                             <div class="col">
@@ -105,7 +105,7 @@
                                 <a class="btn btn-outline-primary icon" role="button" target="_blank" href="pdf.js-gh-pages/web/viewer.html?file=../../assets/img/article.myJournal.pdf">
                                     <i class="material-icons">book</i> read</a>
                                 <a class="btn btn-outline-primary icon" role="button" target="_blank"
-                                   href="../imgs/article.myJournal.pdf" download="article_1">
+                                   href="../src/imgs/article.myJournal.pdf" download="article_1">
                                     <i class="material-icons">file_download</i> Download</a>
                             </li>
                         </ul>

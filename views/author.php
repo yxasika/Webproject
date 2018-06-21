@@ -54,7 +54,7 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
-                                <img class="card-img-top" src="../imgs/monster_hunter_world.jpg" alt="Thumbnail">
+                                <img class="card-img-top" src="../src/imgs/monster_hunter_world.jpg" alt="Thumbnail">
                                 <div class="card-body">
                                     <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                                         diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
@@ -74,7 +74,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
-                                <img class="card-img-top" src="../imgs/dark_souls.jpg"
+                                <img class="card-img-top" src="../src/imgs/dark_souls.jpg"
                                      data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail"
                                      alt="Thumbnail">
                                 <div class="card-body">
@@ -94,7 +94,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
-                                <img class="card-img-top" src="../imgs/path_of_exile.jpg"
+                                <img class="card-img-top" src="../src/imgs/path_of_exile.jpg"
                                      data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail"
                                      alt="Thumbnail">
                                 <div class="card-body">
@@ -114,7 +114,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
-                                <img class="card-img-top" src="../imgs/default.jpg"
+                                <img class="card-img-top" src="../src/imgs/default.jpg"
                                      data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail"
                                      alt="Thumbnail">
                                 <div class="card-body">
@@ -135,7 +135,7 @@
 
                         <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
-                                <img class="card-img-top" src="../imgs/default.jpg"
+                                <img class="card-img-top" src="../src/imgs/default.jpg"
                                      data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail"
                                      alt="Thumbnail">
                                 <div class="card-body">

@@ -10,7 +10,7 @@ if (isset($_POST["login"])) {
             if ($password == $users[$user]["password"]) {
                 session_start();
                 $_SESSION["email"] = $email;
-                header("Location: ../views/editor.php");
+                header("Location: ../views/editor.src");
                 die;
             }
         }
