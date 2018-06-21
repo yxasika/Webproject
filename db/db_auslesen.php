@@ -47,6 +47,7 @@ function getArticles_sortby($status, $sortby, $asc)
 
     try {
         $db = new SQLite3("../db/dpad.db");
+
         if($asc)
         {
             $sql = "SELECT * FROM articlelist
@@ -66,7 +67,7 @@ function getArticles_sortby($status, $sortby, $asc)
         $stmt = $db->prepare($sql);
 
         $stmt->bindParam(':status', $status);
-        $stmt->bindParam(':author', $sortby);
+        $stmt->bindParam(':sortby', $sortby);
 
         $ergebnis = $stmt->execute();
 
