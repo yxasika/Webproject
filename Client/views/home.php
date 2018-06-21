@@ -43,7 +43,7 @@ include "../scripts/articlecardgenerator.php";
 include "navbar.php" ?>
 
 
-<section class="content">
+<main style="position: relative; top: 1em;">
     <div class="container">
         <div class="row justify-content-center">
             <div class="content">
@@ -212,7 +212,7 @@ include "navbar.php" ?>
         </div>
     </div>
     </div>
-</section>
+</main>
 <?php include "footer.php" ?>
 </body>
 

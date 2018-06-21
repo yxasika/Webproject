@@ -1,64 +1,51 @@
 <?php
+session_start();
 if (isset($_POST["search"])) {
     $_SESSION["search"] = $_POST["search"];
 }
 ?>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../css/navbar.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script type="text/javascript">
-        $(window).on('scroll', function () {
-            if ($(window).scrollTop()) {
-                $('nav').addClass('black');
-            }
-            else {
-                $('nav').removeClass('black');
-            }
-        })
-        $('#searchCheckbox').change(function () {
-            if (this.checked) {
-                $('.searchInput').animate({width: '+=200px'});
-            }
-        })
-    </script>
-</head>
-<body>
-<div class="wrapper">
-    <nav>
-        <div class="logo">
-            <i id="menu" class="material-icons">dehaze</i>
-            <label for="navToggle">D+Pad</label>
-            <input type="checkbox" id="navToggle"></div>
-        <ul class="leftnav nav">
-            <li><a href="home.php">Home</a></li>
-            <li><a href="archive.php">Archive</a></li>
+<script type="text/javascript" src="http://beneposto.pl/jqueryrotate/js/jQueryRotateCompressed.js"></script>
+
+<nav class="navbar fixed-top navbar-expand-xl navbar-dark bg-dark">
+    <a class="navbar-brand" href="home.php"><img src="../src/imgs/logo.png" alt="logo" align="center"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="home.php">HOME</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="archive.php">ARCHIVE</a>
+            </li>
             <?php
             if (isset($_SESSION["role"]) && $_SESSION["role"] == "editor") {
-                echo '<li><a href="editor.php">Editor</a></li>';
-                echo '<li><a href="author.php">Author</a></li>';
+                echo '<li class="nav-item"><a class="nav-link" href="editor.php">EDITOR</a></li>';
+                echo '<li class="nav-item"><a class="nav-link" href="author.php">AUTHOR</a></li>';
             }
             if (isset($_SESSION["role"]) && $_SESSION["role"] == "author") {
-                echo '<li><a href="author.php">Author</a></li>';
+                echo '<li class="nav-item"><a class="nav-link" href="author.php">AUTHOR</a></li>';
             }
             ?>
         </ul>
-        <ul class="rightnav nav">
-            <input type="checkbox" id="searchCheckbox">
-            <li><label for="searchCheckbox"><i class="material-icons">search</i></label></li>
-            <li><input type="search" class="searchInput" placeholder="Search.."></li>
-            <li><i class="material-icons">notifications</i><span class="badge"></span></a></li>
+        <ul class="navbar-nav ">
+            <form class="form-inline my-2 my-lg-0" id="searchForm" method="get" action="archive.php">
+                <input class="searchInput form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                       id="searchInput" name="search">
+            </form>
             <?php
-            if (!isset($_SESSION["username"])) {
-                echo '<li><a class="active" href="login.php" name="loginBtn">Log In</a></li>';
-                echo '<li><a class="active" href="signUp.php" name="signupBtn">Sign Up</a></li>';
+            if (!isset($_SESSION["firstname"])) {
+                echo '<a href="login.php" class="btn btn-primary my-2 mr-2" name="loginBtn">Log In</a>
+                    <a href="signUp.php" class="btn btn-primary my-2 mr-2" name="signupBtn">Sign Up</a>';
             } else {
-                echo '<li><a class="active" href="logout.php" name="logoutBtn">Log out</a></li>';
+                echo '<a class="btn btn-primary icon my-2 mr-2" role="button" href="notification.php">
+                       <i class="material-icons">notifications</i><span class="badge"></span></a>';
+                echo '<a href="logout.php" class="btn btn-primary my-2 mr-2" name="logoutBtn">Log out</a>';
             }
             ?>
         </ul>
-    </nav>
-</div>
-</body>
+    </div>
+</nav>
