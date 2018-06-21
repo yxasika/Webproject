@@ -37,6 +37,7 @@ session_start();
 <?php
 include "navbar.php";
 include "../db/db_auslesen.php";
+include "../scripts/articlecardgenerator.php";
 include "../scripts/popupgenerator.php"
 ?>
 
@@ -73,39 +74,16 @@ include "../scripts/popupgenerator.php"
 
                                 $articles = getArticles('pending');
 
-                                foreach ($articles as $article => $article)
+                                foreach ($articles as $article => $articlecard)
                                 {
                                     if($articles[$article]['authormail'] != $_SESSION["email"])
                                     {
 
-                                        generatepopup("approve", ($articles[$article]["id"]), "Are you sure you want to approve this article?", "success");
+                                        generatepopup("approve", ($articlecard["id"]), "Are you sure you want to approve this article?", "success");
 
-                                        generatepopup("reject", ($articles[$article]["id"]), "Are you sure you want to reject this article?", "danger");
+                                        generatepopup("reject", ($articlecard["id"]), "Are you sure you want to reject this article?", "danger");
 
-                                        echo '
-                                            <div class="col-md-3">
-                                                <div class="card">
-                                                    <img class="card-img-top" src=' . $articles[$article]["img"] . 'alt="article image">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">' . $articles[$article]["title"] . '</h5>
-                                                        <i>' . $articles[$article]["author"] . '</i>
-                                                        <p class="card-text">' . $articles[$article]["description"] . '</p>
-                                                        <a href="#" class="btn btn-primary">Read More</a>
-                                                        <div class="btn-group">
-                                                
-                                                            <button type="button" class="btn btn-success btn-outline-secondary"
-                                                                data-toggle="modal"
-                                                                data-target="#approveModalCenter' . $articles[$article]["id"] . '">Approve
-                                                            </button>
-                                                        
-                                                            <button type="button" class="btn btn-danger btn-outline-secondary" data-toggle="modal"
-                                                                data-target="#rejectModalCenter' . $articles[$article]["id"] . '">Reject
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                    ';
+                                        generateArticleCard('editor_pending', $articlecard);
                                     }
                                 }
                                 ?>
@@ -120,33 +98,11 @@ include "../scripts/popupgenerator.php"
 
                                 $articles = getArticles('approved');
 
-                                foreach ($articles as $article => $article)
+                                foreach ($articles as $article => $articlecard)
                                 {
+                                        generatepopup("publish", ($articlecard["id"]), "Are you sure you want to publish this article?", "warning");
 
-
-                                        generatepopup("publish", ($articles[$article]["id"]), "Are you sure you want to publish this article?", "warning");
-
-                                        echo '
-                                        <div class="col-md-3">
-                                    <div class="card">
-                                        <img class="card-img-top" src=' . $articles[$article]["img"] . '
-                                        alt="article image">
-                                        <div class="card-body">
-                                            <h5 class="card-title">' . $articles[$article]["title"] . '</h5>
-                                            <i>' . $articles[$article]["author"] . '</i>
-                                            <p class="card-text">'.$articles[$article]["description"].'</p>
-                                            <a href="#" class="btn btn-primary">Read More</a>
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-success btn-outline-secondary"
-                                                        data-toggle="modal"
-                                                        data-target="#publishModalCenter'.$articles[$article]["id"].'">Publish
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                    ';
-
+                                        generateArticleCard('editor_approved', $articlecard);
                                 }
                                 ?>
                             </div>
@@ -158,24 +114,9 @@ include "../scripts/popupgenerator.php"
                                 <?php
                                 $articles = getArticles('rejected');
 
-                                foreach ($articles as $article => $article)
+                                foreach ($articles as $article => $articlecard)
                                 {
-
-                                        echo '
-                                        <div class="col-md-3">
-                                    <div class="card">
-                                        <img class="card-img-top" src=' . $articles[$article]["img"] . '
-                                        alt="article image">
-                                        <div class="card-body">
-                                            <h5 class="card-title">' . $articles[$article]["title"] . '</h5>
-                                            <i>' . $articles[$article]["author"] . '</i>
-                                            <p class="card-text">'.$articles[$article]["description"].'</p>
-                                            <a href="#" class="btn btn-primary">Read More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                    ';
-
+                                    generateArticleCard('editor_rejected', $articlecard);
                                 }
                                 ?>
                             </div>

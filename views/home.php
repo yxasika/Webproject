@@ -39,6 +39,7 @@ setCookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 <body>
 <?php include "cookie_alert.php";
 include "../db/db_auslesen.php";
+include "../scripts/articlecardgenerator.php";
 include "navbar.php"?>
 
 
@@ -83,8 +84,10 @@ include "navbar.php"?>
 
 
                                 // Momentan wird noch jeder published article ausgelesen. wir sollten eventuell nur die letzten 6 oder so anzeigen.
-                                foreach ($articles as $article => $article)
+                                foreach ($articles as $article => $articlecard)
                                 {
+                                    generateArticleCard('archice', $articlecard);
+
                                     echo'
                                     <div class="card">
                                         <img class="card-img-top" src='. $articles[$article]["img"] .'

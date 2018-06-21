@@ -9,7 +9,7 @@ class category
         $user = "root";
         $pw = null;
         $dsn = "sqlite:../db/dpad.db";
-        $id_user = "artid INTEGER PRIMARY KEY,";
+        $id_user = "artid INTEGER,";
 
         try {
             $this->pdo = new PDO($dsn, $user, $pw);

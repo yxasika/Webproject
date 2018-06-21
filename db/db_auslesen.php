@@ -48,15 +48,12 @@ function getArticles_sortby($status, $sortby, $asc)
     try {
         $db = new SQLite3("../db/dpad.db");
 
-        if($asc)
-        {
+        if ($asc) {
             $sql = "SELECT * FROM articlelist
                 
                 WHERE status = :status
                 ORDER BY :sortby ASC";
-        }
-        else
-        {
+        } else {
             $sql = "SELECT * FROM articlelist
                 
                 WHERE status = :status
@@ -79,6 +76,35 @@ function getArticles_sortby($status, $sortby, $asc)
         $db->close();
 
         return $articles;
+    } catch (Exception $ex) {
+        echo "Fehler: " . $ex->getMessage();
+    }
+}
+
+function getCategories($artid)
+{
+    try {
+        $db = new SQLite3("../db/dpad.db");
+        $sql = "SELECT categorylist.catname
+            FROM articlelist
+            INNER JOIN categorylist ON articlelist.categoryid == categorylist.artid
+            WHERE id == :artid";
+
+        $stmt = $db->prepare($sql);
+
+        $stmt->bindParam(':artid', $artid);
+
+        $ergebnis = $stmt->execute();
+
+        $categories = array();
+
+        while ($row_category = $ergebnis->fetchArray()) {
+            $categories[] = $row_category['catname'];
+        }
+        $db->close();
+
+        return $categories;
+
     } catch (Exception $ex) {
         echo "Fehler: " . $ex->getMessage();
     }
