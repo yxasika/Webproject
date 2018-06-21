@@ -13,7 +13,7 @@ class article
 
         try {
             $this->pdo = new PDO($dsn, $user, $pw);
-            $sql = "CREATE TABLE articlelist (" . $id_article . " title VARCHAR(50), author VARCHAR(100), authormail VARCHAR(50), published_date DATE, categoryid INT REFERENCES categorylist(artid), img BLOB, pdf BLOB, status VARCHAR(40), description TEXT, upvote INT DEFAULT 0);";
+            $sql = "CREATE TABLE articlelist (" . $id_article . " title VARCHAR(50), author VARCHAR(100), authormail VARCHAR(50), published_date DATE, categoryid INT UNIQUE, img BLOB, pdf BLOB, status VARCHAR(40), description TEXT, upvote INT DEFAULT 0);";
             $this->pdo->exec($sql);
             echo "Tabelle articlelist angelegt.<br/>";
         } catch (PDOException $e) {
