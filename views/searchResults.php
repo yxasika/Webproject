@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,22 +25,30 @@
             crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/loginPopup.css">
-    <script rel="script" type="text/javascript" src="../js/loginPopup.js"></script>
-    <script rel="script" type="text/javascript" src="../js/jquery.rotate.1-1.js"></script>
-    <script type="text/javascript" src="../js/search.js"></script>
+    <script rel="script" type="text/javascript" src="../scripts/loginPopup.js"></script>
+    <script rel="script" type="text/javascript" src="../scripts/jquery.rotate.1-1.js"></script>
+    <script type="text/javascript" src="../scripts/search.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/search.css">
 </head>
 <body>
-<?php include "logReg.php" ?>
-<?php include "navbar.php" ?>
+
+<?php include "navbar.php"?>
 
 <main>
     <div class="container">
         <div class="justify-content-center">
             <div class="content">
                 <form class="form-inline my-2 my-lg-0 " action="searchResults.php">
-                    <input class="searchInput form-control mr-sm-2" id="myInput" onkeyup="searchFunction()"
-                           type="search" placeholder="Search" aria-label="Search">
+                    <?php
+                        if(isset($_SESSION["search"])){
+                           echo '<input class="searchInput form-control mr-sm-2" id="myInput" onkeyup="searchFunction()"
+                           type="search" placeholder="Search" aria-label="Search" value="'.$_SESSION['search'].'"><script>searchFunction()</script>';
+                        }
+                        else{
+                            echo '<input class="searchInput form-control mr-sm-2" id="myInput" onkeyup="searchFunction()"
+                           type="search" placeholder="Search" aria-label="Search">';
+                        }
+                    ?>
                 </form>
                 <hr>
                 <h3>Results</h3>
@@ -84,7 +96,7 @@
     </div>
 </main>
 
-<?php include "footer.php" ?>
+<?php include "footer.php"?>
 
 </body>
 

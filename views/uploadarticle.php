@@ -1,3 +1,6 @@
+
+<?php include "../scripts/uploadarticlescript.php" ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,9 +24,9 @@
             crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/loginPopup.css">
-    <script rel="script" type="text/javascript" src="../js/loginPopup.js"></script>
-    <script rel="script" type="text/javascript" src="../js/jquery.rotate.1-1.js"></script>
-    <script type="text/javascript" src="../js/search.js"></script>
+    <script rel="script" type="text/javascript" src="../scripts/loginPopup.js"></script>
+    <script rel="script" type="text/javascript" src="../scripts/jquery.rotate.1-1.js"></script>
+    <script type="text/javascript" src="../scripts/search.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/search.css">
     <link rel="stylesheet" href="../css/styles.css">
 
@@ -34,34 +37,35 @@
 </head>
 
 <body>
-<?php include "logReg.php" ?>
-<?php include "navbar.php" ?>
 
-<main>
+<?php include "navbar.php"?>
+
+<main style="position: relative; top: 1em;">
     <div class="container">
         <div class="row justify-content-center">
-            <form class="content" name="contact" action="index.php">
+            <div class="content">
+            <form class="container" id="uploadform" method="post">
                 <h2>Upload an Article</h2>
                 <div class="form-group">
                     <div class="form-row">
                         <div class="col">
-                            <input type="text" class="form-control" required placeholder="Title of the article">
+                            <input name="title" type="text" class="form-control" required placeholder="Title of the article">
                         </div>
                     </div>
                 </div>
                 <div>
 
-                    <textarea id="description" name="description"
-                              placeholder="write a short summary of your article here..." cols="20" rows="10"
+                    <textarea name="descriptionarea"
+                              placeholder="write a short summary of your article here..." rows="20" cols="20"
                               class="form-control"></textarea>
                 </div>
                 <div class="form-group">
                     upload your PDF file here:
-                    <input type="file" class="float-right" required accept=".pdf">
+                    <input name="pdflink" type="file" class="float-right" required accept=".pdf">
                 </div>
                 <div class="form-group">
                     upload your article's header image here:
-                    <input type="file" class="float-right" accept=".png,.jpg,.jpeg">
+                    <input name="imglink" type="file" class="float-right" accept=".png,.jpg,.jpeg">
                 </div>
                 <div class="row">
                     <div class="col">
@@ -73,25 +77,25 @@
                                 <li class="list-group-item">
                                     <div class="form-row">
                                         <label class="mr-2" for="chk_rpg">rpg</label>
-                                        <input type="checkbox" class="mt-1" id="chk_rpg">
+                                        <input name="rpg" type="checkbox" class="mt-1" id="chk_rpg">
                                     </div>
                                 </li>
                                 <li class="list-group-item">
                                     <div class="form-row">
                                         <label class="mr-2" for="chk_jnr">jump'n run</label>
-                                        <input type="checkbox" class="mt-1" id="chk_jnr">
+                                        <input name="jump'n run" type="checkbox" class="mt-1" id="chk_jnr">
                                     </div>
                                 </li>
                                 <li class="list-group-item">
                                     <div class="form-row">
                                         <label class="mr-2" for="chk_sht">shooter</label>
-                                        <input type="checkbox" class="mt-1" id="chk_sht">
+                                        <input name="shooter" type="checkbox" class="mt-1" id="chk_sht">
                                     </div>
                                 </li>
                                 <li class="list-group-item">
                                     <div class="form-row">
                                         <label class="mr-2" for="chk_act">action</label>
-                                        <input type="checkbox" class="mt-1" id="chk_act">
+                                        <input name="action" type="checkbox" class="mt-1" id="chk_act">
                                     </div>
                                 </li>
                             </ul>
@@ -99,15 +103,16 @@
                     </div>
 
                 <div class="col">
-                    <input type="submit" value="UPLOAD" class="btn btn-primary float-right"/>
+                    <input name="upload" type="submit" class="btn btn-primary float-right"/>
                 </div>
                 </div>
             </form>
+            </div>
         </div>
     </div>
 
 </main>
-<?php include "footer.php" ?>
+<?php include "footer.php"?>
 
 </body>
 

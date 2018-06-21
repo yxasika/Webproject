@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,16 +22,16 @@
             crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/loginPopup.css">
-    <script rel="script" type="text/javascript" src="../js/loginPopup.js"></script>
-    <script rel="script" type="text/javascript" src="../js/jquery.rotate.1-1.js"></script>
-    <script type="text/javascript" src="../js/search.js"></script>
+    <script rel="script" type="text/javascript" src="../scripts/loginPopup.js"></script>
+    <script rel="script" type="text/javascript" src="../scripts/jquery.rotate.1-1.js"></script>
+    <script type="text/javascript" src="../scripts/search.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/search.css">
-    <script type="text/javascript" src="../js/js.js"></script>
+    <script type="text/javascript" src="../scripts/js.js"></script>
 </head>
 
 <body>
-<?php include "logReg.php" ?>
-<?php include "navbar.php" ?>
+
+<?php include "navbar.php"?>
 
 <!--Save Popup-->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -52,6 +53,46 @@
         </div>
     </div>
 </div>
+
+<main>
+    <div class="container">
+        <div class="row justify-content-center">
+            <form class="content" name="profile" action="profile.php">
+                <h2>Profile Data</h2>
+                <div class="form-row">
+                    <div class="form-col mr-4">Current Email <input type="text" class="form-control"
+                                                                    placeholder="unchanged" title="current Email"><br>
+                        current password<input type="password" class="form-control" placeholder="unchanged"><br>
+                        new password
+                        <input type="password" class="form-control" placeholder=""><br>
+                        repeat new password
+                        <input type="password" class="form-control" placeholder=""><br>
+                    </div>
+                    <div class="form-col mr-4">
+                        first name
+                        <input type="text" class="form-control" placeholder="unchanged"><br>
+                        last name
+                        <input type="text" class="form-control" placeholder="unchanged"><br>
+                        birth date
+                        <input type="date" class="form-control"><br>
+                        profile picture<br>
+                        <input type="file" class="btn btn-primary float-right" accept=".png,.jpg,.jpeg">
+                    </div>
+                    <div class="form-col">
+                        about me
+                        <textarea id="aboutme" name="aboutme" placeholder="write something about yourself here..."
+                                  maxlength="1000" cols="50" class="form-control"></textarea>
+                    </div>
+                </div>
+                <input type="submit" class="btn btn-primary float-right">
+            </form>
+        </div>
+
+    </div>
+
+</main>
+
+
 <main>
     <div class="container">
         <div class="row justify-content-center">
@@ -74,7 +115,7 @@
         </div>
     </div>
 </main>
-<?php include "footer.php" ?>
+<?php include "footer.php"?>
 </body>
 
 </html>

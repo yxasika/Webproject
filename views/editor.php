@@ -1,3 +1,9 @@
+<?php
+session_start();
+?>
+
+<?php include "../scripts/articleeditor.php" ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,79 +27,19 @@
             crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/loginPopup.css">
-    <script rel="script" type="text/javascript" src="../js/loginPopup.js"></script>
-    <script rel="script" type="text/javascript" src="../js/jquery.rotate.1-1.js"></script>
-    <script type="text/javascript" src="../js/search.js"></script>
+    <script rel="script" type="text/javascript" src="../scripts/loginPopup.js"></script>
+    <script rel="script" type="text/javascript" src="../scripts/jquery.rotate.1-1.js"></script>
+    <script type="text/javascript" src="../scripts/search.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/search.css">
 </head>
 
 <body>
-<?php include "logReg.php" ?>
-<?php include "navbar.php" ?>
-
-
-<!--Approve Popup-->
-<div class="modal fade" id="approveModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="approveModalCenterTitle">Approve article</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                Are you sure you want to approve this article?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Approve</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!--Reject Popup-->
-<div class="modal fade" id="rejectModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="rejectModalCenterTitle">Reject article</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                Are you sure you want to reject this article?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Reject</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!--Publish Popup-->
-<div class="modal fade" id="publishModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="publishModalCenterTitle">Publish article</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                Are you sure you want to publish this article?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Publish</button>
-            </div>
-        </div>
-    </div>
-</div>
+<?php
+include "navbar.php";
+include "../db/db_auslesen.php";
+include "../scripts/articlecardgenerator.php";
+include "../scripts/popupgenerator.php"
+?>
 
 <main>
     <div class="container">
@@ -125,35 +71,19 @@
                             <div class="row">
 
                                 <?php
-                                $source = file_get_contents("assets/json/articles.json");
-                                $articles = json_decode($source, true);
 
-                                foreach ($articles as $article => $article)
+                                $articles = getArticles('pending');
+
+                                foreach ($articles as $article => $articlecard)
                                 {
-                                    if($articles[$article]["status"] == "pending") {
-                                        echo '
-                                        <div class="col-md-5">
-                                    <div class="card">
-                                        <imgs class="card-imgs-top" src=' . $articles[$article]["imglink"] . '
-                                        alt="article image">
-                                        <div class="card-body">
-                                            <h5 class="card-title">' . $articles[$article]["title"] . '</h5>
-                                            <i>' . $articles[$article]["author"] . '</i>
-                                            <p class="card-text">'.$articles[$article]["description"].'</p>
-                                            <a href='.$articles[$article]["articlelink"].' class="btn btn-primary">Read More</a>
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-success btn-outline-secondary"
-                                                        data-toggle="modal"
-                                                        data-target="#approveModalCenter">Approve
-                                                </button>
-                                                <button type="button" class="btn btn-danger btn-outline-secondary" data-toggle="modal"
-                                                        data-target="#rejectModalCenter">Reject
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                    ';
+                                    if($articles[$article]['authormail'] != $_SESSION["email"])
+                                    {
+
+                                        generatepopup("approve", ($articlecard["id"]), "Are you sure you want to approve this article?", "success");
+
+                                        generatepopup("reject", ($articlecard["id"]), "Are you sure you want to reject this article?", "danger");
+
+                                        generateArticleCard('editor_pending', $articlecard);
                                     }
                                 }
                                 ?>
@@ -165,33 +95,14 @@
                         <div class="container">
                             <div class="row">
                                 <?php
-                                $source = file_get_contents("assets/json/articles.json");
-                                $articles = json_decode($source, true);
 
-                                foreach ($articles as $article => $article)
+                                $articles = getArticles('approved');
+
+                                foreach ($articles as $article => $articlecard)
                                 {
-                                    if($articles[$article]["status"] == "approved") {
-                                        echo '
-                                        <div class="col-md-5">
-                                    <div class="card">
-                                        <imgs class="card-imgs-top" src=' . $articles[$article]["imglink"] . '
-                                        alt="article image">
-                                        <div class="card-body">
-                                            <h5 class="card-title">' . $articles[$article]["title"] . '</h5>
-                                            <i>' . $articles[$article]["author"] . '</i>
-                                            <p class="card-text">'.$articles[$article]["description"].'</p>
-                                            <a href='.$articles[$article]["articlelink"].' class="btn btn-primary">Read More</a>
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-success btn-outline-secondary"
-                                                        data-toggle="modal"
-                                                        data-target="#publishModalCenter">Publish
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                    ';
-                                    }
+                                        generatepopup("publish", ($articlecard["id"]), "Are you sure you want to publish this article?", "warning");
+
+                                        generateArticleCard('editor_approved', $articlecard);
                                 }
                                 ?>
                             </div>
@@ -201,27 +112,11 @@
                         <div class="container">
                             <div class="row">
                                 <?php
-                                $source = file_get_contents("assets/json/articles.json");
-                                $articles = json_decode($source, true);
+                                $articles = getArticles('rejected');
 
-                                foreach ($articles as $article => $article)
+                                foreach ($articles as $article => $articlecard)
                                 {
-                                    if($articles[$article]["status"] == "rejected") {
-                                        echo '
-                                        <div class="col-md-5">
-                                    <div class="card">
-                                        <imgs class="card-imgs-top" src=' . $articles[$article]["imglink"] . '
-                                        alt="article image">
-                                        <div class="card-body">
-                                            <h5 class="card-title">' . $articles[$article]["title"] . '</h5>
-                                            <i>' . $articles[$article]["author"] . '</i>
-                                            <p class="card-text">'.$articles[$article]["description"].'</p>
-                                            <a href='.$articles[$article]["articlelink"].' class="btn btn-primary">Read More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                    ';
-                                    }
+                                    generateArticleCard('editor_rejected', $articlecard);
                                 }
                                 ?>
                             </div>
@@ -232,7 +127,7 @@
         </div>
     </div>
 </main>
-<?php include "footer.php" ?>
+<?php include "footer.php"?>
 </body>
 
 </html>

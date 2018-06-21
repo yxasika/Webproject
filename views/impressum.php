@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,15 +25,16 @@
             crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/loginPopup.css">
-    <script rel="script" type="text/javascript" src="../js/loginPopup.js"></script>
-    <script rel="script" type="text/javascript" src="../js/jquery.rotate.1-1.js"></script>
-    <script type="text/javascript" src="../js/search.js"></script>
+    <script rel="script" type="text/javascript" src="../scripts/loginPopup.js"></script>
+    <script rel="script" type="text/javascript" src="../scripts/jquery.rotate.1-1.js"></script>
+    <script type="text/javascript" src="../scripts/search.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/search.css">
 </head>
 
 <body>
-<?php include "logReg.php" ?>
-<?php include "navbar.php" ?>
+
+<?php include "navbar.php"?>
+<?php include "cookie_alert.php"?>
 
 <main>
     <div class="container">
@@ -53,6 +58,10 @@
                 <h4>Disclaimer</h4>
                 <h5>Verantwortlicher für journalistisch-redaktionelle Inhalte gem. § 55 II RstV:</h5>
                 DPAD Inc
+                <br>
+                <br>
+                <h5>Externe Scripts und anderer Content</h5>
+                PDF.js: <a href="https://github.com/mozilla/pdf.js/">https://github.com/mozilla/pdf.js/</a>
                 <br>
                 <br>
                 <h5>Bilder und Grafiken:</h5>
@@ -363,7 +372,7 @@
         </div>
     </div>
 </main>
-<?php include "footer.php" ?>
+<?php include "footer.php"?>
 </body>
 
 </html>

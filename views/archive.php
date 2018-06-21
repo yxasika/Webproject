@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 
 
@@ -23,85 +27,53 @@
             crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/loginPopup.css">
-    <script rel="script" type="text/javascript" src="../js/loginPopup.js"></script>
-    <script rel="script" type="text/javascript" src="../js/jquery.rotate.1-1.js"></script>
-    <script type="text/javascript" src="../js/search.js"></script>
+    <script rel="script" type="text/javascript" src="../scripts/loginPopup.js"></script>
+    <script rel="script" type="text/javascript" src="../scripts/jquery.rotate.1-1.js"></script>
+    <script type="text/javascript" src="../scripts/search.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/search.css">
 </head>
 
 <body>
-<?php include "logReg.php" ?>
-<nav class="navbar fixed-top navbar-expand-xl navbar-dark bg-dark">
-    <a class="navbar-brand" href="index.php"><img src="../src/imgs/logo.png" alt="logo" align="center"
-                                                  onclick="$(this).rotate(45)"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+<?php include "navbar.php";
+include "../db/db_auslesen.php";
+include "cookie_alert.php" ?>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="index.php">HOME</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="archive.php">ARCHIVE</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="profile.php">PROFILE</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="editor.php">EDITOR</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="author.php">AUTHOR</a>
-            </li>
-        </ul>
-        <ul class="navbar-nav ">
-            <form class="form-inline my-2 my-lg-0" id="searchForm">
-                <input class="searchInput form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
-                       id="searchInput">
-            </form>
-            <a class="btn btn-primary icon my-2 mr-2" role="button" href="notification.php">
-                <i class="material-icons">notifications</i><span class="badge">4</span></a>
-            <button class="btn btn-primary my-2 mr-2"
-                    onclick="document.getElementById('login-wrapper').style.display='block'">LOG IN
-            </button>
-            <button class="btn btn-primary my-2 sm-0"
-                    onclick="document.getElementById('register-wrapper').style.display='block'">SIGN UP
-            </button>
-        </ul>
-    </div>
-</nav>
 <main>
     <div class="container">
         <div class="row justify-content-center">
             <div class="content">
-                <form class="form-inline my-2 my-lg-0 " action="searchResults.php">
-                    <input class="searchInput form-control mr-sm-2" id="myInput" onkeyup="searchFunction()"
-                           type="search" placeholder="Search" aria-label="Search">
+                <form class="form-inline my-2 my-lg-0 " action="archive.php">
+                    <?php
+                    if (isset($_SESSION["search"])) {
+                        echo '<input class="searchInput form-control mr-sm-2" id="myInput" onkeyup="searchFunction()"
+                           type="search" placeholder="Search" aria-label="Search" value="' . $_SESSION['search'] . '">';
+                        echo '<script>searchFunction()</script>';
+                        unset($_SESSION["search"]);
+                    } else {
+                        echo '<input class="searchInput form-control mr-sm-2" id="myInput" onkeyup="searchFunction()"
+                           type="search" placeholder="Search" aria-label="Search">';
+                    }
+                    ?>
                 </form>
                 <hr>
                 <ul id="myUL" class="list-group">
 
                     <?php
-                    $source = file_get_contents("assets/json/articles.json");
-                    $articles = json_decode($source, true);
+                    $articles = getArticles('published');
 
-                    foreach ($articles as $article => $article)
-                    {
-                        if($articles[$article]["status"] == "published") {
+                    foreach ($articles as $article => $article) {
+
                             echo
                                 '
-                            <li><a href=' . $articles[$article]["articlelink"] . ' class="list-group-item list-group-item-action flex-column align-items-start">
+                            <li><a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
                         <div class="d-flex w-100 justify-content-between">
                             <h5 class="mb-1">' . $articles[$article]["title"] . '
-                            <small class="text-muted">' . $articles[$article]["published"] . '</small>
+                            <small class="text-muted">' . $articles[$article]["published_date"] . '</small>
                             </div>
                         <p class="mb-1">' . $articles[$article]["description"] . '</p>
                         <small>' . $articles[$article]["author"] . '</small></a></li>
                         ';
-                        }
+
                     }
                     ?>
                 </ul>
