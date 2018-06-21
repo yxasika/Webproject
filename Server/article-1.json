@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Placeholder1",
+    "published_date": "2018-06-15",
+    "description": "Just a short description.",
+    "author": "test Mustertest"
+  },
+  {
+    "title": "Placeholder2",
+    "published_date": "2018-06-16",
+    "description": "Just a short description.",
+    "author": "Max Musterman"
+  },
+  {
+    "title": "Placeholder3",
+    "published_date": "2018-07-11",
+    "description": "Just a short description.",
+    "author": "test Mustertest"
+  },
+  {
+    "title": "Placeholder4",
+    "published_date": "2017-06-15",
+    "description": "Just a short description.",
+    "author": "Max Musterman"
+  },
+  {
+    "title": "Placeholder5",
+    "published_date": "2010-06-15",
+    "description": "Just a short description.",
+    "author": "test Mustertest"
+  }
+]

@@ -97,5 +97,15 @@ textarea:focus {
     vertical-align: middle;
 }
 
+.hide-me {
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(.75);
+}
+
+#showMore {
+
+}
+
 
 

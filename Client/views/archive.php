@@ -56,7 +56,7 @@ include "cookie_alert.php" ?>
                     ?>
                 </form>
                 <hr>
-                <ul id="myUL" class="list-group">
+                <ul id="myUL">
 
                     <?php
                     $articles = getArticles('published');
@@ -77,13 +77,9 @@ include "cookie_alert.php" ?>
 
                     }
                     ?>
+                    <div id="content"></div>
                 </ul>
-
-                <ul class="pagination" style="margin-top: 1em;">
-                    <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item disabled"><a class="page-link" href="#">Next</a></li>
-                </ul>
+                <button id="showMore" class="btn col">Show more</button>
             </div>
         </div>
     </div>
@@ -107,5 +103,7 @@ include "cookie_alert.php" ?>
     </div>
 </footer>
 </body>
+<script rel="script" type="text/javascript" src="../scripts/showMore.js"></script>
+
 
 </html>
