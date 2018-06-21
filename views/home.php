@@ -88,8 +88,8 @@ include "navbar.php"?>
                                         <img class="card-img-top" src='. $articles[$article]["img"] .'
                                              alt="article_image">
                                         <div class="card-body">
-                                            <h5 class="card-title">. $articles[$article]["title"] .</h5>
-                                            <p class="card-text">. $articles[$article]["description"] .
+                                            <h5 class="card-title">'. $articles[$article]["title"] .'</h5>
+                                            <p class="card-text">'. $articles[$article]["description"] .'
                                             </p>
                                             <a href="#" class="btn btn-primary">Read more</a>
                                         </div>
