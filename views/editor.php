@@ -77,6 +77,7 @@ include "../scripts/popupgenerator.php"
                                 {
                                     if($articles[$article]['authormail'] != $_SESSION["email"])
                                     {
+
                                         generatepopup("approve", ($articles[$article]["id"]), "Are you sure you want to approve this article?", "success");
 
                                         generatepopup("reject", ($articles[$article]["id"]), "Are you sure you want to reject this article?", "danger");
