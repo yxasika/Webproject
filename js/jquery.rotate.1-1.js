@@ -17,7 +17,7 @@ jQuery.fn.rotate = function(angle,whence) {
 	var sintheta = Math.sin(rotation);
 
 	if (document.all && !window.opera) {
-		var canvas = document.createElement('img');
+		var canvas = document.createElement('imgs');
 
 		canvas.src = p.src;
 		canvas.height = p.height;

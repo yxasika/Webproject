@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
           integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
@@ -23,11 +23,11 @@
             integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
             crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="assets/css/loginPopup.css">
-    <script rel="script" type="text/javascript" src="assets/js/loginPopup.js"></script>
-    <script rel="script" type="text/javascript" src="assets/js/jquery.rotate.1-1.js"></script>
-    <script type="text/javascript" src="assets/js/search.js"></script>
-    <link rel="stylesheet" type="text/css" href="assets/css/search.css">
+    <link rel="stylesheet" type="text/css" href="../css/loginPopup.css">
+    <script rel="script" type="text/javascript" src="../js/loginPopup.js"></script>
+    <script rel="script" type="text/javascript" src="../js/jquery.rotate.1-1.js"></script>
+    <script type="text/javascript" src="../js/search.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/search.css">
 </head>
 
 <body>
@@ -75,7 +75,7 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="card">
-                                        <img class="card-img-top" src="assets/img/monster_hunter_world.jpg"
+                                        <img class="card-img-top" src="../imgs/monster_hunter_world.jpg"
                                              alt="monster_hunter_world">
                                         <div class="card-body">
                                             <h5 class="card-title">ARTICLE 1</h5>
@@ -90,7 +90,7 @@
                                 </div>
                                 <div class="col">
                                     <div class="card">
-                                        <img class="card-img-top" src="assets/img/dark_souls.jpg"
+                                        <img class="card-img-top" src="../imgs/dark_souls.jpg"
                                              alt="monster_hunter_world">
                                         <div class="card-body">
                                             <h5 class="card-title">ARTICLE 2</h5>
@@ -105,7 +105,7 @@
                                 </div>
                                 <div class="col">
                                     <div class="card">
-                                        <img class="card-img-top" src="assets/img/path_of_exile.jpg"
+                                        <img class="card-img-top" src="../imgs/path_of_exile.jpg"
                                              alt="monster_hunter_world">
                                         <div class="card-body">
                                             <h5 class="card-title">ARTICLE 3</h5>
@@ -123,7 +123,7 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="card">
-                                        <img class="card-img-top" src="assets/img/rainbow_six.jpg" alt="rainbow_six">
+                                        <img class="card-img-top" src="../imgs/rainbow_six.jpg" alt="rainbow_six">
                                         <div class="card-body">
                                             <h5 class="card-title">ARTICLE 4</h5>
                                             <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
@@ -137,7 +137,7 @@
                                 </div>
                                 <div class="col">
                                     <div class="card">
-                                        <img class="card-img-top" src="assets/img/league_of_legends.jpg"
+                                        <img class="card-img-top" src="../imgs/league_of_legends.jpg"
                                              alt="league_of_legends">
                                         <div class="card-body">
                                             <h5 class="card-title">ARTICLE 5</h5>
@@ -152,7 +152,7 @@
                                 </div>
                                 <div class="col">
                                     <div class="card">
-                                        <img class="card-img-top" src="assets/img/ac_origins.jpg" alt="ac_origins">
+                                        <img class="card-img-top" src="../imgs/ac_origins.jpg" alt="ac_origins">
                                         <div class="card-body">
                                             <h5 class="card-title">ARTICLE 6</h5>
                                             <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
@@ -172,7 +172,7 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="card">
-                                        <img class="card-img-top" src="assets/img/dark_souls.jpg"
+                                        <img class="card-img-top" src="../imgs/dark_souls.jpg"
                                              alt="monster_hunter_world">
                                         <div class="card-body">
                                             <h5 class="card-title">ARTICLE 2</h5>
@@ -187,7 +187,7 @@
                                 </div>
                                 <div class="col">
                                     <div class="card">
-                                        <img class="card-img-top" src="assets/img/monster_hunter_world.jpg"
+                                        <img class="card-img-top" src="../imgs/monster_hunter_world.jpg"
                                              alt="monster_hunter_world">
                                         <div class="card-body">
                                             <h5 class="card-title">ARTICLE 1</h5>
@@ -202,7 +202,7 @@
                                 </div>
                                 <div class="col">
                                     <div class="card">
-                                        <img class="card-img-top" src="assets/img/path_of_exile.jpg"
+                                        <img class="card-img-top" src="../imgs/path_of_exile.jpg"
                                              alt="monster_hunter_world">
                                         <div class="card-body">
                                             <h5 class="card-title">ARTICLE 3</h5>
@@ -220,7 +220,7 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="card">
-                                        <img class="card-img-top" src="assets/img/rainbow_six.jpg" alt="rainbow_six">
+                                        <img class="card-img-top" src="../imgs/rainbow_six.jpg" alt="rainbow_six">
                                         <div class="card-body">
                                             <h5 class="card-title">ARTICLE 4</h5>
                                             <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
@@ -234,7 +234,7 @@
                                 </div>
                                 <div class="col">
                                     <div class="card">
-                                        <img class="card-img-top" src="assets/img/ac_origins.jpg" alt="ac_origins">
+                                        <img class="card-img-top" src="../imgs/ac_origins.jpg" alt="ac_origins">
                                         <div class="card-body">
                                             <h5 class="card-title">ARTICLE 6</h5>
                                             <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
@@ -248,7 +248,7 @@
                                 </div>
                                 <div class="col">
                                     <div class="card">
-                                        <img class="card-img-top" src="assets/img/league_of_legends.jpg"
+                                        <img class="card-img-top" src="../imgs/league_of_legends.jpg"
                                              alt="league_of_legends">
                                         <div class="card-body">
                                             <h5 class="card-title">ARTICLE 5</h5>
@@ -270,7 +270,7 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="card">
-                                        <img class="card-img-top" src="assets/img/path_of_exile.jpg"
+                                        <img class="card-img-top" src="../imgs/path_of_exile.jpg"
                                              alt="monster_hunter_world">
                                         <div class="card-body">
                                             <h5 class="card-title">ARTICLE 3</h5>
@@ -285,7 +285,7 @@
                                 </div>
                                 <div class="col">
                                     <div class="card">
-                                        <img class="card-img-top" src="assets/img/dark_souls.jpg"
+                                        <img class="card-img-top" src="../imgs/dark_souls.jpg"
                                              alt="monster_hunter_world">
                                         <div class="card-body">
                                             <h5 class="card-title">ARTICLE 2</h5>
@@ -300,7 +300,7 @@
                                 </div>
                                 <div class="col">
                                     <div class="card">
-                                        <img class="card-img-top" src="assets/img/monster_hunter_world.jpg"
+                                        <img class="card-img-top" src="../imgs/monster_hunter_world.jpg"
                                              alt="monster_hunter_world">
                                         <div class="card-body">
                                             <h5 class="card-title">ARTICLE 1</h5>
@@ -318,7 +318,7 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="card">
-                                        <img class="card-img-top" src="assets/img/ac_origins.jpg" alt="ac_origins">
+                                        <img class="card-img-top" src="../imgs/ac_origins.jpg" alt="ac_origins">
                                         <div class="card-body">
                                             <h5 class="card-title">ARTICLE 6</h5>
                                             <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
@@ -332,7 +332,7 @@
                                 </div>
                                 <div class="col">
                                     <div class="card">
-                                        <img class="card-img-top" src="assets/img/league_of_legends.jpg"
+                                        <img class="card-img-top" src="../imgs/league_of_legends.jpg"
                                              alt="league_of_legends">
                                         <div class="card-body">
                                             <h5 class="card-title">ARTICLE 5</h5>
@@ -347,7 +347,7 @@
                                 </div>
                                 <div class="col">
                                     <div class="card">
-                                        <img class="card-img-top" src="assets/img/rainbow_six.jpg" alt="rainbow_six">
+                                        <img class="card-img-top" src="../imgs/rainbow_six.jpg" alt="rainbow_six">
                                         <div class="card-body">
                                             <h5 class="card-title">ARTICLE 4</h5>
                                             <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing

@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
           integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
@@ -23,11 +23,11 @@
             integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
             crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="assets/css/loginPopup.css">
-    <script rel="script" type="text/javascript" src="assets/js/loginPopup.js"></script>
-    <script rel="script" type="text/javascript" src="assets/js/jquery.rotate.1-1.js"></script>
-    <script type="text/javascript" src="assets/js/search.js"></script>
-    <link rel="stylesheet" type="text/css" href="assets/css/search.css">
+    <link rel="stylesheet" type="text/css" href="../css/loginPopup.css">
+    <script rel="script" type="text/javascript" src="../js/loginPopup.js"></script>
+    <script rel="script" type="text/javascript" src="../js/jquery.rotate.1-1.js"></script>
+    <script type="text/javascript" src="../js/search.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/search.css">
 </head>
 
 <body>
@@ -54,7 +54,7 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
-                                <img class="card-img-top" src="assets/img/monster_hunter_world.jpg" alt="Thumbnail">
+                                <img class="card-img-top" src="../imgs/monster_hunter_world.jpg" alt="Thumbnail">
                                 <div class="card-body">
                                     <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                                         diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
@@ -74,7 +74,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
-                                <img class="card-img-top" src="assets/img/dark_souls.jpg"
+                                <img class="card-img-top" src="../imgs/dark_souls.jpg"
                                      data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail"
                                      alt="Thumbnail">
                                 <div class="card-body">
@@ -94,7 +94,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
-                                <img class="card-img-top" src="assets/img/path_of_exile.jpg"
+                                <img class="card-img-top" src="../imgs/path_of_exile.jpg"
                                      data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail"
                                      alt="Thumbnail">
                                 <div class="card-body">
@@ -114,7 +114,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
-                                <img class="card-img-top" src="assets/img/default.jpg"
+                                <img class="card-img-top" src="../imgs/default.jpg"
                                      data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail"
                                      alt="Thumbnail">
                                 <div class="card-body">
@@ -135,7 +135,7 @@
 
                         <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
-                                <img class="card-img-top" src="assets/img/default.jpg"
+                                <img class="card-img-top" src="../imgs/default.jpg"
                                      data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail"
                                      alt="Thumbnail">
                                 <div class="card-body">

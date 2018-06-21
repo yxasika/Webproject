@@ -1,5 +1,5 @@
 <nav class="navbar fixed-top navbar-expand-xl navbar-dark bg-dark">
-    <a class="navbar-brand" href="index.php"><img src="assets/img/logo.png" alt="logo" align="center"
+    <a class="navbar-brand" href="index.php"><img src="../imgs/logo.png" alt="logo" align="center"
                                                   onclick="$(this).rotate(45)"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

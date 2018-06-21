@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
           integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
@@ -20,18 +20,18 @@
             integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
             crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="assets/css/loginPopup.css">
-    <script rel="script" type="text/javascript" src="assets/js/loginPopup.js"></script>
-    <script rel="script" type="text/javascript" src="assets/js/jquery.rotate.1-1.js"></script>
-    <script type="text/javascript" src="assets/js/search.js"></script>
-    <link rel="stylesheet" type="text/css" href="assets/css/search.css">
+    <link rel="stylesheet" type="text/css" href="../css/loginPopup.css">
+    <script rel="script" type="text/javascript" src="../js/loginPopup.js"></script>
+    <script rel="script" type="text/javascript" src="../js/jquery.rotate.1-1.js"></script>
+    <script type="text/javascript" src="../js/search.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/search.css">
 </head>
 
 <body>
 <?php include "logReg.php" ?>
 
 <nav class="navbar fixed-top navbar-expand-xl navbar-dark bg-dark">
-    <a class="navbar-brand" href="home.html"><img src="assets/img/logo.png" alt="logo" align="center" onclick="$(this).rotate(45)"></a>
+    <a class="navbar-brand" href="home.html"><img src="../imgs/logo.png" alt="logo" align="center" onclick="$(this).rotate(45)"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -77,7 +77,7 @@
                     <div class="card">
                         <div class="row">
                             <div class="col">
-                                <img class="card-img-left mx-auto" src="assets/img/monster_hunter_world.jpg"
+                                <img class="card-img-left mx-auto" src="../imgs/monster_hunter_world.jpg"
                                      alt="monster_hunter_world">
                             </div>
                             <div class="col">
@@ -105,7 +105,7 @@
                                 <a class="btn btn-outline-primary icon" role="button" target="_blank" href="pdf.js-gh-pages/web/viewer.html?file=../../assets/img/article.myJournal.pdf">
                                     <i class="material-icons">book</i> read</a>
                                 <a class="btn btn-outline-primary icon" role="button" target="_blank"
-                                   href="assets/img/article.myJournal.pdf" download="article_1">
+                                   href="../imgs/article.myJournal.pdf" download="article_1">
                                     <i class="material-icons">file_download</i> Download</a>
                             </li>
                         </ul>
