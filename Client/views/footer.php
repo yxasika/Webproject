@@ -1,17 +1,16 @@
-<footer class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
-    <div class="col">
-        <div class="row">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item text-center">
-                    <a class="nav-link" href="impressum.php">IMPRESSUM</a>
-                </li>
-                <li class="nav-item text-center">
-                    <a class="nav-link" href="contact.php">CONTACT</a>
-                </li>
-            </ul>
-        </div>
-        <div class="row">
-            <p class="text-secondary  mx-auto">&copy; 2018 DPAD</p>
-        </div>
-    </div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#scrollTop").click(function () {
+            window.scrollTo(0, 0);
+        });
+    });
+</script>
+
+<footer>
+    <a id="scrollTop"><i class="material-icons">arrow_upward</i></a>
+    <ul>
+        <li><a href="impressum.php">Impressum</a></li>
+        <li><a href="contact.php">Contact</a></li>
+        <p>&copy; 2018 DPAD</p>
+    </ul>
 </footer>

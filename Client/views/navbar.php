@@ -23,16 +23,22 @@ if (isset($_POST["search"])) {
                 $('.searchInput').animate({width: '+=200px'});
             }
         })
+
+        $(document).ready(function () {
+            $(".menu-icon").on("click", function () {
+                $("nav ul").toggleClass("showing");
+            });
+        });
     </script>
 </head>
-<body>
-<div class="wrapper">
+<body id="top">
+<div>
     <nav>
         <div class="logo">
             <i id="menu" class="material-icons">dehaze</i>
             <label for="navToggle">D+Pad</label>
             <input type="checkbox" id="navToggle"></div>
-        <ul class="leftnav nav">
+        <ul class="leftnav nav menu">
             <li><a href="home.php">Home</a></li>
             <li><a href="archive.php">Archive</a></li>
             <?php
@@ -45,13 +51,13 @@ if (isset($_POST["search"])) {
             }
             ?>
         </ul>
-        <ul class="rightnav nav">
+        <ul class="rightnav nav menu">
             <input type="checkbox" id="searchCheckbox">
             <li><label for="searchCheckbox"><i class="material-icons">search</i></label></li>
             <li><input type="search" class="searchInput" placeholder="Search.."></li>
             <li><i class="material-icons">notifications</i><span class="badge"></span></a></li>
             <?php
-            if (!isset($_SESSION["username"])) {
+            if (!isset($_SESSION["email"])) {
                 echo '<li><a class="active" href="login.php" name="loginBtn">Log In</a></li>';
                 echo '<li><a class="active" href="signUp.php" name="signupBtn">Sign Up</a></li>';
             } else {
