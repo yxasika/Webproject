@@ -49,14 +49,14 @@ function getArticles_sortby($status, $sortby, $asc)
         $db = new SQLite3("../db/dpad.db");
 
         if ($asc) {
-            $sql = "SELECT * FROM articlelist
-                
-                WHERE status = :status
+            $sql = "SELECT *
+                    FROM articlelist
+                WHERE status == :status
                 ORDER BY :sortby ASC";
         } else {
-            $sql = "SELECT * FROM articlelist
-                
-                WHERE status = :status
+            $sql = "SELECT *
+                    FROM articlelist
+                WHERE status == :status
                 ORDER BY :sortby DESC";
         }
 

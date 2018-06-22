@@ -82,7 +82,6 @@ include "navbar.php" ?>
                                 <?php
                                 $articles = getArticles_sortby('published', 'published_date', false);
 
-
                                 // Momentan wird noch jeder published article ausgelesen. wir sollten eventuell nur die letzten 6 oder so anzeigen.
                                 foreach ($articles as $article => $articlecard) {
                                     generateArticleCard('archive', $articlecard);
