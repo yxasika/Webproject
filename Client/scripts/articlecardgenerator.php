@@ -18,11 +18,17 @@ function generateArticleCard($type, $data)
     {
         echo $data["published_date"] . '</br>';
     }
+//echos the status of the article if the card is in the author section
+    if($type == 'author')
+    {
+        echo '<button class="btn btn-warning" disabled class="button">' . $data["status"] . '</button><p></p>';
+    }
 //echos the categories (later clickable for a tag search)
     $categories = getCategories($data['id']);
     foreach ($categories as $category) {
         echo '<a href="#" class="badge badge-info mr-2">' . $category . '</a>';
     }
+
 //starts the card footer and echos the article link-button (no link currently)
     echo '
         <p></p>
