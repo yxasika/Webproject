@@ -35,8 +35,11 @@ function renderHTML(data) {
             '<h5 class="card-title">' + data[i].title + '</h5>' +
             '<i>' + data[i].author + '</i>' +
             '<p><p>' + data[i].published_date + '</p>' +
-            '<p>upvotes: <button class="btn btn-outline-secondary" disabled class="button">' + data[i].upvote + '</button></p>' +
-            '</p>' +
+            '<p>upvotes: <button class="btn btn-outline-secondary" disabled class="button">' + data[i].upvote + '</button></p>';
+        for (ii = 0; ii < data[i].category.length; ii++) {
+            htmlString += '<a href="#" class="badge badge-info">' + data[i].category[ii] + '</a>';
+        }
+        htmlString += '</p>' +
             '<a href="#" class="btn btn-primary">Read More</a>' +
             '</div>' +
             '</div>' +

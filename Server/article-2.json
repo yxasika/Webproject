@@ -1,9 +1,11 @@
 [
   {
+    "img": "NULL",
     "title": "Placeholder1",
     "author": "test Mustertest",
     "authormail": "test@mail.com",
     "published_date": "2018-06-15",
+    "upvote": "3",
     "category": [
       "rpg",
       "shooter",
@@ -12,10 +14,12 @@
     "description": "Just a short description."
   },
   {
+    "img": "NULL",
     "title": "Placeholder2",
     "author": "Max Musterman",
     "authormail": "muster@mail.com",
     "published_date": "2018-06-16",
+    "upvote": "2",
     "category": [
       "rpg",
       "shooter",
@@ -24,10 +28,12 @@
     "description": "Just a short description."
   },
   {
+    "img": "NULL",
     "title": "Placeholder3",
     "author": "test Mustertest",
     "authormail": "test@mail.com",
     "published_date": "2018-07-11",
+    "upvote": "21",
     "category": [
       "rpg",
       "shooter",
@@ -36,10 +42,12 @@
     "description": "Just a short description."
   },
   {
+    "img": "NULL",
     "title": "Placeholder4",
     "author": "Max Musterman",
     "authormail": "muster@mail.com",
     "published_date": "2017-06-15",
+    "upvote": "3",
     "category": [
       "rpg",
       "shooter",
@@ -48,10 +56,12 @@
     "description": "Just a short description."
   },
   {
+    "img": "NULL",
     "title": "Placeholder5",
     "author": "test Mustertest",
     "authormail": "test@mail.com",
     "published_date": "2010-06-15",
+    "upvote": "3",
     "category": [
       "rpg",
       "shooter",
