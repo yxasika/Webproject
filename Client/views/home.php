@@ -85,21 +85,7 @@ include "navbar.php" ?>
 
                                 // Momentan wird noch jeder published article ausgelesen. wir sollten eventuell nur die letzten 6 oder so anzeigen.
                                 foreach ($articles as $article => $articlecard) {
-                                    generateArticleCard('archice', $articlecard);
-
-                                    echo '
-                                    <div class="card">
-                                        <img class="card-img-top" src=' . $articles[$article]["img"] . '
-                                             alt="article_image">
-                                        <div class="card-body">
-                                            <h5 class="card-title">' . $articles[$article]["title"] . '</h5>
-                                            <i>published: ' . $articles[$article]['published_date'] . '</i>
-                                            <p class="card-text">' . $articles[$article]["description"] . '
-                                            </p>
-                                            <a href="#" class="btn btn-primary">Read more</a>
-                                        </div>
-                                    </div>
-                                    ';
+                                    generateArticleCard('archive', $articlecard);
                                 }
 
                                 ?>
@@ -109,101 +95,21 @@ include "navbar.php" ?>
 
                         </div>
                     </div>
-                </div>
-                <div class="tab-pane fade" id="pills-bestRated" role="tabpanel"
-                     aria-labelledby="pills-bestRated-tab">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col">
-                                <div class="card">
-                                    <img class="card-img-top" src="../src/imgs/path_of_exile.jpg"
-                                         alt="monster_hunter_world">
-                                    <div class="card-body">
-                                        <h5 class="card-title">ARTICLE 3</h5>
-                                        <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
-                                            elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                            aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-                                            dolores et ea rebum.
-                                        </p>
-                                        <a href="#" class="btn btn-primary">Read more</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card">
-                                    <img class="card-img-top" src="../src/imgs/dark_souls.jpg"
-                                         alt="monster_hunter_world">
-                                    <div class="card-body">
-                                        <h5 class="card-title">ARTICLE 2</h5>
-                                        <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
-                                            elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                            aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-                                            dolores et ea rebum.
-                                        </p>
-                                        <a href="#" class="btn btn-primary">Read more</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card">
-                                    <img class="card-img-top" src="../src/imgs/monster_hunter_world.jpg"
-                                         alt="monster_hunter_world">
-                                    <div class="card-body">
-                                        <h5 class="card-title">ARTICLE 1</h5>
-                                        <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
-                                            elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                            aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-                                            dolores et ea rebum.
-                                        </p>
-                                        <a href="article_1.php" class="btn btn-primary">Read more</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="row">
-                            <div class="col">
-                                <div class="card">
-                                    <img class="card-img-top" src="../src/imgs/ac_origins.jpg" alt="ac_origins">
-                                    <div class="card-body">
-                                        <h5 class="card-title">ARTICLE 6</h5>
-                                        <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
-                                            elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                            aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-                                            dolores et ea rebum.
-                                        </p>
-                                        <a href="#" class="btn btn-primary">Read more</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card">
-                                    <img class="card-img-top" src="../src/imgs/league_of_legends.jpg"
-                                         alt="league_of_legends">
-                                    <div class="card-body">
-                                        <h5 class="card-title">ARTICLE 5</h5>
-                                        <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
-                                            elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                            aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-                                            dolores et ea rebum.
-                                        </p>
-                                        <a href="#" class="btn btn-primary">Read more</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card">
-                                    <img class="card-img-top" src="../src/imgs/rainbow_six.jpg" alt="rainbow_six">
-                                    <div class="card-body">
-                                        <h5 class="card-title">ARTICLE 4</h5>
-                                        <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing
-                                            elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                            aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-                                            dolores et ea rebum.
-                                        </p>
-                                        <a href="article_1.php" class="btn btn-primary">Read more</a>
-                                    </div>
-                                </div>
+
+                    <div class="tab-pane fade" id="pills-bestRated" role="tabpanel"
+                         aria-labelledby="pills-bestRated-tab">
+                        <div class="container">
+                            <div class="row">
+                                <?php
+                                $articles = getArticles_sortby('published', 'upvote', false);
+
+
+                                // Momentan wird noch jeder published article ausgelesen. wir sollten eventuell nur die letzten 6 oder so anzeigen.
+                                foreach ($articles as $article => $articlecard) {
+                                    generateArticleCard('archive', $articlecard);
+                                }
+
+                                ?>
                             </div>
                         </div>
                     </div>
