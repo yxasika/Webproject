@@ -9,15 +9,17 @@ function generateArticleCard($type, $data)
             <div class="card-body">
                 <h5 class="card-title">' . $data["title"] . '</h5>
                 <i>' . $data["author"] . '</i><p>';
+
     if($type == 'archive')
     {
                 echo'
 <p>' . $data["published_date"] . '</p>
 <p>upvotes: <button class="btn btn-outline-secondary" disabled class="button">' . $data["upvote"] . '</button></p>';
     }
+
     $categories = getCategories($data['id']);
     foreach ($categories as $category) {
-        echo '<button type="button" class="btn btn-success">' . $category . '</button>';
+        echo '<a href="#" class="badge badge-info">' . $category . '</a>';
     }
 
     echo '</p>

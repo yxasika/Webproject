@@ -48,16 +48,16 @@ function getArticles_sortby($status, $sortby, $asc)
     try {
         $db = new SQLite3("../db/dpad.db");
 
-        if ($asc) {
+        if ($asc == true) {
             $sql = "SELECT *
                     FROM articlelist
                 WHERE status == :status
-                ORDER BY :sortby ASC";
+                ORDER BY :sortby ASC;";
         } else {
             $sql = "SELECT *
                     FROM articlelist
                 WHERE status == :status
-                ORDER BY :sortby DESC";
+                ORDER BY :sortby DESC;";
         }
 
 
@@ -68,10 +68,19 @@ function getArticles_sortby($status, $sortby, $asc)
 
         $ergebnis = $stmt->execute();
 
-        $articles = array();
 
-        while ($row_article = $ergebnis->fetchArray()) {
-            $articles[] = $row_article;
+
+        $articles = array();
+        $count = 0;
+
+        while ($row_article = $ergebnis->fetchArray(SQLITE3_ASSOC)) {
+            foreach ($row_article as $i=>$value)
+            {
+                $articles[$count][$i] = $value;
+                echo($value." | ");
+            }
+            $count++;
+            echo"<br>";
         }
         $db->close();
 
