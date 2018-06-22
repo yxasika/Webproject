@@ -96,7 +96,7 @@ nav ul li a:focus {
     outline: none;
 }
 
-nav ul li a:hover {
+nav ul li a :hover {
     background-color: #909090;
 }
 

@@ -33,7 +33,7 @@ setCookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
     <script rel="script" type="text/javascript" src="../scripts/loginPopup.js"></script>
     <script rel="script" type="text/javascript" src="../scripts/jquery.rotate.1-1.js"></script>
     <script type="text/javascript" src="../scripts/search.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/search.css">
+    <link rel="stylesheet" type="text/css" href="../css/navbar.css">
 </head>
 
 <body>
