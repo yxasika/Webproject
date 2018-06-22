@@ -58,7 +58,6 @@ if (isset($_POST["login"])) {
 
                 $success = true;
                 header('Refresh: 2; URL=../views/home.php');
-                die;
             }
         }
     }
