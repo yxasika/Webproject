@@ -91,7 +91,8 @@ include "navbar.php" ?>
 
 
                             </div>
-
+                            <div id="content"></div>
+                            <button id="showMore" class="btn col">Show more</button>
                         </div>
                     </div>
 
@@ -120,5 +121,5 @@ include "navbar.php" ?>
 </main>
 <?php include "footer.php" ?>
 </body>
-
+<script rel="script" type="text/javascript" src="../scripts/showMoreHome.js"></script>
 </html>

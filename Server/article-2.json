@@ -1,32 +1,62 @@
 [
   {
     "title": "Placeholder1",
+    "author": "test Mustertest",
+    "authormail": "test@mail.com",
     "published_date": "2018-06-15",
-    "description": "Just a short description.",
-    "author": "test Mustertest"
+    "category": [
+      "rpg",
+      "shooter",
+      "action"
+    ],
+    "description": "Just a short description."
   },
   {
     "title": "Placeholder2",
+    "author": "Max Musterman",
+    "authormail": "muster@mail.com",
     "published_date": "2018-06-16",
-    "description": "Just a short description.",
-    "author": "Max Musterman"
+    "category": [
+      "rpg",
+      "shooter",
+      "action"
+    ],
+    "description": "Just a short description."
   },
   {
     "title": "Placeholder3",
+    "author": "test Mustertest",
+    "authormail": "test@mail.com",
     "published_date": "2018-07-11",
-    "description": "Just a short description.",
-    "author": "test Mustertest"
+    "category": [
+      "rpg",
+      "shooter",
+      "action"
+    ],
+    "description": "Just a short description."
   },
   {
     "title": "Placeholder4",
+    "author": "Max Musterman",
+    "authormail": "muster@mail.com",
     "published_date": "2017-06-15",
-    "description": "Just a short description.",
-    "author": "Max Musterman"
+    "category": [
+      "rpg",
+      "shooter",
+      "action"
+    ],
+    "description": "Just a short description."
   },
   {
     "title": "Placeholder5",
+    "author": "test Mustertest",
+    "authormail": "test@mail.com",
     "published_date": "2010-06-15",
-    "description": "Just a short description.",
-    "author": "test Mustertest"
+    "category": [
+      "rpg",
+      "shooter",
+      "action"
+    ],
+    "description": "Just a short description."
   }
 ]

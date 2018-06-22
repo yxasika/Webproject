@@ -2,9 +2,6 @@ var pageCounter = 1;
 var newContent = document.getElementById("content");
 var btn = document.getElementById("showMore");
 
-var url = window.location.pathname;
-var filename = url.substring(url.lastIndexOf('/') + 1);
-
 btn.addEventListener("click", function () {
     var request = new XMLHttpRequest();
     request.open('GET', '../../Server/article-' + pageCounter + '.json');
@@ -31,13 +28,19 @@ btn.addEventListener("click", function () {
 function renderHTML(data) {
     var htmlString = "";
     for (i = 0; i < data.length; i++) {
-        htmlString += "<li><a href=\"#\" class=\"list-group-item list-group-item-action flex-column align-items-start\">\n" +
-            "        <div class=\"d-flex w-100 justify-content-between\">\n" +
-            "        <h5 class=\"mb-1\">" + data[i].title + "<small class=\"text-muted\">" + data[i].published_date + "</small>\n" +
-            "        </div>\n" +
-            "        <p class=\"mb-1\">" + data[i].description + "</p>\n" +
-            "        <small>" + data[i].author + "</small></a></li>";
+        htmlString += '<div class="col-md-4">' +
+            '<div class="card">' +
+            '<img class="card-img-top" src="' + data[i].img + '" alt="article image">' +
+            '<div class="card-body">' +
+            '<h5 class="card-title">' + data[i].title + '</h5>' +
+            '<i>' + data[i].author + '</i>' +
+            '<p><p>' + data[i].published_date + '</p>' +
+            '<p>upvotes: <button class="btn btn-outline-secondary" disabled class="button">' + data[i].upvote + '</button></p>' +
+            '</p>' +
+            '<a href="#" class="btn btn-primary">Read More</a>' +
+            '</div>' +
+            '</div>' +
+            '</div>';
     }
-
     newContent.insertAdjacentHTML('beforeend', htmlString);
 }
