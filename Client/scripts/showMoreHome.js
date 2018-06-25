@@ -28,22 +28,25 @@ btn.addEventListener("click", function () {
 function renderHTML(data) {
     var htmlString = "";
     for (i = 0; i < data.length; i++) {
-        htmlString += '<div class="col-md-4">' +
-            '<div class="card">' +
+        htmlString += '<div class="card text-center bg-light mb-3">' +
+            '<div class="card-header">' +
             '<img class="card-img-top" src="' + data[i].img + '" alt="article image">' +
+            '</div>' +
             '<div class="card-body">' +
             '<h5 class="card-title">' + data[i].title + '</h5>' +
-            '<i>' + data[i].author + '</i>' +
-            '<p><p>' + data[i].published_date + '</p>' +
-            '<p>upvotes: <button class="btn btn-outline-secondary" disabled class="button">' + data[i].upvote + '</button></p>';
+            '<i>' + data[i].author + '</i></br>' +
+            data[i].published_date + '</br>';
         for (ii = 0; ii < data[i].category.length; ii++) {
-            htmlString += '<a href="#" class="badge badge-info">' + data[i].category[ii] + '</a>';
+            htmlString += '<a href="#" class="badge badge-info mr-2">' + data[i].category[ii] + '</a>';
         }
-        htmlString += '</p>' +
-            '<a href="#" class="btn btn-primary">Read More</a>' +
+        htmlString += '<p></p>' +
+            '<div class="card-footer row">' +
+            '<a href="#" class="btn btn-primary mr-4">Read More</a>' +
+            '<button class="btn btn-warning" disabled class="button">upvotes: ' + data[i].upvote + '</button>' +
             '</div>' +
             '</div>' +
             '</div>';
+
     }
     newContent.insertAdjacentHTML('beforeend', htmlString);
 }

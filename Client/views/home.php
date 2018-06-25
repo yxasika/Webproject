@@ -78,7 +78,6 @@ include "navbar.php" ?>
                          aria-labelledby="pills-latest-tab">
                         <div class="container">
                             <div class="row">
-
                                 <?php
                                 $articles = getArticles_sortby('published', 'published_date', false);
 
@@ -88,10 +87,8 @@ include "navbar.php" ?>
                                 }
 
                                 ?>
-
-
                             </div>
-                            <div id="content"></div>
+                            <div id="content" class="col-md-4"></div>
                             <button id="showMore" class="btn col">Show more</button>
                         </div>
                     </div>
