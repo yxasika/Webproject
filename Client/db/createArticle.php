@@ -27,6 +27,8 @@ class article
             VALUES (:title, :author, :authormail, :published_date, :categoryid, :img, :pdf, :status, :description, :upvote);";
         $stmt = $this->pdo->prepare($sql);
 
+
+
         $stmt->bindParam(':title', $title);
         $stmt->bindParam(':author', $author);
         $stmt->bindParam(':authormail', $authormail);
@@ -52,7 +54,20 @@ class article
         $stmt->bindParam(':status', $status);
         $stmt->bindParam(':id', $id);
 
-        return $stmt->execute();
+        $stmt->execute();
+
+        if($status=="published")
+        {
+            $sql = "UPDATE articlelist
+                SET published_date = :date
+                WHERE id = :id;";
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->bindParam(':date', date("Y-m-d"));
+            $stmt->bindParam(':id', $id);
+            $stmt->execute();
+        }
+
+
     }
 
 

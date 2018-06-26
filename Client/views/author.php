@@ -37,7 +37,8 @@ session_start();
 <body>
 
 <?php include "navbar.php";
-include "../db/db_auslesen.php"
+include "../db/db_auslesen.php";
+include "../scripts/articlecardgenerator.php"
 ?>
 
 <main>
@@ -67,25 +68,11 @@ include "../db/db_auslesen.php"
 
                             $articles = array_merge(getArticles('pending'), getArticles('approved'), getArticles('rejected'), getArticles('published'));
 
-                            foreach ($articles as $article => $article) {
-                                if ($articles[$article]['authormail'] == $_SESSION["email"]) {
+                            foreach ($articles as $article => $articlecard) {
+                                if ($articlecard['authormail'] == $_SESSION["email"]) {
 
+                                    generateArticleCard("author", $articlecard);
 
-                                    echo '
-                                        <div class="col-md-3">
-                                    <div class="card">
-                                        <img class="card-img-top" src=' . $articles[$article]["img"] . '
-                                        alt="article image">
-                                        <div class="card-body">
-                                            <h5 class="card-title">' . $articles[$article]["title"] . '</h5>
-                                            status: <i>' . $articles[$article]["status"] . '</i>
-                                            <p class="card-text">' . $articles[$article]["description"] . '</p>
-                                            <a href="#" class="btn btn-primary">Read More</a>
-                                        
-                                        </div>
-                                    </div>
-                                </div>
-                                    ';
                                 }
                             }
                             ?>

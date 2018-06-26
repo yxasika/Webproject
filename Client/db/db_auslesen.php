@@ -66,7 +66,7 @@ function getArticles_sortby($status, $sortby, $asc)
         $stmt = $db->prepare($sql);
 
         $stmt->bindParam(':status', $status);
-        $stmt->bindParam(':sortby', $sortby);
+        //$stmt->bindParam(':sortby', $sortby);
 
         $ergebnis = $stmt->execute();
 

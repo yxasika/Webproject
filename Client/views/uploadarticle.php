@@ -1,4 +1,4 @@
-<?php include "../scripts/uploadarticlescript.php" ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +43,8 @@
 
 <body>
 
-<?php include "navbar.php" ?>
+<?php include "navbar.php" ;
+include "../scripts/uploadarticlescript.php" ?>
 
 <main style="position: relative; top: 1em;">
     <div class="container">
@@ -90,7 +91,7 @@
                                     <li class="list-group-item">
                                         <div class="form-row">
                                             <label class="mr-2" for="chk_jnr">jump'n run</label>
-                                            <input name="jump'n run" type="checkbox" class="mt-1" id="chk_jnr">
+                                            <input name="jump" type="checkbox" class="mt-1" id="chk_jnr">
                                         </div>
                                     </li>
                                     <li class="list-group-item">
