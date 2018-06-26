@@ -52,12 +52,14 @@ function getArticles_sortby($status, $sortby, $asc)
             $sql = "SELECT *
                     FROM articlelist
                 WHERE status == :status
-                ORDER BY :sortby ASC;";
+                ORDER BY ".$sortby." ASC;";
+           // echo"ascending</br>";
         } else {
             $sql = "SELECT *
                     FROM articlelist
                 WHERE status == :status
-                ORDER BY :sortby DESC;";
+                ORDER BY ".$sortby." DESC;";
+           // echo"descending</br>";
         }
 
 
@@ -77,10 +79,10 @@ function getArticles_sortby($status, $sortby, $asc)
             foreach ($row_article as $i=>$value)
             {
                 $articles[$count][$i] = $value;
-                echo($value." | ");
+                //echo($value." | ");
             }
             $count++;
-            echo"<br>";
+            //echo"<br>";
         }
         $db->close();
 
