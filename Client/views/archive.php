@@ -36,6 +36,7 @@ session_start();
 <body>
 <?php include "navbar.php";
 include "../db/db_auslesen.php";
+include "../scripts/articlecardgenerator.php";
 include "cookie_alert.php" ?>
 
 <main>
@@ -61,19 +62,11 @@ include "cookie_alert.php" ?>
                     <?php
                     $articles = getArticles('published');
 
-                    foreach ($articles as $article => $article) {
+                    foreach ($articles as $article => $articlecard) {
 
-                        echo
-
-                            '
-                            <li><a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">' . $articles[$article]["title"] . '
-                            <small class="text-muted">' . $articles[$article]["published_date"] . '</small>
-                            </div>
-                        <p class="mb-1">' . $articles[$article]["description"] . '</p>
-                        <small>' . $articles[$article]["author"] . '</small></a></li>
-                        ';
+                        echo"<li>";
+                        generateArticleCard("archive", $articlecard);
+                        echo"</li>";
 
                     }
                     ?>

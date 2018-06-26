@@ -25,5 +25,5 @@ $categoryObj->insertCategory(5, "jump'n run");
 
 $notifiObj = new notification();
 $notifiObj->insertNotifi('test@mail.com', 'muster@mail.com', 'Missing Abstract', 'Here is a text message.', 'new');
-$notifiObj->insertNotifi('muster@mail.com', 'test@mail.com', 'RE:Missing Abstract', 'Here is a response message.', 'new');
+$notifiObj->insertNotifi('muster@mail.com', 'test@mail.com', 'RE:Missing Abstract', 'Here is a response message.', 'read');
 ?>
