@@ -72,7 +72,8 @@ include "../scripts/uploadarticlescript.php" ?>
                     </div>
                     <div class="form-group">
                         upload your article's header image here:
-                        <input name="imglink" type="file" class="float-right" accept=".png,.jpg,.jpeg">
+                        <input id="imglinkid" name="imglink" type="file" class="float-right" accept=".png,.jpg,.jpeg">
+                        <label content="imglinkid"></label>
                     </div>
                     <div class="row">
                         <div class="col">

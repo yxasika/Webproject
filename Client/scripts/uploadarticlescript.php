@@ -3,6 +3,7 @@ include "../db/db_auslesen.php";
 include "../db/createArticle.php";
 include "../db/createCategorylist.php";
 
+
 if (isset($_POST["upload"])) {
 
     $title = htmlspecialchars($_POST["title"]);
@@ -17,6 +18,7 @@ if (isset($_POST["upload"])) {
     $img = $_POST["imglink"];
     $pdf = $_POST["pdflink"];
 
+
     $articles = array_merge(getArticles('pending'), getArticles('approved'), getArticles('rejected'), getArticles('published'));
 
     $catid = count($articles)+1;
@@ -26,9 +28,6 @@ if (isset($_POST["upload"])) {
     $jump = isset($_POST["jump"]);
     $action = isset($_POST["action"]);
     $shooter = isset($_POST["shooter"]);
-
-    echo "<p>".$img."</p>";
-    sleep(10);
 
     $articleObj = new article();
 
