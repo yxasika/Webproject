@@ -29,6 +29,8 @@ session_start();
     <script rel="script" type="text/javascript" src="../scripts/jquery.rotate.1-1.js"></script>
     <script type="text/javascript" src="../scripts/search.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/search.css">
+    <link rel="stylesheet" type="text/css" href="../css/searchBar.css">
+
 </head>
 <body>
 
@@ -36,63 +38,52 @@ session_start();
 
 <main>
     <div class="container">
-        <div class="justify-content-center">
-            <div class="content">
-                <form class="form-inline my-2 my-lg-0 " action="searchResults.php">
-                    <?php
-                    if (isset($_SESSION["search"])) {
-                        echo '<input class="searchInput form-control mr-sm-2" id="myInput" onkeyup="searchFunction()"
-                           type="search" placeholder="Search" aria-label="Search" value="' . $_SESSION['search'] . '"><script>searchFunction()</script>';
-                    } else {
-                        echo '<input class="searchInput form-control mr-sm-2" id="myInput" onkeyup="searchFunction()"
-                           type="search" placeholder="Search" aria-label="Search">';
-                    }
-                    ?>
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <ul class="searchNav">
+                    <li><a href="http://localhost/Webproject/Client/views/searchResults.php?letter=.">#</a></li>
+                    <li><a href="http://localhost/Webproject/Client/views/searchResults.php?letter=A">A</a></li>
+                    <li><a href="http://localhost/Webproject/Client/views/searchResults.php?letter=B">B</a></li>
+                    <li><a href="http://localhost/Webproject/Client/views/searchResults.php?letter=C">C</a></li>
+                    <li><a href="http://localhost/Webproject/Client/views/searchResults.php?letter=D">D</a></li>
+                    <li><a href="http://localhost/Webproject/Client/views/searchResults.php?letter=E">E</a></li>
+                    <li><a href="http://localhost/Webproject/Client/views/searchResults.php?letter=F">F</a></li>
+                    <li><a href="http://localhost/Webproject/Client/views/searchResults.php?letter=G">G</a></li>
+                    <li><a href="http://localhost/Webproject/Client/views/searchResults.php?letter=H">H</a></li>
+                    <li><a href="http://localhost/Webproject/Client/views/searchResults.php?letter=I">I</a></li>
+                    <li><a href="http://localhost/Webproject/Client/views/searchResults.php?letter=J">J</a></li>
+                    <li><a href="http://localhost/Webproject/Client/views/searchResults.php?letter=K">K</a></li>
+                    <li><a href="http://localhost/Webproject/Client/views/searchResults.php?letter=L">L</a></li>
+                    <li><a href="http://localhost/Webproject/Client/views/searchResults.php?letter=M">M</a></li>
+                    <li><a href="http://localhost/Webproject/Client/views/searchResults.php?letter=N">N</a></li>
+                    <li><a href="http://localhost/Webproject/Client/views/searchResults.php?letter=O">O</a></li>
+                    <li><a href="http://localhost/Webproject/Client/views/searchResults.php?letter=P">P</a></li>
+                    <li><a href="http://localhost/Webproject/Client/views/searchResults.php?letter=Q">Q</a></li>
+                    <li><a href="http://localhost/Webproject/Client/views/searchResults.php?letter=R">R</a></li>
+                    <li><a href="http://localhost/Webproject/Client/views/searchResults.php?letter=S">S</a></li>
+                    <li><a href="http://localhost/Webproject/Client/views/searchResults.php?letter=T">T</a></li>
+                    <li><a href="http://localhost/Webproject/Client/views/searchResults.php?letter=U">U</a></li>
+                    <li><a href="http://localhost/Webproject/Client/views/searchResults.php?letter=V">V</a></li>
+                    <li><a href="http://localhost/Webproject/Client/views/searchResults.php?letter=W">W</a></li>
+                    <li><a href="http://localhost/Webproject/Client/views/searchResults.php?letter=X">X</a></li>
+                    <li><a href="http://localhost/Webproject/Client/views/searchResults.php?letter=Y">Y</a></li>
+                    <li><a href="http://localhost/Webproject/Client/views/searchResults.php?letter=Z">Z</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <form method="get" action="">
+                    <input class="searchInput form-control-static" name="search">
+                    <button type="submit"><i class="material-icons btn btn-primary btn-sm">search</i></button>
                 </form>
-                <hr>
-                <h3>Results</h3>
-                <ul id="myUL" class="list-group myList">
-                    <li><a href="article_1.php"
-                           class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">Article 1</h5>
-                                <small>2 weeks ago</small>
-                            </div>
-                            <p class="mb-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                                eirmod
-                                tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                            <small> Max Mustermann</small>
-                        </a></li>
-                    <li><a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">Article A</h5>
-                                <small>4 weeks ago</small>
-                            </div>
-                            <p class="mb-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                                eirmod
-                                tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                            <small> Max Mustermann</small>
-                        </a></li>
-                    <li><a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">Article B</h5>
-                                <small class="text-muted">5 weeks ago</small>
-                            </div>
-                            <p class="mb-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                                eirmod
-                                tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                            <small> Max Mustermann</small>
-                        </a></li>
-                    <li><a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">Test</h5>
-                                <small class="text-muted">5 weeks ago</small>
-                            </div>
-                            <p class="mb-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                                eirmod
-                                tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                            <small> Max Mustermann</small>
-                        </a></li>
+            </div>
+        </div>
+        <hr>
+        <div class="row justify-content-center">
+            <div class="content">
+                <ul>
+                    <?php include "../scripts/search.php" ?>
                 </ul>
             </div>
         </div>

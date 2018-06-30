@@ -1,8 +1,5 @@
 <?php
 session_start();
-if (isset($_POST["search"])) {
-    $_SESSION["search"] = $_POST["search"];
-}
 ?>
 <script type="text/javascript" src="http://beneposto.pl/jqueryrotate/js/jQueryRotateCompressed.js"></script>
 
@@ -32,10 +29,7 @@ if (isset($_POST["search"])) {
             ?>
         </ul>
         <ul class="navbar-nav ">
-            <form class="form-inline my-2 my-lg-0" id="searchForm" method="get" action="archive.php">
-                <input class="searchInput form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
-                       id="searchInput" name="search">
-            </form>
+            <a href="searchResults.php" class="btn btn-primary icon my-2 mr-2" role="button"><i class="material-icons">search</i></a>
             <?php
             if (!isset($_SESSION["firstname"])) {
                 echo '<a href="login.php" class="btn btn-primary my-2 mr-2" name="loginBtn">Log In</a>
