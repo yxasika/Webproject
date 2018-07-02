@@ -18,6 +18,7 @@ setCookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
           integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
@@ -28,16 +29,21 @@ setCookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
             integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
             crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/loginPopup.css">
+    <script rel="script" type="text/javascript" src="../scripts/loginPopup.js"></script>
+    <script rel="script" type="text/javascript" src="../scripts/jquery.rotate.1-1.js"></script>
+    <script type="text/javascript" src="../scripts/search.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/search.css">
 </head>
 
 <body>
 <?php include "cookie_alert.php";
 include "../db/db_auslesen.php";
 include "../scripts/articlecardgenerator.php";
-include "blackNav.php" ?>
+include "navbar.php" ?>
 
 
-<section class="contentS">
+<!--<section class="contentS">
     <div class="wrapper">
         <h1>About Us</h1>
         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
@@ -49,7 +55,8 @@ include "blackNav.php" ?>
             et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
             Lorem ipsum dolor sit amet.</p>
     </div>
-
+</section>-->
+<main>
     <div class="container">
         <div class="row justify-content-center">
             <div class="content">
@@ -122,7 +129,7 @@ include "blackNav.php" ?>
             </div>
         </div>
     </div>
-</section>
+</main>
 <?php include "footer.php" ?>
 </body>
 <script rel="script" type="text/javascript" src="../scripts/showMoreHome.js"></script>

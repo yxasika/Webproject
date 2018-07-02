@@ -7,8 +7,9 @@ body {
 .wrapper {
     width: 1000px;
     margin: 30px auto;
+    padding: 10px;
     border: 1px solid black;
-    border-radius: 10px;
+    border-radius: 6px;
 }
 
 .wrapper h1 {
@@ -128,3 +129,60 @@ nav ul li a.active {
     line-height: 30px;
 }
 
+#searchForm {
+    width: 900px;
+    margin: 30px auto;
+    text-align: justify;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+#searchForm form {
+    display: flex;
+}
+
+#searchForm input {
+    width: 100%;
+}
+
+#searchForm button {
+    width: 5%;
+}
+
+.searchNav {
+    width: 900px;
+    margin: 10px auto;
+    text-align: justify;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.searchNav li {
+    display: inline-block;
+}
+
+.searchNav li a {
+    color: red;
+    padding: 0px 3px 0px 3px;
+}
+
+.searchNav a:hover {
+    background-color: #909090;
+    text-decoration: none;
+    color: white;
+}
+
+.results {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.list {
+    list-style: none;
+}
+
+.results li {
+    padding: 0px 20px;
+}
