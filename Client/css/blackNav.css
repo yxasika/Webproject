@@ -112,7 +112,7 @@ nav ul li a.active {
     margin-top: 120px;
 }
 
-.contentS p {
+.contentS p, .contentS div {
     width: 900px;
     margin: 30px auto;
     text-align: justify;
@@ -128,3 +128,25 @@ nav ul li a.active {
     line-height: 30px;
 }
 
+.searchNav {
+    width: 900px;
+    margin: 10px auto;
+    text-align: justify;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.searchNav li {
+    display: inline-block;
+}
+
+.searchNav li a {
+    color: red;
+    padding: 0px 3px 0px 3px;
+}
+
+li a:hover {
+    background-color: #909090;
+    text-decoration: none;
+    color: white;
+}
