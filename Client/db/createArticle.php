@@ -13,7 +13,7 @@ class article
 
         try {
             $this->pdo = new PDO($dsn, $user, $pw);
-            $sql = "CREATE TABLE articlelist (" . $id_article . " title VARCHAR(50), author VARCHAR(100), authormail VARCHAR(50), published_date DATE, categoryid INT UNIQUE, img IMAGE, pdf BLOB, status VARCHAR(40), description TEXT, upvote INT DEFAULT 0);";
+            $sql = "CREATE TABLE articlelist (" . $id_article . " title VARCHAR(50), author VARCHAR(100), authormail VARCHAR(50), published_date DATE, categoryid INT UNIQUE, img VARCHAR(50), pdf VARCHAR(50), status VARCHAR(40), description TEXT, upvote INT DEFAULT 0);";
             $this->pdo->exec($sql);
             echo "Tabelle articlelist angelegt.<br/>";
         } catch (PDOException $e) {
@@ -24,10 +24,7 @@ class article
     public function insertArticle($title, $author, $authormail, $published_date, $categoryid, $img, $pdf, $status, $description, $upvote)
     {
         $sql = "INSERT INTO articlelist (title, author, authormail, published_date, categoryid, img, pdf, status, description, upvote) 
-            VALUES (:title, :author, :authormail, :published_date, :categoryid, :img, :pdf, :status, :description, :upvote);
-            UPDATE articlelist
-            SET img = Openrowset(Bulk(".$img."), SINGLE_BLOB) as image
-            WHERE id == MAX;";
+            VALUES (:title, :author, :authormail, :published_date, :categoryid, :img, :pdf, :status, :description, :upvote)";
         $stmt = $this->pdo->prepare($sql);
 
         $stmt->bindParam(':title', $title);

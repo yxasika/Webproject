@@ -3,6 +3,8 @@ include "../db/db_auslesen.php";
 include "../db/createArticle.php";
 include "../db/createCategorylist.php";
 
+$success = false;
+$error = array();
 
 if (isset($_POST["upload"])) {
 
@@ -15,24 +17,45 @@ if (isset($_POST["upload"])) {
     $authormail = $_SESSION["email"];
     $publishdate = NULL;
 
-    $img = $_POST["imglink"];
-    $pdf = $_POST["pdflink"];
-
-
     $articles = array_merge(getArticles('pending'), getArticles('approved'), getArticles('rejected'), getArticles('published'));
-
     $catid = count($articles)+1;
-    //$categories = array();
+
+    $imgpath = "../../Server/imgs/" .$catid. basename($_FILES["imgfile"]["name"]);
+    $pdfpath = "../../Server/pdfs/" .$catid. basename($_FILES["pdffile"]["name"]);
+
     $mail = $_SESSION["email"];
     $rpg = isset($_POST["rpg"]);
     $jump = isset($_POST["jump"]);
     $action = isset($_POST["action"]);
     $shooter = isset($_POST["shooter"]);
 
+    //testing for errors:
+    $filetype = strtolower(pathinfo($imgpath,PATHINFO_EXTENSION));
+    if($filetype != "png" && $filetype != "jpg" && $filetype != "jpeg")
+    {
+        $error[] = "Wrong image format. Please select a PNG, JPG or JPEG.";
+    }
+    $filetype = strtolower(pathinfo($pdfpath,PATHINFO_EXTENSION));
+
+    if($filetype != "pdf")
+    {
+        $error[] = "Wrong article format. Please select a PDF.";
+    }
+    if (count($error) == 0)
+    {
+        $success = true;
+        move_uploaded_file($_FILES["imgfile"]["tmp_name"], $imgpath);
+        move_uploaded_file($_FILES["pdffile"]["tmp_name"], $pdfpath);
+        header('Refresh: 2; URL=../views/login.php');
+    }
+
+
+
+
     $articleObj = new article();
 
 
-    $articleObj->insertArticle($title, $authorname, $authormail, $publishdate, $catid, $img, $pdf, 'pending', $description, 0);
+    $articleObj->insertArticle($title, $authorname, $authormail, $publishdate, $catid, $imgpath, $pdfpath, 'pending', $description, 0);
 
     $categoryObj = new category();
 

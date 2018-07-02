@@ -50,7 +50,7 @@ include "../scripts/uploadarticlescript.php" ?>
     <div class="container">
         <div class="row justify-content-center">
             <div class="content">
-                <form class="container" id="uploadform" method="post">
+                <form class="container" id="uploadform" method="post" enctype="multipart/form-data">
                     <h2>Upload an Article</h2>
                     <div class="form-group">
                         <div class="form-row">
@@ -68,11 +68,11 @@ include "../scripts/uploadarticlescript.php" ?>
                     </div>
                     <div class="form-group">
                         upload your PDF file here:
-                        <input name="pdflink" type="file" class="float-right" required accept=".pdf">
+                        <input id="pdffile" name="pdffile" type="file" class="float-right" required accept=".pdf">
                     </div>
                     <div class="form-group">
                         upload your article's header image here:
-                        <input id="imglinkid" name="imglink" type="file" class="float-right" accept=".png,.jpg,.jpeg">
+                        <input id="imgfile" name="imgfile" type="file" class="float-right" accept=".png,.jpg,.jpeg">
                         <label content="imglinkid"></label>
                     </div>
                     <div class="row">
@@ -116,6 +116,22 @@ include "../scripts/uploadarticlescript.php" ?>
                         </div>
                     </div>
                 </form>
+                <?php
+
+                if ($success)
+                {
+                    echo '<ul class="text-success" style= "list-style-type: none;"><li>Article upload successful!</li></ul>';
+                }
+
+                if (count($error) > 0) {
+                    echo "<ul class='text-danger' style='list-style-type: none;'>";
+                    foreach ($error as $e) {
+                        echo "<li>" . $e . "</li>";
+                    }
+                    echo "</ul>";
+                }
+
+                ?>
             </div>
         </div>
     </div>

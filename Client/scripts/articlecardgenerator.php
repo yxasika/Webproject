@@ -7,8 +7,7 @@ function generateArticleCard($type, $data)
         <div class="col-md-4">
             <div class="card text-center bg-light mb-3">
                 <div class="card-header">
-                    <img class="card-img-top" src="' . $data["img"] . '" alt="article image">
-                    <br></br>' . $data["img"] . '
+                    <img class="card-img-top img-fluid" src="' . $data["img"] . '" alt="article image">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">' . $data["title"] . '</h5>
