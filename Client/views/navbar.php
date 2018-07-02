@@ -1,6 +1,7 @@
 <?php
 session_start();
 ?>
+
 <script type="text/javascript" src="http://beneposto.pl/jqueryrotate/js/jQueryRotateCompressed.js"></script>
 
 <nav class="navbar fixed-top navbar-expand-xl navbar-dark bg-dark">

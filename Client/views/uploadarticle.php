@@ -43,7 +43,7 @@
 
 <body>
 
-<?php include "navbar.php" ;
+<?php include "navbar.php";
 include "../scripts/uploadarticlescript.php" ?>
 
 <main style="position: relative; top: 1em;">

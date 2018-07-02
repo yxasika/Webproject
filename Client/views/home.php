@@ -40,10 +40,22 @@ setCookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 <?php include "cookie_alert.php";
 include "../db/db_auslesen.php";
 include "../scripts/articlecardgenerator.php";
-include "navbar.php" ?>
+include "blackNav.php" ?>
 
 
-<main style="position: relative; top: 1em;">
+<section class="contentS">
+    <div class="wrapper">
+        <h1>About Us</h1>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+            eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
+            eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+            no sea takimata sanctus est Lorem ipsasdasasdum dolor sit amet. Lorem ipsum dolor sit amet,
+            consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+            magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+            et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+            Lorem ipsum dolor sit amet.</p>
+    </div>
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="content">
@@ -116,7 +128,7 @@ include "navbar.php" ?>
             </div>
         </div>
     </div>
-</main>
+</section>
 <?php include "footer.php" ?>
 </body>
 <script rel="script" type="text/javascript" src="../scripts/showMoreHome.js"></script>

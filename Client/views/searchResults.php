@@ -41,7 +41,6 @@ session_start();
         <div class="row justify-content-center">
             <div class="col-6">
                 <ul class="searchNav">
-                    <li><a href="http://localhost/Webproject/Client/views/searchResults.php?letter=.">#</a></li>
                     <li><a href="http://localhost/Webproject/Client/views/searchResults.php?letter=A">A</a></li>
                     <li><a href="http://localhost/Webproject/Client/views/searchResults.php?letter=B">B</a></li>
                     <li><a href="http://localhost/Webproject/Client/views/searchResults.php?letter=C">C</a></li>
