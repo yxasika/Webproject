@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,7 +28,28 @@ session_start();
 </head>
 
 <body>
-<?php include "navbar.php" ?>
+<?php
+    include "navbar.php";
+    include "../db/db_auslesen.php";
+
+
+
+$noarticle = true;
+$articles = array_merge(getArticles('pending'), getArticles('approved'), getArticles('rejected'), getArticles('published'));
+
+if(isset($_GET["artid"]))
+{
+    foreach ($articles as $article => $articlecard) {
+        echo "<p>".$articlecard["id"]."</p>";
+        if($articlecard["id"] == $_GET["artid"])
+        {
+            $currentarticle = $articlecard;
+            $noarticle = false;
+        }
+    }
+    echo "<p class='text-warning'>".$_GET["artid"]."</p>";
+}
+?>
 
 <main>
     <div class="container">
@@ -43,42 +60,55 @@ session_start();
                     <div class="card">
                         <div class="row">
                             <div class="col">
-                                <img class="card-img-left mx-auto" src="../src/imgs/monster_hunter_world.jpg"
-                                     alt="monster_hunter_world">
-                            </div>
-                            <div class="col">
-                                <div class="card-body">
-                                    <h5 class="card-title">Article 1</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                        diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-                                        diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Lorem
-                                        ipsum dolor
-                                        sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                                        labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-                                        et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet, consetetur
-                                        sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                                        magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-                                        dolores et ea rebum.</p>
-                                </div>
+
+
+
+                                    <?php
+
+                                    if($noarticle){
+                                        echo "<p class='text-warning'>No article given in link. How did you get here?</p>";
+                                    }
+
+                                    echo'
+
+                                        <img class="card-img-top img-fluid" src="' . $currentarticle["img"] . '" alt="article image">
+                                         </div>
+                                            <div class="col">
+                                    <div class="card-body">
+                                    <h5 class="card-title">'.$currentarticle["title"].'</h5>
+                                    <p class="card-text">'.$currentarticle["description"].'</p>
+                                    
+                                    </div>
                             </div>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">author: <a class="card-link" href="#">Max Mustermann</a></li>
-                            <li class="list-group-item">published: 11.09.2018</li>
-                            <li class="list-group-item">category: <a href="#" class="badge badge-primary">RPG</a>, <a
-                                        href="#" class="badge badge-warning">ACTION</a></li>
+                            <li class="list-group-item">author: <a class="card-link" href="#">'.$currentarticle["author"].'</a></li>
+                            <li class="list-group-item">published: '.$currentarticle["published_date"].'</li>
+                            <li class="list-group-item">category: ';
+                                    $categories = getCategories($currentarticle['id']);
+    foreach ($categories as $category) {
+        echo '<a href="#" class="badge badge-info mr-2">' . $category . '</a>';
+    }
+    echo'
+                                    
+                                    </li>
                             <li class="list-group-item">
                                 <a class="btn btn-outline-primary icon" role="button" target="_blank"
-                                   href="../scripts/pdf.js-gh-pages/web/viewer.html?file=../../../src/imgs/article.myJournal.pdf">
+                                   href="../scripts/pdf.js-gh-pages/web/viewer.html?file=../../'.$currentarticle["pdf"].'">
                                     <i class="material-icons">book</i> read</a>
                                 <a class="btn btn-outline-primary icon" role="button" target="_blank"
-                                   href="../src/imgs/article.myJournal.pdf" download="article_1">
+                                   href="'.$currentarticle["pdf"].'" download="article '.$currentarticle["id"].'">
                                     <i class="material-icons">file_download</i> Download</a>
                             </li>
                         </ul>
                     </div>
                     <br>
-                    <hr/>
+                                    
+                                    ';
+                                    ?>
+
+
+
                     <form class="comment" name="comment">
                         <div class="form-group">
                             <label for="commentbox">COMMENT</label>

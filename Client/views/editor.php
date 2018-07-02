@@ -1,9 +1,3 @@
-<?php
-session_start();
-?>
-
-<?php include "../scripts/articleeditor.php" ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,6 +30,7 @@ session_start();
 <body>
 <?php
 include "navbar.php";
+include "../scripts/articleeditor.php";
 include "../db/db_auslesen.php";
 include "../scripts/articlecardgenerator.php";
 include "../scripts/popupgenerator.php"

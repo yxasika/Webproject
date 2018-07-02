@@ -10,10 +10,7 @@ if (isset($_POST["upload"])) {
 
     $title = htmlspecialchars($_POST["title"]);
     $description = htmlspecialchars($_POST['descriptionarea']);
-    //$pdflink = "../src/imgs/article.myJournal.pdf"; //wird später durch den pdf-dateiinput ersetzt
-    //$imglink = "../src/imgs/dark_souls.jpg"; //wird später über die aktuelle login-session gelesen
     $authorname = $_SESSION["firstname"] . " " . $_SESSION["lastname"];
-    //$articlelink = "../views/article_1.php";    //wird später durch eine hoffentlich automatisch generierte php-seite ersetzt
     $authormail = $_SESSION["email"];
     $publishdate = NULL;
 

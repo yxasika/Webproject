@@ -32,8 +32,11 @@ function generateArticleCard($type, $data)
 //starts the card footer and echos the article link-button (no link currently)
     echo '
         <p></p>
+        <form action="../views/article.php" method="get">
         <div class="card-footer row">
-            <a href="#" class="btn btn-primary mr-4">Read More</a>
+            <input type="submit" class="btn btn-primary mr-4" value="Read more"/>
+            <input type="hidden" name="artid" value="'.$data["id"].'">
+            </form>
     ';
 //echos the upvote score if the card is in the archive (or on the home screen)
     if($type == 'archive')
