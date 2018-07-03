@@ -31,6 +31,7 @@
 <?php
     include "navbar.php";
     include "../db/db_auslesen.php";
+    include "../db/createArticle.php";
 
 
 
@@ -40,14 +41,14 @@ $articles = array_merge(getArticles('pending'), getArticles('approved'), getArti
 if(isset($_GET["artid"]))
 {
     foreach ($articles as $article => $articlecard) {
-        echo "<p>".$articlecard["id"]."</p>";
+        //echo "<p>".$articlecard["id"]."</p>";
         if($articlecard["id"] == $_GET["artid"])
         {
             $currentarticle = $articlecard;
             $noarticle = false;
         }
     }
-    echo "<p class='text-warning'>".$_GET["artid"]."</p>";
+    //echo "<p class='text-warning'>".$_GET["artid"]."</p>";
 }
 ?>
 
@@ -66,7 +67,7 @@ if(isset($_GET["artid"]))
                                     <?php
 
                                     if($noarticle){
-                                        echo "<p class='text-warning'>No article given in link. How did you get here?</p>";
+                                        echo "<p class='text-warning'>No valid article given in url. How did you get here?</p>";
                                     }
 
                                     echo'
@@ -96,9 +97,10 @@ if(isset($_GET["artid"]))
                                 <a class="btn btn-outline-primary icon" role="button" target="_blank"
                                    href="../scripts/pdf.js-gh-pages/web/viewer.html?file=../../'.$currentarticle["pdf"].'">
                                     <i class="material-icons">book</i> read</a>
-                                <a class="btn btn-outline-primary icon" role="button" target="_blank"
+                                <a class="btn btn-outline-primary icon mr-4" role="button" target="_blank"
                                    href="'.$currentarticle["pdf"].'" download="article '.$currentarticle["id"].'">
                                     <i class="material-icons">file_download</i> Download</a>
+                                '.$currentarticle["upvote"].' <a name="upvotebtn" role="button" href="#" class="btn btn-outline-success icon" ><i class="material-icons">favorite_border</i> Upvote</a>
                             </li>
                         </ul>
                     </div>
