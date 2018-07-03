@@ -59,13 +59,27 @@ class article
             $sql = "UPDATE articlelist
                 SET published_date = :date
                 WHERE id = :id;";
+            $date = date("Y-m-d");
             $stmt = $this->pdo->prepare($sql);
-            $stmt->bindParam(':date', date("Y-m-d"));
+            $stmt->bindParam(':date', $date);
             $stmt->bindParam(':id', $id);
             $stmt->execute();
         }
 
 
+    }
+
+    public function upvoteArticle($id)
+    {
+        $sql = "UPDATE articlelist
+                SET upvote = upvote+1
+                WHERE id = :id;";
+
+        $stmt = $this->pdo->prepare($sql);
+
+        $stmt->bindParam(':id', $id);
+
+        $stmt->execute();
     }
 
 
