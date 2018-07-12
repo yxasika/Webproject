@@ -1,4 +1,4 @@
-<footer class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
+<footer class="navbar navbar-expand-sm navbar-dark bg-dark p-0 fixed-bottom">
     <div class="col">
         <div class="row">
             <ul class="navbar-nav mx-auto">

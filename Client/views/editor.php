@@ -40,7 +40,10 @@ include "../scripts/popupgenerator.php"
     <div class="container">
         <div class="row justify-content-center">
             <div class="card container">
-                <section class="jumbotron text-center">
+                <?php
+                if(isset($_SESSION["role"]) && $_SESSION["role"] == "editor")
+                {
+                    echo'<section class="jumbotron text-center">
                     <div class="container">
                         <h1 class="jumbotron-heading">Articles</h1>
                         <p class="lead text-muted">This is the perspective of an editor. You can view all of articles
@@ -67,58 +70,71 @@ include "../scripts/popupgenerator.php"
                     <div class="tab-pane fade show active" id="pills-pending" role="tabpanel"
                          aria-labelledby="pills-pending-tab">
                         <div class="container">
-                            <div class="row">
+                            <div class="row">';
 
-                                <?php
+                    $articles = getArticles('pending');
 
-                                $articles = getArticles('pending');
+                    foreach ($articles as $article => $articlecard) {
+                        if ($articles[$article]['authormail'] != $_SESSION["email"]) {
 
-                                foreach ($articles as $article => $articlecard) {
-                                    if ($articles[$article]['authormail'] != $_SESSION["email"]) {
+                            generatepopup("approve", ($articlecard["id"]), "Are you sure you want to approve this article?", "success");
 
-                                        generatepopup("approve", ($articlecard["id"]), "Are you sure you want to approve this article?", "success");
+                            generatepopup("reject", ($articlecard["id"]), "Are you sure you want to reject this article?", "danger");
 
-                                        generatepopup("reject", ($articlecard["id"]), "Are you sure you want to reject this article?", "danger");
+                            generateArticleCard('editor_pending', $articlecard);
+                        }
+                    }
 
-                                        generateArticleCard('editor_pending', $articlecard);
-                                    }
-                                }
-                                ?>
 
-                            </div>
+                    echo'</div>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="pills-approved" role="tabpanel" aria-labelledby="pills-approved-tab">
                         <div class="container">
-                            <div class="row">
-                                <?php
+                            <div class="row">';
 
-                                $articles = getArticles('approved');
+                    $articles = getArticles('approved');
 
-                                foreach ($articles as $article => $articlecard) {
-                                    generatepopup("publish", ($articlecard["id"]), "Are you sure you want to publish this article?", "warning");
+                    foreach ($articles as $article => $articlecard) {
+                        generatepopup("publish", ($articlecard["id"]), "Are you sure you want to publish this article?", "warning");
 
-                                    generateArticleCard('editor_approved', $articlecard);
-                                }
-                                ?>
-                            </div>
+                        generateArticleCard('editor_approved', $articlecard);
+                    }
+
+                    echo'</div>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="pills-rejected" role="tabpanel" aria-labelledby="pills-rejected-tab">
                         <div class="container">
                             <div class="row">
                                 <?php
-                                $articles = getArticles('rejected');
+                                $articles = getArticles(\'rejected\');
 
                                 foreach ($articles as $article => $articlecard) {
-                                    generateArticleCard('editor_rejected', $articlecard);
+                                    generateArticleCard(\'editor_rejected\', $articlecard);
                                 }
                                 ?>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </div></div>';
+
+                }
+                else{
+                    echo'<br /><br /><br /><br />
+<p class="text-danger">Missing permissions to access this page. If you believe this is a mistake, contact our admin.</p>
+';
+                }
+
+                ?>
+
+
+
+
+
+
             </div>
+
+
         </div>
     </div>
 </main>
