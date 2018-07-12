@@ -1,3 +1,4 @@
+<br /><br />
 <footer class="navbar navbar-expand-sm navbar-dark bg-dark p-0 fixed-bottom">
     <div class="col">
         <div class="row">

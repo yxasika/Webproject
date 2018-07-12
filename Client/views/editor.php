@@ -126,15 +126,7 @@ include "../scripts/popupgenerator.php"
                 }
 
                 ?>
-
-
-
-
-
-
             </div>
-
-
         </div>
     </div>
 </main>

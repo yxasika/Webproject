@@ -1,5 +1,5 @@
 <?php
-session_start();
+if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
 ?>
 
 <script type="text/javascript" src="http://beneposto.pl/jqueryrotate/js/jQueryRotateCompressed.js"></script>
@@ -44,3 +44,4 @@ session_start();
         </ul>
     </div>
 </nav>
+<br /><br />
