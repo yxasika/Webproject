@@ -121,6 +121,32 @@ function getCategories($artid)
     }
 }
 
+function getAllCategories()
+{
+    try {
+        $db = new SQLite3("../db/dpad.db");
+        $sql = "SELECT DISTINCT categorylist.catname
+            FROM categorylist;";
+
+        $stmt = $db->prepare($sql);
+
+        $ergebnis = $stmt->execute();
+
+        $categories = array();
+
+        while ($row_category = $ergebnis->fetchArray()) {
+            $categories[] = $row_category['catname'];
+            echo "<p>test: ".$row_category['catname']."</p>";
+        }
+        $db->close();
+
+        return $categories;
+
+    } catch (Exception $ex) {
+        echo "Fehler: " . $ex->getMessage();
+    }
+}
+
 function getUsers()
 {
     try {

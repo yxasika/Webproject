@@ -43,7 +43,8 @@
 
 <body>
 <?php include "navbar.php";
-include "../scripts/uploadarticlescript.php" ?>
+include "../scripts/uploadarticlescript.php"
+?>
 
 <main style="position: relative; top: 1em;">
     <div class="container">
@@ -76,6 +77,19 @@ include "../scripts/uploadarticlescript.php" ?>
                     </div>
                     <div class="row">
                         <div class="col">
+                            <div class="form-group">
+                                <label for="categoryselection">Select your article's categories:</label>
+                                <select required name="categories[]" multiple class="form-control" id="categoryselection">
+                                    <?php
+                                    $categories = getAllCategories();
+                                    foreach ($categories as $category) {
+                                        echo'<option>'.$category.'</option>';
+                                    }
+
+                                    ?>
+                                </select>
+                            </div>
+
                             <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button"
                                aria-expanded="false" aria-controls="collapseExample">
                                 show categories

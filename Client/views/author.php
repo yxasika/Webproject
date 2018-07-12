@@ -40,7 +40,6 @@ include "../scripts/articlecardgenerator.php"
 <main>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="album py-5 bg-light">
                 <div class="card container">
                     <section class="jumbotron text-center">
                         <div class="container">
@@ -75,7 +74,7 @@ include "../scripts/articlecardgenerator.php"
                         </div>
                     </div>
                 </div>
-            </div>
+
         </div>
 </main>
 <?php include "footer.php" ?>
