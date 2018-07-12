@@ -43,7 +43,14 @@ if (isset($_POST["upload"])) {
         $success = true;
         move_uploaded_file($_FILES["imgfile"]["tmp_name"], $imgpath);
         move_uploaded_file($_FILES["pdffile"]["tmp_name"], $pdfpath);
-        header('Refresh: 2; URL=../views/login.php');
+        echo'<script type="text/javascript">
+function myFunction() {
+    window.location.href = "../views/author.php"
+}
+setTimeout(myFunction, 2000)
+
+;
+</script>';
     }
 
 

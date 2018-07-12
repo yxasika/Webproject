@@ -55,13 +55,12 @@ if (isset($_POST["login"])) {
                 $_SESSION["lastname"] = $users[$user]["lastname"];
                 $_SESSION["email"] = $users[$user]["email"];
                 $_SESSION["role"] = $users[$user]["role"];
-
                 $success = true;
                 header('Refresh: 2; URL=../views/home.php');
             }
         }
     }
-    if (success == false) {
+    if ($success == false) {
         $error = true;
     }
 

@@ -42,7 +42,6 @@
 </head>
 
 <body>
-
 <?php include "navbar.php";
 include "../scripts/uploadarticlescript.php" ?>
 
@@ -120,7 +119,7 @@ include "../scripts/uploadarticlescript.php" ?>
 
                 if ($success)
                 {
-                    echo '<ul class="text-success" style= "list-style-type: none;"><li>Article upload successful!</li></ul>';
+                    echo '<ul class="text-success" style= "list-style-type: none;"><li>Article upload successful! Redirecting to author page in a moment. (Only if Javascript is enabled)</li></ul>';
                 }
 
                 if (count($error) > 0) {

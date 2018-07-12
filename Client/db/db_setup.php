@@ -1,4 +1,7 @@
 <?php
+session_start();
+$_SESSION['db_set'] = true;
+
 include "../db/createArticle.php";
 include "../db/createUserlist.php";
 include "../db/createCategorylist.php";
