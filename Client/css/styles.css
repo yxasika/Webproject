@@ -20,38 +20,11 @@ body {
     background-color: white;
 }
 
-/* #navigation {
-    list-style-type: none;
-    margin: 0;
-    padding: 5px;
-    overflow: hidden;
-    background-color: #303f9f;
-    border-radius: 3mm;
-    width: 100%;
-    position:fixed;
-}
-
-#navigation li {
-    float: left;
-}
-
-#navigation li a {
-    display: block;
-    float: left;
-    color: #ffffff;
-    padding: 14px 16px;
-    text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-} */
-
 .content {
     margin-top: 30px;
-
     padding: 50px;
     width: 1200px;
     background-color: white;
-
 }
 
 label { /* Beschriftung auf eigener Zeile */
