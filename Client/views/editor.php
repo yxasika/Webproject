@@ -19,9 +19,8 @@ include "../scripts/popupgenerator.php"
         <div class="row justify-content-center">
             <div class="card container">
                 <?php
-                if(isset($_SESSION["role"]) && $_SESSION["role"] == "editor")
-                {
-                    echo'<section class="jumbotron text-center">
+                if (isset($_SESSION["role"]) && $_SESSION["role"] == "editor") {
+                    echo '<section class="jumbotron text-center">
                     <div class="container">
                         <h1 class="jumbotron-heading">Articles</h1>
                         <p class="card-text">This is the perspective of an editor. You can view all of articles
@@ -64,7 +63,7 @@ include "../scripts/popupgenerator.php"
                     }
 
 
-                    echo'</div>
+                    echo '</div>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="pills-approved" role="tabpanel" aria-labelledby="pills-approved-tab">
@@ -79,27 +78,26 @@ include "../scripts/popupgenerator.php"
                         generateArticleCard('editor_approved', $articlecard);
                     }
 
-                    echo'</div>
+                    echo '</div>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="pills-rejected" role="tabpanel" aria-labelledby="pills-rejected-tab">
                         <div class="container">
-                            <div class="row">
-                                <?php
-                                $articles = getArticles(\'rejected\');
+                            <div class="row">';
 
-                                foreach ($articles as $article => $articlecard) {
-                                    generateArticleCard(\'editor_rejected\', $articlecard);
-                                }
-                                ?>
+                    $articles = getArticles("rejected");
+
+                    foreach ($articles as $article => $articlecard) {
+                        generateArticleCard("editor_rejected", $articlecard);
+                    }
+                    echo '
                             </div>
                         </div>
                     </div></div>
                     </section>';
 
-                }
-                else{
-                    echo'<br /><br /><br /><br />
+                } else {
+                    echo '<br /><br /><br /><br />
 <p class="text-danger">Missing permissions to access this page. If you believe this is a mistake, contact our admin.</p>
 ';
                 }

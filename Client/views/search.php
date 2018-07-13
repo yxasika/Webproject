@@ -1,4 +1,3 @@
-<?php include '../db/db_auslesen.php    ' ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,10 +43,11 @@
                     <div class="dropdown">
                         <button class="btn btn-primary">Category</button>
                         <div class="dropdown-content">
-                            <a href="http://localhost/Webproject/Client/views/search.php?cat=action">Action</a>
-                            <a href="http://localhost/Webproject/Client/views/search.php?cat=jump'n Run">Jump'n Run</a>
-                            <a href="http://localhost/Webproject/Client/views/search.php?cat=rpg">Rpg</a>
-                            <a href="http://localhost/Webproject/Client/views/search.php?cat=shooter">Shooter</a>
+                            <a href="http://localhost/Webproject/Client/views/search.php?category=action">Action</a>
+                            <a href="http://localhost/Webproject/Client/views/search.php?category=jumpnrun">Jump'n
+                                Run</a>
+                            <a href="http://localhost/Webproject/Client/views/search.php?category=rpg">Rpg</a>
+                            <a href="http://localhost/Webproject/Client/views/search.php?category=shooter">Shooter</a>
                         </div>
                     </div>
                 </li>

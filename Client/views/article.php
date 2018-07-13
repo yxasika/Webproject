@@ -65,28 +65,11 @@ if (isset($_GET["artid"])) {
                                 <a class="btn btn-outline-primary icon mr-4" role="button" target="_blank"
                                    href="' . $currentarticle["pdf"] . '" download="article ' . $currentarticle["id"] . '">
                                     <i class="material-icons">file_download</i> Download</a>
-                                ' . $currentarticle["upvote"] . ' <a name="upvotebtn" role="button" href="#" class="btn btn-outline-success icon" ><i class="material-icons">favorite_border</i> Upvote</a>
+                                ' . $currentarticle["upvote"] . ' <a name="upvotebtn" role="button" href="#" class="btn btn-outline-success icon"><i class="material-icons">favorite_border</i> Upvote</a>
                             </li>
                         </ul>
                     </div>
                     <br>'; ?>
-
-
-                            <form class="comment" name="comment">
-                                <div class="form-group">
-                                    <label for="commentbox">Comment</label>
-                                    <textarea id="commentbox" name="comment" placeholder="Write your comment..."
-                                              cols="20"
-                                              rows="3" class="form-control"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="anonym">
-                                        <label class="form-check-label" for="anonym">Anonymous comment</label>
-                                        <input type="submit" value="SEND" class="btn btn-primary float-right"/>
-                                    </div>
-                                </div>
-                            </form>
             </article>
         </div>
     </div>

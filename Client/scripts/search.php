@@ -1,5 +1,5 @@
 <?php
-if (isset($_GET['search']) || isset($_GET['letter'])) {
+if (isset($_GET['search']) || isset($_GET['letter']) || isset($_GET['category'])) {
     try {
         $db = new SQLite3("../db/dpad.db");
 
@@ -13,12 +13,12 @@ if (isset($_GET['search']) || isset($_GET['letter'])) {
             $sql = "SELECT id, title, author, published_date, upvote
                 FROM articlelist
                 WHERE (lower(title) LIKE '" . $query . "%')";
-        } else if (isset($_GET['cat'])) {
-            $query = htmlspecialchars($_GET['cat']);
+        } else if (isset($_GET['category'])) {
+            $query = htmlspecialchars($_GET['category']);
             $sql = "SELECT id, title, author, published_date, upvote
                 FROM articlelist
                 INNER JOIN categorylist ON articlelist.categoryid == categorylist.artid
-                WHERE (lower(categorylist.catname) LIKE '" . $query . "%')";
+                WHERE (lower(categorylist.catname) LIKE '%" . $query . "%')";
         }
 
         $stmt = $db->prepare($sql);
