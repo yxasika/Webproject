@@ -59,7 +59,6 @@ include "../scripts/articlecardgenerator.php";
                                 ?>
                             </div>
                             <div id="content" class="col-md-4"></div>
-                            <button id="showMore" class="btn col">Show more</button>
                         </div>
                     </div>
 
@@ -79,7 +78,6 @@ include "../scripts/articlecardgenerator.php";
                             </div>
                         </div>
                     </div>
-
                 </div>
                 </section>
             </div>
@@ -88,5 +86,4 @@ include "../scripts/articlecardgenerator.php";
 </main>
 <?php include "footer.php" ?>
 </body>
-<script rel="script" type="text/javascript" src="../scripts/showMoreHome.js"></script>
 </html>
