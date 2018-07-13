@@ -10,6 +10,9 @@
 <?php
 include "navbar.php";
 include "../db/createArticle.php";
+
+$articleObj = new article();
+
 $noarticle = true;
 $articles = array_merge(getArticles('pending'), getArticles('approved'), getArticles('rejected'), getArticles('published'));
 
@@ -22,6 +25,16 @@ if (isset($_GET["artid"])) {
         }
     }
     //echo "<p class='text-warning'>".$_GET["artid"]."</p>";
+}
+
+if(isset($_POST["upvotebtn"]))
+{
+    if(!isset($_SESSION["upvote".$currentarticle["id"]]))
+    {
+    $articleObj->upvoteArticle($_POST["upvotebtn"]);
+    $_SESSION["upvote".$currentarticle["id"]] = true;
+        header("Refresh:0");
+    }
 }
 ?>
 
@@ -65,7 +78,21 @@ if (isset($_GET["artid"])) {
                                 <a class="btn btn-outline-primary icon mr-4" role="button" target="_blank"
                                    href="' . $currentarticle["pdf"] . '" download="article ' . $currentarticle["id"] . '">
                                     <i class="material-icons">file_download</i> Download</a>
-                                ' . $currentarticle["upvote"] . ' <a name="upvotebtn" role="button" href="#" class="btn btn-outline-success icon"><i class="material-icons">favorite_border</i> Upvote</a>
+                                ';
+                                if($currentarticle["status"]=="published")
+                                    {
+                                        if(!isset($_SESSION["upvote".$currentarticle["id"]]))
+                                        {
+                                            echo '<form method="post"> <button type="submit" value="'.$currentarticle["id"].'" name="upvotebtn" role="button" href="#" class="btn btn-outline-success icon"><i class="material-icons">favorite_border</i>'. $currentarticle["upvote"] . '</button></form>';
+                                        }
+                                        else
+                                        {
+                                            echo '<button disabled value="upvote" name="upvotebtn" role="button" class="btn btn-success icon"><i class="material-icons">favorite</i>'. $currentarticle["upvote"] . '</button>';
+                                        }
+
+                                    }
+
+                                echo'
                             </li>
                         </ul>
                     </div>
