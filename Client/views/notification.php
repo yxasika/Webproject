@@ -14,11 +14,12 @@ include "../db/createNotification.php";
 
 $notifiObj = new notification();
 
-
 if (isset($_POST["markread"])) {
     $notifiObj->readNotifi($_POST["notid"]);
 }
-$i = 0;
+if (isset($_POST["recipient"]) and isset($_POST["subject"]) and isset($_POST["message"])) {
+    $notifiObj->insertNotifi($_SESSION["email"], $_POST["recipient"], $_POST["subject"], $_POST["message"]);
+}
 ?>
 
 <main>
@@ -55,7 +56,7 @@ $i = 0;
                                                     <h6 class="card-title">Message:</h6>
                                                     <p class="card-text">' . htmlspecialchars($notifi[$notification]["message"]) . '</p>             
                                                     <div class="btn-group">
-                                                    <button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#exampleModal" data-whatever="' . $notifi[$notification]["sender"] . '">Answer</button>
+                                                    <button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#exampleModal" data-rec="' . $notifi[$notification]["sender"] . '" data-sub="RE: ' . $notifi[$notification]["subject"] . '">Answer</button>
                                                     <form method="post" action=""><input name="notid" type="hidden" value="' . $notifi[$notification]["id"] . '"/><button type="submit" name="markread" class="btn btn-secondary">Mark read</button></form>
                                                     </div></div>
                                                     </div>';
@@ -83,7 +84,7 @@ $i = 0;
                                                     <p class="text-muted">' . htmlspecialchars($notifi[$notification]["sender"]) . '</p>
                                                     <h6 class="card-title">Message:</h6>
                                                     <p class="card-text">' . htmlspecialchars($notifi[$notification]["message"]) . '</p>
-                                                    <a class="btn btn-primary">Answer</a>
+                                                    <button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#exampleModal" data-rec="' . $notifi[$notification]["sender"] . '" data-sub="RE: ' . $notifi[$notification]["subject"] . '">Answer</button>
                                                     </div>
                                                     </div>';
                                         }
@@ -108,24 +109,24 @@ $i = 0;
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form method="post">
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Recipient:</label>
-                            <input type="text" class="form-control" id="recipient-name">
+                            <input type="text" class="form-control" id="recipient-name" name="recipient">
                         </div>
                         <div class="form-group">
-                            <label>Subject:</label>
-                            <input type="text">
+                            <label for="subject-name" class="col-form-label">Subject:</label>
+                            <input type="text" class="form-control" id="subject-name" name="subject">
                         </div>
                         <div class="form-group">
                             <label for="message-text" class="col-form-label">Message:</label>
-                            <textarea class="form-control" id="message-text"></textarea>
+                            <textarea class="form-control" id="message-text" name="message"></textarea>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Send message</button>
+                    <button type="submit" class="btn btn-primary">Send message</button>
                 </div>
             </div>
         </div>
@@ -136,12 +137,14 @@ $i = 0;
 <script>
     $('#exampleModal').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget) // Button that triggered the modal
-        var recipient = button.data('whatever') // Extract info from data-* attributes
+        var recipient = button.data('rec')
+        var subject = button.data('sub')// Extract info from data-* attributes
         // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
         // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
         var modal = $(this)
         modal.find('.modal-title').text('New message to ' + recipient)
-        modal.find('.modal-body input').val(recipient)
+        modal.find('.modal-body #recipient-name').val(recipient)
+        modal.find('.modal-body #subject-name').val(subject)
     })
 </script>
 

@@ -18,23 +18,11 @@ include "cookie_alert.php" ?>
                 <section class="jumbotron text-center">
                     <div class="container">
                         <h1 class="jumbotron-heading">Archive</h1>
-                        <p class="card-text">This is the archive. You can view all published articles here. You can also search for articles here.</p>
+                        <p class="card-text">This is the archive. Here are all published articles listed. You can access
+                            them if you click on -Read more-.</p>
                     </div>
                 </section>
 
-                <form class="form-inline my-2 my-lg-0 " action="archive.php">
-                    <?php
-                    if (isset($_SESSION["search"])) {
-                        echo '<input class="searchInput form-control mr-sm-2" id="myInput" onkeyup="searchFunction()"
-                           type="search" placeholder="Search" aria-label="Search" value="' . $_SESSION['search'] . '">';
-                        echo '<script>searchFunction()</script>';
-                        unset($_SESSION["search"]);
-                    } else {
-                        echo '<input class="searchInput form-control mr-sm-2" id="myInput" onkeyup="searchFunction()"
-                           type="search" placeholder="Search" aria-label="Search">';
-                    }
-                    ?>
-                </form>
                 <hr>
                 <div class="container">
                 <div class="row">
@@ -48,10 +36,6 @@ include "cookie_alert.php" ?>
                     ?>
 
                 </div></div>
-
-
-<!--                <div id="content"></div>-->
-<!--                <button id="showMore" class="btn col">Show more</button>-->
             </div>
         </div>
     </div>
@@ -60,6 +44,4 @@ include "cookie_alert.php" ?>
 <?php include "footer.php" ?>
 </body>
 <!--<script rel="script" type="text/javascript" src="../scripts/showMore.js"></script>-->
-
-
 </html>
