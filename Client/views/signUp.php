@@ -70,7 +70,6 @@ if (isset($_POST["register"])) {
     <script rel="script" type="text/javascript" src="../scripts/loginPopup.js"></script>
     <script rel="script" type="text/javascript" src="../scripts/jquery.rotate.1-1.js"></script>
     <script type="text/javascript" src="../scripts/search.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/search.css">
 </head>
 
 <body>

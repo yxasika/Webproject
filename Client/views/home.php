@@ -53,12 +53,10 @@ include "../scripts/articlecardgenerator.php";
                             <div class="row">
                                 <?php
                                 $articles = getArticles_sortby('published', 'published_date', false);
-
                                 // Momentan wird noch jeder published article ausgelesen. wir sollten eventuell nur die letzten 6 oder so anzeigen.
                                 foreach ($articles as $article => $articlecard) {
                                     generateArticleCard('archive', $articlecard);
                                 }
-
                                 ?>
                             </div>
                             <div id="content" class="col-md-4"></div>
@@ -71,9 +69,7 @@ include "../scripts/articlecardgenerator.php";
                         <div class="container">
                             <div class="row">
                                 <?php
-
                                 $articles2 = getArticles_sortby('published', 'upvote', false);
-
 
                                 // Momentan wird noch jeder published article ausgelesen. wir sollten eventuell nur die letzten 6 oder so anzeigen.
                                 foreach ($articles2 as $article => $articlecard) {
@@ -84,7 +80,6 @@ include "../scripts/articlecardgenerator.php";
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

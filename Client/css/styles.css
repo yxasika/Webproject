@@ -1,76 +1,65 @@
-/* Navigation */
-
 body {
-    background-color: #FFFFFF;
-    font-family: 'Varela Round', sans-serif;
+    font-family: Quicksand;
+    margin-top: 80px;
 }
 
-#logo {
-    max-height: 200%;
-    max-width: 200%;
+#searchForm {
+    width: 900px;
+    margin: 30px auto;
+    text-align: justify;
+    font-size: 20px;
+    line-height: 30px;
 }
 
-#whitebox {
-    background-color: white;
-    padding: 1mm;
-
+#searchForm form {
+    display: flex;
 }
 
-#whitebox h1 {
-    background-color: white;
+#searchForm ul li {
+    list-style: none;
 }
 
-.content {
-    margin-top: 30px;
-    padding: 50px;
-    width: 1200px;
-    background-color: white;
+#searchForm input {
+    width: 100%;
 }
 
-label { /* Beschriftung auf eigener Zeile */
-    display: block;
-    cursor: pointer; /* Mauszeiger wird zur Hand */
+#searchForm button {
+    width: 5%;
 }
 
-input#absender,
-textarea {
-    width: 300px;
-    border: 1px solid #8c8c8c;
-    margin-bottom: 1em;
+.searchNav {
+    width: 900px;
+    margin: 10px auto;
+    text-align: justify;
+    font-size: 20px;
+    line-height: 30px;
 }
 
-textarea {
-    height: 7em;
+.searchNav li {
+    display: inline-block;
 }
 
-input:focus,
-textarea:focus {
-    background-color: #d9d9d9;
+.searchNav li a {
+    padding: 0px 3px 0px 3px;
 }
 
-/* li a:hover {
-    background-color: #666ad1;
-    border-radius: 10px;
-} */
-
-.comment {
-    padding-bottom: 50px;
+.searchNav a:hover {
+    background-color: #909090;
+    text-decoration: none;
+    color: white;
 }
 
-.icon {
-    display: inline-flex;
-    vertical-align: middle;
+.results {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
 }
 
-.hide-me {
-    visibility: hidden;
-    opacity: 0;
-    transform: scale(.75);
+.list {
+    list-style: none;
 }
 
-#showMore {
-
+.results li {
+    padding: 0px 20px;
 }
-
-
-
