@@ -1,3 +1,4 @@
+<?php include '../db/db_auslesen.php    ' ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,6 +40,17 @@
                 <li><a href="http://localhost/Webproject/Client/views/search.php?letter=X">X</a></li>
                 <li><a href="http://localhost/Webproject/Client/views/search.php?letter=Y">Y</a></li>
                 <li><a href="http://localhost/Webproject/Client/views/search.php?letter=Z">Z</a></li>
+                <li>
+                    <div class="dropdown">
+                        <button class="btn btn-primary">Category</button>
+                        <div class="dropdown-content">
+                            <a href="http://localhost/Webproject/Client/views/search.php?cat=action">Action</a>
+                            <a href="http://localhost/Webproject/Client/views/search.php?cat=jump'n Run">Jump'n Run</a>
+                            <a href="http://localhost/Webproject/Client/views/search.php?cat=rpg">Rpg</a>
+                            <a href="http://localhost/Webproject/Client/views/search.php?cat=shooter">Shooter</a>
+                        </div>
+                    </div>
+                </li>
             </ul>
             <div id="searchForm">
                 <form method="get" action="">
@@ -46,9 +58,18 @@
                     <button type="submit"><i class="material-icons">search</i></button>
                 </form>
                 <hr>
-                <ul>
+
+                <table>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Publish date</th>
+                        <th>Categories</th>
+                        <th>Rating</th>
+                        <th>Read</th>
+                    </tr>
                     <?php include "../scripts/search.php" ?>
-                </ul>
+                </table>
             </div>
         </div>
     </div>

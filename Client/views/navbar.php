@@ -31,8 +31,6 @@ if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
                 echo '<a href="login.php" class="btn btn-primary my-2 mr-2" name="loginBtn">Log In</a>
                     <a href="signUp.php" class="btn btn-primary my-2 mr-2" name="signupBtn">Sign Up</a>';
             } else {
-                // echo '<a class="btn btn-primary icon my-2 mr-2" role="button" href="notification.php">
-                //                       <i class="material-icons">notifications</i><span class="badge"></span></a>';
                 echo '<a class="btn btn-warning icon my-2 mr-2" role="button" href="notification.php">
                        <i class="material-icons">notifications_active</i><span class="badge"></span></a>';
                 echo '<a href="logout.php" class="btn btn-primary my-2 mr-2" name="logoutBtn">Log out</a>';
