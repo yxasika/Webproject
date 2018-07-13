@@ -1,6 +1,6 @@
 <?php
 
-function generatepopup($type, $artid, $text, $buttontype)
+function generatepopup($type, $artid, $text, $buttontype, $authormail, $arttitle)
 {
     echo '
     <div class="modal fade" id="' . $type . 'ModalCenter' . $artid . '" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -18,7 +18,8 @@ function generatepopup($type, $artid, $text, $buttontype)
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <form action=""  method="post"><button value="' . $artid . '" type="submit" name="' . $type . '" class="btn btn-' . $buttontype . '" href="...?' . $type . '="' . $artid . '>' . $type . '</button>
-
+                <input type="hidden" name="authormail" value="'.$authormail.'">
+                <input type="hidden" name="arttitle" value="'.$arttitle.'">
                 </form>
             </div>
         </div>
