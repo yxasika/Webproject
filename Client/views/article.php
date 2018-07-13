@@ -8,21 +8,16 @@
 
 <body>
 <?php
-    include "navbar.php";
-    include "../db/db_auslesen.php";
-    include "../db/createArticle.php";
-
-
-
+include "navbar.php";
+include "../db/db_auslesen.php";
+include "../db/createArticle.php";
 $noarticle = true;
 $articles = array_merge(getArticles('pending'), getArticles('approved'), getArticles('rejected'), getArticles('published'));
 
-if(isset($_GET["artid"]))
-{
+if (isset($_GET["artid"])) {
     foreach ($articles as $article => $articlecard) {
         //echo "<p>".$articlecard["id"]."</p>";
-        if($articlecard["id"] == $_GET["artid"])
-        {
+        if ($articlecard["id"] == $_GET["artid"]) {
             $currentarticle = $articlecard;
             $noarticle = false;
         }
@@ -34,82 +29,66 @@ if(isset($_GET["artid"]))
 <main>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="content">
-                <article>
-
-                    <div class="card">
-                        <div class="row">
-                            <div class="col">
-
-
-
-                                    <?php
-
-                                    if($noarticle){
-                                        echo "<p class='text-warning'>No valid article given in url. How did you get here?</p>";
-                                    }
-
-                                    echo'
-
+            <article>
+                <div class="card">
+                    <div class="row">
+                        <div class="col">
+                            <?php
+                            if ($noarticle) {
+                                echo "<p class='text-warning'>No valid article given in url. How did you get here?</p>";
+                            }
+                            echo '
                                         <img class="card-img-top img-fluid" src="' . $currentarticle["img"] . '" alt="article image">
                                          </div>
                                             <div class="col">
                                     <div class="card-body">
-                                    <h5 class="card-title">'.$currentarticle["title"].'</h5>
-                                    <p class="card-text">'.$currentarticle["description"].'</p>
+                                    <h5 class="card-title">' . $currentarticle["title"] . '</h5>
+                                    <p class="card-text">' . $currentarticle["description"] . '</p>
                                     
                                     </div>
                             </div>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">author: <a class="card-link" href="#">'.$currentarticle["author"].'</a></li>
-                            <li class="list-group-item">published: '.$currentarticle["published_date"].'</li>
-                            <li class="list-group-item">category: ';
-                                    $categories = getCategories($currentarticle['id']);
-    foreach ($categories as $category) {
-        echo '<a href="#" class="badge badge-info mr-2">' . $category . '</a>';
-    }
-    echo'
+                            <li class="list-group-item">Author: <a class="card-link" href="#">' . $currentarticle["author"] . '</a></li>
+                            <li class="list-group-item">Published: ' . $currentarticle["published_date"] . '</li>
+                            <li class="list-group-item">Category: ';
+                            $categories = getCategories($currentarticle['id']);
+                            foreach ($categories as $category) {
+                                echo '<a href="#" class="badge badge-info mr-2">' . $category . '</a>';
+                            }
+                            echo '
                                     
                                     </li>
                             <li class="list-group-item">
                                 <a class="btn btn-outline-primary icon" role="button" target="_blank"
-                                   href="../scripts/pdf.js-gh-pages/web/viewer.html?file=../../'.$currentarticle["pdf"].'">
+                                   href="../scripts/pdf.js-gh-pages/web/viewer.html?file=../../' . $currentarticle["pdf"] . '">
                                     <i class="material-icons">book</i> read</a>
                                 <a class="btn btn-outline-primary icon mr-4" role="button" target="_blank"
-                                   href="'.$currentarticle["pdf"].'" download="article '.$currentarticle["id"].'">
+                                   href="' . $currentarticle["pdf"] . '" download="article ' . $currentarticle["id"] . '">
                                     <i class="material-icons">file_download</i> Download</a>
-                                '.$currentarticle["upvote"].' <a name="upvotebtn" role="button" href="#" class="btn btn-outline-success icon" ><i class="material-icons">favorite_border</i> Upvote</a>
+                                ' . $currentarticle["upvote"] . ' <a name="upvotebtn" role="button" href="#" class="btn btn-outline-success icon" ><i class="material-icons">favorite_border</i> Upvote</a>
                             </li>
                         </ul>
                     </div>
-                    <br>
-                                    
-                                    ';
-                                    ?>
+                    <br>'; ?>
 
 
-
-                    <form class="comment" name="comment">
-                        <div class="form-group">
-                            <label for="commentbox">COMMENT</label>
-                            <textarea id="commentbox" name="comment" placeholder="write your comment..." cols="20"
-                                      rows="3" class="form-control"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="anonym">
-                                <label class="form-check-label" for="anonym">
-                                    anonymous comment
-                                </label>
-                            </div>
-                            <div class="form-group">
-                                <input type="submit" value="SEND" class="btn btn-primary float-right"/>
-                            </div>
-                        </div>
-                    </form>
-                </article>
-            </div>
+                            <form class="comment" name="comment">
+                                <div class="form-group">
+                                    <label for="commentbox">Comment</label>
+                                    <textarea id="commentbox" name="comment" placeholder="Write your comment..."
+                                              cols="20"
+                                              rows="3" class="form-control"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="anonym">
+                                        <label class="form-check-label" for="anonym">Anonymous comment</label>
+                                        <input type="submit" value="SEND" class="btn btn-primary float-right"/>
+                                    </div>
+                                </div>
+                            </form>
+            </article>
         </div>
     </div>
 </main>
