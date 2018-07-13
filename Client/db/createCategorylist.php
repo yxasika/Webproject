@@ -15,7 +15,6 @@ class category
             $this->pdo = new PDO($dsn, $user, $pw);
             $sql = "CREATE TABLE categorylist (" . $id_user . " catname VARCHAR(20));";
             $this->pdo->exec($sql);
-            if(isset($_SESSION['db_set'])){echo "Tabelle categorylist angelegt.<br/>";}
         } catch (PDOException $e) {
             echo $e->getMessage();
         }

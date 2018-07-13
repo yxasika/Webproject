@@ -49,6 +49,8 @@ if(isset($_POST["upvotebtn"]))
                             if ($noarticle) {
                                 echo "<p class='text-warning'>No valid article given in url. How did you get here?</p>";
                             }
+                            else
+                            {
                             echo '
                                         <img class="card-img-top img-fluid" src="' . $currentarticle["img"] . '" alt="article image">
                                          </div>
@@ -71,7 +73,7 @@ if(isset($_POST["upvotebtn"]))
                             echo '
                                     
                                     </li>
-                            <li class="list-group-item">
+                            <li class="form-group row mt-2">
                                 <a class="btn btn-outline-primary icon" role="button" target="_blank"
                                    href="../scripts/pdf.js-gh-pages/web/viewer.html?file=../../' . $currentarticle["pdf"] . '">
                                     <i class="material-icons">book</i> read</a>
@@ -95,8 +97,10 @@ if(isset($_POST["upvotebtn"]))
                                 echo'
                             </li>
                         </ul>
-                    </div>
-                    <br>'; ?>
+                    
+                    <br>';
+                            }?>
+                        </div></div></div>
             </article>
         </div>
     </div>

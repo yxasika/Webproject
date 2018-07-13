@@ -21,7 +21,6 @@ class notification
             $this->pdo = new PDO($dsn, $user, $pw);
             $sql = "CREATE TABLE notification (" . $id_notifi . " sender VARCHAR(50), receiver VARCHAR(50), subject VARCHAR(50), message TEXT, status VARCHAR(20));";
             $this->pdo->exec($sql);
-            if(isset($_SESSION['db_set'])){echo "Tabelle notifications angelegt.<br/>";}
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
