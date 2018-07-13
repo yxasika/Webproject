@@ -2,23 +2,20 @@
 if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
 ?>
 
-<script type="text/javascript" src="http://beneposto.pl/jqueryrotate/js/jQueryRotateCompressed.js"></script>
-
 <nav class="navbar fixed-top navbar-expand-xl navbar-dark bg-dark">
-    <a class="navbar-brand" href="home.php"><img src="../src/imgs/logo.png" alt="logo" align="center"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
+    <div class="logo">
+        <label>D+Pad</label>
+    </div>
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="home.php">HOME</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="archive.php">ARCHIVE</a>
-            </li>
+            <li class="nav-item"><a class="nav-link" href="home.php">HOME</a></li>
+            <li class="nav-item"><a class="nav-link" href="archive.php">ARCHIVE</a></li>
             <?php
             if (isset($_SESSION["role"]) && $_SESSION["role"] == "editor") {
                 echo '<li class="nav-item"><a class="nav-link" href="editor.php">EDITOR</a></li>';
@@ -29,8 +26,9 @@ if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
             }
             ?>
         </ul>
-        <ul class="navbar-nav ">
-            <a href="searchResults.php" class="btn btn-primary icon my-2 mr-2" role="button"><i class="material-icons">search</i></a>
+        <ul class="navbar-nav">
+            <a href="search.php" class="btn btn-primary icon my-2 mr-2" role="button"><i
+                        class="material-icons">search</i></a>
             <?php
             if (!isset($_SESSION["firstname"])) {
                 echo '<a href="login.php" class="btn btn-primary my-2 mr-2" name="loginBtn">Log In</a>

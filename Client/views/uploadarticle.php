@@ -32,11 +32,11 @@ include "../scripts/uploadarticlescript.php"
                               class="form-control"></textarea>
                     </div>
                     <div class="form-group">
-                        upload your PDF file here:
+                        Upload your PDF file here:
                         <input id="pdffile" name="pdffile" type="file" class="float-right" required accept=".pdf">
                     </div>
                     <div class="form-group">
-                        upload your article's header image here:
+                        Upload your article's header image here:
                         <input id="imgfile" name="imgfile" type="file" class="float-right" accept=".png,.jpg,.jpeg">
                         <label content="imglinkid"></label>
                     </div>
@@ -74,12 +74,10 @@ include "../scripts/uploadarticlescript.php"
                     }
                     echo "</ul>";
                 }
-
                 ?>
             </div>
         </div>
     </div>
-
 </main>
 <?php include "footer.php" ?>
 

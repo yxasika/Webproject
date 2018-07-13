@@ -1,6 +1,14 @@
 body {
-    font-family: Quicksand;
+    font-family: 'Varela Round', sans-serif;
     margin-top: 80px;
+}
+
+.logo {
+    color: #dddddd;
+    padding: 22px 20px;
+    height: 80px;
+    float: left;
+    font-size: 24px;
 }
 
 #searchForm {
