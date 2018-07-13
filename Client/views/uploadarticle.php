@@ -50,42 +50,8 @@ include "../scripts/uploadarticlescript.php"
                                     foreach ($categories as $category) {
                                         echo'<option>'.$category.'</option>';
                                     }
-
                                     ?>
                                 </select>
-                            </div>
-
-                            <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button"
-                               aria-expanded="false" aria-controls="collapseExample">
-                                show categories
-                            </a>
-                            <div class="collapse" id="collapseExample">
-                                <ul class="list-group">
-                                    <li class="list-group-item">
-                                        <div class="form-row">
-                                            <label class="mr-2" for="chk_rpg">rpg</label>
-                                            <input name="rpg" type="checkbox" class="mt-1" id="chk_rpg">
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <div class="form-row">
-                                            <label class="mr-2" for="chk_jnr">jump'n run</label>
-                                            <input name="jump" type="checkbox" class="mt-1" id="chk_jnr">
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <div class="form-row">
-                                            <label class="mr-2" for="chk_sht">shooter</label>
-                                            <input name="shooter" type="checkbox" class="mt-1" id="chk_sht">
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <div class="form-row">
-                                            <label class="mr-2" for="chk_act">action</label>
-                                            <input name="action" type="checkbox" class="mt-1" id="chk_act">
-                                        </div>
-                                    </li>
-                                </ul>
                             </div>
                         </div>
 
