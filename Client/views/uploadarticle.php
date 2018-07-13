@@ -11,12 +11,16 @@
 include "../scripts/uploadarticlescript.php"
 ?>
 
-<main style="position: relative; top: 1em;">
+<main>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="content">
+            <div class="card container">
+                <section class="jumbotron text-center">
+                    <div class="container">
+                        <h1 class="jumbotron-heading">Upload an Article</h1>
+                    </div>
+                </section>
                 <form class="container" id="uploadform" method="post" enctype="multipart/form-data">
-                    <h2>Upload an Article</h2>
                     <div class="form-group">
                         <div class="form-row">
                             <div class="col">
@@ -28,7 +32,7 @@ include "../scripts/uploadarticlescript.php"
                     <div>
 
                     <textarea name="descriptionarea"
-                              placeholder="write a short summary of your article here..." rows="20" cols="20"
+                              placeholder="write a short summary of your article here..." rows="5" cols="20"
                               class="form-control"></textarea>
                     </div>
                     <div class="form-group">

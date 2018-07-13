@@ -12,7 +12,6 @@ $cookie_name = "user";
 $cookie_value = "Max Mustermann";
 setCookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 include "cookie_alert.php";
-include "../db/db_auslesen.php";
 include "../scripts/articlecardgenerator.php";
 ?>
 

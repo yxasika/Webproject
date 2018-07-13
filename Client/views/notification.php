@@ -9,7 +9,6 @@
 <body>
 
 <?php include "navbar.php" ?>
-<?php include "../db/db_auslesen.php" ?>
 
 <main>
     <div class="container">

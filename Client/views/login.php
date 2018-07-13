@@ -8,11 +8,10 @@
 </head>
 
 <body>
-<?php include "navbar.php" ?>
-<?php
+<?php include "navbar.php";
+
 $error = false;
 $success = false;
-include "../db/db_auslesen.php";
 
 if (isset($_POST["login"])) {
 
@@ -45,9 +44,7 @@ if (isset($_POST["login"])) {
 
 }
 ?>
-</br>
-</br>
-</br>
+
 
 <div class="container">
     <div class="row">

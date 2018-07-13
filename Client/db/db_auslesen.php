@@ -189,6 +189,32 @@ function getNotifi()
     }
 }
 
+function getUnreadNotifi()
+{
+    try {
+        $receiver = $_SESSION['email'];
+
+        $db = new SQLite3("../db/dpad.db");
+        $sql = "SELECT * FROM notification WHERE status = 'new' AND receiver = :receiver";
+
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam(':receiver', $receiver);
+        $result = $stmt->execute();
+
+        $notifi = array();
+
+        while ($row = $result->fetchArray()) {
+            $notifi[] = $row;
+        }
+        $db->close();
+
+        return $notifi;
+    } catch (Exception $ex) {
+        echo "Fehler: " . $ex->getMessage();
+    }
+}
+
+
 /*
 try {
     $db = new SQLite3("dpad.db");

@@ -10,7 +10,6 @@
 <?php
 include "navbar.php";
 include "../scripts/articleeditor.php";
-include "../db/db_auslesen.php";
 include "../scripts/articlecardgenerator.php";
 include "../scripts/popupgenerator.php"
 ?>
