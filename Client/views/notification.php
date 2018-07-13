@@ -29,11 +29,11 @@ if(isset($_POST["markread"]))
             <div class="content">
                 <ul class="nav nav-tabs" id="pills-tab" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" id="pills-newMessage-tab" data-toggle="pill" href="#newMessage"
+                        <a class="nav-link active" id="pills-newMessage-tab" data-toggle="pill" href="#pills-newMessage"
                            role="tab" aria-controls="pills-newMessage" aria-selected="true">New Messages</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="pills-readMessage-tab" data-toggle="pill" href="#readMessage"
+                        <a class="nav-link" id="pills-readMessage-tab" data-toggle="pill" href="#pills-readMessage"
                            role="tab" aria-controls="pills-readMessage" aria-selected="false">Read Messages</a>
                     </li>
                 </ul>
@@ -49,7 +49,7 @@ if(isset($_POST["markread"]))
                                     $notifi = getNotifi();
                                     foreach ($notifi as $notification => $notification) {
                                         if ($notifi[$notification]['receiver'] == ($_SESSION['email'] && $notifi[$notification]['status'] == 'new')) {
-                                            print '<div class="card">
+                                            echo '<div class="card">
                                                     <div class="card-body">
                                                     <h5 class="card-title">Subject: ' . htmlspecialchars($notifi[$notification]['subject']) . '</h5>
                                                     <p class="text-muted">' . htmlspecialchars($notifi[$notification]["sender"]) . '</p>
@@ -76,7 +76,7 @@ if(isset($_POST["markread"]))
                                     $notifi = getNotifi();
                                     foreach ($notifi as $notification => $notification) {
                                         if ($notifi[$notification]['receiver'] == ($_SESSION['email'] && $notifi[$notification]['status'] == 'read')) {
-                                            print '<div class="card">
+                                            echo '<div class="card">
                                                     <div class="card-body">
                                                     <h5 class="card-title">Subject: ' . htmlspecialchars($notifi[$notification]['subject']) . '</h5>
                                                     <p class="text-muted">' . htmlspecialchars($notifi[$notification]["sender"]) . '</p>
