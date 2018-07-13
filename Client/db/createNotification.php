@@ -27,14 +27,13 @@ class notification
         }
     }
 
-    public function insertNotifi($receiver, $subject, $message)
+    public function insertNotifi($sender, $receiver, $subject, $message)
     {
         $sql = "INSERT INTO notification (sender, receiver, subject, message, status) 
             VALUES (:sender, :receiver, :subject, :message, :status);";
         $stmt = $this->pdo->prepare($sql);
 
         $status = "new";
-        $sender = $_SESSION["email"];
 
         $stmt->bindParam(':sender', $sender);
         $stmt->bindParam(':receiver', $receiver);
