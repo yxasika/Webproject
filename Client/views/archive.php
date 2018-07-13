@@ -8,7 +8,6 @@
 
 <body>
 <?php include "navbar.php";
-include "../db/db_auslesen.php";
 include "../scripts/articlecardgenerator.php";
 include "cookie_alert.php" ?>
 
@@ -58,25 +57,9 @@ include "cookie_alert.php" ?>
     </div>
 </main>
 
-<footer class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
-    <div class="col">
-        <div class="row">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item text-center">
-                    <a class="nav-link" href="impressum.php">IMPRESSUM</a>
-                </li>
-                <li class="nav-item text-center">
-                    <a class="nav-link" href="contact.php">CONTACT</a>
-                </li>
-            </ul>
-        </div>
-        <div class="row">
-            <p class="text-secondary  mx-auto">&copy; 2018 DPAD</p>
-        </div>
-    </div>
-</footer>
+<?php include "footer.php" ?>
 </body>
-<script rel="script" type="text/javascript" src="../scripts/showMore.js"></script>
+<!--<script rel="script" type="text/javascript" src="../scripts/showMore.js"></script>-->
 
 
 </html>

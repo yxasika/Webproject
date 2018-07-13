@@ -1,11 +1,12 @@
 <?php
 session_start();
 
+include "navbar.php";
+
 include "../db/createArticle.php";
 include "../db/createUserlist.php";
 include "../db/createCategorylist.php";
 include "../db/createNotification.php";
-include "../db/db_auslesen.php";
 
 $error = array();
 $success = false;
@@ -73,8 +74,7 @@ if (isset($_POST["register"])) {
 </head>
 
 <body>
-<?php include "navbar.php" ?>
-</br>
+
 <div class="container">
     <div class="row">
         <div class="col">

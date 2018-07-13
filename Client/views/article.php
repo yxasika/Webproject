@@ -9,7 +9,6 @@
 <body>
 <?php
 include "navbar.php";
-include "../db/db_auslesen.php";
 include "../db/createArticle.php";
 $noarticle = true;
 $articles = array_merge(getArticles('pending'), getArticles('approved'), getArticles('rejected'), getArticles('published'));

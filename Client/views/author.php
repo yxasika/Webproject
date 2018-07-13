@@ -9,7 +9,6 @@
 <body>
 
 <?php include "navbar.php";
-include "../db/db_auslesen.php";
 include "../scripts/articlecardgenerator.php"
 ?>
 

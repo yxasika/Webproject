@@ -1,5 +1,6 @@
 <?php
 if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
+include "../db/db_auslesen.php";
 ?>
 
 <nav class="navbar fixed-top navbar-expand-xl navbar-dark bg-dark">
@@ -31,8 +32,16 @@ if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
                 echo '<a href="login.php" class="btn btn-primary my-2 mr-2" name="loginBtn">Log In</a>
                     <a href="signUp.php" class="btn btn-primary my-2 mr-2" name="signupBtn">Sign Up</a>';
             } else {
-                echo '<a class="btn btn-warning icon my-2 mr-2" role="button" href="notification.php">
-                       <i class="material-icons">notifications_active</i><span class="badge"></span></a>';
+                if(count(getUnreadNotifi())==0)
+                {
+                    echo '<a class="btn btn-primary icon my-2 mr-2" role="button" href="notification.php">
+                                      <i class="material-icons">notifications</i><span class="badge"></span></a>';
+                }
+                else
+                {
+                    echo '<a class="btn btn-warning icon my-2 mr-2" role="button" href="notification.php">
+                       <i class="material-icons">notifications_active</i>'.count(getUnreadNotifi()).'<span class="badge"></span></a>';
+                }
                 echo '<a href="logout.php" class="btn btn-primary my-2 mr-2" name="logoutBtn">Log out</a>';
             }
             ?>
