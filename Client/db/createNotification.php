@@ -33,7 +33,7 @@ class notification
             VALUES (:sender, :receiver, :subject, :message, :status);";
         $stmt = $this->pdo->prepare($sql);
 
-        $status = "unread";
+        $status = "new";
         $sender = $_SESSION["email"];
 
         $stmt->bindParam(':sender', $sender);
@@ -43,6 +43,14 @@ class notification
         $stmt->bindParam(':status', $status);
 
         return $stmt->execute();
+    }
+
+    public function readNotifi($id)
+    {
+        $sql = "UPDATE notification SET status = 'read' WHERE id == :id;";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
     }
 
 

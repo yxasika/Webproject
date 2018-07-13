@@ -8,7 +8,20 @@
 
 <body>
 
-<?php include "navbar.php" ?>
+<?php
+include "navbar.php";
+include "../db/createNotification.php";
+
+$notifiObj = new notification();
+
+
+if(isset($_POST["markread"]))
+{
+    $notifiObj->readNotifi($_POST["notid"]);
+
+}
+
+?>
 
 <main>
     <div class="container">
@@ -26,6 +39,7 @@
                 </ul>
                 <br>
                 <div class="tab-content" id="pills-tabContent">
+
                     <div class="tab-pane fade show active" id="pills-newMessage" role="tabpanel"
                          aria-labelledby="pills-newMessage-tab">
                         <div class="container">
@@ -38,11 +52,11 @@
                                             print '<div class="card">
                                                     <div class="card-body">
                                                     <h5 class="card-title">Subject: ' . htmlspecialchars($notifi[$notification]['subject']) . '</h5>
-                                                    <p class="text-muted">' . htmlspecialchars($notifi[$notification]['sender']) . '</p>
+                                                    <p class="text-muted">' . htmlspecialchars($notifi[$notification]["sender"]) . '</p>
                                                     <h6 class="card-title">Message:</h6>
-                                                    <p class="card-text">' . htmlspecialchars($notifi[$notification]['message']) . '</p>
+                                                    <p class="card-text">' . htmlspecialchars($notifi[$notification]["message"]) . '</p>
                                                     <a class="btn btn-primary">Answer</a>
-                                                    <a class="btn btn-secondary">Marked read</a>
+                                                    <form method="post" action=""><input name="notid" type="hidden" value="'.$notifi[$notification]["id"].'"/><button type="submit" name="markread" class="btn btn-secondary">Mark read</button></form>
                                                     </div>
                                                     </div>';
                                         }
@@ -52,16 +66,33 @@
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane fade show active" id="pills-newMessage" role="tabpanel"
+
+                    <div class="tab-pane fade" id="pills-readMessage" role="tabpanel"
                          aria-labelledby="pills-readMessage-tab">
                         <div class="container">
                             <div class="row">
                                 <div class="col">
-
+                                    <?php
+                                    $notifi = getNotifi();
+                                    foreach ($notifi as $notification => $notification) {
+                                        if ($notifi[$notification]['receiver'] == ($_SESSION['email'] && $notifi[$notification]['status'] == 'read')) {
+                                            print '<div class="card">
+                                                    <div class="card-body">
+                                                    <h5 class="card-title">Subject: ' . htmlspecialchars($notifi[$notification]['subject']) . '</h5>
+                                                    <p class="text-muted">' . htmlspecialchars($notifi[$notification]["sender"]) . '</p>
+                                                    <h6 class="card-title">Message:</h6>
+                                                    <p class="card-text">' . htmlspecialchars($notifi[$notification]["message"]) . '</p>
+                                                    <a class="btn btn-primary">Answer</a>
+                                                    </div>
+                                                    </div>';
+                                        }
+                                    }
+                                    ?>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

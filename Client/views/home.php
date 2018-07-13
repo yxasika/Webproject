@@ -46,6 +46,7 @@ include "../scripts/articlecardgenerator.php";
                 </ul>
                 <br>
                 <div class="tab-content" id="pills-tabContent">
+
                     <div class="tab-pane fade show active" id="pills-latest" role="tabpanel"
                          aria-labelledby="pills-latest-tab">
                         <div class="container">
@@ -79,6 +80,7 @@ include "../scripts/articlecardgenerator.php";
                             </div>
                         </div>
                     </div>
+
                 </div>
                 </section>
             </div>
