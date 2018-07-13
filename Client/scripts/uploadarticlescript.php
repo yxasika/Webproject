@@ -1,5 +1,4 @@
 <?php
-include "../db/db_auslesen.php";
 include "../db/createArticle.php";
 include "../db/createCategorylist.php";
 
