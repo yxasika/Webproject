@@ -49,7 +49,7 @@ if(isset($_POST["markread"]))
                                     $notifi = getNotifi();
                                     foreach ($notifi as $notification => $notification) {
                                         if ($notifi[$notification]['receiver'] == ($_SESSION['email'] && $notifi[$notification]['status'] == 'new')) {
-                                            print '<div class="card">
+                                            echo '<div class="card">
                                                     <div class="card-body">
                                                     <h5 class="card-title">Subject: ' . htmlspecialchars($notifi[$notification]['subject']) . '</h5>
                                                     <p class="text-muted">' . htmlspecialchars($notifi[$notification]["sender"]) . '</p>
@@ -76,7 +76,7 @@ if(isset($_POST["markread"]))
                                     $notifi = getNotifi();
                                     foreach ($notifi as $notification => $notification) {
                                         if ($notifi[$notification]['receiver'] == ($_SESSION['email'] && $notifi[$notification]['status'] == 'read')) {
-                                            print '<div class="card">
+                                            echo '<div class="card">
                                                     <div class="card-body">
                                                     <h5 class="card-title">Subject: ' . htmlspecialchars($notifi[$notification]['subject']) . '</h5>
                                                     <p class="text-muted">' . htmlspecialchars($notifi[$notification]["sender"]) . '</p>
