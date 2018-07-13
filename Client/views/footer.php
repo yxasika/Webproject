@@ -1,5 +1,5 @@
 <br /><br />
-<footer class="navbar navbar-expand-sm navbar-dark bg-dark p-0 fixed-bottom">
+<footer class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
     <div class="col">
         <div class="row">
             <ul class="navbar-nav mx-auto">

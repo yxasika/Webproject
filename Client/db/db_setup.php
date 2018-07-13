@@ -7,6 +7,14 @@ include "../db/createUserlist.php";
 include "../db/createCategorylist.php";
 include "../db/createNotification.php";
 
+$db = new SQLite3("../db/dpad.db");
+$sql = "SELECT DISTINCT categorylist.catname
+            FROM categorylist;";
+
+$tableExists = $db->query("SHOW TABLES LIKE 'userlist'")->rowCount() > 0;
+
+echo
+
 $userObj = new user();
 $userObj->insertUser('test', 'Mustertest', 'test@mail.com', md5("test"), 'author');
 $userObj->insertUser('Max', 'Musterman', 'muster@mail.com', md5("muster"), 'editor');
