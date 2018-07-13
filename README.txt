@@ -19,3 +19,6 @@ Falls nötig, kann die Datenbank in **Client/db/dpad.db** gelöscht werden und m
 
 #Homepage
 Client/views/home.php
+
+#PDF
+Der Standordplan Wechloy wurde nur zu Testzwecken verwendet.
