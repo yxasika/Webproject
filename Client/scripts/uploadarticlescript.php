@@ -22,7 +22,7 @@ if (isset($_POST["upload"])) {
 
     $mail = $_SESSION["email"];
 
-    $categories = $_POST['categories[]'];
+    $categories = $_POST['categories'];
 
     //testing for errors:
     $filetype = strtolower(pathinfo($imgpath, PATHINFO_EXTENSION));
