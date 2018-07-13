@@ -60,7 +60,6 @@ if (isset($_POST["recipient"]) and isset($_POST["subject"]) and isset($_POST["me
                                                     <form method="post" action=""><input name="notid" type="hidden" value="' . $notifi[$notification]["id"] . '"/><button type="submit" name="markread" class="btn btn-secondary">Mark read</button></form>
                                                     </div></div>
                                                     </div>';
-                                            $i++;
                                         }
                                     }
                                     ?>
@@ -122,11 +121,11 @@ if (isset($_POST["recipient"]) and isset($_POST["subject"]) and isset($_POST["me
                             <label for="message-text" class="col-form-label">Message:</label>
                             <textarea class="form-control" id="message-text" name="message"></textarea>
                         </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Send message</button>
+                        </div>
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Send message</button>
                 </div>
             </div>
         </div>

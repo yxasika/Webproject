@@ -23,5 +23,4 @@ if (isset($_POST["publish"])) {
     $msg = "You da MAN! Your Article '".$_POST["arttitle"]."' was published!";
     $notifiObj->insertNotifi($_SESSION["email"], $_POST["authormail"], $subject, $msg);
 }
-
 ?>
