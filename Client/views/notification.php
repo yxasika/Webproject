@@ -47,7 +47,7 @@ if (isset($_POST["recipient"]) and isset($_POST["subject"]) and isset($_POST["me
                                     <?php
                                     $notifi = getNotifi();
                                     foreach ($notifi as $notification => $notification) {
-                                        if ($notifi[$notification]['receiver'] == ($_SESSION['email'] && $notifi[$notification]['status'] == 'new')) {
+                                        if ($notifi[$notification]['receiver'] == $_SESSION['email'] and $notifi[$notification]['status'] == 'new') {
 
                                             echo '<div class="card">
                                                     <div class="card-body">
@@ -76,7 +76,7 @@ if (isset($_POST["recipient"]) and isset($_POST["subject"]) and isset($_POST["me
                                     <?php
                                     $notifi = getNotifi();
                                     foreach ($notifi as $notification => $notification) {
-                                        if ($notifi[$notification]['receiver'] == ($_SESSION['email'] && $notifi[$notification]['status'] == 'read')) {
+                                        if ($notifi[$notification]['receiver'] == $_SESSION['email'] and $notifi[$notification]['status'] == 'read') {
                                             echo '<div class="card">
                                                     <div class="card-body">
                                                     <h5 class="card-title">Subject: ' . htmlspecialchars($notifi[$notification]['subject']) . '</h5>
