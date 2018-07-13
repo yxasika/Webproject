@@ -18,13 +18,11 @@ $articles = array_merge(getArticles('pending'), getArticles('approved'), getArti
 
 if (isset($_GET["artid"])) {
     foreach ($articles as $article => $articlecard) {
-        //echo "<p>".$articlecard["id"]."</p>";
         if ($articlecard["id"] == $_GET["artid"]) {
             $currentarticle = $articlecard;
             $noarticle = false;
         }
     }
-    //echo "<p class='text-warning'>".$_GET["artid"]."</p>";
 }
 
 if(isset($_POST["upvotebtn"]))
@@ -91,9 +89,7 @@ if(isset($_POST["upvotebtn"]))
                                         {
                                             echo '<button disabled value="upvote" name="upvotebtn" role="button" class="btn btn-success icon"><i class="material-icons">favorite</i>'. $currentarticle["upvote"] . '</button>';
                                         }
-
                                     }
-
                                 echo'
                             </li>
                         </ul>

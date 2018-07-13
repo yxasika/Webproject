@@ -33,16 +33,11 @@ include "../scripts/articlecardgenerator.php"
 <section>
                     <div class="container">
                         <div class="row">
-
                             <?php
-
                             $articles = array_merge(getArticles('pending'), getArticles('approved'), getArticles('rejected'), getArticles('published'));
-
                             foreach ($articles as $article => $articlecard) {
                                 if ($articlecard['authormail'] == $_SESSION["email"]) {
-
                                     generateArticleCard("author", $articlecard);
-
                                 }
                             }
                             ?>
