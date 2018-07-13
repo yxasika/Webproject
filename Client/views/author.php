@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Home</title>
+    <title>Author</title>
     <?php include "head.php" ?>
 </head>
 
