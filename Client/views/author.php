@@ -20,7 +20,7 @@ include "../scripts/articlecardgenerator.php"
                     <section class="jumbotron text-center">
                         <div class="container">
                             <h1 class="jumbotron-heading">My articles</h1>
-                            <p class="lead text-muted">This is the perspective of an author. You can view all of your
+                            <p class="card-text">This is the perspective of an author. You can view all of your
                                 articles
                                 and edit them here. You can upload new articles too.</p>
                             <p>
@@ -31,7 +31,7 @@ include "../scripts/articlecardgenerator.php"
                             </p>
                         </div>
                     </section>
-
+<section>
                     <div class="container">
                         <div class="row">
 
@@ -49,6 +49,7 @@ include "../scripts/articlecardgenerator.php"
                             ?>
                         </div>
                     </div>
+</section>
                 </div>
 
         </div>

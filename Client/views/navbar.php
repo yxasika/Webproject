@@ -41,4 +41,3 @@ if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
         </ul>
     </div>
 </nav>
-<br /><br />

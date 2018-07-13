@@ -25,11 +25,11 @@ include "../scripts/popupgenerator.php"
                     echo'<section class="jumbotron text-center">
                     <div class="container">
                         <h1 class="jumbotron-heading">Articles</h1>
-                        <p class="lead text-muted">This is the perspective of an editor. You can view all of articles
+                        <p class="card-text">This is the perspective of an editor. You can view all of articles
                             , approve or reject them here.</p>
                     </div>
                 </section>
-
+<section>
                 <ul class="nav nav-tabs" id="pills-tab" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" id="pills-pending-tab" data-toggle="pill" href="#pills-pending"
@@ -95,7 +95,8 @@ include "../scripts/popupgenerator.php"
                                 ?>
                             </div>
                         </div>
-                    </div></div>';
+                    </div></div>
+                    </section>';
 
                 }
                 else{

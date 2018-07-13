@@ -19,11 +19,11 @@ include "../scripts/articlecardgenerator.php";
 <main>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="content">
-                <div class="card">
-                    <h3 class="card-header">About us</h3>
-                    <div class="card-body">
-                        <h5 class="card-title">Title</h5>
+            <div class="card container">
+
+                <section class="jumbotron text-center">
+                    <div class="container">
+                        <h1 class="jumbotron-heading">About us</h1>
                         <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
                             eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
                             eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
@@ -33,9 +33,9 @@ include "../scripts/articlecardgenerator.php";
                             et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
                             Lorem ipsum dolor sit amet.</p>
                     </div>
-                </div>
-                <br>
-                <ul class="nav nav-tabs" id="pills-tab" role="tablist">
+                </section>
+                <section>
+                    <ul class="nav nav-tabs" id="pills-tab" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" id="pills-latest-tab" data-toggle="pill" href="#pills-latest"
                            role="tab" aria-controls="pills-latest" aria-selected="true">Latest</a>
@@ -81,6 +81,7 @@ include "../scripts/articlecardgenerator.php";
                         </div>
                     </div>
                 </div>
+                </section>
             </div>
         </div>
     </div>

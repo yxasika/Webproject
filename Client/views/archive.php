@@ -15,7 +15,14 @@ include "cookie_alert.php" ?>
 <main>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="content">
+            <div class="card container">
+                <section class="jumbotron text-center">
+                    <div class="container">
+                        <h1 class="jumbotron-heading">Archive</h1>
+                        <p class="card-text">This is the archive. You can view all published articles here. You can also search for articles here.</p>
+                    </div>
+                </section>
+
                 <form class="form-inline my-2 my-lg-0 " action="archive.php">
                     <?php
                     if (isset($_SESSION["search"])) {
@@ -30,22 +37,22 @@ include "cookie_alert.php" ?>
                     ?>
                 </form>
                 <hr>
-                <ul id="myUL">
+                <div class="container">
+                <div class="row">
 
                     <?php
                     $articles = getArticles('published');
 
                     foreach ($articles as $article => $articlecard) {
-
-                        echo"<li>";
                         generateArticleCard("archive", $articlecard);
-                        echo"</li>";
-
                     }
                     ?>
-                    <div id="content"></div>
-                </ul>
-                <button id="showMore" class="btn col">Show more</button>
+
+                </div></div>
+
+
+<!--                <div id="content"></div>-->
+<!--                <button id="showMore" class="btn col">Show more</button>-->
             </div>
         </div>
     </div>
